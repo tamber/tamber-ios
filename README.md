@@ -36,7 +36,7 @@ If you are just getting started, check out the [Quick Start][quickstart] guide f
 
 To begin tracking events, set your publishable project key. If you have already begun tracking real time events and have created an engine, you should also set your engine key so you can retrieve recommendations.
 
-```objective-c
+```objc
 #import "AppDelegate.h"
 @import Tamber;
 
@@ -55,7 +55,7 @@ To begin tracking events, set your publishable project key. If you have already 
 
 Set the User wherever you load your user's unique ID from your backend, or wherever you load user ids from.
 
-```objective-c
+```objc
 [Tamber setUser:@"user_id"];
 ```
 
@@ -63,7 +63,7 @@ Set the User wherever you load your user's unique ID from your backend, or where
 
 Stream events to your Tamber project as the user interacts with items in your app.
 
-```objective-c
+```objc
 TMBEventParams *params = [TMBEventParams eventWithItem:@"item_id" behavior:@"like"];
 [[Tamber client] trackEvent:params responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSString *errorMessage) {
     if(errorMessage){
@@ -79,7 +79,7 @@ TMBEventParams *params = [TMBEventParams eventWithItem:@"item_id" behavior:@"lik
 
 Once you have seeded some events and created your engine, you can start pulling user recommendations into your app.
 
-```objective-c
+```objc
 TMBDiscoverParams *params = [TMBDiscoverParams discoverRecommendations:[NSNumber numberWithInt:50]];
 [[Tamber client] discoverRecommendations:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSString *errorMessage) {
     if(errorMessage){
@@ -95,7 +95,7 @@ TMBDiscoverParams *params = [TMBDiscoverParams discoverRecommendations:[NSNumber
 
 If you are setting [properties for your items][properties] from your backend, you can include these properties in recommendation responses to simplify data handling. For example, you might have `title`, `img`, and `price` properties that you can use to display items to users without needing to make an additional request for each recommendation.
 
-```objective-c
+```objc
 TMBDiscoverParams *params = [TMBDiscoverParams alloc] discoverRecommendations:[NSNumber numberWithInt:50] page:nil filter:nil getProperties:true testEvents:nil];
 [[Tamber client] discoverRecommendations:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSString *errorMessage) {
     if(errorMessage){

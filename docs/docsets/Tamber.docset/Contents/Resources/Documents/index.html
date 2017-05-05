@@ -105,7 +105,7 @@
 <p>Our SDK is compatible with iOS 8.0 and above. It requires Xcode 8.0+ to build the source.</p>
 <h2 id='documentation' class='heading'>Documentation</h2>
 
-<p>This README covers the basics of using the Tamber iOS SDK. Check out the <a href="http://tamber.github.io/tamber-ios/docs/index.html">documentation</a> for a comprehensive look at the classes and methods.</p>
+<p>This ReadMe covers the basics of using the Tamber iOS SDK. Check out the <a href="http://tamber.github.io/tamber-ios/docs/index.html">documentation</a> for a comprehensive look at the classes and methods.</p>
 <h2 id='installation' class='heading'>Installation</h2>
 
 <p>Install Tamber with <a href="https://guides.cocoapods.org/using/getting-started.html">CocoaPods</a>. If you do not yet have a Podfile for your project, <code>$ cd</code> into your project directory and run <code>$ pod init</code>.</p>
@@ -138,50 +138,50 @@
 <h3 id='set-user' class='heading'>Set User</h3>
 
 <p>Set the User wherever you load your user&rsquo;s unique ID from your backend, or wherever you load user ids from.</p>
-<pre class="highlight plaintext"><code>[Tamber setUser:@"user_id"];
+<pre class="highlight objective_c"><code><span class="p">[</span><span class="n">Tamber</span> <span class="nf">setUser</span><span class="p">:</span><span class="s">@"user_id"</span><span class="p">];</span>
 </code></pre>
 <h3 id='track-events' class='heading'>Track Events</h3>
 
 <p>Stream events to your Tamber project as the user interacts with items in your app.</p>
-<pre class="highlight plaintext"><code>TMBEventParams *params = [TMBEventParams eventWithItem:@"item_id" behavior:@"like"];
-[[Tamber client] trackEvent:params responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSString *errorMessage) {
-    if(errorMessage){
-        // Handle error
-    } else {
-        object.events[0] // Event tracked
-        object.recs // Returns updated recommendations if params.getRecs is set - [params setGetRecs:&lt;TMBDiscoverParams&gt;]
-    }
-}];
+<pre class="highlight objective_c"><code><span class="n">TMBEventParams</span> <span class="o">*</span><span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="n">TMBEventParams</span> <span class="nf">eventWithItem</span><span class="p">:</span><span class="s">@"item_id"</span> <span class="nf">behavior</span><span class="p">:</span><span class="s">@"like"</span><span class="p">];</span>
+<span class="p">[[</span><span class="n">Tamber</span> <span class="nf">client</span><span class="p">]</span> <span class="nf">trackEvent</span><span class="p">:</span><span class="n">params</span> <span class="nf">responseCompletion</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">TMBEventResponse</span> <span class="o">*</span><span class="n">object</span><span class="p">,</span> <span class="n">NSHTTPURLResponse</span> <span class="o">*</span><span class="n">response</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">errorMessage</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">errorMessage</span><span class="p">){</span>
+        <span class="c1">// Handle error
+</span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">object</span><span class="p">.</span><span class="n">events</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">// Event tracked
+</span>        <span class="n">object</span><span class="p">.</span><span class="n">recs</span> <span class="c1">// Returns updated recommendations if params.getRecs is set - [params setGetRecs:&lt;TMBDiscoverParams&gt;]
+</span>    <span class="p">}</span>
+<span class="p">}];</span>
 </code></pre>
 <h3 id='get-recommendations' class='heading'>Get Recommendations</h3>
 
 <p>Once you have seeded some events and created your engine, you can start pulling user recommendations into your app.</p>
-<pre class="highlight plaintext"><code>TMBDiscoverParams *params = [TMBDiscoverParams discoverRecommendations:[NSNumber numberWithInt:50]];
-[[Tamber client] discoverRecommendations:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSString *errorMessage) {
-    if(errorMessage){
-        // Handle error
-    } else {
-        for(TMBDiscovery *discovery in object.discoveries){
-            discovery.item // Recommended item id
-            discovery.score // Recommendation score (relative to other results, not a predicted rating)
-        }
-    }
-}];
+<pre class="highlight objective_c"><code><span class="n">TMBDiscoverParams</span> <span class="o">*</span><span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="n">TMBDiscoverParams</span> <span class="nf">discoverRecommendations</span><span class="p">:[</span><span class="n">NSNumber</span> <span class="nf">numberWithInt</span><span class="p">:</span><span class="mi">50</span><span class="p">]];</span>
+<span class="p">[[</span><span class="n">Tamber</span> <span class="nf">client</span><span class="p">]</span> <span class="nf">discoverRecommendations</span><span class="p">:</span><span class="n">params</span> <span class="nf">responseCompletion</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">TMBDiscoverResponse</span> <span class="o">*</span><span class="n">object</span><span class="p">,</span> <span class="n">NSHTTPURLResponse</span> <span class="o">*</span><span class="n">response</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">errorMessage</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">errorMessage</span><span class="p">){</span>
+        <span class="c1">// Handle error
+</span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">TMBDiscovery</span> <span class="o">*</span><span class="n">discovery</span> <span class="k">in</span> <span class="n">object</span><span class="p">.</span><span class="n">discoveries</span><span class="p">){</span>
+            <span class="n">discovery</span><span class="p">.</span><span class="n">item</span> <span class="c1">// Recommended item id
+</span>            <span class="n">discovery</span><span class="p">.</span><span class="n">score</span> <span class="c1">// Recommendation score (relative to other results, not a predicted rating)
+</span>        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}];</span>
 </code></pre>
 
-<p>If you are setting [properties for your items][properties] from your backend, you can include these properties in recommendation responses to simplify data handling. For example, you might have <code>title</code>, <code>img</code>, and <code>price</code> properties that you can use to display items to users without needing to make an additional request for each recommendation.</p>
-<pre class="highlight plaintext"><code>TMBDiscoverParams *params = [TMBDiscoverParams alloc] discoverRecommendations:[NSNumber numberWithInt:50] page:nil filter:nil getProperties:true testEvents:nil];
-[[Tamber client] discoverRecommendations:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSString *errorMessage) {
-    if(errorMessage){
-        // Handle error
-    } else {
-        for(TMBDiscovery *discovery in object.discoveries){
-            discovery.item // Recommended item id
-            discovery.score // Recommendation score (relative to other results, not a predicted rating)
-            discovery.properties // Dictionary of item properties
-        }
-    }
-}];
+<p>If you are setting <a href="https://tamber.com/docs/guides/filtering.html">properties for your items</a> from your backend, you can include these properties in recommendation responses to simplify data handling. For example, you might have <code>title</code>, <code>img</code>, and <code>price</code> properties that you can use to display items to users without needing to make an additional request for each recommendation.</p>
+<pre class="highlight objective_c"><code><span class="n">TMBDiscoverParams</span> <span class="o">*</span><span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="n">TMBDiscoverParams</span> <span class="nf">alloc</span><span class="p">]</span> <span class="n">discoverRecommendations</span><span class="o">:</span><span class="p">[</span><span class="n">NSNumber</span> <span class="nf">numberWithInt</span><span class="p">:</span><span class="mi">50</span><span class="p">]</span> <span class="n">page</span><span class="o">:</span><span class="nb">nil</span> <span class="n">filter</span><span class="o">:</span><span class="nb">nil</span> <span class="n">getProperties</span><span class="o">:</span><span class="nb">true</span> <span class="n">testEvents</span><span class="o">:</span><span class="nb">nil</span><span class="p">];</span>
+<span class="p">[[</span><span class="n">Tamber</span> <span class="nf">client</span><span class="p">]</span> <span class="nf">discoverRecommendations</span><span class="p">:</span><span class="n">params</span> <span class="nf">responseCompletion</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">TMBDiscoverResponse</span> <span class="o">*</span><span class="n">object</span><span class="p">,</span> <span class="n">NSHTTPURLResponse</span> <span class="o">*</span><span class="n">response</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">errorMessage</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">errorMessage</span><span class="p">){</span>
+        <span class="c1">// Handle error
+</span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">TMBDiscovery</span> <span class="o">*</span><span class="n">discovery</span> <span class="k">in</span> <span class="n">object</span><span class="p">.</span><span class="n">discoveries</span><span class="p">){</span>
+            <span class="n">discovery</span><span class="p">.</span><span class="n">item</span> <span class="c1">// Recommended item id
+</span>            <span class="n">discovery</span><span class="p">.</span><span class="n">score</span> <span class="c1">// Recommendation score (relative to other results, not a predicted rating)
+</span>            <span class="n">discovery</span><span class="p">.</span><span class="n">properties</span> <span class="c1">// Dictionary of item properties
+</span>        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}];</span>
 </code></pre>
 
 <p>If your app allows users to interact with content before creating an account, or otherwise establishing a unique identifier, and you can want to get recommendations for these un-initialized users, you can do so by setting <code>testEvents</code> to an array of <code>TMBEvent</code> objects. Retrieving recommendations with <code>testEvents</code> set will return a list of simulated recommendations given the series of Events, but does not write anything to your project or engine.</p>
@@ -193,7 +193,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2017 <a class="link" href="https://tamber.com" target="_blank" rel="external">Tamber</a>. All rights reserved. (Last updated: 2017-05-04)</p>
+      <p>&copy; 2017 <a class="link" href="https://tamber.com" target="_blank" rel="external">Tamber</a>. All rights reserved. (Last updated: 2017-05-05)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
