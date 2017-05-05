@@ -117,7 +117,7 @@ If your app allows users to interact with content before creating an account, or
 [ios-docs]: http://tamber.github.io/tamber-ios/docs/index.html
 [quickstart]: https://tamber.com/docs/start/
 [dataset]: https://tamber.com/docs/start/#upload-history
-[proeprties]: https://tamber.com/docs/guides/filtering.html
+[properties]: https://tamber.com/docs/guides/filtering.html
 [homepage]: https://tamber.com/
 [docs]: https://tamber.com/docs/
 [dashboard]: https://dashboard.tamber.com/
