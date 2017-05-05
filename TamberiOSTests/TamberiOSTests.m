@@ -36,7 +36,7 @@ const NSString *defaultUser = @"user_jctzgisbru";
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
-    TMBEventParams *params = [TMBEventParams eventWithUser:@"user_a" item:@"item_1" behavior:@"like"];
+    TMBEventParams *params = [TMBEventParams eventWithUser:@"user_a" item:@"item_1" behavior:@"like" value:nil created:[NSDate date]];
     XCTestExpectation *trackExp = [self expectationWithDescription:@"Event tracked"];
     [_client trackEvent:params responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSString *errorMessage) {
         XCTAssertNil(errorMessage);

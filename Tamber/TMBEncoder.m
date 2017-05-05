@@ -37,7 +37,11 @@ FOUNDATION_EXPORT NSString * TMBQueryStringFromParameters(NSDictionary *paramete
     [[object.class propertyNamesToFormFieldNamesMapping] enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull propertyName, NSString *  _Nonnull formFieldName, __unused BOOL * _Nonnull stop) {
         id value = [self formEncodableValueForObject:[object valueForKey:propertyName]];
         if (value) {
-            keyPairs[formFieldName] = value;
+            if([value isKindOfClass:[NSDate class]]) { keyPairs[formFieldName] = [NSNumber numberWithInt:[(NSDate*)value timeIntervalSince1970]];
+            } else {
+                keyPairs[formFieldName] = value;
+            }
+            
         }
     }];
     [object.additionalAPIParameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull additionalFieldName, id  _Nonnull additionalFieldValue, __unused BOOL * _Nonnull stop) {

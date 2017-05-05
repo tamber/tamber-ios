@@ -16,7 +16,7 @@
 #import "TMBAPIRequest.h"
 
 NS_ASSUME_NONNULL_BEGIN
-static  NSString *const TMBSDKVersion = @"0.0.1";
+static  NSString *const TMBSDKVersion = @"0.0.2";
 static NSString *const TMBApiURLBase = @"api.tamber.com/v1";
 static NSString *const TMBApiVersion = @"2017-3-8";
 NS_ASSUME_NONNULL_END
