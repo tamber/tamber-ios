@@ -15,9 +15,11 @@
 #import "TMBEncoder.h"
 #import "TMBAPIRequest.h"
 
-static NSString *const TMBSDKVersion = @"0.0.1";
+NS_ASSUME_NONNULL_BEGIN
+static  NSString *const TMBSDKVersion = @"0.0.1";
 static NSString *const TMBApiURLBase = @"api.tamber.com/v1";
 static NSString *const TMBApiVersion = @"2017-3-8";
+NS_ASSUME_NONNULL_END
 
 /**
  *  High-level wrapper for the Tamber iOS SDK.
@@ -25,16 +27,16 @@ static NSString *const TMBApiVersion = @"2017-3-8";
 @interface Tamber : NSObject
 
 // Set default project and engine keys.
-+ (void)setPublishableProjectKey:(NSString *)publishableProjectKey publishableEngineKey:(NSString *)publishableEngineKey;
++ (void)setPublishableProjectKey:(nullable NSString *)publishableProjectKey publishableEngineKey:(nullable NSString *)publishableEngineKey;
 
 // Set default project key.
-+ (void)setPublishableProjectKey:(NSString *)publishableProjectKey;
++ (void)setPublishableProjectKey:(nullable NSString *)publishableProjectKey;
 
 // Set default engine key.
-+ (void)setPublishableEngineKey:(NSString *)publishableEngineKey;
++ (void)setPublishableEngineKey:(nullable NSString *)publishableEngineKey;
 
 // Set default user.
-+ (void)setUser:(NSString *)user;
++ (void)setUser:(nullable NSString *)user;
 
 // Load the default client for making API requests.
 + (nullable TMBClient*)client;
@@ -53,7 +55,7 @@ static NSString *const TMBApiVersion = @"2017-3-8";
  * @param publishableProjectKey Your publishable project key. Obtained from https://dashboard.tamber.com
  * @param publishableEngineKey Your publishable engine key. Obtained from https://dashboard.tamber.com
  */
-+(nullable instancetype) apiClientWithPublishableProjectKey:(NSString*)publishableProjectKey publishableEngineKey:(NSString*)publishableEngineKey;
++(nullable instancetype) apiClientWithPublishableProjectKey:(nullable NSString*)publishableProjectKey publishableEngineKey:(nullable NSString*)publishableEngineKey;
 
 /**
  * Create a Tamber Client instance.
@@ -62,7 +64,7 @@ static NSString *const TMBApiVersion = @"2017-3-8";
  * @param publishableEngineKey Your publishable engine key. Obtained from https://dashboard.tamber.com
  * @param user The unique id for the app user
  */
-+(nullable instancetype) apiClientWithPublishableProjectKey:(NSString*)publishableProjectKey publishableEngineKey:(NSString*)publishableEngineKey user:(NSString*)user;
++(nullable instancetype) apiClientWithPublishableProjectKey:(nullable NSString*)publishableProjectKey publishableEngineKey:(nullable NSString*)publishableEngineKey user:(nullable NSString*)user;
 
 /**
  * Tamber initialization
@@ -85,7 +87,7 @@ static NSString *const TMBApiVersion = @"2017-3-8";
  * @param eventParams The parameters for the event you are tracking. If the client's user has been set, then the user field can be and it will default to the client's user.
  * @param responseCompletion The callback to run with the returned TMBEventResponse (and any errors that may have occurred)
  */
-- (nullable NSURLSessionDataTask *) trackEvent:(nullable  TMBEventParams*) eventParams responseCompletion:(nullable TMBAPIResponseBlock) completion;
+- (nullable NSURLSessionDataTask *) trackEvent:(nullable  TMBEventParams*) eventParams responseCompletion:(nullable TMBAPIResponseBlock) responseCompletion;
 
 /**
  * Retrieve recommended items for the given user.
@@ -93,7 +95,7 @@ static NSString *const TMBApiVersion = @"2017-3-8";
  * @param discoverParams The parameters for the discover request. If the client's user has been set, then the user field can be nil and it will default to the client's user.
  * @param responseCompletion The callback to run with the returned TMBEventResponse (and any errors that may have occurred)
  */
-- (NSURLSessionDataTask *) discoverRecommendations:(TMBDiscoverParams*) discoverParams responseCompletion:(TMBAPIResponseBlock) completion;
+- (nullable NSURLSessionDataTask *) discoverRecommendations:(nonnull TMBDiscoverParams*) discoverParams responseCompletion:(nonnull TMBAPIResponseBlock) responseCompletion;
 
 
 @property (nullable, readwrite, nonatomic) NSString *publishableProjectKey;

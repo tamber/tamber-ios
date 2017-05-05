@@ -103,7 +103,7 @@
     _userId = user;
 }
 
-- (NSURLSessionDataTask *) trackEvent:(TMBEventParams*) eventParams responseCompletion:(TMBAPIResponseBlock) completion {
+- (NSURLSessionDataTask *) trackEvent:(TMBEventParams*) eventParams responseCompletion:(TMBAPIResponseBlock) responseCompletion {
 
     NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"event", @"track"];
     if(eventParams.user == nil && self.userId != nil){
@@ -114,10 +114,10 @@
                                                endpoint:endpoint
                                              parameters:params
                                              serializer:[TMBEventResponse new]
-                                             completion:completion];
+                                             completion:responseCompletion];
 }
 
-- (NSURLSessionDataTask *) discoverRecommendations:(TMBDiscoverParams*) discoverParams responseCompletion:(TMBAPIResponseBlock) completion {
+- (NSURLSessionDataTask *) discoverRecommendations:(TMBDiscoverParams*) discoverParams responseCompletion:(TMBAPIResponseBlock) responseCompletion {
     
     NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"discover", @"recommended"];
     if(discoverParams.user == nil && self.userId != nil){
@@ -128,7 +128,7 @@
                                   endpoint:endpoint
                                 parameters:params
                                 serializer:[TMBDiscoverResponse new]
-                                completion:completion];
+                                completion:responseCompletion];
 }
 
 /* Taken from Stripe STPAPIClient user agent */

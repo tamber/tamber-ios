@@ -16,6 +16,20 @@ This README covers the basics of using the Tamber iOS SDK. Check out the [docume
 
 ## Installation
 
+Install Tamber with [CocoaPods][install-cocoa-pods]. If you do not yet have a Podfile for your project, `$ cd` into your project directory and run `$ pod init`.
+
+Add this line to your Podfile:
+
+```
+pod 'Tamber'
+```
+
+Then, run the following command:
+
+```
+$ pod install
+```
+
 ## Usage
 
 If you are just getting started, check out the [Quick Start][quickstart] guide for instructions on how to get setup.
@@ -95,7 +109,7 @@ TMBDiscoverParams *params = [TMBDiscoverParams alloc] discoverRecommendations:[N
 	}
 }];
 ```
-
+[install-cocoa-pods]: https://guides.cocoapods.org/using/getting-started.html
 [ios-docs]: http://tamber.github.io/tamber-ios/docs/index.html
 [quickstart]: https://tamber.com/docs/start/
 [dataset]: https://tamber.com/docs/start/#upload-history
