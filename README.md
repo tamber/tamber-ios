@@ -53,7 +53,7 @@ To begin tracking events, set your publishable project key. If you have already 
 
 ### Set User
 
-Set the User wherever you load your user's unique ID from your backend, or wherever you load user ids from. Note that you can still get recommendations for users that are not logged in by using `testEvents`, which simulate recommendations given a series of events with an unkown `user`, but does not write anything to your project or engine.
+Set the User wherever you load your user's unique ID from your backend, or wherever you load user ids from.
 
 ```
 [Tamber setUser:@"user_id"];
@@ -109,6 +109,10 @@ TMBDiscoverParams *params = [TMBDiscoverParams alloc] discoverRecommendations:[N
 	}
 }];
 ```
+
+If your app allows users to interact with content before creating an account, or otherwise establishing a unique identifier, and you can want to get recommendations for these un-initialized users, you can do so by setting `testEvents` to an array of `TMBEvent` objects. Retrieving recommendations with `testEvents` set will return a list of simulated recommendations given the series of Events, but does not write anything to your project or engine.
+
+
 [install-cocoa-pods]: https://guides.cocoapods.org/using/getting-started.html
 [ios-docs]: http://tamber.github.io/tamber-ios/docs/index.html
 [quickstart]: https://tamber.com/docs/start/
