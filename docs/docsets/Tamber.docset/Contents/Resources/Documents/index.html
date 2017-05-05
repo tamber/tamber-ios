@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tamber  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+
+    <a title="Tamber  Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          Tamber Docs
+        </a>
+        
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/tamber/tamber-ios">
+            <img class="header-icon" src="img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">Tamber Reference</a>
+      <img class="carat" src="img/carat.png" />
+      Tamber  Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/TMBClient.html">TMBClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/TMBDiscoverParams.html">TMBDiscoverParams</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/TMBDiscoverResponse.html">TMBDiscoverResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/TMBEvent.html">TMBEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/TMBEventParams.html">TMBEventParams</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/TMBEventResponse.html">TMBEventResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes.html#/c:objc(cs)Tamber">Tamber</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/TMBObjectDecodable.html">TMBObjectDecodable</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/TMBObjectEncodable.html">TMBObjectEncodable</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            
+            <h1 id='tamber-ios-sdk' class='heading'>Tamber iOS SDK</h1>
+
+<p><a href="https://travis-ci.org/stripe/stripe-ios"><img src="https://img.shields.io/travis/stripe/stripe-ios/master.svg?style=flat" alt="Travis"></a>
+<a href="http://cocoapods.org/?q=author%3Astripe%20name%3Astripe"><img src="https://img.shields.io/cocoapods/v/Stripe.svg?style=flat" alt="CocoaPods"></a>
+<a href="https://github.com/stripe/stripe-ios/blob/master/LICENSE"><img src="https://img.shields.io/cocoapods/l/Stripe.svg?style=flat" alt="CocoaPods"></a>
+<a href="https://github.com/stripe/stripe-ios#"><img src="https://img.shields.io/cocoapods/p/Stripe.svg?style=flat" alt="CocoaPods"></a></p>
+
+<p>Recommendation engines for developers, easy as π. Build blazing fast, head-scratchingly accurate hosted recommendation engines in minutes.</p>
+
+<p>The Tamber iOS SDK makes it easy to track events (user-item interactions) and get recommendations for your users inside your iOS app. </p>
+
+<p><a href="https://tamber.com/">Get a free api key</a> to get started.</p>
+<h2 id='requirements' class='heading'>Requirements</h2>
+
+<p>Our SDK is compatible with iOS 8.0 and above. It requires Xcode 8.0+ to build the source.</p>
+<h2 id='documentation' class='heading'>Documentation</h2>
+
+<p>This README covers the basics of using the Tamber iOS SDK. Check out the <a href="http://tamber.github.io/tamber-ios/docs/index.html">documentation</a> for a comprehensive look at the classes and methods.</p>
+<h2 id='installation' class='heading'>Installation</h2>
+<h2 id='usage' class='heading'>Usage</h2>
+
+<p>If you are just getting started, check out the <a href="https://tamber.com/docs/start/">Quick Start</a> guide for instructions on how to get setup.</p>
+
+<p>To begin tracking events, set your publishable project key. If you have already begun tracking real time events and have created an engine, you should also set your engine key so you can retrieve recommendations.</p>
+<pre class="highlight objective_c"><code><span class="cp">#import "AppDelegate.h"
+</span><span class="k">@import</span> <span class="n">Tamber</span><span class="p">;</span>
+
+<span class="k">@implementation</span> <span class="nc">AppDelegate</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">application</span><span class="p">:(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">didFinishLaunchingWithOptions</span><span class="p">:(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">launchOptions</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">Tamber</span> <span class="nf">setPublishableProjectKey</span><span class="p">:</span><span class="s">@"your_project_key"</span><span class="p">];</span>
+    <span class="c1">// If you have an engine use:
+</span>    <span class="p">[</span><span class="n">Tamber</span> <span class="nf">setPublishableProjectKey</span><span class="p">:</span><span class="s">@"your_project_key"</span> <span class="nf">publishableEngineKey</span><span class="p">:</span><span class="s">@"your_engine_key"</span><span class="p">];</span>
+    <span class="c1">// do any other necessary launch configuration
+</span>    <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">@end</span>
+</code></pre>
+<h3 id='set-user' class='heading'>Set User</h3>
+
+<p>Set the User wherever you load your user&rsquo;s unique ID from your backend, or wherever you load user ids from. Note that you can still get recommendations for users that are not logged in by using <code>testEvents</code>, which simulate recommendations given a series of events with an unkown <code>user</code>, but does not write anything to your project or engine.</p>
+<pre class="highlight plaintext"><code>[Tamber setUser:@"user_id"];
+</code></pre>
+<h3 id='track-events' class='heading'>Track Events</h3>
+
+<p>Stream events to your Tamber project as the user interacts with items in your app.</p>
+<pre class="highlight plaintext"><code>TMBEventParams *params = [TMBEventParams eventWithItem:@"item_id" behavior:@"like"];
+[[Tamber client] trackEvent:params responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSString *errorMessage) {
+    if(errorMessage){
+        // Handle error
+    } else {
+        object.events[0] // Event tracked
+        object.recs // Returns updated recommendations if params.getRecs is set - [params setGetRecs:&lt;TMBDiscoverParams&gt;]
+    }
+}];
+</code></pre>
+<h3 id='get-recommendations' class='heading'>Get Recommendations</h3>
+
+<p>Once you have seeded some events and created your engine, you can start pulling user recommendations into your app.</p>
+<pre class="highlight plaintext"><code>TMBDiscoverParams *params = [TMBDiscoverParams discoverRecommendations:[NSNumber numberWithInt:50]];
+[[Tamber client] discoverRecommendations:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSString *errorMessage) {
+    if(errorMessage){
+        // Handle error
+    } else {
+        for(TMBDiscovery *discovery in object.discoveries){
+            discovery.item // Recommended item id
+            discovery.score // Recommendation score (relative to other results, not a predicted rating)
+        }
+    }
+}];
+</code></pre>
+
+<p>If you are setting [properties for your items][properties] from your backend, you can include these properties in recommendation responses to simplify data handling. For example, you might have <code>title</code>, <code>img</code>, and <code>price</code> properties that you can use to display items to users without needing to make an additional request for each recommendation.</p>
+<pre class="highlight plaintext"><code>TMBDiscoverParams *params = [TMBDiscoverParams alloc] discoverRecommendations:[NSNumber numberWithInt:50] page:nil filter:nil getProperties:true testEvents:nil];
+[[Tamber client] discoverRecommendations:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSString *errorMessage) {
+    if(errorMessage){
+        // Handle error
+    } else {
+        for(TMBDiscovery *discovery in object.discoveries){
+            discovery.item // Recommended item id
+            discovery.score // Recommendation score (relative to other results, not a predicted rating)
+            discovery.properties // Dictionary of item properties
+        }
+    }
+}];
+</code></pre>
+
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2017 <a class="link" href="https://tamber.com" target="_blank" rel="external">Tamber</a>. All rights reserved. (Last updated: 2017-05-04)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

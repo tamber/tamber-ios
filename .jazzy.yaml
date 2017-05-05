@@ -1,0 +1,13 @@
+objc: true
+clean: true
+author: Tamber
+author_url: https://tamber.com
+github_url: https://github.com/tamber/tamber-ios
+github_file_prefix: https://github.com/tamber/tamber-ios/tree/master
+umbrella_header: Tamber/Tamber.h
+framework_root: .
+module: Tamber
+skip_undocumented: true
+hide_documentation_coverage: true
+theme: fullwidth
+sdk: iphonesimulator

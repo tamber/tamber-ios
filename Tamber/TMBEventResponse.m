@@ -1,0 +1,49 @@
+//
+//  TMBEventResponse.m
+//  Tamber
+//
+//  Created by Alexander Robbins on 5/3/17.
+//  Copyright © 2017 Tamber. All rights reserved.
+//
+
+#import "TMBEventResponse.h"
+#import "TMBEvent.h"
+#import "NSDictionary+Tamber.h"
+
+@implementation TMBEventResponse
+
++ (NSArray *)requiredFields {
+    return @[@"events"];
+}
+
++ (instancetype)decodedObjectFromAPIResponse:(NSDictionary *)response {
+    if (response[@"result"] == [NSNull null]){
+        return nil;
+    }
+    NSDictionary *result = [response[@"result"] tmb_dictionaryByRemovingNullsValidatingRequiredFields:[self requiredFields]];
+    if (!result) {
+        return nil;
+    }
+    
+    TMBEventResponse *eventResponse = [self new];
+    
+    NSMutableArray *events = [NSMutableArray new];
+    for (NSDictionary *eventDict in result[@"recommended"]){
+        TMBEvent *event = [TMBEvent decodedObjectFromAPIResponse:eventDict];
+        [events addObject:event];
+    }
+    eventResponse.events = [events copy];
+    
+    if(result[@"recommended"] != nil){
+        NSMutableArray *recs = [NSMutableArray new];
+        for (NSDictionary *discoveryDict in result[@"recommended"]){
+            TMBDiscovery *discovery = [TMBDiscovery decodedObjectFromAPIResponse:discoveryDict];
+            [recs addObject:discovery];
+        }
+        eventResponse.recs = [recs copy];
+    }
+    
+    return eventResponse;
+}
+
+@end

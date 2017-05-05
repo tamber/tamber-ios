@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EE425F361EBA84A600FC10FA /* TMBClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F351EBA84A600FC10FA /* TMBClient.m */; };
+		EE425F3A1EBA8D5C00FC10FA /* TMBEventParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F391EBA8D5C00FC10FA /* TMBEventParams.m */; };
+		EE425F3D1EBAA16300FC10FA /* TMBEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F3C1EBAA16300FC10FA /* TMBEvent.m */; };
+		EE425F401EBAA19000FC10FA /* TMBDiscoverParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F3F1EBAA19000FC10FA /* TMBDiscoverParams.m */; };
+		EE425F431EBAA1AA00FC10FA /* TMBDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F421EBAA1AA00FC10FA /* TMBDiscovery.m */; };
+		EE425F461EBAA48900FC10FA /* TMBEventResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F451EBAA48900FC10FA /* TMBEventResponse.m */; };
+		EE425F4D1EBAB2D500FC10FA /* TMBEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F4C1EBAB2D500FC10FA /* TMBEncoder.m */; };
+		EE425F501EBABBF500FC10FA /* TMBAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F4F1EBABBF500FC10FA /* TMBAPIRequest.m */; };
+		EE425F581EBAC0D400FC10FA /* NSMutableURLRequest+Tamber.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F571EBAC0D400FC10FA /* NSMutableURLRequest+Tamber.m */; };
+		EE475C681EBB28CD00435C47 /* TMBEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = EE425F4B1EBAB2D500FC10FA /* TMBEncoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE475C691EBB28D000435C47 /* TMBClient.h in Headers */ = {isa = PBXBuildFile; fileRef = EE425F341EBA84A600FC10FA /* TMBClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE475C6A1EBB28D200435C47 /* TMBAPIRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = EE425F4E1EBABBF500FC10FA /* TMBAPIRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE475C6B1EBB28DE00435C47 /* TMBObjectEncodable.h in Headers */ = {isa = PBXBuildFile; fileRef = EE425F481EBAB1B200FC10FA /* TMBObjectEncodable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE475C6C1EBB28E100435C47 /* TMBObjectDecodable.h in Headers */ = {isa = PBXBuildFile; fileRef = EEF8DE811EBAC49500CF4CB4 /* TMBObjectDecodable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE475C6D1EBB28E900435C47 /* TMBEventResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = EE425F441EBAA48900FC10FA /* TMBEventResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE475C6E1EBB28EA00435C47 /* TMBEventParams.h in Headers */ = {isa = PBXBuildFile; fileRef = EE425F381EBA8D5C00FC10FA /* TMBEventParams.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE475C6F1EBB28ED00435C47 /* TMBEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = EE425F3B1EBAA16300FC10FA /* TMBEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE475C701EBB28F000435C47 /* TMBDiscoverParams.h in Headers */ = {isa = PBXBuildFile; fileRef = EE425F3E1EBAA19000FC10FA /* TMBDiscoverParams.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE475C711EBB28F200435C47 /* TMBDiscovery.h in Headers */ = {isa = PBXBuildFile; fileRef = EE425F411EBAA1AA00FC10FA /* TMBDiscovery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE475C721EBB28F700435C47 /* TMBDiscoverResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = EEF8DE8B1EBB0F4D00CF4CB4 /* TMBDiscoverResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE475C731EBB29DC00435C47 /* TMBClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F351EBA84A600FC10FA /* TMBClient.m */; };
+		EE475C741EBB29E000435C47 /* TMBDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF8DE861EBB064600CF4CB4 /* TMBDispatcher.m */; };
+		EE475C751EBB29E300435C47 /* TMBEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F4C1EBAB2D500FC10FA /* TMBEncoder.m */; };
+		EE475C761EBB29FA00435C47 /* TMBAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F4F1EBABBF500FC10FA /* TMBAPIRequest.m */; };
+		EE475C771EBB2A0C00435C47 /* NSMutableURLRequest+Tamber.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F571EBAC0D400FC10FA /* NSMutableURLRequest+Tamber.m */; };
+		EE475C781EBB2A0E00435C47 /* NSDictionary+Tamber.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF8DE891EBB08A500CF4CB4 /* NSDictionary+Tamber.m */; };
+		EE475C791EBB2A1100435C47 /* TMBEventResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F451EBAA48900FC10FA /* TMBEventResponse.m */; };
+		EE475C7A1EBB2A1800435C47 /* TMBEventParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F391EBA8D5C00FC10FA /* TMBEventParams.m */; };
+		EE475C7B1EBB2A2400435C47 /* TMBEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F3C1EBAA16300FC10FA /* TMBEvent.m */; };
+		EE475C7C1EBB2A2400435C47 /* TMBDiscoverParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F3F1EBAA19000FC10FA /* TMBDiscoverParams.m */; };
+		EE475C7D1EBB2A2400435C47 /* TMBDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F421EBAA1AA00FC10FA /* TMBDiscovery.m */; };
+		EE475C7E1EBB2A2400435C47 /* TMBDiscoverResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF8DE8C1EBB0F4D00CF4CB4 /* TMBDiscoverResponse.m */; };
+		EEAE1BAB1EB7FD13003F48D5 /* Tamber.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EEAE1BA81EB7FD13003F48D5 /* Tamber.h */; };
+		EEF8DE871EBB064600CF4CB4 /* TMBDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF8DE861EBB064600CF4CB4 /* TMBDispatcher.m */; };
+		EEF8DE8A1EBB08A500CF4CB4 /* NSDictionary+Tamber.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF8DE891EBB08A500CF4CB4 /* NSDictionary+Tamber.m */; };
+		EEF8DE8D1EBB0F4D00CF4CB4 /* TMBDiscoverResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF8DE8C1EBB0F4D00CF4CB4 /* TMBDiscoverResponse.m */; };
+		EEF8DE9C1EBB171000CF4CB4 /* Tamber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF8DE931EBB170F00CF4CB4 /* Tamber.framework */; };
+		EEF8DEA11EBB171000CF4CB4 /* TamberiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF8DEA01EBB171000CF4CB4 /* TamberiOSTests.m */; };
+		EEF8DEAA1EBB18CE00CF4CB4 /* Tamber.h in Headers */ = {isa = PBXBuildFile; fileRef = EEAE1BA81EB7FD13003F48D5 /* Tamber.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EEF8DEAC1EBB223100CF4CB4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEF8DEAB1EBB223100CF4CB4 /* Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EEF8DE9D1EBB171000CF4CB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EEAE1B9D1EB7FD13003F48D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEF8DE921EBB170F00CF4CB4;
+			remoteInfo = TamberiOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EEAE1BA31EB7FD13003F48D5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				EEAE1BAB1EB7FD13003F48D5 /* Tamber.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EE425F341EBA84A600FC10FA /* TMBClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBClient.h; sourceTree = "<group>"; };
+		EE425F351EBA84A600FC10FA /* TMBClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBClient.m; sourceTree = "<group>"; };
+		EE425F381EBA8D5C00FC10FA /* TMBEventParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBEventParams.h; sourceTree = "<group>"; };
+		EE425F391EBA8D5C00FC10FA /* TMBEventParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBEventParams.m; sourceTree = "<group>"; };
+		EE425F3B1EBAA16300FC10FA /* TMBEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBEvent.h; sourceTree = "<group>"; };
+		EE425F3C1EBAA16300FC10FA /* TMBEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBEvent.m; sourceTree = "<group>"; };
+		EE425F3E1EBAA19000FC10FA /* TMBDiscoverParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBDiscoverParams.h; sourceTree = "<group>"; };
+		EE425F3F1EBAA19000FC10FA /* TMBDiscoverParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBDiscoverParams.m; sourceTree = "<group>"; };
+		EE425F411EBAA1AA00FC10FA /* TMBDiscovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBDiscovery.h; sourceTree = "<group>"; };
+		EE425F421EBAA1AA00FC10FA /* TMBDiscovery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBDiscovery.m; sourceTree = "<group>"; };
+		EE425F441EBAA48900FC10FA /* TMBEventResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBEventResponse.h; sourceTree = "<group>"; };
+		EE425F451EBAA48900FC10FA /* TMBEventResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBEventResponse.m; sourceTree = "<group>"; };
+		EE425F481EBAB1B200FC10FA /* TMBObjectEncodable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBObjectEncodable.h; sourceTree = "<group>"; };
+		EE425F4B1EBAB2D500FC10FA /* TMBEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBEncoder.h; sourceTree = "<group>"; };
+		EE425F4C1EBAB2D500FC10FA /* TMBEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBEncoder.m; sourceTree = "<group>"; };
+		EE425F4E1EBABBF500FC10FA /* TMBAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBAPIRequest.h; sourceTree = "<group>"; };
+		EE425F4F1EBABBF500FC10FA /* TMBAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBAPIRequest.m; sourceTree = "<group>"; };
+		EE425F561EBAC0D400FC10FA /* NSMutableURLRequest+Tamber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Tamber.h"; sourceTree = "<group>"; };
+		EE425F571EBAC0D400FC10FA /* NSMutableURLRequest+Tamber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Tamber.m"; sourceTree = "<group>"; };
+		EEAE1BA51EB7FD13003F48D5 /* libTamber.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTamber.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEAE1BA81EB7FD13003F48D5 /* Tamber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tamber.h; sourceTree = "<group>"; };
+		EEF8DE811EBAC49500CF4CB4 /* TMBObjectDecodable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBObjectDecodable.h; sourceTree = "<group>"; };
+		EEF8DE851EBB064600CF4CB4 /* TMBDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBDispatcher.h; sourceTree = "<group>"; };
+		EEF8DE861EBB064600CF4CB4 /* TMBDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBDispatcher.m; sourceTree = "<group>"; };
+		EEF8DE881EBB08A500CF4CB4 /* NSDictionary+Tamber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Tamber.h"; sourceTree = "<group>"; };
+		EEF8DE891EBB08A500CF4CB4 /* NSDictionary+Tamber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Tamber.m"; sourceTree = "<group>"; };
+		EEF8DE8B1EBB0F4D00CF4CB4 /* TMBDiscoverResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBDiscoverResponse.h; sourceTree = "<group>"; };
+		EEF8DE8C1EBB0F4D00CF4CB4 /* TMBDiscoverResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBDiscoverResponse.m; sourceTree = "<group>"; };
+		EEF8DE931EBB170F00CF4CB4 /* Tamber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Tamber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEF8DE9B1EBB170F00CF4CB4 /* TamberiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TamberiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEF8DEA01EBB171000CF4CB4 /* TamberiOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TamberiOSTests.m; sourceTree = "<group>"; };
+		EEF8DEA21EBB171000CF4CB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEF8DEAB1EBB223100CF4CB4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EEAE1BA21EB7FD13003F48D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEF8DE8F1EBB170F00CF4CB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEF8DE981EBB170F00CF4CB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEF8DE9C1EBB171000CF4CB4 /* Tamber.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EE425F371EBA88FA00FC10FA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EE425F441EBAA48900FC10FA /* TMBEventResponse.h */,
+				EE425F451EBAA48900FC10FA /* TMBEventResponse.m */,
+				EE425F381EBA8D5C00FC10FA /* TMBEventParams.h */,
+				EE425F391EBA8D5C00FC10FA /* TMBEventParams.m */,
+				EE425F3B1EBAA16300FC10FA /* TMBEvent.h */,
+				EE425F3C1EBAA16300FC10FA /* TMBEvent.m */,
+				EE425F3E1EBAA19000FC10FA /* TMBDiscoverParams.h */,
+				EE425F3F1EBAA19000FC10FA /* TMBDiscoverParams.m */,
+				EE425F411EBAA1AA00FC10FA /* TMBDiscovery.h */,
+				EE425F421EBAA1AA00FC10FA /* TMBDiscovery.m */,
+				EEF8DE8B1EBB0F4D00CF4CB4 /* TMBDiscoverResponse.h */,
+				EEF8DE8C1EBB0F4D00CF4CB4 /* TMBDiscoverResponse.m */,
+				EE425F481EBAB1B200FC10FA /* TMBObjectEncodable.h */,
+				EEF8DE811EBAC49500CF4CB4 /* TMBObjectDecodable.h */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		EE425F471EBAB0F900FC10FA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EEF8DE851EBB064600CF4CB4 /* TMBDispatcher.h */,
+				EEF8DE861EBB064600CF4CB4 /* TMBDispatcher.m */,
+				EE425F4B1EBAB2D500FC10FA /* TMBEncoder.h */,
+				EE425F4C1EBAB2D500FC10FA /* TMBEncoder.m */,
+				EE425F4E1EBABBF500FC10FA /* TMBAPIRequest.h */,
+				EE425F4F1EBABBF500FC10FA /* TMBAPIRequest.m */,
+				EE425F561EBAC0D400FC10FA /* NSMutableURLRequest+Tamber.h */,
+				EE425F571EBAC0D400FC10FA /* NSMutableURLRequest+Tamber.m */,
+				EEF8DE881EBB08A500CF4CB4 /* NSDictionary+Tamber.h */,
+				EEF8DE891EBB08A500CF4CB4 /* NSDictionary+Tamber.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		EEAE1B9C1EB7FD13003F48D5 = {
+			isa = PBXGroup;
+			children = (
+				EEAE1BA71EB7FD13003F48D5 /* Tamber */,
+				EEF8DE9F1EBB171000CF4CB4 /* TamberiOSTests */,
+				EEAE1BA61EB7FD13003F48D5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EEAE1BA61EB7FD13003F48D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EEAE1BA51EB7FD13003F48D5 /* libTamber.a */,
+				EEF8DE931EBB170F00CF4CB4 /* Tamber.framework */,
+				EEF8DE9B1EBB170F00CF4CB4 /* TamberiOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EEAE1BA71EB7FD13003F48D5 /* Tamber */ = {
+			isa = PBXGroup;
+			children = (
+				EEAE1BA81EB7FD13003F48D5 /* Tamber.h */,
+				EE425F341EBA84A600FC10FA /* TMBClient.h */,
+				EE425F351EBA84A600FC10FA /* TMBClient.m */,
+				EEF8DEAB1EBB223100CF4CB4 /* Info.plist */,
+				EE425F471EBAB0F900FC10FA /* Utils */,
+				EE425F371EBA88FA00FC10FA /* Models */,
+			);
+			path = Tamber;
+			sourceTree = "<group>";
+		};
+		EEF8DE9F1EBB171000CF4CB4 /* TamberiOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				EEF8DEA01EBB171000CF4CB4 /* TamberiOSTests.m */,
+				EEF8DEA21EBB171000CF4CB4 /* Info.plist */,
+			);
+			path = TamberiOSTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EEF8DE901EBB170F00CF4CB4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEF8DEAA1EBB18CE00CF4CB4 /* Tamber.h in Headers */,
+				EE475C681EBB28CD00435C47 /* TMBEncoder.h in Headers */,
+				EE475C6A1EBB28D200435C47 /* TMBAPIRequest.h in Headers */,
+				EE475C691EBB28D000435C47 /* TMBClient.h in Headers */,
+				EE475C6D1EBB28E900435C47 /* TMBEventResponse.h in Headers */,
+				EE475C6E1EBB28EA00435C47 /* TMBEventParams.h in Headers */,
+				EE475C6F1EBB28ED00435C47 /* TMBEvent.h in Headers */,
+				EE475C701EBB28F000435C47 /* TMBDiscoverParams.h in Headers */,
+				EE475C711EBB28F200435C47 /* TMBDiscovery.h in Headers */,
+				EE475C721EBB28F700435C47 /* TMBDiscoverResponse.h in Headers */,
+				EE475C6B1EBB28DE00435C47 /* TMBObjectEncodable.h in Headers */,
+				EE475C6C1EBB28E100435C47 /* TMBObjectDecodable.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		EEAE1BA41EB7FD13003F48D5 /* Tamber */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEAE1BAE1EB7FD13003F48D5 /* Build configuration list for PBXNativeTarget "Tamber" */;
+			buildPhases = (
+				EEAE1BA11EB7FD13003F48D5 /* Sources */,
+				EEAE1BA21EB7FD13003F48D5 /* Frameworks */,
+				EEAE1BA31EB7FD13003F48D5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tamber;
+			productName = Tamber;
+			productReference = EEAE1BA51EB7FD13003F48D5 /* libTamber.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EEF8DE921EBB170F00CF4CB4 /* TamberiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEF8DEA41EBB171000CF4CB4 /* Build configuration list for PBXNativeTarget "TamberiOS" */;
+			buildPhases = (
+				EEF8DE8E1EBB170F00CF4CB4 /* Sources */,
+				EEF8DE8F1EBB170F00CF4CB4 /* Frameworks */,
+				EEF8DE901EBB170F00CF4CB4 /* Headers */,
+				EEF8DE911EBB170F00CF4CB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TamberiOS;
+			productName = TamberiOS;
+			productReference = EEF8DE931EBB170F00CF4CB4 /* Tamber.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EEF8DE9A1EBB170F00CF4CB4 /* TamberiOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEF8DEA71EBB171000CF4CB4 /* Build configuration list for PBXNativeTarget "TamberiOSTests" */;
+			buildPhases = (
+				EEF8DE971EBB170F00CF4CB4 /* Sources */,
+				EEF8DE981EBB170F00CF4CB4 /* Frameworks */,
+				EEF8DE991EBB170F00CF4CB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EEF8DE9E1EBB171000CF4CB4 /* PBXTargetDependency */,
+			);
+			name = TamberiOSTests;
+			productName = TamberiOSTests;
+			productReference = EEF8DE9B1EBB170F00CF4CB4 /* TamberiOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EEAE1B9D1EB7FD13003F48D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = Tamber;
+				TargetAttributes = {
+					EEAE1BA41EB7FD13003F48D5 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					EEF8DE921EBB170F00CF4CB4 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					EEF8DE9A1EBB170F00CF4CB4 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EEAE1BA01EB7FD13003F48D5 /* Build configuration list for PBXProject "Tamber" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EEAE1B9C1EB7FD13003F48D5;
+			productRefGroup = EEAE1BA61EB7FD13003F48D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EEAE1BA41EB7FD13003F48D5 /* Tamber */,
+				EEF8DE921EBB170F00CF4CB4 /* TamberiOS */,
+				EEF8DE9A1EBB170F00CF4CB4 /* TamberiOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EEF8DE911EBB170F00CF4CB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEF8DEAC1EBB223100CF4CB4 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEF8DE991EBB170F00CF4CB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EEAE1BA11EB7FD13003F48D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE425F501EBABBF500FC10FA /* TMBAPIRequest.m in Sources */,
+				EE425F401EBAA19000FC10FA /* TMBDiscoverParams.m in Sources */,
+				EE425F3A1EBA8D5C00FC10FA /* TMBEventParams.m in Sources */,
+				EEF8DE8A1EBB08A500CF4CB4 /* NSDictionary+Tamber.m in Sources */,
+				EE425F3D1EBAA16300FC10FA /* TMBEvent.m in Sources */,
+				EEF8DE8D1EBB0F4D00CF4CB4 /* TMBDiscoverResponse.m in Sources */,
+				EE425F361EBA84A600FC10FA /* TMBClient.m in Sources */,
+				EE425F581EBAC0D400FC10FA /* NSMutableURLRequest+Tamber.m in Sources */,
+				EE425F4D1EBAB2D500FC10FA /* TMBEncoder.m in Sources */,
+				EE425F431EBAA1AA00FC10FA /* TMBDiscovery.m in Sources */,
+				EEF8DE871EBB064600CF4CB4 /* TMBDispatcher.m in Sources */,
+				EE425F461EBAA48900FC10FA /* TMBEventResponse.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEF8DE8E1EBB170F00CF4CB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE475C731EBB29DC00435C47 /* TMBClient.m in Sources */,
+				EE475C741EBB29E000435C47 /* TMBDispatcher.m in Sources */,
+				EE475C751EBB29E300435C47 /* TMBEncoder.m in Sources */,
+				EE475C761EBB29FA00435C47 /* TMBAPIRequest.m in Sources */,
+				EE475C771EBB2A0C00435C47 /* NSMutableURLRequest+Tamber.m in Sources */,
+				EE475C781EBB2A0E00435C47 /* NSDictionary+Tamber.m in Sources */,
+				EE475C791EBB2A1100435C47 /* TMBEventResponse.m in Sources */,
+				EE475C7A1EBB2A1800435C47 /* TMBEventParams.m in Sources */,
+				EE475C7B1EBB2A2400435C47 /* TMBEvent.m in Sources */,
+				EE475C7C1EBB2A2400435C47 /* TMBDiscoverParams.m in Sources */,
+				EE475C7D1EBB2A2400435C47 /* TMBDiscovery.m in Sources */,
+				EE475C7E1EBB2A2400435C47 /* TMBDiscoverResponse.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEF8DE971EBB170F00CF4CB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEF8DEA11EBB171000CF4CB4 /* TamberiOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EEF8DE9E1EBB171000CF4CB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EEF8DE921EBB170F00CF4CB4 /* TamberiOS */;
+			targetProxy = EEF8DE9D1EBB171000CF4CB4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EEAE1BAC1EB7FD13003F48D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Tamber/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EEAE1BAD1EB7FD13003F48D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Tamber/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EEAE1BAF1EB7FD13003F48D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EEAE1BB01EB7FD13003F48D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		EEF8DEA51EBB171000CF4CB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Tamber/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tamber.TamberiOS;
+				PRODUCT_NAME = Tamber;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EEF8DEA61EBB171000CF4CB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Tamber/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tamber.TamberiOS;
+				PRODUCT_NAME = Tamber;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EEF8DEA81EBB171000CF4CB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TamberiOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tamber.TamberiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EEF8DEA91EBB171000CF4CB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TamberiOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tamber.TamberiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EEAE1BA01EB7FD13003F48D5 /* Build configuration list for PBXProject "Tamber" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEAE1BAC1EB7FD13003F48D5 /* Debug */,
+				EEAE1BAD1EB7FD13003F48D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEAE1BAE1EB7FD13003F48D5 /* Build configuration list for PBXNativeTarget "Tamber" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEAE1BAF1EB7FD13003F48D5 /* Debug */,
+				EEAE1BB01EB7FD13003F48D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEF8DEA41EBB171000CF4CB4 /* Build configuration list for PBXNativeTarget "TamberiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEF8DEA51EBB171000CF4CB4 /* Debug */,
+				EEF8DEA61EBB171000CF4CB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEF8DEA71EBB171000CF4CB4 /* Build configuration list for PBXNativeTarget "TamberiOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEF8DEA81EBB171000CF4CB4 /* Debug */,
+				EEF8DEA91EBB171000CF4CB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EEAE1B9D1EB7FD13003F48D5 /* Project object */;
+}
