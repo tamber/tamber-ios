@@ -137,7 +137,7 @@
 </code></pre>
 <h3 id='set-user' class='heading'>Set User</h3>
 
-<p>Set the User wherever you load your user&rsquo;s unique ID from your backend, or wherever you load user ids from. Note that you can still get recommendations for users that are not logged in by using <code>testEvents</code>, which simulate recommendations given a series of events with an unkown <code>user</code>, but does not write anything to your project or engine.</p>
+<p>Set the User wherever you load your user&rsquo;s unique ID from your backend, or wherever you load user ids from.</p>
 <pre class="highlight plaintext"><code>[Tamber setUser:@"user_id"];
 </code></pre>
 <h3 id='track-events' class='heading'>Track Events</h3>
@@ -183,6 +183,8 @@
     }
 }];
 </code></pre>
+
+<p>If your app allows users to interact with content before creating an account, or otherwise establishing a unique identifier, and you can want to get recommendations for these un-initialized users, you can do so by setting <code>testEvents</code> to an array of <code>TMBEvent</code> objects. Retrieving recommendations with <code>testEvents</code> set will return a list of simulated recommendations given the series of Events, but does not write anything to your project or engine.</p>
 
           </div>
         </section>
