@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.license                        = { :type => 'MIT', :file => 'LICENSE' }
   s.homepage                       = 'https://tamber.com'
   s.authors                        = { 'Alexi Robbins' => 'alexi@tamber.com'}
-  s.source                         = { :git => 'https://github.com/tamber/tamber-ios.git', :tag => "v#{s.version}" }
+  s.source                         = { :git => 'https://github.com/tamber/tamber-ios.git', :tag => "#{s.version}" }
   s.frameworks                     = 'Foundation'
   s.requires_arc                   = true
   s.platform                       = :ios

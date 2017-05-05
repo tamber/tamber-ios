@@ -42,8 +42,8 @@ To begin tracking events, set your publishable project key. If you have already 
 
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	[Tamber setPublishableProjectKey:@"your_project_key"];
-	// If you have an engine use:
+    [Tamber setPublishableProjectKey:@"your_project_key"];
+    // If you have an engine use:
     [Tamber setPublishableProjectKey:@"your_project_key" publishableEngineKey:@"your_engine_key"];
     // do any other necessary launch configuration
     return YES;
@@ -67,11 +67,11 @@ Stream events to your Tamber project as the user interacts with items in your ap
 TMBEventParams *params = [TMBEventParams eventWithItem:@"item_id" behavior:@"like"];
 [[Tamber client] trackEvent:params responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSString *errorMessage) {
     if(errorMessage){
-    	// Handle error
+        // Handle error
     } else {
-    	object.events[0] // Event tracked
-    	object.recs // Returns updated recommendations if params.getRecs is set - [params setGetRecs:<TMBDiscoverParams>]
-	}
+        object.events[0] // Event tracked
+        object.recs // Returns updated recommendations if params.getRecs is set - [params setGetRecs:<TMBDiscoverParams>]
+    }
 }];
 ```
 
@@ -83,13 +83,13 @@ Once you have seeded some events and created your engine, you can start pulling 
 TMBDiscoverParams *params = [TMBDiscoverParams discoverRecommendations:[NSNumber numberWithInt:50]];
 [[Tamber client] discoverRecommendations:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSString *errorMessage) {
     if(errorMessage){
-    	// Handle error
+        // Handle error
     } else {
-    	for(TMBDiscovery *discovery in object.discoveries){
-    		discovery.item // Recommended item id
-    		discovery.score // Recommendation score (relative to other results, not a predicted rating)
-    	}
-	}
+        for(TMBDiscovery *discovery in object.discoveries){
+            discovery.item // Recommended item id
+            discovery.score // Recommendation score (relative to other results, not a predicted rating)
+        }
+    }
 }];
 ```
 
@@ -99,14 +99,14 @@ If you are setting [properties for your items][properties] from your backend, yo
 TMBDiscoverParams *params = [TMBDiscoverParams alloc] discoverRecommendations:[NSNumber numberWithInt:50] page:nil filter:nil getProperties:true testEvents:nil];
 [[Tamber client] discoverRecommendations:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSString *errorMessage) {
     if(errorMessage){
-    	// Handle error
+        // Handle error
     } else {
-    	for(TMBDiscovery *discovery in object.discoveries){
-    		discovery.item // Recommended item id
-    		discovery.score // Recommendation score (relative to other results, not a predicted rating)
-    		discovery.properties // Dictionary of item properties
-    	}
-	}
+        for(TMBDiscovery *discovery in object.discoveries){
+            discovery.item // Recommended item id
+            discovery.score // Recommendation score (relative to other results, not a predicted rating)
+            discovery.properties // Dictionary of item properties
+        }
+    }
 }];
 ```
 
