@@ -75,7 +75,7 @@
         _apiVersion = @"2017-3-8";
         NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
         sessionConfiguration.HTTPAdditionalHeaders = @{
-                                                       @"X-Stripe-User-Agent": [self.class tamberUserAgentDetails],
+                                                       @"X-Tamber-User-Agent": [self.class tamberUserAgentDetails],
                                                        @"Tamber-Version": TMBApiVersion,
                                                        };
         _urlSession = [NSURLSession sessionWithConfiguration:sessionConfiguration];
@@ -91,7 +91,7 @@
         _apiVersion = @"2017-3-8";
         NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
         sessionConfiguration.HTTPAdditionalHeaders = @{
-                                                       @"X-Stripe-User-Agent": [self.class tamberUserAgentDetails],
+                                                       @"X-Tamber-User-Agent": [self.class tamberUserAgentDetails],
                                                        @"Tamber-Version": TMBApiVersion,
                                                        };
         _urlSession = [NSURLSession sessionWithConfiguration:sessionConfiguration];

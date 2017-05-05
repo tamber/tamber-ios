@@ -71,7 +71,7 @@ FOUNDATION_EXPORT NSString * TMBQueryStringFromParameters(NSDictionary *paramete
 
 @end
 
-// This code is adapted from https://github.com/AFNetworking/AFNetworking/blob/master/AFNetworking/AFURLRequestSerialization.m . The only modifications are to replace the AF namespace with the TMB namespace to avoid collisions with apps that are using both Stripe and AFNetworking.
+// This code is adapted from https://github.com/AFNetworking/AFNetworking/blob/master/AFNetworking/AFURLRequestSerialization.m . The only modifications are to replace the AF namespace with the TMB namespace to avoid collisions with apps that are using both Tamber and AFNetworking.
 NSString * TMBPercentEscapedStringFromString(NSString *string) {
     static NSString * const kTMBCharactersGeneralDelimitersToEncode = @":#[]@"; // does not include "?" or "/" due to RFC 3986 - Section 3.4
     static NSString * const kTMBCharactersSubDelimitersToEncode = @"!$&'()*+,;=";
