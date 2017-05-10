@@ -12,7 +12,7 @@ Our SDK is compatible with iOS 8.0 and above. It requires Xcode 8.0+ to build th
 
 ## Documentation
 
-This ReadMe covers the basics of using the Tamber iOS SDK. Check out the [documentation][ios-docs] for a comprehensive look at the classes and methods.
+This ReadMe covers the basics of using the Tamber iOS SDK. Check out the [sdk documentation][ios-docs] for a comprehensive look at the classes and methods, and the full [API Reference][reference] for Tamber documentation.
 
 ## Installation
 
@@ -110,7 +110,7 @@ TMBDiscoverParams *params = [TMBDiscoverParams alloc] discoverRecommendations:[N
 }];
 ```
 
-If your app allows users to interact with content before creating an account, or otherwise establishing a unique identifier, and you can want to get recommendations for these un-initialized users, you can do so by setting `testEvents` to an array of `TMBEvent` objects. Retrieving recommendations with `testEvents` set will return a list of simulated recommendations given the series of Events, but does not write anything to your project or engine.
+If your app allows users to interact with content before creating an account, or otherwise establishing a unique identifier, and you want to get recommendations for these un-initialized users, you can do so by setting `testEvents` to an array of `TMBEvent` objects. Retrieving recommendations with `testEvents` set will return a list of simulated recommendations given the series of Events, but does not write anything to your project or engine.
 
 
 [install-cocoa-pods]: https://guides.cocoapods.org/using/getting-started.html
@@ -119,5 +119,5 @@ If your app allows users to interact with content before creating an account, or
 [dataset]: https://tamber.com/docs/start/#upload-history
 [properties]: https://tamber.com/docs/guides/filtering.html
 [homepage]: https://tamber.com/
-[docs]: https://tamber.com/docs/
+[reference]: https://tamber.com/docs/api
 [dashboard]: https://dashboard.tamber.com/
