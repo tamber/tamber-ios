@@ -28,7 +28,7 @@
     TMBEventResponse *eventResponse = [self new];
     
     NSMutableArray *events = [NSMutableArray new];
-    for (NSDictionary *eventDict in result[@"recommended"]){
+    for (NSDictionary *eventDict in result[@"events"]){
         TMBEvent *event = [TMBEvent decodedObjectFromAPIResponse:eventDict];
         [events addObject:event];
     }

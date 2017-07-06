@@ -25,6 +25,10 @@
     event.item = result[@"item"];
     event.behavior = result[@"behavior"];
     event.value = result[@"value"];
+    if([[result allKeys] containsObject:@"hit"]){
+        event.hit = [result[@"hit"] boolValue];
+    }
+    event.context = [result objectForKey:@"context"];
     event.created = [NSDate dateWithTimeIntervalSince1970:[result[@"created"] doubleValue]];
     return event;
 }

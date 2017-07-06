@@ -11,6 +11,7 @@
 @interface NSDictionary (Tamber)
 
 - (nullable NSDictionary *)tmb_dictionaryByRemovingNullsValidatingRequiredFields:(nonnull NSArray *)requiredFields;
+- (nullable NSString *) tmb_json;
 
 @end
 

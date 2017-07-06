@@ -71,6 +71,15 @@
                 <a class="nav-group-task-link" href="Classes/TMBEventResponse.html">TMBEventResponse</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/TMBUser.html">TMBUser</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/TMBUserParams.html">TMBUserParams</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/TMBUserSearchResponse.html">TMBUserSearchResponse</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes.html#/c:objc(cs)Tamber">Tamber</a>
               </li>
             </ul>
@@ -132,7 +141,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L27-L43">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L31-L47">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -168,7 +177,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L47-L109">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L51-L185">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -288,7 +297,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEvent.h#L15-L42">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEvent.h#L15-L52">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -328,7 +337,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L16-L75">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L16-L100">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -375,14 +384,134 @@
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TMBUser"></a>
+                    <a name="//apple_ref/objc/Class/TMBUser" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TMBUser">TMBUser</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code>TMBUser</code> represents a User object. - see: <a href="https://tamber.com/docs/api/#user-object">https://tamber.com/docs/api/#user-object</a></p>
+
+                        <a href="Classes/TMBUser.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">TMBUser</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n"><a href="Protocols/TMBObjectDecodable.html">TMBObjectDecodable</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">TMBUser</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt"><a href="Protocols/TMBObjectDecodable.html">TMBObjectDecodable</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBUser.h#L15-L42">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TMBUserParams"></a>
+                    <a name="//apple_ref/objc/Class/TMBUserParams" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TMBUserParams">TMBUserParams</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An object representing parameters used to make user commands. Not all parameters are needed for all requests. - see: <a href="https://tamber.com/docs/api/#user">https://tamber.com/docs/api/#user</a></p>
+
+                        <a href="Classes/TMBUserParams.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">TMBUserParams</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n"><a href="Protocols/TMBObjectEncodable.html">TMBObjectEncodable</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">TMBUserParams</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt"><a href="Protocols/TMBObjectEncodable.html">TMBObjectEncodable</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBUserParams.h#L16-L75">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TMBUserSearchResponse"></a>
+                    <a name="//apple_ref/objc/Class/TMBUserSearchResponse" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TMBUserSearchResponse">TMBUserSearchResponse</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code>TMBUserSearchResponse</code> represents an array of deserialized User objects from the Tamber API&rsquo;s user/search endpoint. - see: <a href="https://tamber.com/docs/api/#user-search">https://tamber.com/docs/api/#user-search</a></p>
+
+                        <a href="Classes/TMBUserSearchResponse.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">TMBUserSearchResponse</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n"><a href="Protocols/TMBObjectDecodable.html">TMBObjectDecodable</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">TMBUserSearchResponse</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt"><a href="Protocols/TMBObjectDecodable.html">TMBObjectDecodable</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBUserSearchResponse.h#L16-L24">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
 
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2017 <a class="link" href="https://tamber.com" target="_blank" rel="external">Tamber</a>. All rights reserved. (Last updated: 2017-05-05)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2017 <a class="link" href="https://tamber.com" target="_blank" rel="external">Tamber</a>. All rights reserved. (Last updated: 2017-07-06)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

@@ -110,7 +110,28 @@ TMBDiscoverParams *params = [TMBDiscoverParams alloc] discoverRecommendations:[N
 }];
 ```
 
-If your app allows users to interact with content before creating an account, or otherwise establishing a unique identifier, and you want to get recommendations for these un-initialized users, you can do so by setting `testEvents` to an array of `TMBEvent` objects. Retrieving recommendations with `testEvents` set will return a list of simulated recommendations given the series of Events, but does not write anything to your project or engine.
+Retrieving recommendations with `testEvents` set will return a list of simulated recommendations given the series of Events, but does not write anything to your project or engine.
+
+
+### Anonymous / Signed-Out Users
+
+If your app allows users to interact with content before creating an account, or when they are logged out, but you have some unique identifier (like the device id) you may set the user to this id and track events as normal. Then, when the user creates an account or logs in, you can `merge` the anonymous user into the logged-in user.
+
+```objc
+// At app launch / wherever appropriate in your code 
+[Tamber setUser:@"anonymous-device-id"];
+
+// On signup/login:
+NSString *toUser = @"user-id"; // The id of the user to which you want to merge.
+[[Tamber client] mergeToUser:toUser responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSString *errorMessage) {
+    if(errorMessage){
+        // Handle error. Note that mergeToUser internally sets the default user to the `toUser`.
+    } else {
+       object.events // Array of merged user events (`TMBEvent` objects)
+       object.metadata // Dictionary of the merged user metadata. Note that field-value conflicts default to the `toUser`.
+    }
+}];
+```
 
 
 [install-cocoa-pods]: https://guides.cocoapods.org/using/getting-started.html

@@ -103,6 +103,10 @@
     _userId = user;
 }
 
+-(nullable NSString*) getUser{
+    return _userId;
+}
+
 - (NSURLSessionDataTask *) trackEvent:(TMBEventParams*) eventParams responseCompletion:(TMBAPIResponseBlock) responseCompletion {
 
     NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"event", @"track"];
@@ -117,9 +121,113 @@
                                              completion:responseCompletion];
 }
 
+- (NSURLSessionDataTask *) createUser:(TMBUserParams*) userParams responseCompletion:(TMBAPIResponseBlock) responseCompletion{
+    NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"user", @"create"];
+    
+    if(userParams.ID == nil && self.userId != nil){
+        userParams.ID = self.userId;
+    }
+    NSDictionary *params = [TMBEncoder dictionaryForObject:userParams];
+    
+    return [TMBAPIRequest getWithAPIClient:self
+                                  endpoint:endpoint
+                                parameters:params
+                                serializer:[TMBUser new]
+                                completion:responseCompletion];
+}
+
+- (NSURLSessionDataTask *) retrieveUser:(TMBUserParams*) userParams responseCompletion:(TMBAPIResponseBlock) responseCompletion{
+    NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"user", @"retrieve"];
+    
+    if(userParams.ID == nil && self.userId != nil){
+        userParams.ID = self.userId;
+    }
+    NSDictionary *params = [TMBEncoder dictionaryForObject:userParams];
+    
+    return [TMBAPIRequest getWithAPIClient:self
+                                  endpoint:endpoint
+                                parameters:params
+                                serializer:[TMBUser new]
+                                completion:responseCompletion];
+}
+
+- (NSURLSessionDataTask *) updateUser:(TMBUserParams*) userParams responseCompletion:(TMBAPIResponseBlock) responseCompletion{
+    NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"user", @"update"];
+    
+    if(userParams.ID == nil && self.userId != nil){
+        userParams.ID = self.userId;
+    }
+    NSDictionary *params = [TMBEncoder dictionaryForObject:userParams];
+    
+    return [TMBAPIRequest getWithAPIClient:self
+                                  endpoint:endpoint
+                                parameters:params
+                                serializer:[TMBUser new]
+                                completion:responseCompletion];
+}
+
+- (NSURLSessionDataTask *) mergeToUser:(NSString*) toUser responseCompletion:(TMBAPIResponseBlock) responseCompletion{
+    NSURLSessionDataTask *task = [self mergeUser: _userId toUser:toUser noCreate: false responseCompletion: responseCompletion];
+    _userId = toUser;
+    return task;
+}
+
+- (NSURLSessionDataTask *) mergeUser:(NSString*) fromUser toUser:(NSString*)toUser responseCompletion:(TMBAPIResponseBlock) responseCompletion{
+    return [self mergeUser: fromUser toUser:toUser noCreate: false responseCompletion: responseCompletion];
+}
+
+- (NSURLSessionDataTask *) mergeUser:(NSString*) fromUser toUser:(NSString*)toUser noCreate:(BOOL) noCreate responseCompletion:(TMBAPIResponseBlock) responseCompletion{
+    NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"user", @"merge"];
+
+    NSDictionary *params = @{ @"from": fromUser, @"to": toUser, @"no_create":@(noCreate) };
+    
+    return [TMBAPIRequest getWithAPIClient:self
+                                  endpoint:endpoint
+                                parameters:params
+                                serializer:[TMBUser new]
+                                completion:responseCompletion];
+}
+
+- (NSURLSessionDataTask *) searchUsers:(NSDictionary*) metadata responseCompletion:(TMBAPIResponseBlock) responseCompletion{
+    NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"user", @"search"];
+    
+    NSDictionary *params = @{ @"filter": metadata };
+    
+    return [TMBAPIRequest getWithAPIClient:self
+                                  endpoint:endpoint
+                                parameters:params
+                                serializer:[TMBUserSearchResponse new]
+                                completion:responseCompletion];
+}
+
 - (NSURLSessionDataTask *) discoverRecommendations:(TMBDiscoverParams*) discoverParams responseCompletion:(TMBAPIResponseBlock) responseCompletion {
     
     NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"discover", @"recommended"];
+    if(discoverParams.user == nil && self.userId != nil){
+        discoverParams.user = self.userId;
+    }
+    NSDictionary *params = [TMBEncoder dictionaryForObject:discoverParams];
+    return [TMBAPIRequest getWithAPIClient:self
+                                  endpoint:endpoint
+                                parameters:params
+                                serializer:[TMBDiscoverResponse new]
+                                completion:responseCompletion];
+}
+
+- (NSURLSessionDataTask *) discoverSimilar:(TMBDiscoverParams*) discoverParams responseCompletion:(TMBAPIResponseBlock) responseCompletion {
+    
+    NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"discover", @"similar"];
+    NSDictionary *params = [TMBEncoder dictionaryForObject:discoverParams];
+    return [TMBAPIRequest getWithAPIClient:self
+                                  endpoint:endpoint
+                                parameters:params
+                                serializer:[TMBDiscoverResponse new]
+                                completion:responseCompletion];
+}
+
+- (NSURLSessionDataTask *) discoverRecommendedSimilar:(TMBDiscoverParams*) discoverParams responseCompletion:(TMBAPIResponseBlock) responseCompletion {
+    
+    NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"discover", @"recommended_similar"];
     if(discoverParams.user == nil && self.userId != nil){
         discoverParams.user = self.userId;
     }

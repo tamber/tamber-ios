@@ -9,6 +9,8 @@
 #import "TMBEncoder.h"
 #import "TMBDiscoverParams.h"
 #import "TMBEventParams.h"
+#import "NSDictionary+Tamber.h"
+#import "NSArray+Tamber.h"
 
 FOUNDATION_EXPORT NSString * TMBPercentEscapedStringFromString(NSString *string);
 FOUNDATION_EXPORT NSString * TMBQueryStringFromParameters(NSDictionary *parameters);
@@ -37,11 +39,22 @@ FOUNDATION_EXPORT NSString * TMBQueryStringFromParameters(NSDictionary *paramete
     [[object.class propertyNamesToFormFieldNamesMapping] enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull propertyName, NSString *  _Nonnull formFieldName, __unused BOOL * _Nonnull stop) {
         id value = [self formEncodableValueForObject:[object valueForKey:propertyName]];
         if (value) {
-            if([value isKindOfClass:[NSDate class]]) { keyPairs[formFieldName] = [NSNumber numberWithInt:[(NSDate*)value timeIntervalSince1970]];
+            if ([value isKindOfClass:[NSDictionary class]]) {
+                NSString *jsonDictStr = [value tmb_json];
+                keyPairs[formFieldName] = jsonDictStr;
+            } else if ([value isKindOfClass:[NSArray class]]) {
+                NSMutableArray *encodedValueTemp = [[NSMutableArray alloc] init];
+                for(NSObject* obj in value){
+                    [encodedValueTemp addObject:[self formEncodableValueForObject:obj]];
+                }
+                NSArray *encodedValue = [encodedValueTemp copy];
+                NSLog(@"encodedValue:%@", encodedValue);
+                keyPairs[formFieldName] = [encodedValue tmb_json];
+            } else if([value isKindOfClass:[NSDate class]]) {
+                keyPairs[formFieldName] = [NSNumber numberWithInt:[(NSDate*)value timeIntervalSince1970]];
             } else {
                 keyPairs[formFieldName] = value;
             }
-            
         }
     }];
     [object.additionalAPIParameters enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull additionalFieldName, id  _Nonnull additionalFieldValue, __unused BOOL * _Nonnull stop) {
@@ -57,7 +70,7 @@ FOUNDATION_EXPORT NSString * TMBQueryStringFromParameters(NSDictionary *paramete
     if ([object conformsToProtocol:@protocol(TMBObjectEncodable)]) {
         return [self keyPairDictionaryForObject:(NSObject<TMBObjectEncodable>*)object];
     } else {
-        return object;
+         return object;
     }
 }
 
@@ -171,14 +184,22 @@ NSArray * TMBQueryStringPairsFromKeyAndValue(NSString *key, id value) {
         for (id nestedKey in [dictionary.allKeys sortedArrayUsingDescriptors:@[ sortDescriptor ]]) {
             id nestedValue = dictionary[nestedKey];
             if (nestedValue) {
-                [mutableQueryStringComponents addObjectsFromArray:TMBQueryStringPairsFromKeyAndValue((key ? [NSString stringWithFormat:@"%@[%@]", key, nestedKey] : nestedKey), nestedValue)];
+                if ([nestedValue isKindOfClass:[NSDictionary class]]) {
+                    NSString *jsonDictStr = [nestedValue tmb_json];
+                    [mutableQueryStringComponents addObjectsFromArray:TMBQueryStringPairsFromKeyAndValue(nestedKey, jsonDictStr)];
+                } else {
+                    [mutableQueryStringComponents addObjectsFromArray:TMBQueryStringPairsFromKeyAndValue((key ? [NSString stringWithFormat:@"%@[%@]", key, nestedKey] : nestedKey), nestedValue)];
+                }
             }
         }
     } else if ([value isKindOfClass:[NSArray class]]) {
         NSArray *array = value;
-        for (id nestedValue in array) {
-            [mutableQueryStringComponents addObjectsFromArray:TMBQueryStringPairsFromKeyAndValue([NSString stringWithFormat:@"%@[]", key], nestedValue)];
-        }
+        NSString *jsonDictStr = [array tmb_json];
+        [mutableQueryStringComponents addObjectsFromArray:TMBQueryStringPairsFromKeyAndValue(key, jsonDictStr)];
+//        for (id nestedValue in array) {
+//            
+//            [mutableQueryStringComponents addObjectsFromArray:TMBQueryStringPairsFromKeyAndValue([NSString stringWithFormat:@"%@[]", key], nestedValue)];
+//        }
     } else if ([value isKindOfClass:[NSSet class]]) {
         NSSet *set = value;
         for (id obj in [set sortedArrayUsingDescriptors:@[ sortDescriptor ]]) {

@@ -21,6 +21,11 @@
 + (nullable instancetype)eventWithItem:(nonnull NSString*) item behavior:(nonnull NSString *)behavior;
 
 /**
+ *  Initialize user event with an item, behavior, hit boolean, and context array (TMBClient uses default user when tracking event).
+ */
++ (nullable instancetype)eventWithItem:(nonnull NSString*) item behavior:(nonnull NSString *)behavior hit:(BOOL)hit context:(nullable NSArray*)context;
+
+/**
  *  Initialize user event with an item, behavior, value, and created time (TMBClient uses default user when tracking event).
  */
 + (nullable instancetype)eventWithItem:(nonnull NSString*) item behavior:(nonnull NSString *)behavior value:(nullable NSNumber*)value created:(nullable NSDate*)created;
@@ -31,11 +36,21 @@
 + (nullable instancetype)eventWithUser:(nonnull NSString*) user item:(nonnull NSString*) item behavior:(nonnull NSString *)behavior;
 
 /**
- *  Initialize the full event params with a user, item, behavior, value, and created time.
+ *  Initialize an event with a user, item, behavior, value, and created time.
  */
 + (nullable instancetype)eventWithUser:(nonnull NSString*) user item:(nonnull NSString*) item behavior:(nonnull NSString *)behavior value:(nullable NSNumber*)value created:(nullable NSDate*)created;
 
-- (nullable instancetype)initWithUser:(nullable NSString*) user item:(nonnull NSString*) item behavior:(nonnull NSString *)behavior value:(nullable NSNumber*)value created:(nullable NSDate*)created;
+/**
+ *  Initialize an event with a user, item, behavior, hit, and context.
+ */
++ (nullable instancetype)eventWithUser:(nonnull NSString*) user item:(nonnull NSString*) item behavior:(nonnull NSString *)behavior hit:(BOOL)hit context:(nullable NSArray*)context;
+
+/**
+ *  Initialize the full event params with a user, item, behavior, value, and created time.
+ */
++ (nullable instancetype)eventWithUser:(nonnull NSString*) user item:(nonnull NSString*) item behavior:(nonnull NSString *)behavior value:(nullable NSNumber*)value hit:(BOOL)hit context:(nullable NSArray*)context created:(nullable NSDate*)created;
+
+- (nullable instancetype)initWithUser:(nullable NSString*) user item:(nonnull NSString*) item behavior:(nonnull NSString *)behavior value:(nullable NSNumber*)value hit:(BOOL)hit context:(nullable NSArray*)context created:(nullable NSDate*)created;
 
 /**
  *  Provide TMBDiscoverParams to return udpated recommendations for the user, taking into account the event that is tracked.
@@ -61,6 +76,16 @@
  *  A value that represents the amount that the behavior was performed. Defaults to 1.0 if not supplied.
  */
 @property (nonatomic, nullable) NSNumber* value;
+
+/**
+ *  Indicates that the event represents a successful recommendation (ex. user 'clicks' an item in their recommended items list). This is used in Tamber's analytics tools to track how recommendations impact user behavior.
+ */
+@property (nonatomic) BOOL hit;
+
+/**
+ *  The context(s) in which the event occurred. Useful for segmenting events data to determine the impact of interface elements and other contextual variables on user behavior. Also useful for A/B testing interface changes.
+ */
+@property (nonatomic, copy, nullable) NSArray *context;
 
 /**
  *  Time the event occurred. Defaults to the current time if not supplied.

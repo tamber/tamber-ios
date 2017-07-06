@@ -25,6 +25,20 @@
     return [dict copy];
 }
 
+-(NSString*) tmb_json {
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self
+                                                       options:(NSJSONWritingOptions) (0)
+                                                         error:&error];
+    
+    if (! jsonData) {
+        NSLog(@"NSDictionary+Tamber tmb_json error: %@", error.localizedDescription);
+        return @"{}";
+    } else {
+        return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+}
+
 @end
 
 void linkNSDictionaryCategory(void){}

@@ -35,6 +35,16 @@
 @property (nonatomic, nullable) NSNumber* value;
 
 /**
+ *  Indicates that the event represents a successful recommendation (ex. user 'clicks' an item in their recommended items list). This is used in Tamber's analytics tools to track how recommendations impact user behavior.
+ */
+@property (nonatomic) BOOL hit;
+
+/**
+ *  The context(s) in which the event occurred. Useful for segmenting events data to determine the impact of interface elements and other contextual variables on user behavior. Also useful for A/B testing interface changes.
+ */
+@property (nonatomic, copy, nullable) NSArray *context;
+
+/**
  *  Time the event occurred. Defaults to the current time if not supplied.
  */
 @property (nonatomic, copy, nullable) NSDate *created;

@@ -16,3 +16,6 @@
 #import "TMBDiscovery.h"
 #import "TMBDiscoverParams.h"
 #import "TMBDiscoverResponse.h"
+#import "TMBUser.h"
+#import "TMBUserParams.h"
+#import "TMBUserSearchResponse.h"

@@ -71,6 +71,15 @@
                 <a class="nav-group-task-link" href="Classes/TMBEventResponse.html">TMBEventResponse</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/TMBUser.html">TMBUser</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/TMBUserParams.html">TMBUserParams</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/TMBUserSearchResponse.html">TMBUserSearchResponse</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes.html#/c:objc(cs)Tamber">Tamber</a>
               </li>
             </ul>
@@ -105,7 +114,7 @@
 <p>Our SDK is compatible with iOS 8.0 and above. It requires Xcode 8.0+ to build the source.</p>
 <h2 id='documentation' class='heading'>Documentation</h2>
 
-<p>This ReadMe covers the basics of using the Tamber iOS SDK. Check out the <a href="http://tamber.github.io/tamber-ios/docs/index.html">documentation</a> for a comprehensive look at the classes and methods.</p>
+<p>This ReadMe covers the basics of using the Tamber iOS SDK. Check out the <a href="http://tamber.github.io/tamber-ios/docs/index.html">sdk documentation</a> for a comprehensive look at the classes and methods, and the full <a href="https://tamber.com/docs/api">API Reference</a> for Tamber documentation.</p>
 <h2 id='installation' class='heading'>Installation</h2>
 
 <p>Install Tamber with <a href="https://guides.cocoapods.org/using/getting-started.html">CocoaPods</a>. If you do not yet have a Podfile for your project, <code>$ cd</code> into your project directory and run <code>$ pod init</code>.</p>
@@ -184,7 +193,24 @@
 <span class="p">}];</span>
 </code></pre>
 
-<p>If your app allows users to interact with content before creating an account, or otherwise establishing a unique identifier, and you can want to get recommendations for these un-initialized users, you can do so by setting <code>testEvents</code> to an array of <code>TMBEvent</code> objects. Retrieving recommendations with <code>testEvents</code> set will return a list of simulated recommendations given the series of Events, but does not write anything to your project or engine.</p>
+<p>Retrieving recommendations with <code>testEvents</code> set will return a list of simulated recommendations given the series of Events, but does not write anything to your project or engine.</p>
+<h3 id='anonymous-signed-out-users' class='heading'>Anonymous / Signed-Out Users</h3>
+
+<p>If your app allows users to interact with content before creating an account, or when they are logged out, but you have some unique identifier (like the device id) you may set the user to this id and track events as normal. Then, when the user creates an account or logs in, you can <code>merge</code> the anonymous user into the logged-in user.</p>
+<pre class="highlight objective_c"><code><span class="c1">// At app launch / wherever appropriate in your code 
+</span><span class="p">[</span><span class="n">Tamber</span> <span class="nf">setUser</span><span class="p">:</span><span class="s">@"anonymous-device-id"</span><span class="p">];</span>
+
+<span class="c1">// On signup/login:
+</span><span class="n">NSString</span> <span class="o">*</span><span class="n">toUser</span> <span class="o">=</span> <span class="s">@"user-id"</span><span class="p">;</span> <span class="c1">// The id of the user to which you want to merge.
+</span><span class="p">[[</span><span class="n">Tamber</span> <span class="nf">client</span><span class="p">]</span> <span class="nf">mergeToUser</span><span class="p">:</span><span class="n">toUser</span> <span class="nf">responseCompletion</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">TMBUser</span> <span class="o">*</span><span class="n">object</span><span class="p">,</span> <span class="n">NSHTTPURLResponse</span> <span class="o">*</span><span class="n">response</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">errorMessage</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">errorMessage</span><span class="p">){</span>
+        <span class="c1">// Handle error. Note that mergeToUser internally sets the default user to the `toUser`.
+</span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+       <span class="n">object</span><span class="p">.</span><span class="n">events</span> <span class="c1">// Array of merged user events (`TMBEvent` objects)
+</span>       <span class="n">object</span><span class="p">.</span><span class="n">metadata</span> <span class="c1">// Dictionary of the merged user metadata. Note that field-value conflicts default to the `toUser`.
+</span>    <span class="p">}</span>
+<span class="p">}];</span>
+</code></pre>
 
           </div>
         </section>
@@ -193,8 +219,8 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2017 <a class="link" href="https://tamber.com" target="_blank" rel="external">Tamber</a>. All rights reserved. (Last updated: 2017-05-05)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2017 <a class="link" href="https://tamber.com" target="_blank" rel="external">Tamber</a>. All rights reserved. (Last updated: 2017-07-06)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>
