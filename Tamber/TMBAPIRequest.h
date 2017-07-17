@@ -9,11 +9,13 @@
 
 #import <Foundation/Foundation.h>
 #import "TMBObjectDecodable.h"
+#import "TMBError.h"
+
 @class TMBClient;
 
 @interface TMBAPIRequest<__covariant ResponseType:id<TMBObjectDecodable>> : NSObject
 
-typedef void(^TMBAPIResponseBlock)(ResponseType object, NSHTTPURLResponse *response, NSString *errorMessage);
+typedef void(^TMBAPIResponseBlock)(ResponseType object, NSHTTPURLResponse *response, NSError *error);
 
 + (NSURLSessionDataTask *)postWithAPIClient:(TMBClient *)apiClient
                                    endpoint:(NSString *)endpoint

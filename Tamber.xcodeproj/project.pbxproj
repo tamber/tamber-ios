@@ -39,6 +39,9 @@
 		EE475C7C1EBB2A2400435C47 /* TMBDiscoverParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F3F1EBAA19000FC10FA /* TMBDiscoverParams.m */; };
 		EE475C7D1EBB2A2400435C47 /* TMBDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F421EBAA1AA00FC10FA /* TMBDiscovery.m */; };
 		EE475C7E1EBB2A2400435C47 /* TMBDiscoverResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF8DE8C1EBB0F4D00CF4CB4 /* TMBDiscoverResponse.m */; };
+		EE69BE781F1D4C9200BC1913 /* TMBError.m in Sources */ = {isa = PBXBuildFile; fileRef = EE69BE771F1D4C9200BC1913 /* TMBError.m */; };
+		EE69BE791F1D515D00BC1913 /* TMBError.h in Headers */ = {isa = PBXBuildFile; fileRef = EE69BE761F1D4C9200BC1913 /* TMBError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE69BE7A1F1D51FB00BC1913 /* TMBError.m in Sources */ = {isa = PBXBuildFile; fileRef = EE69BE771F1D4C9200BC1913 /* TMBError.m */; };
 		EE6A5F9E1F0E08640062B409 /* TMBUser.h in Headers */ = {isa = PBXBuildFile; fileRef = EEF969871F0DD207007E7653 /* TMBUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE6A5F9F1F0E08730062B409 /* TMBUserParams.h in Headers */ = {isa = PBXBuildFile; fileRef = EEF9698D1F0DFA40007E7653 /* TMBUserParams.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE6A5FA01F0E087B0062B409 /* TMBUserSearchResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = EEF9698A1F0DD601007E7653 /* TMBUserSearchResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -104,6 +107,8 @@
 		EE425F4F1EBABBF500FC10FA /* TMBAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBAPIRequest.m; sourceTree = "<group>"; };
 		EE425F561EBAC0D400FC10FA /* NSMutableURLRequest+Tamber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Tamber.h"; sourceTree = "<group>"; };
 		EE425F571EBAC0D400FC10FA /* NSMutableURLRequest+Tamber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Tamber.m"; sourceTree = "<group>"; };
+		EE69BE761F1D4C9200BC1913 /* TMBError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBError.h; sourceTree = "<group>"; };
+		EE69BE771F1D4C9200BC1913 /* TMBError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBError.m; sourceTree = "<group>"; };
 		EE6A5FA41F0E2BFE0062B409 /* NSArray+Tamber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Tamber.h"; sourceTree = "<group>"; };
 		EE6A5FA51F0E2BFE0062B409 /* NSArray+Tamber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Tamber.m"; sourceTree = "<group>"; };
 		EEAE1BA51EB7FD13003F48D5 /* libTamber.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTamber.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +201,8 @@
 				EEF8DE891EBB08A500CF4CB4 /* NSDictionary+Tamber.m */,
 				EE6A5FA41F0E2BFE0062B409 /* NSArray+Tamber.h */,
 				EE6A5FA51F0E2BFE0062B409 /* NSArray+Tamber.m */,
+				EE69BE761F1D4C9200BC1913 /* TMBError.h */,
+				EE69BE771F1D4C9200BC1913 /* TMBError.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -263,6 +270,7 @@
 				EE6A5F9E1F0E08640062B409 /* TMBUser.h in Headers */,
 				EE6A5F9F1F0E08730062B409 /* TMBUserParams.h in Headers */,
 				EE6A5FA01F0E087B0062B409 /* TMBUserSearchResponse.h in Headers */,
+				EE69BE791F1D515D00BC1913 /* TMBError.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +409,7 @@
 				EE425F4D1EBAB2D500FC10FA /* TMBEncoder.m in Sources */,
 				EE425F431EBAA1AA00FC10FA /* TMBDiscovery.m in Sources */,
 				EEF8DE871EBB064600CF4CB4 /* TMBDispatcher.m in Sources */,
+				EE69BE781F1D4C9200BC1913 /* TMBError.m in Sources */,
 				EE425F461EBAA48900FC10FA /* TMBEventResponse.m in Sources */,
 				EEF969891F0DD242007E7653 /* TMBUser.m in Sources */,
 				EEF9698C1F0DD601007E7653 /* TMBUserSearchResponse.m in Sources */,
@@ -411,6 +420,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE69BE7A1F1D51FB00BC1913 /* TMBError.m in Sources */,
 				EE6A5FA91F0E301A0062B409 /* NSArray+Tamber.m in Sources */,
 				EE6A5FA11F0E09910062B409 /* TMBUserParams.m in Sources */,
 				EE6A5FA21F0E09910062B409 /* TMBUser.m in Sources */,

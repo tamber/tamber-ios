@@ -69,18 +69,23 @@
     
     NSDictionary *jsonDictionary = body ? [NSJSONSerialization JSONObjectWithData:body options:(NSJSONReadingOptions)kNilOptions error:NULL] : nil;
     id<TMBObjectDecodable> responseObject = [[serializer class] decodedObjectFromAPIResponse:jsonDictionary];
-    NSString *returnedError = jsonDictionary[@"error"] ?: [error localizedDescription];
-    if ((!responseObject || ![response isKindOfClass:[NSHTTPURLResponse class]]) && !returnedError) {
-        returnedError = @"The response from Tamber failed to get parsed into valid JSON.";
+    if(!error){
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+        error = [NSError tmb_error:jsonDictionary statusCode:[httpResponse statusCode]]; // only sets error if error field is set in response, which is only true when there is an error.
+    }
+//    NSString *errorMessage = jsonDictionary[@"error"] ?: [error localizedDescription];
+    if ((!responseObject || ![response isKindOfClass:[NSHTTPURLResponse class]]) && !error) {
+        error = [NSError tmb_defaultJSONParseError];
     }
     
     NSHTTPURLResponse *httpResponse;
     if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
         httpResponse = (NSHTTPURLResponse *)response;
     }
+    
     tmbDispatchToMainThreadIfNecessary(^{
-        if (returnedError) {
-            completion(nil, httpResponse, returnedError);
+        if (error) {
+            completion(nil, httpResponse, error);
         } else {
             completion(responseObject, httpResponse, nil);
         }

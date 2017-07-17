@@ -10,6 +10,7 @@
 #import "TMBAPIRequest.h"
 #import "TMBObjectEncodable.h"
 #import "TMBObjectDecodable.h"
+#import "TMBError.h"
 #import "TMBEvent.h"
 #import "TMBEventParams.h"
 #import "TMBEventResponse.h"

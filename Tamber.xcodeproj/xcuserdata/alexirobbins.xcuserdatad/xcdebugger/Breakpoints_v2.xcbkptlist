@@ -24,12 +24,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TamberiOSTests/TamberiOSTests.m"
-            timestampString = "521077156.889803"
+            timestampString = "521088703.359704"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "-testUserMerge_ExistingUser"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TamberiOSTests/TamberiOSTests.m"
+            timestampString = "521085955.680653"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "-testExample"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
