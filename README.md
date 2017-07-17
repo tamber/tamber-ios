@@ -65,8 +65,8 @@ Stream events to your Tamber project as the user interacts with items in your ap
 
 ```objc
 TMBEventParams *params = [TMBEventParams eventWithItem:@"item_id" behavior:@"like"];
-[[Tamber client] trackEvent:params responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSString *errorMessage) {
-    if(errorMessage){
+[[Tamber client] trackEvent:params responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *error) {
+    if(error){
         // Handle error
     } else {
         object.events[0] // Event tracked
@@ -81,8 +81,8 @@ Once you have seeded some events and created your engine, you can start pulling 
 
 ```objc
 TMBDiscoverParams *params = [TMBDiscoverParams discoverRecommendations:[NSNumber numberWithInt:50]];
-[[Tamber client] discoverRecommendations:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSString *errorMessage) {
-    if(errorMessage){
+[[Tamber client] discoverRecommendations:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSError *error) {
+    if(error){
         // Handle error
     } else {
         for(TMBDiscovery *discovery in object.discoveries){
@@ -97,8 +97,8 @@ If you are setting [properties for your items][properties] from your backend, yo
 
 ```objc
 TMBDiscoverParams *params = [TMBDiscoverParams alloc] discoverRecommendations:[NSNumber numberWithInt:50] page:nil filter:nil getProperties:true testEvents:nil];
-[[Tamber client] discoverRecommendations:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSString *errorMessage) {
-    if(errorMessage){
+[[Tamber client] discoverRecommendations:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSError *error) {
+    if(error){
         // Handle error
     } else {
         for(TMBDiscovery *discovery in object.discoveries){
@@ -123,8 +123,8 @@ If your app allows users to interact with content before creating an account, or
 
 // On signup/login:
 NSString *toUser = @"user-id"; // The id of the user to which you want to merge.
-[[Tamber client] mergeToUser:toUser responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSString *errorMessage) {
-    if(errorMessage){
+[[Tamber client] mergeToUser:toUser responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSError *error) {
+    if(error){
         // Handle error. Note that mergeToUser internally sets the default user to the `toUser`.
     } else {
        object.events // Array of merged user events (`TMBEvent` objects)
