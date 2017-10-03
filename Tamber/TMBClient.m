@@ -200,6 +200,19 @@
                                 completion:responseCompletion];
 }
 
+- (nullable NSURLSessionDataTask *) discoverNext:(nonnull TMBDiscoverNextParams*) discoverParams responseCompletion:(nonnull TMBAPIResponseBlock) responseCompletion {
+    NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"discover", @"next"];
+    if(discoverParams.user == nil && self.userId != nil){
+        discoverParams.user = self.userId;
+    }
+    NSDictionary *params = [TMBEncoder dictionaryForObject:discoverParams];
+    return [TMBAPIRequest getWithAPIClient:self
+                                  endpoint:endpoint
+                                parameters:params
+                                serializer:[TMBDiscoverResponse new]
+                                completion:responseCompletion];
+}
+
 - (NSURLSessionDataTask *) discoverRecommendations:(TMBDiscoverParams*) discoverParams responseCompletion:(TMBAPIResponseBlock) responseCompletion {
     
     NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"discover", @"recommended"];

@@ -12,7 +12,7 @@
 @implementation TMBEvent
 
 + (NSArray *)requiredFields {
-    return @[@"user", @"item", @"behavior", @"value", @"created"];
+    return @[@"user", @"item", @"behavior", @"amount", @"created"];
 }
 
 + (instancetype)decodedObjectFromAPIResponse:(NSDictionary *)response {
@@ -24,7 +24,7 @@
     event.user = result[@"user"];
     event.item = result[@"item"];
     event.behavior = result[@"behavior"];
-    event.value = result[@"value"];
+    event.amount = result[@"amount"];
     if([[result allKeys] containsObject:@"hit"]){
         event.hit = [result[@"hit"] boolValue];
     }

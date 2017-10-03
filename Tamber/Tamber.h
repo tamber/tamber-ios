@@ -16,6 +16,7 @@
 #import "TMBEventResponse.h"
 #import "TMBDiscovery.h"
 #import "TMBDiscoverParams.h"
+#import "TMBDiscoverNextParams.h"
 #import "TMBDiscoverResponse.h"
 #import "TMBUser.h"
 #import "TMBUserParams.h"

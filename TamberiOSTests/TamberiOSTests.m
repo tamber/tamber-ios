@@ -9,8 +9,8 @@
 #import <XCTest/XCTest.h>
 #import <Tamber/Tamber.h>
 
-const NSString *testProjectKey = @"Mu6DUPXdDYe98cv5JIfX";
-const NSString *testEngineKey = @"SbWYPBNdARfIDa0IIO9L";
+//const NSString *testProjectKey = @"Mu6DUPXdDYe98cv5JIfX";
+//const NSString *testEngineKey = @"SbWYPBNdARfIDa0IIO9L";
 const NSString *defaultUser = @"user_jctzgisbru";
 
 NSString *userA;
@@ -46,7 +46,7 @@ NSString *item2;
     double nan = NAN;
     NSNumber * v =  [NSNumber numberWithDouble:0.3];
 //    NSLog(@"v:%@", [v doubleValue]);
-    TMBEventParams *params = [TMBEventParams eventWithUser:@"user_a" item:@"item_1" behavior:@"like" value:v hit:true context:@[@"recommended", @"detail-view"] created:[NSDate date]];
+    TMBEventParams *params = [TMBEventParams eventWithUser:@"user_a" item:@"item_1" behavior:@"like" amount:v hit:true context:@[@"recommended", @"detail-view"] created:[NSDate date]];
     XCTestExpectation *trackExp = [self expectationWithDescription:@"Event tracked"];
     [_client trackEvent:params responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
         XCTAssertNil(errorMessage);
@@ -57,7 +57,25 @@ NSString *item2;
 }
 
 - (void)testRecs {
-    TMBDiscoverParams *params = [TMBDiscoverParams discoverParamsWithUser:@"user_a" number:nil];
+    TMBDiscoverNextParams *nextParams = [TMBDiscoverNextParams discoverNext:[NSNumber numberWithInt:8]];
+    XCTestExpectation *discoverNextExp = [self expectationWithDescription:@"Discover next"];
+    [_client discoverNext:nextParams responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+        XCTAssertNil(errorMessage);
+        XCTAssertNotNil(object);
+        [discoverNextExp fulfill];
+    }];
+    [self waitForExpectationsWithTimeout:5.0f handler:nil];
+    
+    TMBDiscoverNextParams *nextParamsFull = [TMBDiscoverNextParams discoverNext:item1 number:[NSNumber numberWithInt:8] excludeItems:@[item2] randomness:[NSNumber numberWithFloat:0.1]  filter:nil getProperties:true];
+    XCTestExpectation *discoverNextExp2 = [self expectationWithDescription:@"Discover next with item, exclude_items, randomness, and get_properties set"];
+    [_client discoverNext:nextParamsFull responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+        XCTAssertNil(errorMessage);
+        XCTAssertNotNil(object);
+        [discoverNextExp2 fulfill];
+    }];
+    [self waitForExpectationsWithTimeout:5.0f handler:nil];
+    
+    TMBDiscoverParams *params = [TMBDiscoverParams discoverParamsWithUser:defaultUser number:nil];
     XCTestExpectation *discoverExp = [self expectationWithDescription:@"Discover recommended"];
     [_client discoverRecommendations:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
         XCTAssertNil(errorMessage);
@@ -200,6 +218,36 @@ NSString *item2;
         XCTAssertNil(errorMessage);
         XCTAssertNotNil(object);
         [discoverExp fulfill];
+    }];
+    [self waitForExpectationsWithTimeout:5.0f handler:nil];
+}
+
+- (void)testItemlessEvents {
+    
+    TMBEventParams *eventParams = [TMBEventParams pushRenderedWithContext:@[@"tmb_push"] created:nil];
+    XCTestExpectation *trackExp = [self expectationWithDescription:@"Itemless `tmb_push_rendered` event tracked"];
+    [[Tamber client] trackEvent:eventParams responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+        XCTAssertNil(errorMessage);
+        XCTAssertNotNil(object);
+        [trackExp fulfill];
+    }];
+    [self waitForExpectationsWithTimeout:5.0f handler:nil];
+    
+    TMBEventParams *eventParams2 = [TMBEventParams sessionStarted];
+    XCTestExpectation *trackExp2 = [self expectationWithDescription:@"Itemless `tmb_session_started` event tracked"];
+    [[Tamber client] trackEvent:eventParams2 responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+        XCTAssertNil(errorMessage);
+        XCTAssertNotNil(object);
+        [trackExp2 fulfill];
+    }];
+    [self waitForExpectationsWithTimeout:5.0f handler:nil];
+    
+    TMBEventParams *eventParams3 = [TMBEventParams sessionEnded];
+    XCTestExpectation *trackExp3 = [self expectationWithDescription:@"Itemless `tmb_session_ended` event tracked"];
+    [[Tamber client] trackEvent:eventParams3 responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+        XCTAssertNil(errorMessage);
+        XCTAssertNotNil(object);
+        [trackExp3 fulfill];
     }];
     [self waitForExpectationsWithTimeout:5.0f handler:nil];
 }

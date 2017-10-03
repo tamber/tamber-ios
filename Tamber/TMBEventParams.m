@@ -8,6 +8,10 @@
 
 #import "TMBEventParams.h"
 
+NSString *const TMBSessionStartedBehavior = @"tmb_session_started";
+NSString *const TMBSessionEndedBehavior = @"tmb_session_ended";
+NSString *const TMBPushRenderedBehavior = @"tmb_push_rendered";
+
 @implementation TMBEventParams
 
 @synthesize additionalAPIParameters = _additionalAPIParameters;
@@ -21,40 +25,40 @@
 }
 
 + (instancetype)eventWithItem:(NSString*) item behavior:(NSString *)behavior{
-    return [[self.class alloc] initWithUser:nil item:item behavior:behavior value:nil hit:false context:nil created:nil];
+    return [[self.class alloc] initWithUser:nil item:item behavior:behavior amount:nil hit:false context:nil created:nil];
 }
 
 + (instancetype)eventWithItem:(NSString*) item behavior:(NSString *)behavior hit:(BOOL)hit context:(NSArray*)context {
-    return [[self.class alloc] initWithUser:nil item:item behavior:behavior value:nil hit:hit context:context created:nil];
+    return [[self.class alloc] initWithUser:nil item:item behavior:behavior amount:nil hit:hit context:context created:nil];
 }
 
-+ (instancetype)eventWithItem:(NSString*) item behavior:(NSString *)behavior value:(NSNumber*)value created:(NSDate*)created{
-    return [[self.class alloc] initWithUser:nil item:item behavior:behavior value:value hit:false context:nil created:created];
++ (instancetype)eventWithItem:(NSString*) item behavior:(NSString *)behavior amount:(NSNumber*)amount created:(NSDate*)created{
+    return [[self.class alloc] initWithUser:nil item:item behavior:behavior amount:amount hit:false context:nil created:created];
 }
 
 + (instancetype)eventWithUser:(NSString*) user item:(NSString*) item behavior:(NSString *)behavior{
-    return [[self.class alloc] initWithUser:user item:item behavior:behavior value:nil hit:false context:nil created:nil];
+    return [[self.class alloc] initWithUser:user item:item behavior:behavior amount:nil hit:false context:nil created:nil];
 }
 
-+ (instancetype)eventWithUser:(NSString*) user item:(NSString*) item behavior:(NSString *)behavior value:(NSNumber*)value created:(NSDate*)created {
-    return [[self.class alloc] initWithUser:user item:item behavior:behavior value:value hit:false context:nil created:created];
++ (instancetype)eventWithUser:(NSString*) user item:(NSString*) item behavior:(NSString *)behavior amount:(NSNumber*)amount created:(NSDate*)created {
+    return [[self.class alloc] initWithUser:user item:item behavior:behavior amount:amount hit:false context:nil created:created];
 }
 
 + (instancetype)eventWithUser:(NSString*) user item:(NSString*) item behavior:(NSString *)behavior hit:(BOOL)hit context:(NSArray*)context{
-    return [[self.class alloc] initWithUser:user item:item behavior:behavior value:nil hit:hit context:context created:nil];
+    return [[self.class alloc] initWithUser:user item:item behavior:behavior amount:nil hit:hit context:context created:nil];
 }
 
-+ (instancetype)eventWithUser:(NSString*) user item:(NSString*) item behavior:(NSString *)behavior value:(NSNumber*)value hit:(BOOL)hit context:(NSArray*)context created:(NSDate*)created {
-    return [[self.class alloc] initWithUser:user item:item behavior:behavior value:value hit:hit context:context created:created];
++ (instancetype)eventWithUser:(NSString*) user item:(NSString*) item behavior:(NSString *)behavior amount:(NSNumber*)amount hit:(BOOL)hit context:(NSArray*)context created:(NSDate*)created {
+    return [[self.class alloc] initWithUser:user item:item behavior:behavior amount:amount hit:hit context:context created:created];
 }
 
-- (instancetype)initWithUser:(NSString*) user item:(NSString*) item behavior:(NSString *)behavior value:(NSNumber*)value hit:(BOOL)hit context:(NSArray*)context created:(NSDate*)created {
+- (instancetype)initWithUser:(NSString*) user item:(NSString*) item behavior:(NSString *)behavior amount:(NSNumber*)amount hit:(BOOL)hit context:(NSArray*)context created:(NSDate*)created {
     self = [super init];
     if (self) {
         _user = user;
         _item = item;
         _behavior = behavior;
-        _value = value;
+        _amount = amount;
         _hit = hit;
         _context = context;
         _created = created;
@@ -64,6 +68,32 @@
 
 - (void) setGetRecs:(TMBDiscoverParams*)getRecs{
     _getRecs = getRecs;
+}
+
+#pragma mark - Reserved item-less events
+
++ (instancetype)sessionStarted{
+    return [[self.class alloc] initWithUser:nil item:nil behavior:TMBSessionStartedBehavior amount:nil hit:false context:nil created:nil];
+}
+
++ (instancetype)sessionStartedWithContext:(NSArray*)context created:(NSDate*)created{
+    return [[self.class alloc] initWithUser:nil item:nil behavior:TMBSessionStartedBehavior amount:nil hit:false context:context created:created];
+}
+
++ (instancetype)sessionEnded{
+    return [[self.class alloc] initWithUser:nil item:nil behavior:TMBSessionEndedBehavior amount:nil hit:false context:nil created:nil];
+}
+
++ (instancetype)sessionEndedWithContext:(NSArray*)context created:(NSDate*)created{
+    return [[self.class alloc] initWithUser:nil item:nil behavior:TMBSessionEndedBehavior amount:nil hit:false context:context created:created];
+}
+
++ (instancetype)pushRendered{
+    return [[self.class alloc] initWithUser:nil item:nil behavior:TMBPushRenderedBehavior amount:nil hit:false context:nil created:nil];
+}
+
++ (instancetype)pushRenderedWithContext:(NSArray*)context created:(NSDate*)created{
+    return [[self.class alloc] initWithUser:nil item:nil behavior:TMBPushRenderedBehavior amount:nil hit:false context:context created:created];
 }
 
 #pragma mark - TMBObjectEncodable
@@ -77,7 +107,7 @@
              @"user": @"user",
              @"item": @"item",
              @"behavior": @"behavior",
-             @"value": @"value",
+             @"amount": @"amount",
              @"created": @"created",
              @"getRecs": @"get_recs",
              };

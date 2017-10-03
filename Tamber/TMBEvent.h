@@ -30,9 +30,9 @@
 @property (nonatomic, copy, nullable) NSString *behavior;
 
 /**
- *  A value that represents the amount that the behavior was performed. Defaults to 1.0 if not supplied.
+ *  Represents the amount that the behavior was performed. Defaults to 1.0 if not supplied.
  */
-@property (nonatomic, nullable) NSNumber* value;
+@property (nonatomic, nullable) NSNumber* amount;
 
 /**
  *  Indicates that the event represents a successful recommendation (ex. user 'clicks' an item in their recommended items list). This is used in Tamber's analytics tools to track how recommendations impact user behavior.

@@ -24,12 +24,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TamberiOSTests/TamberiOSTests.m"
-            timestampString = "521088703.359704"
+            timestampString = "528764887.1442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "-testUserMerge_ExistingUser"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "-testUserMerge_ToNovelUser"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -40,11 +40,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TamberiOSTests/TamberiOSTests.m"
-            timestampString = "521085955.680653"
+            timestampString = "528764887.1442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "-testExample"
             landmarkType = "7">
          </BreakpointContent>

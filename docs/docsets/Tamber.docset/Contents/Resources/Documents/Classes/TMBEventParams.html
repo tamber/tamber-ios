@@ -57,6 +57,9 @@
                 <a class="nav-group-task-link" href="../Classes/TMBClient.html">TMBClient</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TMBDiscoverNextParams.html">TMBDiscoverNextParams</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/TMBDiscoverParams.html">TMBDiscoverParams</a>
               </li>
               <li class="nav-group-task">
@@ -195,9 +198,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:value:created:"></a>
-                    <a name="//apple_ref/objc/Method/+eventWithItem:behavior:value:created:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:value:created:">+eventWithItem:behavior:value:created:</a>
+                    <a name="/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:amount:created:"></a>
+                    <a name="//apple_ref/objc/Method/+eventWithItem:behavior:amount:created:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:amount:created:">+eventWithItem:behavior:amount:created:</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -205,7 +208,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Initialize user event with an item, behavior, value, and created time (TMBClient uses default user when tracking event).</p>
+                        <p>Initialize user event with an item, behavior, amount, and created time (TMBClient uses default user when tracking event).</p>
 
                       </div>
                       <div class="declaration">
@@ -214,13 +217,13 @@
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithItem</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">item</span>
                               <span class="nf">behavior</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">behavior</span>
-                                 <span class="nf">value</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">value</span>
+                                <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
                                <span class="nf">created</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDate</span> <span class="o">*</span><span class="p">)</span><span class="nv">created</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withItem</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">created</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withItem</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">created</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -270,9 +273,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)TMBEventParams(cm)eventWithUser:item:behavior:value:created:"></a>
-                    <a name="//apple_ref/objc/Method/+eventWithUser:item:behavior:value:created:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithUser:item:behavior:value:created:">+eventWithUser:item:behavior:value:created:</a>
+                    <a name="/c:objc(cs)TMBEventParams(cm)eventWithUser:item:behavior:amount:created:"></a>
+                    <a name="//apple_ref/objc/Method/+eventWithUser:item:behavior:amount:created:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithUser:item:behavior:amount:created:">+eventWithUser:item:behavior:amount:created:</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -280,7 +283,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Initialize an event with a user, item, behavior, value, and created time.</p>
+                        <p>Initialize an event with a user, item, behavior, amount, and created time.</p>
 
                       </div>
                       <div class="declaration">
@@ -290,13 +293,13 @@
                           <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithUser</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">user</span>
                                   <span class="nf">item</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">item</span>
                               <span class="nf">behavior</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">behavior</span>
-                                 <span class="nf">value</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">value</span>
+                                <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
                                <span class="nf">created</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDate</span> <span class="o">*</span><span class="p">)</span><span class="nv">created</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withUser</span> <span class="nv">user</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">created</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withUser</span> <span class="nv">user</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">created</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -348,9 +351,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)TMBEventParams(cm)eventWithUser:item:behavior:value:hit:context:created:"></a>
-                    <a name="//apple_ref/objc/Method/+eventWithUser:item:behavior:value:hit:context:created:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithUser:item:behavior:value:hit:context:created:">+eventWithUser:item:behavior:value:hit:context:created:</a>
+                    <a name="/c:objc(cs)TMBEventParams(cm)eventWithUser:item:behavior:amount:hit:context:created:"></a>
+                    <a name="//apple_ref/objc/Method/+eventWithUser:item:behavior:amount:hit:context:created:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithUser:item:behavior:amount:hit:context:created:">+eventWithUser:item:behavior:amount:hit:context:created:</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -358,7 +361,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Initialize the full event params with a user, item, behavior, value, and created time.</p>
+                        <p>Initialize the full event params with a user, item, behavior, amount, and created time.</p>
 
                       </div>
                       <div class="declaration">
@@ -368,7 +371,7 @@
                           <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithUser</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">user</span>
                                   <span class="nf">item</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">item</span>
                               <span class="nf">behavior</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">behavior</span>
-                                 <span class="nf">value</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">value</span>
+                                <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
                                    <span class="nf">hit</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">hit</span>
                                <span class="nf">context</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">context</span>
                                <span class="nf">created</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDate</span> <span class="o">*</span><span class="p">)</span><span class="nv">created</span><span class="p">;</span></code></pre>
@@ -376,12 +379,117 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withUser</span> <span class="nv">user</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">hit</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]?,</span> <span class="nv">created</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withUser</span> <span class="nv">user</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">hit</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]?,</span> <span class="nv">created</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
                         <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L51">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TMBEventParams(cm)sessionStarted"></a>
+                    <a name="//apple_ref/objc/Method/+sessionStarted" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)sessionStarted">+sessionStarted</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize a session started item-less event.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="n">sessionStarted</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">sessionStarted</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L63">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TMBEventParams(cm)sessionEnded"></a>
+                    <a name="//apple_ref/objc/Method/+sessionEnded" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)sessionEnded">+sessionEnded</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize a session ended item-less event.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="n">sessionEnded</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">sessionEnded</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L70">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TMBEventParams(cm)pushRendered"></a>
+                    <a name="//apple_ref/objc/Method/+pushRendered" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)pushRendered">+pushRendered</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize a push rendered item-less event.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="n">pushRendered</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">pushRendered</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L77">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -416,7 +524,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L63">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L84">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -451,7 +559,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L68">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L89">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -486,7 +594,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L73">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L94">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -494,9 +602,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)TMBEventParams(py)value"></a>
-                    <a name="//apple_ref/objc/Property/value" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)TMBEventParams(py)value">value</a>
+                    <a name="/c:objc(cs)TMBEventParams(py)amount"></a>
+                    <a name="//apple_ref/objc/Property/amount" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TMBEventParams(py)amount">amount</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -504,24 +612,24 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A value that represents the amount that the behavior was performed. Defaults to 1.0 if not supplied.</p>
+                        <p>Represents the amount that the behavior was performed. Defaults to 1.0 if not supplied.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="n">value</span><span class="p">;</span></code></pre>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="n">amount</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L78">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L99">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -556,7 +664,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L83">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L104">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -591,7 +699,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L88">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L109">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -626,7 +734,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L93">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L114">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -661,7 +769,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L98">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L119">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -674,7 +782,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2017 <a class="link" href="https://tamber.com" target="_blank" rel="external">Tamber</a>. All rights reserved. (Last updated: 2017-07-17)</p>
+      <p>&copy; 2017 <a class="link" href="https://tamber.com" target="_blank" rel="external">Tamber</a>. All rights reserved. (Last updated: 2017-10-03)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

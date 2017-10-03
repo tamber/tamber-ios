@@ -27,7 +27,7 @@
     
     TMBEventResponse *eventResponse = [self new];
     
-    NSMutableArray *events = [NSMutableArray new];
+    NSMutableArray *events = [[NSMutableArray alloc] init];
     for (NSDictionary *eventDict in result[@"events"]){
         TMBEvent *event = [TMBEvent decodedObjectFromAPIResponse:eventDict];
         [events addObject:event];
@@ -35,7 +35,7 @@
     eventResponse.events = [events copy];
     
     if(result[@"recommended"] != nil){
-        NSMutableArray *recs = [NSMutableArray new];
+        NSMutableArray *recs = [[NSMutableArray alloc] init];
         for (NSDictionary *discoveryDict in result[@"recommended"]){
             TMBDiscovery *discovery = [TMBDiscovery decodedObjectFromAPIResponse:discoveryDict];
             [recs addObject:discovery];

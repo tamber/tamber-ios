@@ -10,6 +10,7 @@
 #import "TMBEventParams.h"
 #import "TMBEventResponse.h"
 #import "TMBDiscoverParams.h"
+#import "TMBDiscoverNextParams.h"
 #import "TMBDiscoverResponse.h"
 #import "TMBUser.h"
 #import "TMBUserParams.h"
@@ -19,9 +20,9 @@
 #import "TMBAPIRequest.h"
 
 NS_ASSUME_NONNULL_BEGIN
-static  NSString *const TMBSDKVersion = @"0.0.4";
+static  NSString *const TMBSDKVersion = @"0.0.5";
 static NSString *const TMBApiURLBase = @"api.tamber.com/v1";
-static NSString *const TMBApiVersion = @"2017-7-3";
+static NSString *const TMBApiVersion = @"2017-10-2";
 NS_ASSUME_NONNULL_END
 
 /**
@@ -148,6 +149,15 @@ NS_ASSUME_NONNULL_END
  * @param responseCompletion The callback to run with the returned TMBUserSearchResponse (and any errors that may have occurred)
  */
 - (nullable NSURLSessionDataTask *) searchUsers:(nonnull  NSDictionary*) metadata responseCompletion:(nullable TMBAPIResponseBlock) responseCompletion;
+
+
+/**
+ * Retrieve the set of recommended items to display next for the given user and/or item. Discover Next is your go-to tool for displaying personalized items on item-pages (set the item to the currently displayed item) and in dedicated recommendations section.
+ *
+ * @param discoverParams The parameters for the discover request.
+ * @param responseCompletion The callback to run with the returned TMBEventResponse (and any errors that may have occurred)
+ */
+- (nullable NSURLSessionDataTask *) discoverNext:(nonnull TMBDiscoverNextParams*) discoverParams responseCompletion:(nonnull TMBAPIResponseBlock) responseCompletion;
 
 /**
  * Retrieve recommended items for the given user.
