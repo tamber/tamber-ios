@@ -79,6 +79,13 @@
 + (nullable instancetype)pushRenderedWithContext:(nullable NSArray*)context created:(nullable NSDate*)created;
 
 /**
+ *  Initialize a push received item-less event.
+ */
++ (nullable instancetype)pushReceived;
+
++ (nullable instancetype)pushReceivedWithContext:(nullable NSArray*)context created:(nullable NSDate*)created;
+
+/**
  *  User associated with the event.
  */
 @property (nonatomic, copy, nullable) NSString *user;

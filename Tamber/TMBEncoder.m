@@ -48,7 +48,6 @@ FOUNDATION_EXPORT NSString * TMBQueryStringFromParameters(NSDictionary *paramete
                     [encodedValueTemp addObject:[self formEncodableValueForObject:obj]];
                 }
                 NSArray *encodedValue = [encodedValueTemp copy];
-                NSLog(@"encodedValue:%@", encodedValue);
                 keyPairs[formFieldName] = [encodedValue tmb_json];
             } else if([value isKindOfClass:[NSDate class]]) {
                 keyPairs[formFieldName] = [NSNumber numberWithInt:[(NSDate*)value timeIntervalSince1970]];

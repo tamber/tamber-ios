@@ -32,11 +32,11 @@
  * @param item Item's unique identifier. Used for discover-similar and discover-recommended_similar.
  * @param number Number of recommendations to return. Maximum of 200.
  * @param excludeItems List of item ids to exclude from results. Useful for hiding items that are already being displayed to the user.
- * @param randomness Represents the degree of randomness applied to the results. Randomness helps make results more dynamic, and is intelligently weighted to prioritize higher-scoring results (i.e. it does not just shuffle the results). Defaults to 0 if not supplied.
+ * @param variability Represents the degree of variability applied to the results. variability helps make results more dynamic, and is intelligently weighted to prioritize higher-scoring results (i.e. it does not just shuffle the results). Defaults to 0 if not supplied.
  * @param filter The filter to apply on the discoveries. See https://tamber.com/docs/api/#filtering and our filtering guide at https://tamber.com/docs/guides/filtering.html for reference.
  * @param getProperties Include items' properties and tags in the discovery objects.
  */
-+ (nullable instancetype)discoverNext:(nullable NSString*) item number:(nullable NSNumber*) number excludeItems:(nullable NSArray*) excludeItems randomness:(nullable NSNumber*) randomness  filter:(nullable NSDictionary*)filter getProperties:(BOOL) getProperties;
++ (nullable instancetype)discoverNext:(nullable NSString*) item number:(nullable NSNumber*) number excludeItems:(nullable NSArray*) excludeItems variability:(nullable NSNumber*) variability  filter:(nullable NSDictionary*)filter getProperties:(BOOL) getProperties;
 
 
 /**
@@ -60,11 +60,11 @@
  * @param item Item's unique identifier. Used for discover-similar and discover-recommended_similar.
  * @param number Number of recommendations to return. Maximum of 200.
  * @param excludeItems List of item ids to exclude from results. Useful for hiding items that are already being displayed to the user.
- * @param randomness Represents the degree of randomness applied to the results. Randomness helps make results more dynamic, and is intelligently weighted to prioritize higher-scoring results (i.e. it does not just shuffle the results). Defaults to 0 if not supplied.
+ * @param variability Represents the degree of variability applied to the results. Variability helps make results more dynamic, and is intelligently weighted to prioritize higher-scoring results (i.e. it does not just shuffle the results). Defaults to 0 if not supplied.
  * @param filter The filter to apply on the discoveries. See https://tamber.com/docs/api/#filtering and our filtering guide at https://tamber.com/docs/guides/filtering.html for reference.
  * @param getProperties Include items' properties and tags in the discovery objects.
  */
-- (nullable instancetype)initWithUser:(nullable NSString*) user item:(nullable NSString*) item number:(nullable NSNumber*)number excludeItems:(nullable NSArray*) excludeItems randomness:(nullable NSNumber*)randomness filter:(nullable NSDictionary*)filter getProperties:(BOOL) getProperties;
+- (nullable instancetype)initWithUser:(nullable NSString*) user item:(nullable NSString*) item number:(nullable NSNumber*)number excludeItems:(nullable NSArray*) excludeItems variability:(nullable NSNumber*)variability filter:(nullable NSDictionary*)filter getProperties:(BOOL) getProperties;
 
 @property (nonatomic, copy, nullable) NSString *user;
 @property (nonatomic, copy, nullable) NSString *item;
@@ -76,9 +76,9 @@
 @property (nonatomic, readonly, nullable) NSArray *excludeItems;
 
 /**
- *  Represents the degree of randomness applied to the results. Randomness helps make results more dynamic, and is intelligently weighted to prioritize higher-scoring results (i.e. it does not just shuffle the results). Defaults to 0 if not supplied.
+ *  Represents the degree of variability applied to the results. Variability helps make results more dynamic, and is intelligently weighted to prioritize higher-scoring results (i.e. it does not just shuffle the results). Defaults to 0 if not supplied.
  */
-@property (nonatomic, nullable) NSNumber* randomness;
+@property (nonatomic, nullable) NSNumber* variability;
 @property (nonatomic, readonly, nullable) NSDictionary *filter;
 @property (nonatomic, readwrite) BOOL getProperties;
 

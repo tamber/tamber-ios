@@ -31,12 +31,57 @@
     [client updateAuth];
 }
 
++ (void)setPublishableProjectKey:(nullable NSString *)publishableProjectKey enablePush:(BOOL) enablePush{
+    TMBClient* client = [TMBClient defaultClient];
+    client.publishableProjectKey = publishableProjectKey;
+    [client updateAuth];
+    if(enablePush){
+        [TMBPush setInternalDelegate: client];
+    }
+}
+
++ (void)setPublishableProjectKey:(nullable NSString *)publishableProjectKey publishableEngineKey:(nullable NSString *)publishableEngineKey enablePush:(BOOL) enablePush{
+    TMBClient* client = [TMBClient defaultClient];
+    client.publishableProjectKey = publishableProjectKey;
+    client.publishableEngineKey = publishableEngineKey;
+    [client updateAuth];
+    if(enablePush){
+        [TMBPush setInternalDelegate: client];
+    }
+}
+
++ (void) enablePush{
+    [TMBPush setInternalDelegate:  [TMBClient defaultClient]];
+}
+
++ (void) setPushDelegate:(id <TMBPushDelegate>) delegate {
+    [[TMBClient defaultClient] setPushDelegate:delegate];
+}
+
++ (void) enableAutoUNCenterDel {
+    TMBUtils *utils = [TMBUtils getInstance];
+    utils.disableNotificationCenterDelegate = false;
+}
+
++ (void) disableAutoUNCenterDel {
+    TMBUtils *utils = [TMBUtils getInstance];
+    utils.disableNotificationCenterDelegate = true;
+}
+
 + (void)setUser:(NSString *)user {
     [TMBClient defaultClient].userId = user;
 }
 
-+ (TMBClient*)client {
++(void) setUserPushToken:(nullable NSString*)token{
+    [[TMBClient defaultClient] setUserPushToken: token];
+}
+
++ (TMBClient*) client {
     return  [TMBClient defaultClient];
+}
+
++ (nullable TMBPush*) push {
+    return [TMBPush getInstance];
 }
 
 @end
@@ -57,8 +102,24 @@
     return [[self.class alloc] initWithPublishableProjectKey:publishableProjectKey publishableEngineKey:publishableEngineKey user:user];
 }
 
+- (void) setPushDelegate:(id <TMBPushDelegate>) delegate {
+    [TMBPush setPushDelegate:delegate andInternalDelegate:self];
+}
+
+- (void) enablePush{
+    [TMBPush setInternalDelegate: self];
+}
+
 - (void) updateAuth {
-    NSData *authData = [[[self.publishableProjectKey stringByAppendingString:@":"] stringByAppendingString:self.publishableEngineKey ]
+    NSString *engineKey = @"";
+    if(self.publishableEngineKey){
+        engineKey = self.publishableEngineKey;
+    }
+    NSString *projectKey = @"";
+    if(self.publishableProjectKey){
+        projectKey = self.publishableProjectKey;
+    }
+    NSData *authData = [[[projectKey stringByAppendingString:@":"] stringByAppendingString:engineKey ]
                         dataUsingEncoding:NSUTF8StringEncoding];
     NSString *authKeys = [authData base64EncodedStringWithOptions:0];
     self.auth = [@"Basic " stringByAppendingString:authKeys];
@@ -72,7 +133,7 @@
         _publishableEngineKey = publishableEngineKey;
         _userId = user;
         _apiUrl = [NSURL URLWithString:[NSString stringWithFormat:@"https://%@", TMBApiURLBase]];
-        _apiVersion = @"2017-3-8";
+        _apiVersion = TMBApiVersion;
         NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
         sessionConfiguration.HTTPAdditionalHeaders = @{
                                                        @"X-Tamber-User-Agent": [self.class tamberUserAgentDetails],
@@ -88,7 +149,7 @@
     self = [super init];
     if (self) {
         _apiUrl = [NSURL URLWithString:[NSString stringWithFormat:@"https://%@", TMBApiURLBase]];
-        _apiVersion = @"2017-3-8";
+        _apiVersion = TMBApiVersion;
         NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
         sessionConfiguration.HTTPAdditionalHeaders = @{
                                                        @"X-Tamber-User-Agent": [self.class tamberUserAgentDetails],
@@ -101,6 +162,20 @@
 
 -(void) setUser:(NSString*)user{
     _userId = user;
+}
+
+-(void) setUserPushToken:(nullable NSString*)token{
+    TMBClient *client = [TMBClient defaultClient];
+    if(client.userId != nil){
+        TMBUserParams *userParams = [TMBUserParams userWithId:_userId];
+        [client retrieveUser:userParams responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+            if(!errorMessage){
+                [userParams.metadata setValue:token forKey:TMBPushTokenFieldName];
+                [client updateUser:userParams responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+                }];
+            }
+        }];
+    }
 }
 
 -(nullable NSString*) getUser{
@@ -280,5 +355,29 @@
     }
     return [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:[details copy] options:(NSJSONWritingOptions)kNilOptions error:NULL] encoding:NSUTF8StringEncoding];
 }
+
+#pragma mark TMPushInternalDelegate
+
+-(void) sessionStarted{
+    if(_userId != nil){
+        [self trackEvent:[TMBEventParams sessionStarted] responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+           // handle
+        }];
+    }
+}
+
+- (void) trackPushReceived:(nullable NSString *) pushId context:(nullable NSArray *) context{
+    [[Tamber client] trackEvent:[TMBEventParams pushReceivedWithContext:context created:nil] responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+        // handle
+    }];
+}
+- (void) trackPushRendered:(nullable NSString *) item context:(nullable NSArray *) context{
+    TMBEventParams *eventParams = [TMBEventParams pushRenderedWithContext:context created:nil];
+    eventParams.item = item;
+    [[Tamber client] trackEvent:eventParams responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+         // handle
+    }];
+}
+
 
 @end

@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_END
 
 @interface TMBPushMessage : NSObject<TMBObjectDecodable>
 
+- (nullable NSDictionary *) dict;
+
 @property (nullable, readwrite, nonatomic) NSDictionary *aps;
 @property (nullable, readwrite, nonatomic) NSString *type;
 @property (nullable, readwrite, nonatomic) NSString *pushId;

@@ -84,7 +84,7 @@
                 <a class="nav-group-task-link" href="../Classes/TMBUserSearchResponse.html">TMBUserSearchResponse</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes.html#/c:objc(cs)Tamber">Tamber</a>
+                <a class="nav-group-task-link" href="../Classes/Tamber.html">Tamber</a>
               </li>
             </ul>
           </li>
@@ -238,9 +238,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)TMBDiscoverNextParams(cm)discoverNext:number:excludeItems:randomness:filter:getProperties:"></a>
-                    <a name="//apple_ref/objc/Method/+discoverNext:number:excludeItems:randomness:filter:getProperties:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)TMBDiscoverNextParams(cm)discoverNext:number:excludeItems:randomness:filter:getProperties:">+discoverNext:number:excludeItems:randomness:filter:getProperties:</a>
+                    <a name="/c:objc(cs)TMBDiscoverNextParams(cm)discoverNext:number:excludeItems:variability:filter:getProperties:"></a>
+                    <a name="//apple_ref/objc/Method/+discoverNext:number:excludeItems:variability:filter:getProperties:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TMBDiscoverNextParams(cm)discoverNext:number:excludeItems:variability:filter:getProperties:">+discoverNext:number:excludeItems:variability:filter:getProperties:</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -258,14 +258,14 @@
                           <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">discoverNext</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">item</span>
                                <span class="nf">number</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">number</span>
                          <span class="nf">excludeItems</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">excludeItems</span>
-                           <span class="nf">randomness</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">randomness</span>
+                          <span class="nf">variability</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">variability</span>
                                <span class="nf">filter</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">filter</span>
                         <span class="nf">getProperties</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">getProperties</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">discoverNext</span><span class="p">(</span><span class="n">_</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">number</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">excludeItems</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]?,</span> <span class="nv">randomness</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">filter</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?,</span> <span class="nv">getProperties</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">discoverNext</span><span class="p">(</span><span class="n">_</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">number</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">excludeItems</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]?,</span> <span class="nv">variability</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">filter</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?,</span> <span class="nv">getProperties</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -312,12 +312,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>randomness</em>
+                                <em>variability</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>Represents the degree of randomness applied to the results. Randomness helps make results more dynamic, and is intelligently weighted to prioritize higher-scoring results (i.e. it does not just shuffle the results). Defaults to 0 if not supplied.</p>
+                                  <p>Represents the degree of variability applied to the results. variability helps make results more dynamic, and is intelligently weighted to prioritize higher-scoring results (i.e. it does not just shuffle the results). Defaults to 0 if not supplied.</p>
                                 </div>
                               </td>
                             </tr>
@@ -492,9 +492,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)TMBDiscoverNextParams(im)initWithUser:item:number:excludeItems:randomness:filter:getProperties:"></a>
-                    <a name="//apple_ref/objc/Method/-initWithUser:item:number:excludeItems:randomness:filter:getProperties:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)TMBDiscoverNextParams(im)initWithUser:item:number:excludeItems:randomness:filter:getProperties:">-initWithUser:item:number:excludeItems:randomness:filter:getProperties:</a>
+                    <a name="/c:objc(cs)TMBDiscoverNextParams(im)initWithUser:item:number:excludeItems:variability:filter:getProperties:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithUser:item:number:excludeItems:variability:filter:getProperties:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TMBDiscoverNextParams(im)initWithUser:item:number:excludeItems:variability:filter:getProperties:">-initWithUser:item:number:excludeItems:variability:filter:getProperties:</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -513,14 +513,14 @@
                                  <span class="nf">item</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">item</span>
                                <span class="nf">number</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">number</span>
                          <span class="nf">excludeItems</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">excludeItems</span>
-                           <span class="nf">randomness</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">randomness</span>
+                          <span class="nf">variability</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">variability</span>
                                <span class="nf">filter</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">filter</span>
                         <span class="nf">getProperties</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">getProperties</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="nf">init</span><span class="p">?(</span><span class="nv">user</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">number</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">excludeItems</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]?,</span> <span class="nv">randomness</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">filter</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?,</span> <span class="nv">getProperties</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">?(</span><span class="nv">user</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">number</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">excludeItems</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]?,</span> <span class="nv">variability</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">filter</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?,</span> <span class="nv">getProperties</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -579,12 +579,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>randomness</em>
+                                <em>variability</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>Represents the degree of randomness applied to the results. Randomness helps make results more dynamic, and is intelligently weighted to prioritize higher-scoring results (i.e. it does not just shuffle the results). Defaults to 0 if not supplied.</p>
+                                  <p>Represents the degree of variability applied to the results. Variability helps make results more dynamic, and is intelligently weighted to prioritize higher-scoring results (i.e. it does not just shuffle the results). Defaults to 0 if not supplied.</p>
                                 </div>
                               </td>
                             </tr>
@@ -659,9 +659,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)TMBDiscoverNextParams(py)randomness"></a>
-                    <a name="//apple_ref/objc/Property/randomness" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)TMBDiscoverNextParams(py)randomness">randomness</a>
+                    <a name="/c:objc(cs)TMBDiscoverNextParams(py)variability"></a>
+                    <a name="//apple_ref/objc/Property/variability" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TMBDiscoverNextParams(py)variability">variability</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -669,19 +669,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Represents the degree of randomness applied to the results. Randomness helps make results more dynamic, and is intelligently weighted to prioritize higher-scoring results (i.e. it does not just shuffle the results). Defaults to 0 if not supplied.</p>
+                        <p>Represents the degree of variability applied to the results. Variability helps make results more dynamic, and is intelligently weighted to prioritize higher-scoring results (i.e. it does not just shuffle the results). Defaults to 0 if not supplied.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="n">randomness</span><span class="p">;</span></code></pre>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="n">variability</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">randomness</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">variability</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -699,7 +699,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2017 <a class="link" href="https://tamber.com" target="_blank" rel="external">Tamber</a>. All rights reserved. (Last updated: 2017-10-03)</p>
+      <p>&copy; 2017 <a class="link" href="https://tamber.com" target="_blank" rel="external">Tamber</a>. All rights reserved. (Last updated: 2017-10-31)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

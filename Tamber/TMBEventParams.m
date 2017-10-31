@@ -11,6 +11,7 @@
 NSString *const TMBSessionStartedBehavior = @"tmb_session_started";
 NSString *const TMBSessionEndedBehavior = @"tmb_session_ended";
 NSString *const TMBPushRenderedBehavior = @"tmb_push_rendered";
+NSString *const TMBPushReceivedBehavior = @"tmb_push_received";
 
 @implementation TMBEventParams
 
@@ -94,6 +95,14 @@ NSString *const TMBPushRenderedBehavior = @"tmb_push_rendered";
 
 + (instancetype)pushRenderedWithContext:(NSArray*)context created:(NSDate*)created{
     return [[self.class alloc] initWithUser:nil item:nil behavior:TMBPushRenderedBehavior amount:nil hit:false context:context created:created];
+}
+
++ (nullable instancetype)pushReceived{
+    return [[self.class alloc] initWithUser:nil item:nil behavior:TMBPushReceivedBehavior amount:nil hit:false context:nil created:nil];
+}
+
++ (nullable instancetype)pushReceivedWithContext:(nullable NSArray*)context created:(nullable NSDate*)created{
+    return [[self.class alloc] initWithUser:nil item:nil behavior:TMBPushReceivedBehavior amount:nil hit:false context:context created:created];
 }
 
 #pragma mark - TMBObjectEncodable

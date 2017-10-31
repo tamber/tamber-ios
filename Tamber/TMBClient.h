@@ -17,12 +17,23 @@
 #import "TMBUserSearchResponse.h"
 #import "TMBDiscovery.h"
 #import "TMBEncoder.h"
+#import "TMBPush.h"
+#import "TMBUtils.h"
 #import "TMBAPIRequest.h"
 
 NS_ASSUME_NONNULL_BEGIN
-static  NSString *const TMBSDKVersion = @"0.0.5";
+static  NSString *const TMBSDKVersion = @"0.0.6";
 static NSString *const TMBApiURLBase = @"api.tamber.com/v1";
-static NSString *const TMBApiVersion = @"2017-10-2";
+static NSString *const TMBApiVersion = @"2017-10-12";
+
+static NSString *const TMBPushTokenFieldName = @"tmb_push_token_ios";
+
+static NSString *const TMBDefaultContext = @"tamber";
+static NSString *const TMBNextContext = @"tmb_next";
+static NSString *const TMBRecommendedContext = @"tmb_recommended";
+static NSString *const TMBSimilarContext = @"tmb_similar";
+static NSString *const TMBRecommendedSimilarContext = @"tmb_recommended_similar";
+
 NS_ASSUME_NONNULL_END
 
 /**
@@ -39,16 +50,37 @@ NS_ASSUME_NONNULL_END
 // Set default engine key.
 + (void)setPublishableEngineKey:(nullable NSString *)publishableEngineKey;
 
+// Set default project key and enable push.
++ (void)setPublishableProjectKey:(nullable NSString *)publishableProjectKey enablePush:(BOOL) enablePush;
+
+// Set default project and engine keys and enable push.
++ (void)setPublishableProjectKey:(nullable NSString *)publishableProjectKey publishableEngineKey:(nullable NSString *)publishableEngineKey enablePush:(BOOL) enablePush;
+
 // Set default user.
 + (void)setUser:(nullable NSString *)user;
 
++ (void) enablePush;
++ (void) disableAutoUNCenterDel;
++ (void) enableAutoUNCenterDel;
+
++ (void) setPushDelegate:(nullable id <TMBPushDelegate>) delegate;
+
+/**
+ * Set the push token for the user (must set the user first)
+ * @param token The unique push token for the user
+ */
++ (void) setUserPushToken:(nullable NSString*)token;
+
 // Load the default client for making API requests.
 + (nullable TMBClient*)client;
+
++ (nullable TMBPush*) push;
 @end
+
 /**
  *  Client for interacting with a Tamber project and/or engine via the Tamber API.
  */
-@interface TMBClient : NSObject
+@interface TMBClient : NSObject <TMBPushInternalDelegate>
 
 + (nullable instancetype)defaultClient;
 - (void) updateAuth;
@@ -89,6 +121,28 @@ NS_ASSUME_NONNULL_END
  * Get the current user. Returns nil if no user has been set.
  */
 -(nullable NSString*) getUser;
+
+/**
+ * Set the push token for the user (must set the user first)
+ * @param token The unique push token for the user
+ */
+-(void) setUserPushToken:(nullable NSString*)token;
+
+/**
+ * Set the delegate for `TMBPush`.
+ * @param delegate The `TMBPushDelegate`.
+ */
+-(void) setPushDelegate:(nullable id <TMBPushDelegate>) delegate;
+
+/**
+ * Enable `TMBPush` operation. Initializes `TMBPush` instance to begin handling push notification events.
+ */
+-(void) enablePush;
+
+/**
+ * Track start of user session. Used to evaluate engagement driven by push notifications.
+ */
+-(void) sessionStarted;
 
 /**
  * Track event to your project.
@@ -182,6 +236,7 @@ NS_ASSUME_NONNULL_END
  * @param responseCompletion The callback to run with the returned TMBEventResponse (and any errors that may have occurred)
  */
 - (nullable NSURLSessionDataTask *) discoverRecommendedSimilar:(nonnull TMBDiscoverParams*) discoverParams responseCompletion:(nonnull TMBAPIResponseBlock) responseCompletion;
+
 
 @property (nullable, readwrite, nonatomic) NSString *publishableProjectKey;
 @property (nullable, readwrite, nonatomic) NSString *publishableEngineKey;

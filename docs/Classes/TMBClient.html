@@ -84,7 +84,7 @@
                 <a class="nav-group-task-link" href="../Classes/TMBUserSearchResponse.html">TMBUserSearchResponse</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes.html#/c:objc(cs)Tamber">Tamber</a>
+                <a class="nav-group-task-link" href="../Classes/Tamber.html">Tamber</a>
               </li>
             </ul>
           </li>
@@ -184,7 +184,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L62">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L94">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -265,7 +265,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L71">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L103">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -346,7 +346,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L80">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L112">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -400,7 +400,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L86">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L118">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -435,7 +435,185 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L91">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L123">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TMBClient(im)setUserPushToken:"></a>
+                    <a name="//apple_ref/objc/Method/-setUserPushToken:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TMBClient(im)setUserPushToken:">-setUserPushToken:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the push token for the user (must set the user first)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setUserPushToken</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">token</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setUserPushToken</span><span class="p">(</span><span class="n">_</span> <span class="nv">token</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The unique push token for the user</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L129">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TMBClient(im)setPushDelegate:"></a>
+                    <a name="//apple_ref/objc/Method/-setPushDelegate:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TMBClient(im)setPushDelegate:">-setPushDelegate:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the delegate for <code>TMBPush</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setPushDelegate</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n">TMBPushDelegate</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">delegate</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setPushDelegate</span><span class="p">(</span><span class="n">_</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt">TMBPushDelegate</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>delegate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>TMBPushDelegate</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L135">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TMBClient(im)enablePush"></a>
+                    <a name="//apple_ref/objc/Method/-enablePush" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TMBClient(im)enablePush">-enablePush</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enable <code>TMBPush</code> operation. Initializes <code>TMBPush</code> instance to begin handling push notification events.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">enablePush</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">enablePush</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L140">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TMBClient(im)sessionStarted"></a>
+                    <a name="//apple_ref/objc/Method/-sessionStarted" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TMBClient(im)sessionStarted">-sessionStarted</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Track start of user session. Used to evaluate engagement driven by push notifications.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">sessionStarted</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">sessionStarted</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L145">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -467,7 +645,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">trackEvent</span><span class="p">(</span><span class="n">_</span> <span class="nv">eventParams</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBEventParams.html">TMBEventParams</a></span><span class="p">?,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="kt">TMBAPIResponseBlock</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">trackEvent</span><span class="p">(</span><span class="n">_</span> <span class="nv">eventParams</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBEventParams.html">TMBEventParams</a></span><span class="p">?,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="p">((</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">TMBClient</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt"><a href="../Classes/TMBEventParams.html">TMBEventParams</a></span><span class="p">?,</span> <span class="p">((</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -503,7 +681,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L98">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L152">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -535,7 +713,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">createUser</span><span class="p">(</span><span class="n">_</span> <span class="nv">userParams</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBUserParams.html">TMBUserParams</a></span><span class="p">?,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="kt">TMBAPIResponseBlock</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">createUser</span><span class="p">(</span><span class="n">_</span> <span class="nv">userParams</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBUserParams.html">TMBUserParams</a></span><span class="p">?,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="p">((</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">TMBClient</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt"><a href="../Classes/TMBUserParams.html">TMBUserParams</a></span><span class="p">?,</span> <span class="p">((</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -571,7 +749,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L105">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L159">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -603,7 +781,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">updateUser</span><span class="p">(</span><span class="n">_</span> <span class="nv">userParams</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBUserParams.html">TMBUserParams</a></span><span class="p">?,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="kt">TMBAPIResponseBlock</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">updateUser</span><span class="p">(</span><span class="n">_</span> <span class="nv">userParams</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBUserParams.html">TMBUserParams</a></span><span class="p">?,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="p">((</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">TMBClient</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt"><a href="../Classes/TMBUserParams.html">TMBUserParams</a></span><span class="p">?,</span> <span class="p">((</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -639,7 +817,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L112">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L166">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -671,7 +849,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">retrieveUser</span><span class="p">(</span><span class="n">_</span> <span class="nv">userParams</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBUserParams.html">TMBUserParams</a></span><span class="p">?,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="kt">TMBAPIResponseBlock</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">retrieveUser</span><span class="p">(</span><span class="n">_</span> <span class="nv">userParams</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBUserParams.html">TMBUserParams</a></span><span class="p">?,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="p">((</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">TMBClient</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt"><a href="../Classes/TMBUserParams.html">TMBUserParams</a></span><span class="p">?,</span> <span class="p">((</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -707,7 +885,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L119">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L173">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -739,7 +917,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">merge</span><span class="p">(</span><span class="nv">toUser</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="kt">TMBAPIResponseBlock</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">merge</span><span class="p">(</span><span class="nv">toUser</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="p">((</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">TMBClient</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="p">((</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -775,7 +953,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L127">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L181">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -808,7 +986,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">mergeUser</span><span class="p">(</span><span class="n">_</span> <span class="nv">fromUser</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">toUser</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="kt">TMBAPIResponseBlock</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">mergeUser</span><span class="p">(</span><span class="n">_</span> <span class="nv">fromUser</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">toUser</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="p">((</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">TMBClient</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">,</span> <span class="p">((</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -856,7 +1034,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L135">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L189">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -890,7 +1068,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">mergeUser</span><span class="p">(</span><span class="n">_</span> <span class="nv">fromUser</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">toUser</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">noCreate</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="kt">TMBAPIResponseBlock</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">mergeUser</span><span class="p">(</span><span class="n">_</span> <span class="nv">fromUser</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">toUser</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">noCreate</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="p">((</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">TMBClient</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">Bool</span><span class="p">,</span> <span class="p">((</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -950,7 +1128,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L144">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L198">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -982,7 +1160,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">searchUsers</span><span class="p">(</span><span class="n">_</span> <span class="nv">metadata</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">],</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="kt">TMBAPIResponseBlock</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">searchUsers</span><span class="p">(</span><span class="n">_</span> <span class="nv">metadata</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">],</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="p">((</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">TMBClient</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">([</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">],</span> <span class="p">((</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -1018,7 +1196,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L151">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L205">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1050,7 +1228,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">discoverNext</span><span class="p">(</span><span class="n">_</span> <span class="nv">discoverParams</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBDiscoverNextParams.html">TMBDiscoverNextParams</a></span><span class="p">,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">TMBAPIResponseBlock</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">discoverNext</span><span class="p">(</span><span class="n">_</span> <span class="nv">discoverParams</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBDiscoverNextParams.html">TMBDiscoverNextParams</a></span><span class="p">,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="p">(</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">TMBClient</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt"><a href="../Classes/TMBDiscoverNextParams.html">TMBDiscoverNextParams</a></span><span class="p">,</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -1086,7 +1264,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L160">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L214">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1118,7 +1296,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">discoverRecommendations</span><span class="p">(</span><span class="n">_</span> <span class="nv">discoverParams</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBDiscoverParams.html">TMBDiscoverParams</a></span><span class="p">,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">TMBAPIResponseBlock</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">discoverRecommendations</span><span class="p">(</span><span class="n">_</span> <span class="nv">discoverParams</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBDiscoverParams.html">TMBDiscoverParams</a></span><span class="p">,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="p">(</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">TMBClient</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt"><a href="../Classes/TMBDiscoverParams.html">TMBDiscoverParams</a></span><span class="p">,</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -1154,7 +1332,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L168">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L222">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1186,7 +1364,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">discoverSimilar</span><span class="p">(</span><span class="n">_</span> <span class="nv">discoverParams</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBDiscoverParams.html">TMBDiscoverParams</a></span><span class="p">,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">TMBAPIResponseBlock</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">discoverSimilar</span><span class="p">(</span><span class="n">_</span> <span class="nv">discoverParams</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBDiscoverParams.html">TMBDiscoverParams</a></span><span class="p">,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="p">(</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">TMBClient</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt"><a href="../Classes/TMBDiscoverParams.html">TMBDiscoverParams</a></span><span class="p">,</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -1222,7 +1400,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L176">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L230">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1254,7 +1432,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">discoverRecommendedSimilar</span><span class="p">(</span><span class="n">_</span> <span class="nv">discoverParams</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBDiscoverParams.html">TMBDiscoverParams</a></span><span class="p">,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">TMBAPIResponseBlock</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">discoverRecommendedSimilar</span><span class="p">(</span><span class="n">_</span> <span class="nv">discoverParams</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBDiscoverParams.html">TMBDiscoverParams</a></span><span class="p">,</span> <span class="nv">responseCompletion</span><span class="p">:</span> <span class="p">(</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">TMBClient</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt"><a href="../Classes/TMBDiscoverParams.html">TMBDiscoverParams</a></span><span class="p">,</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">ResponseType</span><span class="p">?,</span> <span class="kt">HTTPURLResponse</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">URLSessionDataTask</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -1290,7 +1468,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L184">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBClient.h#L238">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1303,7 +1481,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2017 <a class="link" href="https://tamber.com" target="_blank" rel="external">Tamber</a>. All rights reserved. (Last updated: 2017-10-03)</p>
+      <p>&copy; 2017 <a class="link" href="https://tamber.com" target="_blank" rel="external">Tamber</a>. All rights reserved. (Last updated: 2017-10-31)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

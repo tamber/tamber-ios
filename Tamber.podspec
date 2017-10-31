@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                           = 'Tamber'
-  s.version                        = '0.0.5'
+  s.version                        = '0.0.6'
   s.summary                        = 'Recommendation engines for developers, easy as π. Build blazing fast, head-scratchingly accurate hosted recommendation engines in minutes.'
   s.license                        = { :type => 'MIT', :file => 'LICENSE' }
   s.homepage                       = 'https://tamber.com'
@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.requires_arc                   = true
   s.platform                       = :ios
   s.ios.deployment_target          = '8.0'
-  s.public_header_files            = 'Tamber/*.h'
-  s.source_files                   = 'Tamber/*.{h,m}'
+  s.public_header_files            = 'Tamber/*.h', 'Tamber/Push/*.h'
+  s.source_files                   = 'Tamber/*.{h,m}', 'Tamber/Push/*.{h,m}'
 end
