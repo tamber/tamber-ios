@@ -16,23 +16,23 @@
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPush.h",
-      "line": 24,
+      "line": 23,
       "symbol": "TMBPushDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPush.h",
-      "line": 34,
-      "symbol": "TMBPush",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "line": 31,
+      "symbol": "TMBPushInternalDelegate",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPush.h",
-      "line": 108,
-      "symbol": "TMBPushInternalDelegate",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "line": 38,
+      "symbol": "TMBPush",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
       "warning": "undocumented"
     },
     {
