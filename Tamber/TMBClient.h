@@ -22,7 +22,7 @@
 #import "TMBAPIRequest.h"
 
 NS_ASSUME_NONNULL_BEGIN
-static  NSString *const TMBSDKVersion = @"0.0.6";
+static  NSString *const TMBSDKVersion = @"0.0.7";
 static NSString *const TMBApiURLBase = @"api.tamber.com/v1";
 static NSString *const TMBApiVersion = @"2017-10-12";
 
@@ -60,8 +60,10 @@ NS_ASSUME_NONNULL_END
 + (void)setUser:(nullable NSString *)user;
 
 + (void) enablePush;
-+ (void) disableAutoUNCenterDel;
+
 + (void) enableAutoUNCenterDel;
+
++ (void) disableAutoUNCenterDel;
 
 + (void) setPushDelegate:(nullable id <TMBPushDelegate>) delegate;
 

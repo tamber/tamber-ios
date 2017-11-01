@@ -113,7 +113,8 @@ static bool swizzled = false;
 
 
 // push received
--(void) pushNotificationReceived:(nullable NSDictionary *) payload willDisplayAlert:(bool) willDisplayAlert {
+-(void) pushNotificationReceived:(nullable NSDictionary *) payload willDisplayAlert:(bool) willDisplayAlert completion:(TMBEmptyCallbackBlock) completion {
+    LogDebug(@"pushNotificationReceived called");
     TMBPushMessage *tmbMessage = [TMBPushMessage decodedObjectFromAPIResponse:payload];
     NSArray *context;
     if(tmbMessage){
@@ -124,6 +125,7 @@ static bool swizzled = false;
     }
     if(tmbMessage){
         if([lastTMBPushId isEqualToString:tmbMessage.pushId]){
+            completion();
             return;
         }
         lastTMBPushId = tmbMessage.pushId;
@@ -135,34 +137,41 @@ static bool swizzled = false;
                 // assume this is not a silent notification
                 [_client trackPushRendered:nil context:context];
             }
+            completion();
             return;
         }
     }
-    
-    UNMutableNotificationContent* content = [_delegate getPushContent:tmbMessage];
-    NSMutableDictionary *uinfo = [NSMutableDictionary dictionaryWithDictionary:content.userInfo];
-    
-    NSDictionary *tmbMsgDict = [tmbMessage dict];
-    [uinfo setObject:tmbMsgDict forKey:TMBPushMessageFieldName];
-    content.userInfo = uinfo;
-    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:tmbMessage.type content:content trigger:[UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1 repeats:NO]];
-    if(request){
-        UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
-        [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
-            if (error != nil) {
-                NSLog(@"%@", error.localizedDescription);
-            } else {
-                [self localPushNotificationRendered:request.content.userInfo];
-            }
-        }];
-    }
+    [_delegate getPushContent:tmbMessage completion:^(UNMutableNotificationContent *content){
+        NSMutableDictionary *uinfo = [NSMutableDictionary dictionaryWithDictionary:content.userInfo];
+        NSDictionary *tmbMsgDict = [tmbMessage dict];
+        [uinfo setObject:tmbMsgDict forKey:TMBPushMessageFieldName];
+        content.userInfo = uinfo;
+        UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:tmbMessage.type content:content trigger:[UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1 repeats:NO]];
+        if(request){
+            UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
+            [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+                if (error != nil) {
+                    LogDebug(@"%@", error.localizedDescription);
+                } else {
+                    // If center delegate set then iOS will leave presentation of notification up to willPresent -- else if app is foreground the completion error will be non-nil and the notification will not present.
+//                    [UNUserNotificationCenter currentNotificationCenter].delegate
+                    if(willDisplayAlert){
+                        [self localPushNotificationRendered:request.content.userInfo];
+                    }
+                }
+            }];
+        }
+        completion();
+    }];
+
 }
 
--(void) pushNotificationReceived:(nullable NSDictionary *) payload {
-    [self pushNotificationReceived:payload willDisplayAlert:![TMBUtils sharedUIApplicationActive]];
+-(void) pushNotificationReceived:(nullable NSDictionary *) payload completion:(TMBEmptyCallbackBlock) completion{
+    [self pushNotificationReceived:payload willDisplayAlert:![TMBUtils sharedUIApplicationActive] completion:completion];
 }
 
 -(void) localPushNotificationRendered:(nullable NSDictionary *) userInfo{
+    LogDebug(@"localPushNotificationRendered");
     id tmbMsgDict = [userInfo objectForKey:TMBPushMessageFieldName];
     if ([tmbMsgDict isKindOfClass:[NSDictionary class]]){
         TMBPushMessage *tmbMessage = [TMBPushMessage decodedObjectFromAPIResponse:tmbMsgDict];
@@ -203,32 +212,48 @@ static bool swizzled = false;
     return false;
 }
 
-- (void)userNotificationCenter:(nonnull UNUserNotificationCenter *)center willPresentNotification:(nonnull UNNotification *)notification withOptions:(UNNotificationPresentationOptions) options {
+- (void)userNotificationCenter:(nonnull UNUserNotificationCenter *)center willPresentNotification:(nonnull UNNotification *)notification withOptions:(UNNotificationPresentationOptions) options completion:(TMBEmptyCallbackBlock) completion {
+    LogDebug(@"willPresentNotification options + completion");
     // TODO: Handle non-tamber local notifications
     if (![self matchesLastPush:notification]){
-        lastPushId = notification.request.identifier;
         if((options & UNNotificationPresentationOptionAlert) > 0){
-            [self pushNotificationReceived:notification.request.content.userInfo willDisplayAlert:true];
+            LogDebug(@"willPresentNotification options + completion calling pushReceived willDisplay:true");
+            [self pushNotificationReceived:notification.request.content.userInfo willDisplayAlert:true completion:completion];
         } else {
-            [self pushNotificationReceived:notification.request.content.userInfo willDisplayAlert:true];
+            LogDebug(@"willPresentNotification options + completion calling pushReceived willDisplay:false");
+            [self pushNotificationReceived:notification.request.content.userInfo willDisplayAlert:false completion:completion];
         }
     }
 }
 
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification{
-    [self userNotificationCenter:center willPresentNotification:notification withOptions:0];
++ (UNNotificationPresentationOptions) getDefaultPresentationOptions {
+    if([TMBUtils sharedUIApplicationActive]){
+        return UNNotificationPresentationOptionNone;
+    } else {
+        return UNNotificationPresentationOptionAlert;
+    }
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification completion:(TMBEmptyCallbackBlock) completion{
+    LogDebug(@"willPresentNotification completion");
+    [self userNotificationCenter:center willPresentNotification:notification withOptions:[TMBPush getDefaultPresentationOptions] completion:completion];
 }
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
-    [self userNotificationCenter:center willPresentNotification:notification withOptions:UNNotificationPresentationOptionAlert];
-    
-    completionHandler(UNNotificationPresentationOptionAlert);
+    LogDebug(@"willPresentNotification delegate");
+    UNNotificationPresentationOptions opts = [TMBPush getDefaultPresentationOptions];
+    [self userNotificationCenter:center willPresentNotification:notification withOptions:opts completion:^(){
+            // TODO: Test this
+            completionHandler(opts);
+        }
+     ];
 }
 
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response {
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response completion:(TMBEmptyCallbackBlock)completion{
+    LogDebug(@"didReceiveNotificationResponse completion");
     if (![self matchesLastPush:response.notification]){
         lastPushId = response.notification.request.identifier;
-        [self pushNotificationReceived: response.notification.request.content.userInfo];
+        [self pushNotificationReceived: response.notification.request.content.userInfo completion:completion];
     }
 }
 
@@ -237,8 +262,10 @@ static bool swizzled = false;
 #else
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler {
 #endif
-    [self userNotificationCenter:center didReceiveNotificationResponse:response];
-    completionHandler();
+    LogDebug(@"didReceiveNotificationResponse delegate");
+    [self userNotificationCenter:center didReceiveNotificationResponse:response completion:^(){
+        completionHandler();
+    }];
 }
 
 #pragma mark - UIApplication Functions
@@ -273,20 +300,21 @@ static bool swizzled = false;
 - (void)application:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary *)userInfo
 fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler{
+    LogDebug(@"didReceiveRemoteNotification swizzle");
     TMBPush *push = [TMBPush getInstance];
     if(push.client == NULL) {
 
     } else {
         // if 1st occurrance of notification, push received or rendered
-        [push pushNotificationReceived:userInfo];
-
-        // else, push engaged
-        if( push->didReceiveRemoteNotificationImpl != NULL ) {
-            id target = [TMBUtils sharedUIApplication].delegate;
-            push->didReceiveRemoteNotificationImpl(target, @selector(application:didReceiveRemoteNotification:), application, userInfo, completionHandler);
-        } else {
-            completionHandler(UIBackgroundFetchResultNewData);
-        }
+        [push pushNotificationReceived:userInfo completion:^(){
+            // else, push engaged
+            if( push->didReceiveRemoteNotificationImpl != NULL ) {
+                id target = [TMBUtils sharedUIApplication].delegate;
+                push->didReceiveRemoteNotificationImpl(target, @selector(application:didReceiveRemoteNotification:), application, userInfo, completionHandler);
+            } else {
+                completionHandler(UIBackgroundFetchResultNewData);
+            }
+        }];
     }
 }
 @end

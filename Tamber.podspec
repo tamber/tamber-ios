@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                           = 'Tamber'
-  s.version                        = '0.0.6'
+  s.version                        = '0.0.7'
   s.summary                        = 'Recommendation engines for developers, easy as π. Build blazing fast, head-scratchingly accurate hosted recommendation engines in minutes.'
   s.license                        = { :type => 'MIT', :file => 'LICENSE' }
   s.homepage                       = 'https://tamber.com'

@@ -21,7 +21,8 @@ NS_ASSUME_NONNULL_END
 #pragma mark Delegate Methods
 
 @protocol TMBPushDelegate <NSObject>
--(nullable UNMutableNotificationContent *) getPushContent:(nullable TMBPushMessage *) message;
+- (void) getPushContent:(nullable TMBPushMessage *) message completion:(nullable void (^)(UNMutableNotificationContent * _Nullable content))completion;
+
 @optional
 -(void) handleDeepLink;
 -(void) handleDeviceToken:(nullable NSData *) deviceToken;
@@ -62,31 +63,35 @@ NS_ASSUME_NONNULL_END
  * If another class is serving as the `UNUserNotificationCenter` delegate, use this method to handle willPresentNotification events in `TMBPush`.
  * @param center The `UNUserNotificationCenter` object.
  * @param notification the `UNNotification` that will be presented.
+ * @param completion Completion handler called once all operations completed.
  */
-- (void)userNotificationCenter:(nonnull UNUserNotificationCenter *)center willPresentNotification:(nonnull UNNotification *)notification;
+- (void)userNotificationCenter:(nonnull UNUserNotificationCenter *)center willPresentNotification:(nonnull UNNotification *)notification completion:(nullable TMBEmptyCallbackBlock) completion;
 
 /**
  * If another class is serving as the `UNUserNotificationCenter` delegate, and using `UNNotificationPresentationOptions` in its completionHandler, use this method to handle willPresentNotification events in `TMBPush`.
  * @param center The `UNUserNotificationCenter` object.
  * @param notification The `UNNotification` that will be presented.
-  * @param options Presentation options for the notification. Used by TMBPush to determine whether or not the notification will be shown (or 'rendered') to the user.
+ * @param options Presentation options for the notification. Used by TMBPush to determine whether or not the notification will be shown (or 'rendered') to the user.
+ * @param completion Completion handler called once all operations completed.
  */
-- (void)userNotificationCenter:(nonnull UNUserNotificationCenter *)center willPresentNotification:(nonnull UNNotification *)notification withOptions:(UNNotificationPresentationOptions) options;
+- (void)userNotificationCenter:(nonnull UNUserNotificationCenter *)center willPresentNotification:(nonnull UNNotification *)notification withOptions:(UNNotificationPresentationOptions) options completion:(nullable TMBEmptyCallbackBlock) completion;
 
 /**
  * If another class is serving as the `UNUserNotificationCenter` delegate, use this method to handle didReceiveNotificationResponse events in `TMBPush`.
  * @param center The `UNUserNotificationCenter` object.
  * @param response The `UNNotificationResponse` received.
+ * @param completion Completion handler called once all operations completed.
  */
-- (void)userNotificationCenter:(nonnull UNUserNotificationCenter *)center didReceiveNotificationResponse:(nonnull UNNotificationResponse *)response;
+- (void)userNotificationCenter:(nonnull UNUserNotificationCenter *)center didReceiveNotificationResponse:(nonnull UNNotificationResponse *)response completion:(nullable TMBEmptyCallbackBlock) completion;
 
 
 
 /**
  * Handler for received notification payloads. Only to be used if swizzling is disabled.
  * @param payload The notification payload
+ * @param completion Completion handler called once all operations completed.
  */
--(void) pushNotificationReceived:(nullable NSDictionary *) payload;
+-(void) pushNotificationReceived:(nullable NSDictionary *) payload completion:(nullable TMBEmptyCallbackBlock) completion;
 
 /**
  * Handler for rendered notifications (notifications shown to the user). Only to be used if swizzling is disabled.
