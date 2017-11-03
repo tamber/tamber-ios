@@ -141,25 +141,30 @@ static bool swizzled = false;
             return;
         }
     }
+    if(!tmbMessage){
+        return;
+    }
     [_delegate getPushContent:tmbMessage completion:^(UNMutableNotificationContent *content){
-        NSMutableDictionary *uinfo = [NSMutableDictionary dictionaryWithDictionary:content.userInfo];
-        NSDictionary *tmbMsgDict = [tmbMessage dict];
-        [uinfo setObject:tmbMsgDict forKey:TMBPushMessageFieldName];
-        content.userInfo = uinfo;
-        UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:tmbMessage.type content:content trigger:[UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1 repeats:NO]];
-        if(request){
-            UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
-            [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
-                if (error != nil) {
-                    LogDebug(@"%@", error.localizedDescription);
-                } else {
-                    // If center delegate set then iOS will leave presentation of notification up to willPresent -- else if app is foreground the completion error will be non-nil and the notification will not present.
-//                    [UNUserNotificationCenter currentNotificationCenter].delegate
-                    if(willDisplayAlert){
-                        [self localPushNotificationRendered:request.content.userInfo];
+        if(content){
+            NSMutableDictionary *uinfo = [NSMutableDictionary dictionaryWithDictionary:content.userInfo];
+            NSDictionary *tmbMsgDict = [tmbMessage dict];
+            [uinfo setObject:tmbMsgDict forKey:TMBPushMessageFieldName];
+            content.userInfo = uinfo;
+            UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:tmbMessage.type content:content trigger:[UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1 repeats:NO]];
+            if(request){
+                UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
+                [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+                    if (error != nil) {
+                        LogDebug(@"%@", error.localizedDescription);
+                    } else {
+                        // If center delegate set then iOS will leave presentation of notification up to willPresent -- else if app is foreground the completion error will be non-nil and the notification will not present.
+    //                    [UNUserNotificationCenter currentNotificationCenter].delegate
+                        if(willDisplayAlert){
+                            [self localPushNotificationRendered:request.content.userInfo];
+                        }
                     }
-                }
-            }];
+                }];
+            }
         }
         completion();
     }];

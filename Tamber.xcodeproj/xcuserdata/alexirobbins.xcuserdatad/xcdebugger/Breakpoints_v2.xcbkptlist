@@ -271,8 +271,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "168"
             endingLineNumber = "168"
-            landmarkName = "TMBPush"
-            landmarkType = "3">
+            landmarkName = "-pushNotificationReceived:willDisplayAlert:completion:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -351,8 +351,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "233"
             endingLineNumber = "233"
-            landmarkName = "+getDefaultPresentationOptions"
-            landmarkType = "7">
+            landmarkName = "TMBPush"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -367,7 +367,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "245"
             endingLineNumber = "245"
-            landmarkName = "-userNotificationCenter:willPresentNotification:withCompletionHandler:"
+            landmarkName = "-userNotificationCenter:willPresentNotification:completion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -399,7 +399,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "374"
             endingLineNumber = "374"
-            landmarkName = "-trackPushReceived:context:"
+            landmarkName = "-trackPushRendered:context:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -431,7 +431,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "369"
             endingLineNumber = "369"
-            landmarkName = "-sessionStarted"
+            landmarkName = "-trackPushReceived:context:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -447,7 +447,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "370"
             endingLineNumber = "370"
-            landmarkName = "-sessionStarted"
+            landmarkName = "-trackPushReceived:context:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -463,8 +463,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "214"
             endingLineNumber = "214"
-            landmarkName = "TMBPush"
-            landmarkType = "3">
+            landmarkName = "-matchesLastPush:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -479,7 +479,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "216"
             endingLineNumber = "216"
-            landmarkName = "-userNotificationCenter:willPresentNotification:withOptions:completion:"
+            landmarkName = "-matchesLastPush:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
