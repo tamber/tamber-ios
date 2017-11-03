@@ -142,6 +142,7 @@ static bool swizzled = false;
         }
     }
     if(!tmbMessage){
+        completion();
         return;
     }
     [_delegate getPushContent:tmbMessage completion:^(UNMutableNotificationContent *content){
