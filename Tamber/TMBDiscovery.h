@@ -47,6 +47,8 @@
  */
 @property (nonatomic, nullable) NSDate *created;
 
+-(nullable NSDictionary *) dict;
+
 @end
 
 

@@ -168,10 +168,28 @@
     TMBClient *client = [TMBClient defaultClient];
     if(client.userId != nil){
         TMBUserParams *userParams = [TMBUserParams userWithId:_userId];
-        [client retrieveUser:userParams responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+        [client retrieveUser:userParams responseCompletion:^(TMBUser *user, NSHTTPURLResponse *response, NSError *errorMessage) {
             if(!errorMessage){
-                [userParams.metadata setValue:token forKey:TMBPushTokenFieldName];
+                // Check if token already set
+                if(user.metadata){
+                    id curToken = [user.metadata objectForKey:TMBPushTokenFieldName];
+                    if([curToken isKindOfClass:[NSString class]] && [curToken isEqualToString:token]){
+                        return;
+                    }
+                }
+                // Update token if necessary
+                NSMutableDictionary *metadata;
+                if(user.metadata){
+                    metadata = [[NSMutableDictionary alloc] initWithDictionary:user.metadata];
+                } else {
+                    metadata = [[NSMutableDictionary alloc] init];
+                }
+                [metadata setValue:token forKey:TMBPushTokenFieldName];
+                userParams.metadata = metadata;
                 [client updateUser:userParams responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+                    if(errorMessage){
+                        LogDebug(@"error %@", errorMessage);
+                    }
                 }];
             }
         }];

@@ -37,35 +37,35 @@
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPushMessage.h",
-      "line": 13,
+      "line": 15,
       "symbol": "TMBPushPayloadIdFieldName",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPushMessage.h",
-      "line": 14,
+      "line": 16,
       "symbol": "TMBPushPayloadTypeFieldName",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPushMessage.h",
-      "line": 15,
+      "line": 17,
       "symbol": "TMBPushPayloadItemsFieldName",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPushMessage.h",
-      "line": 16,
-      "symbol": "TMBPushPayloadSrcItemFieldName",
+      "line": 18,
+      "symbol": "TMBPushPayloadSrcItemsFieldName",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPushMessage.h",
-      "line": 19,
+      "line": 21,
       "symbol": "TMBPushMessage",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
       "warning": "undocumented"

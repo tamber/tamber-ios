@@ -169,7 +169,6 @@ static bool swizzled = false;
         }
         completion();
     }];
-
 }
 
 -(void) pushNotificationReceived:(nullable NSDictionary *) payload completion:(TMBEmptyCallbackBlock) completion{
@@ -181,12 +180,12 @@ static bool swizzled = false;
     id tmbMsgDict = [userInfo objectForKey:TMBPushMessageFieldName];
     if ([tmbMsgDict isKindOfClass:[NSDictionary class]]){
         TMBPushMessage *tmbMessage = [TMBPushMessage decodedObjectFromAPIResponse:tmbMsgDict];
-        for(NSString *itemId in tmbMessage.items){
-            [_client trackPushRendered:itemId context:@[TMBPushContext, tmbMessage.type]];
+        for(TMBDiscovery *d in tmbMessage.items){
+            [_client trackPushRendered:d.item context:@[TMBPushContext, tmbMessage.type]];
         }
         if(tmbMessage.srcItems){
-            for(NSString *itemId in tmbMessage.srcItems){
-                [_client trackPushRendered:itemId context:@[TMBPushContext, tmbMessage.type]];
+            for(TMBDiscovery *d in tmbMessage.srcItems){
+                [_client trackPushRendered:d.item context:@[TMBPushContext, tmbMessage.type]];
             }
         }
     } else {

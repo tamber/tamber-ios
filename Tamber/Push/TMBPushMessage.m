@@ -23,9 +23,21 @@
     TMBPushMessage *message = [self new];
     message.pushId = result[TMBPushPayloadIdFieldName];
     message.type = result[TMBPushPayloadTypeFieldName];
-    message.items = result[TMBPushPayloadItemsFieldName];
-    if([[result allKeys] containsObject:TMBPushPayloadSrcItemFieldName]){
-        message.srcItems = result[TMBPushPayloadSrcItemFieldName] ;
+    if(result[TMBPushPayloadItemsFieldName] != nil){
+        NSMutableArray *items = [[NSMutableArray alloc] init];
+        for (NSDictionary *discoveryDict in result[TMBPushPayloadItemsFieldName]){
+            TMBDiscovery *discovery = [TMBDiscovery decodedObjectFromAPIResponse:discoveryDict];
+            [items addObject:discovery];
+        }
+        message.items = [items copy];
+    }
+    if(result[TMBPushPayloadSrcItemsFieldName] != nil){
+        NSMutableArray *items = [[NSMutableArray alloc] init];
+        for (NSDictionary *discoveryDict in result[TMBPushPayloadSrcItemsFieldName]){
+            TMBDiscovery *discovery = [TMBDiscovery decodedObjectFromAPIResponse:discoveryDict];
+            [items addObject:discovery];
+        }
+        message.srcItems = [items copy];
     }
     message.aps = result[@"aps"];
     return message;
@@ -36,7 +48,7 @@
              @"type":TMBPushPayloadTypeFieldName,
              @"pushId": TMBPushPayloadIdFieldName,
              @"items": TMBPushPayloadItemsFieldName,
-             @"srcItems": TMBPushPayloadSrcItemFieldName,
+             @"srcItems": TMBPushPayloadSrcItemsFieldName,
              @"aps": @"aps",
              };
 }
@@ -47,8 +59,12 @@
         if (value) {
             if ([value isKindOfClass:[NSArray class]]) {
                 NSMutableArray *encodedValueTemp = [[NSMutableArray alloc] init];
-                for(NSObject* obj in value){
-                    [encodedValueTemp addObject:obj];
+                for(id obj in value){
+                    if([obj isKindOfClass:[TMBDiscovery class]]){
+                        [encodedValueTemp addObject:[obj dict]];
+                    } else if ([obj isKindOfClass:[NSObject class]]){
+                        [encodedValueTemp addObject:obj];
+                    }
                 }
                 NSArray *encodedValue = [encodedValueTemp copy];
                 keyPairs[formFieldName] = encodedValue;

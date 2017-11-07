@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "TMBObjectDecodable.h"
+#import "TMBDiscovery.h"
+#import "TMBEncoder.h"
 
 NS_ASSUME_NONNULL_BEGIN
 static NSString *const TMBPushPayloadIdFieldName = @"tmb-push-id";
 static NSString *const TMBPushPayloadTypeFieldName = @"tmb-type";
 static NSString *const TMBPushPayloadItemsFieldName = @"tmb-items";
-static NSString *const TMBPushPayloadSrcItemFieldName = @"tmb-src-items";
+static NSString *const TMBPushPayloadSrcItemsFieldName = @"tmb-src-items";
 NS_ASSUME_NONNULL_END
 
 @interface TMBPushMessage : NSObject<TMBObjectDecodable>
@@ -23,7 +25,7 @@ NS_ASSUME_NONNULL_END
 @property (nullable, readwrite, nonatomic) NSDictionary *aps;
 @property (nullable, readwrite, nonatomic) NSString *type;
 @property (nullable, readwrite, nonatomic) NSString *pushId;
-@property (nullable, readwrite, nonatomic) NSArray *items;
-@property (nullable, readwrite, nonatomic) NSArray *srcItems;
+@property (nullable, readwrite, nonatomic) NSArray<TMBDiscovery *> *items;
+@property (nullable, readwrite, nonatomic) NSArray<TMBDiscovery *> *srcItems;
 
 @end
