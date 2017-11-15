@@ -18,37 +18,37 @@
 /**
  *  Initialize user event with an item and behavior (TMBClient uses default user when tracking event).
  */
-+ (nullable instancetype)eventWithItem:(nonnull NSString*) item behavior:(nonnull NSString *)behavior;
++ (nullable instancetype)eventWithitem:(nonnull id) item behavior:(nonnull NSString *)behavior;
 
 /**
  *  Initialize user event with an item, behavior, hit boolean, and context array (TMBClient uses default user when tracking event).
  */
-+ (nullable instancetype)eventWithItem:(nonnull NSString*) item behavior:(nonnull NSString *)behavior hit:(BOOL)hit context:(nullable NSArray*)context;
++ (nullable instancetype)eventWithitem:(nonnull id) item behavior:(nonnull NSString *)behavior hit:(BOOL)hit context:(nullable NSArray*)context;
 
 /**
  *  Initialize user event with an item, behavior, amount, and created time (TMBClient uses default user when tracking event).
  */
-+ (nullable instancetype)eventWithItem:(nonnull NSString*) item behavior:(nonnull NSString *)behavior amount:(nullable NSNumber*)amount created:(nullable NSDate*)created;
++ (nullable instancetype)eventWithitem:(nonnull id) item behavior:(nonnull NSString *)behavior amount:(nullable NSNumber*)amount created:(nullable NSDate*)created;
 
 /**
  *  Initialize an event with a user, item and behavior.
  */
-+ (nullable instancetype)eventWithUser:(nonnull NSString*) user item:(nonnull NSString*) item behavior:(nonnull NSString *)behavior;
++ (nullable instancetype)eventWithUser:(nonnull NSString*) user item:(nonnull id) item behavior:(nonnull NSString *)behavior;
 
 /**
  *  Initialize an event with a user, item, behavior, amount, and created time.
  */
-+ (nullable instancetype)eventWithUser:(nonnull NSString*) user item:(nonnull NSString*) item behavior:(nonnull NSString *)behavior amount:(nullable NSNumber*)amount created:(nullable NSDate*)created;
++ (nullable instancetype)eventWithUser:(nonnull NSString*) user item:(nonnull id) item behavior:(nonnull NSString *)behavior amount:(nullable NSNumber*)amount created:(nullable NSDate*)created;
 
 /**
  *  Initialize an event with a user, item, behavior, hit, and context.
  */
-+ (nullable instancetype)eventWithUser:(nonnull NSString*) user item:(nonnull NSString*) item behavior:(nonnull NSString *)behavior hit:(BOOL)hit context:(nullable NSArray*)context;
++ (nullable instancetype)eventWithUser:(nonnull NSString*) user item:(nonnull id) item behavior:(nonnull NSString *)behavior hit:(BOOL)hit context:(nullable NSArray*)context;
 
 /**
  *  Initialize the full event params with a user, item, behavior, amount, and created time.
  */
-+ (nullable instancetype)eventWithUser:(nonnull NSString*) user item:(nonnull NSString*) item behavior:(nonnull NSString *)behavior amount:(nullable NSNumber*)amount hit:(BOOL)hit context:(nullable NSArray*)context created:(nullable NSDate*)created;
++ (nullable instancetype)eventWithUser:(nonnull NSString*) user item:(nonnull id) item behavior:(nonnull NSString *)behavior amount:(nullable NSNumber*)amount hit:(BOOL)hit context:(nullable NSArray*)context created:(nullable NSDate*)created;
 
 - (nullable instancetype)initWithUser:(nullable NSString*) user item:(nullable NSString*) item behavior:(nonnull NSString *)behavior amount:(nullable NSNumber*)amount hit:(BOOL)hit context:(nullable NSArray*)context created:(nullable NSDate*)created;
 
@@ -86,6 +86,13 @@
 + (nullable instancetype)pushReceivedWithContext:(nullable NSArray*)context created:(nullable NSDate*)created;
 
 /**
+ *  Initialize a push engaged item-less event.
+ */
++ (nullable instancetype)pushEngaged;
+
++ (nullable instancetype)pushEngagedWithContext:(nullable NSArray*)context created:(nullable NSDate*)created;
+
+/**
  *  User associated with the event.
  */
 @property (nonatomic, copy, nullable) NSString *user;
@@ -93,7 +100,7 @@
 /**
  *  Item associated with the event.
  */
-@property (nonatomic, copy, nullable) NSString *item;
+@property (nonatomic, copy, nullable) id item;
 
 /**
  *  The behavior name.

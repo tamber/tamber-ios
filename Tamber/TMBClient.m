@@ -397,5 +397,13 @@
     }];
 }
 
+- (void) trackPushEngaged:(nullable NSString *) item context:(nullable NSArray *) context{
+    TMBEventParams *eventParams = [TMBEventParams pushEngagedWithContext:context created:nil];
+    eventParams.item = item;
+    [[Tamber client] trackEvent:eventParams responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+        // handle
+    }];
+}
+
 
 @end

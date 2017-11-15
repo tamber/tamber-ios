@@ -194,6 +194,19 @@ static bool swizzled = false;
     }
 }
 
+-(void) pushNotificationEngaged:(nullable NSDictionary *) payload completion:(TMBEmptyCallbackBlock) completion{
+    TMBPushMessage *tmbMessage = [TMBPushMessage decodedObjectFromAPIResponse:payload];
+    NSArray *context;
+    if(tmbMessage){
+        context = @[TMBPushContext];
+        for(TMBDiscovery *d in tmbMessage.items){
+            [_client trackPushEngaged:d.item context:@[TMBPushContext, tmbMessage.type]];
+        }
+    }
+    completion();
+    return;
+}
+
 // Session started
 -(void) sessionStarted{
     if(_client != nil){
@@ -259,6 +272,9 @@ static bool swizzled = false;
     if (![self matchesLastPush:response.notification]){
         lastPushId = response.notification.request.identifier;
         [self pushNotificationReceived: response.notification.request.content.userInfo completion:completion];
+    } else if(response.notification.request.content.userInfo){
+        [self pushNotificationEngaged: response.notification.request.content.userInfo completion:completion];
+        // TODO: track push interacted
     }
 }
 

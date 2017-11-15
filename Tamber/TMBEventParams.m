@@ -12,6 +12,7 @@ NSString *const TMBSessionStartedBehavior = @"tmb_session_started";
 NSString *const TMBSessionEndedBehavior = @"tmb_session_ended";
 NSString *const TMBPushRenderedBehavior = @"tmb_push_rendered";
 NSString *const TMBPushReceivedBehavior = @"tmb_push_received";
+NSString *const TMBPushEngagedBehavior = @"tmb_push_engaged";
 
 @implementation TMBEventParams
 
@@ -25,35 +26,35 @@ NSString *const TMBPushReceivedBehavior = @"tmb_push_received";
     return self;
 }
 
-+ (instancetype)eventWithItem:(NSString*) item behavior:(NSString *)behavior{
++ (instancetype)eventWithItem:(id) item behavior:(NSString *)behavior{
     return [[self.class alloc] initWithUser:nil item:item behavior:behavior amount:nil hit:false context:nil created:nil];
 }
 
-+ (instancetype)eventWithItem:(NSString*) item behavior:(NSString *)behavior hit:(BOOL)hit context:(NSArray*)context {
++ (instancetype)eventWithItem:(id) item behavior:(NSString *)behavior hit:(BOOL)hit context:(NSArray*)context {
     return [[self.class alloc] initWithUser:nil item:item behavior:behavior amount:nil hit:hit context:context created:nil];
 }
 
-+ (instancetype)eventWithItem:(NSString*) item behavior:(NSString *)behavior amount:(NSNumber*)amount created:(NSDate*)created{
++ (instancetype)eventWithItem:(id) item behavior:(NSString *)behavior amount:(NSNumber*)amount created:(NSDate*)created{
     return [[self.class alloc] initWithUser:nil item:item behavior:behavior amount:amount hit:false context:nil created:created];
 }
 
-+ (instancetype)eventWithUser:(NSString*) user item:(NSString*) item behavior:(NSString *)behavior{
++ (instancetype)eventWithUser:(NSString*) user item:(id) item behavior:(NSString *)behavior{
     return [[self.class alloc] initWithUser:user item:item behavior:behavior amount:nil hit:false context:nil created:nil];
 }
 
-+ (instancetype)eventWithUser:(NSString*) user item:(NSString*) item behavior:(NSString *)behavior amount:(NSNumber*)amount created:(NSDate*)created {
++ (instancetype)eventWithUser:(NSString*) user item:(id) item behavior:(NSString *)behavior amount:(NSNumber*)amount created:(NSDate*)created {
     return [[self.class alloc] initWithUser:user item:item behavior:behavior amount:amount hit:false context:nil created:created];
 }
 
-+ (instancetype)eventWithUser:(NSString*) user item:(NSString*) item behavior:(NSString *)behavior hit:(BOOL)hit context:(NSArray*)context{
++ (instancetype)eventWithUser:(NSString*) user item:(id) item behavior:(NSString *)behavior hit:(BOOL)hit context:(NSArray*)context{
     return [[self.class alloc] initWithUser:user item:item behavior:behavior amount:nil hit:hit context:context created:nil];
 }
 
-+ (instancetype)eventWithUser:(NSString*) user item:(NSString*) item behavior:(NSString *)behavior amount:(NSNumber*)amount hit:(BOOL)hit context:(NSArray*)context created:(NSDate*)created {
++ (instancetype)eventWithUser:(NSString*) user item:(id) item behavior:(NSString *)behavior amount:(NSNumber*)amount hit:(BOOL)hit context:(NSArray*)context created:(NSDate*)created {
     return [[self.class alloc] initWithUser:user item:item behavior:behavior amount:amount hit:hit context:context created:created];
 }
 
-- (instancetype)initWithUser:(NSString*) user item:(NSString*) item behavior:(NSString *)behavior amount:(NSNumber*)amount hit:(BOOL)hit context:(NSArray*)context created:(NSDate*)created {
+- (instancetype)initWithUser:(NSString*) user item:(id) item behavior:(NSString *)behavior amount:(NSNumber*)amount hit:(BOOL)hit context:(NSArray*)context created:(NSDate*)created {
     self = [super init];
     if (self) {
         _user = user;
@@ -103,6 +104,14 @@ NSString *const TMBPushReceivedBehavior = @"tmb_push_received";
 
 + (nullable instancetype)pushReceivedWithContext:(nullable NSArray*)context created:(nullable NSDate*)created{
     return [[self.class alloc] initWithUser:nil item:nil behavior:TMBPushReceivedBehavior amount:nil hit:false context:context created:created];
+}
+
++ (nullable instancetype)pushEngaged{
+    return [[self.class alloc] initWithUser:nil item:nil behavior:TMBPushEngagedBehavior amount:nil hit:true context:nil created:nil];
+}
+
++ (nullable instancetype)pushEngagedWithContext:(nullable NSArray*)context created:(nullable NSDate*)created{
+    return [[self.class alloc] initWithUser:nil item:nil behavior:TMBPushEngagedBehavior amount:nil hit:true context:context created:created];
 }
 
 #pragma mark - TMBObjectEncodable

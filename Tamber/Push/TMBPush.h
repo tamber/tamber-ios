@@ -34,6 +34,7 @@ NS_ASSUME_NONNULL_END
 - (void) setUserPushToken:(nullable NSString *) token;
 - (void) trackPushReceived:(nullable NSString *) pushId context:(nullable NSArray *) context;
 - (void) trackPushRendered:(nullable NSString *) item context:(nullable NSArray *) context;
+- (void) trackPushEngaged:(nullable NSString *) item context:(nullable NSArray *) context;
 @end
 
 @interface TMBPush : NSObject <UNUserNotificationCenterDelegate>

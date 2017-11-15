@@ -23,7 +23,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 static  NSString *const TMBSDKVersion = @"0.0.10";
-static NSString *const TMBApiURLBase = @"api.tamber.com/v1";
+static NSString *const TMBApiURLBase = @"works.tamber.com/v1";
 static NSString *const TMBApiVersion = @"2017-10-12";
 
 static NSString *const TMBPushTokenFieldName = @"tmb_push_token_ios";

@@ -9,8 +9,10 @@
 #import <XCTest/XCTest.h>
 #import <Tamber/Tamber.h>
 
-const NSString *testProjectKey = @"Mu6DUPXdDYe98cv5JIfX";
-const NSString *testEngineKey = @"SbWYPBNdARfIDa0IIO9L";
+//const NSString *testProjectKey = @"Mu6DUPXdDYe98cv5JIfX";
+//const NSString *testEngineKey = @"SbWYPBNdARfIDa0IIO9L";
+const NSString *testProjectKey = @"uiGMqKTQl9PoaI1IrdTz";
+const NSString *testEngineKey = @"t02IH7JhTaOF1ElbuDTD";
 const NSString *defaultUser = @"user_jctzgisbru";
 
 NSString *userA;

@@ -21,6 +21,7 @@
 #import "TMBUser.h"
 #import "TMBUserParams.h"
 #import "TMBUserSearchResponse.h"
+#import "TMBItem.h"
 #import "TMBPush.h"
 #import "TMBSwizzler.h"
 #import "TMBPushMessage.h"
