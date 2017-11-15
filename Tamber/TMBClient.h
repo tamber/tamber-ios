@@ -16,24 +16,25 @@
 #import "TMBUserParams.h"
 #import "TMBUserSearchResponse.h"
 #import "TMBDiscovery.h"
+#import "TMBItem.h"
 #import "TMBEncoder.h"
 #import "TMBPush.h"
 #import "TMBUtils.h"
 #import "TMBAPIRequest.h"
 
 NS_ASSUME_NONNULL_BEGIN
-static  NSString *const TMBSDKVersion = @"0.0.10";
-static NSString *const TMBApiURLBase = @"works.tamber.com/v1";
+static  NSString *const TMBSDKVersion = @"0.0.11";
+static NSString *const TMBApiURLBase = @"api.tamber.com/v1";
 static NSString *const TMBApiVersion = @"2017-10-12";
 
 static NSString *const TMBPushTokenFieldName = @"tmb_push_token_ios";
+static NSString *const TMBTestUserFieldName = @"tmb_test_user";
 
 static NSString *const TMBDefaultContext = @"tamber";
 static NSString *const TMBNextContext = @"tmb_next";
 static NSString *const TMBRecommendedContext = @"tmb_recommended";
 static NSString *const TMBSimilarContext = @"tmb_similar";
 static NSString *const TMBRecommendedSimilarContext = @"tmb_recommended_similar";
-
 NS_ASSUME_NONNULL_END
 
 /**
@@ -72,6 +73,10 @@ NS_ASSUME_NONNULL_END
  * @param token The unique push token for the user
  */
 + (void) setUserPushToken:(nullable NSString*)token;
+
++ (void) makeTestUser;
++ (void) makeTestUser:(nullable TMBEmptyCallbackBlock) completion;
+//+ (void) makeTestUser:(nullable NSString*)user;
 
 // Load the default client for making API requests.
 + (nullable TMBClient*)client;
@@ -130,6 +135,7 @@ NS_ASSUME_NONNULL_END
  */
 -(void) setUserPushToken:(nullable NSString*)token;
 
+-(void) makeTestUser:(nullable NSString *) userId completion:(nullable TMBEmptyCallbackBlock) completion;
 /**
  * Set the delegate for `TMBPush`.
  * @param delegate The `TMBPushDelegate`.

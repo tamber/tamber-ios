@@ -9,6 +9,9 @@
 #import "TMBEncoder.h"
 #import "TMBDiscoverParams.h"
 #import "TMBEventParams.h"
+#import "TMBItem.h"
+#import "TMBDiscoverNextParams.h"
+#import "TMBUserParams.h"
 #import "NSDictionary+Tamber.h"
 #import "NSArray+Tamber.h"
 
@@ -18,7 +21,7 @@ FOUNDATION_EXPORT NSString * TMBQueryStringFromParameters(NSDictionary *paramete
 @implementation TMBEncoder
 
 + (NSDictionary *)dictionaryForObject:(nonnull NSObject<TMBObjectEncodable> *)object {
-    NSDictionary *keyPairs = [self keyPairDictionaryForObject:object];
+    NSDictionary *keyPairs = [self keyPairDictionaryForObject:object root:true];
     NSString *rootObjectName = [object.class rootObjectName];
     NSDictionary *dict = rootObjectName != nil ? @{ rootObjectName: keyPairs } : keyPairs;
     return dict;
@@ -34,21 +37,20 @@ FOUNDATION_EXPORT NSString * TMBQueryStringFromParameters(NSDictionary *paramete
     return [camelCaseParam copy];
 }
 
-+ (NSDictionary *)keyPairDictionaryForObject:(nonnull NSObject<TMBObjectEncodable> *)object {
++ (NSDictionary *)keyPairDictionaryForObject:(nonnull NSObject<TMBObjectEncodable> *)object root:(BOOL) root{
     NSMutableDictionary *keyPairs = [NSMutableDictionary dictionary];
     [[object.class propertyNamesToFormFieldNamesMapping] enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull propertyName, NSString *  _Nonnull formFieldName, __unused BOOL * _Nonnull stop) {
         id value = [self formEncodableValueForObject:[object valueForKey:propertyName]];
         if (value) {
             if ([value isKindOfClass:[NSDictionary class]]) {
-                NSString *jsonDictStr = [value tmb_json];
-                keyPairs[formFieldName] = jsonDictStr;
+                keyPairs[formFieldName] = root ? [value tmb_json] : value;
             } else if ([value isKindOfClass:[NSArray class]]) {
                 NSMutableArray *encodedValueTemp = [[NSMutableArray alloc] init];
                 for(NSObject* obj in value){
                     [encodedValueTemp addObject:[self formEncodableValueForObject:obj]];
                 }
                 NSArray *encodedValue = [encodedValueTemp copy];
-                keyPairs[formFieldName] = [encodedValue tmb_json];
+                keyPairs[formFieldName] = root ? [encodedValue tmb_json] : encodedValue;
             } else if([value isKindOfClass:[NSDate class]]) {
                 keyPairs[formFieldName] = [NSNumber numberWithInt:[(NSDate*)value timeIntervalSince1970]];
             } else {
@@ -67,7 +69,7 @@ FOUNDATION_EXPORT NSString * TMBQueryStringFromParameters(NSDictionary *paramete
 
 + (id)formEncodableValueForObject:(NSObject *)object {
     if ([object conformsToProtocol:@protocol(TMBObjectEncodable)]) {
-        return [self keyPairDictionaryForObject:(NSObject<TMBObjectEncodable>*)object];
+        return [self keyPairDictionaryForObject:(NSObject<TMBObjectEncodable>*)object root:false];
     } else {
          return object;
     }

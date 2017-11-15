@@ -6,6 +6,7 @@
 //  Copyright © 2017 Tamber. All rights reserved.
 //
 
+//#import <Tamber/TMBClient.h>
 #import "TMBClient.h"
 #import <UIKit/UIKit.h>
 #import <sys/utsname.h>
@@ -76,6 +77,19 @@
     [[TMBClient defaultClient] setUserPushToken: token];
 }
 
++(void) makeTestUser{
+    [[TMBClient defaultClient] makeTestUser: nil completion:nil];
+}
+
++ (void) makeTestUser:(TMBEmptyCallbackBlock) completion{
+    [[TMBClient defaultClient] makeTestUser: nil completion:completion];
+}
+
+//+(void) makeTestUser:(nullable NSString*)user{
+//    [[TMBClient defaultClient] makeTestUser: user];
+//}
+
+
 + (TMBClient*) client {
     return  [TMBClient defaultClient];
 }
@@ -83,8 +97,8 @@
 + (nullable TMBPush*) push {
     return [TMBPush getInstance];
 }
-
 @end
+
 @implementation TMBClient
 
 + (instancetype)defaultClient{
@@ -164,36 +178,67 @@
     _userId = user;
 }
 
--(void) setUserPushToken:(nullable NSString*)token{
-    TMBClient *client = [TMBClient defaultClient];
-    if(client.userId != nil){
-        TMBUserParams *userParams = [TMBUserParams userWithId:_userId];
-        [client retrieveUser:userParams responseCompletion:^(TMBUser *user, NSHTTPURLResponse *response, NSError *errorMessage) {
-            if(!errorMessage){
-                // Check if token already set
-                if(user.metadata){
-                    id curToken = [user.metadata objectForKey:TMBPushTokenFieldName];
-                    if([curToken isKindOfClass:[NSString class]] && [curToken isEqualToString:token]){
+- (void) upsertUserMetadata:(NSString *) userId field:(NSString *) field value:(id) value completion:(TMBEmptyCallbackBlock) completion {
+    LogDebug(@"upsertUserMetadata called");
+    if(userId == nil){
+        if(_userId == nil){
+            if(completion){completion();}
+            return;
+        }
+        userId = _userId;
+    }
+    TMBUserParams *userParams = [TMBUserParams userWithId:userId];
+    [self retrieveUser:userParams responseCompletion:^(TMBUser *user, NSHTTPURLResponse *response, NSError *errorMessage) {
+        if(!errorMessage){
+            // Check if token already set
+            if(user.metadata){
+                id curValue = [user.metadata objectForKey:field];
+                if([value isKindOfClass:[NSString class]]){
+                    if([curValue isKindOfClass:[NSString class]] && [curValue isEqualToString:value]){
+                        if(completion){completion();}
+                        return;
+                    }
+                } else if ([value isKindOfClass:[NSNumber class]]){
+                    if([curValue isKindOfClass:[NSNumber class]] && [curValue isEqualToNumber:value]){
+                        if(completion){completion();}
                         return;
                     }
                 }
-                // Update token if necessary
-                NSMutableDictionary *metadata;
-                if(user.metadata){
-                    metadata = [[NSMutableDictionary alloc] initWithDictionary:user.metadata];
-                } else {
-                    metadata = [[NSMutableDictionary alloc] init];
-                }
-                [metadata setValue:token forKey:TMBPushTokenFieldName];
-                userParams.metadata = metadata;
-                [client updateUser:userParams responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSError *errorMessage) {
-                    if(errorMessage){
-                        LogDebug(@"error %@", errorMessage);
-                    }
-                }];
             }
-        }];
-    }
+            // Update token if necessary
+            NSMutableDictionary *metadata;
+            if(user.metadata){
+                metadata = [[NSMutableDictionary alloc] initWithDictionary:user.metadata];
+            } else {
+                metadata = [[NSMutableDictionary alloc] init];
+            }
+            [metadata setValue:value forKey:field];
+            userParams.metadata = metadata;
+            [self updateUser:userParams responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+                if(errorMessage){
+                    LogDebug(@"error %@", errorMessage);
+                    if(completion){completion();}
+                }
+            }];
+        } else {
+            NSDictionary *metadata = @{field:value};
+            userParams.metadata = metadata;
+            [self createUser:userParams responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+                if(errorMessage){
+                    LogDebug(@"error %@", errorMessage);
+                    if(completion){completion();}
+                }
+            }];
+        }
+    }];
+}
+
+-(void) setUserPushToken:(nullable NSString*)token{
+    [self upsertUserMetadata:nil field:TMBPushTokenFieldName value:token completion:nil];
+}
+
+-(void) makeTestUser:(NSString *) userId completion:(TMBEmptyCallbackBlock) completion{
+    [self upsertUserMetadata:userId field:TMBTestUserFieldName value:[NSNumber numberWithBool:true] completion:completion];
 }
 
 -(nullable NSString*) getUser{
@@ -401,6 +446,7 @@
     TMBEventParams *eventParams = [TMBEventParams pushEngagedWithContext:context created:nil];
     eventParams.item = item;
     [[Tamber client] trackEvent:eventParams responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+        LogDebug(@"error:%@", errorMessage.localizedDescription);
         // handle
     }];
 }

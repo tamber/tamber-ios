@@ -64,7 +64,17 @@ Set the User wherever you load your user's unique ID from your backend, or where
 Stream events to your Tamber project as the user interacts with items in your app.
 
 ```objc
-TMBEventParams *params = [TMBEventParams eventWithItem:@"item_id" behavior:@"like"];
+TMBItem *item = [TMBItem itemWithId:@"item_id"
+    properties:@{
+        @"type":@"book",
+        @"title":@"The Moon is a Harsh Mistress",
+        @"img_url":@"https://img.domain.com/book/The_Moon_is_a_Harsh Mistress.jpg", 
+        @"stock":[NSNumber numberWithInteger:34]
+    }
+    tags:@[@"sci-fi", @"bestseller"]
+];
+
+TMBEventParams *params = [TMBEventParams eventWithItem:item behavior:@"like"];
 [[Tamber client] trackEvent:params responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *error) {
     if(error){
         // Handle error
@@ -75,13 +85,21 @@ TMBEventParams *params = [TMBEventParams eventWithItem:@"item_id" behavior:@"lik
 }];
 ```
 
+You may also set the item to just the unique ID of the item, but this will limit the capabilities of your engine.
+
+```objc
+TMBEventParams *params = [TMBEventParams eventWithItem:@"item_id" behavior:@"like"];
+```
+
 ### Get Recommendations
 
 Once you have seeded some events and created your engine, you can start pulling user recommendations into your app.
 
+To get recommendations for the user to show on a homepage, or in any recommended section:
+
 ```objc
-TMBDiscoverParams *params = [TMBDiscoverParams discoverRecommendations:[NSNumber numberWithInt:50]];
-[[Tamber client] discoverRecommendations:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSError *error) {
+TMBDiscoverParams *params = [TMBDiscoverNextParams discoverNext:[NSNumber numberWithInt:8]];
+[[Tamber client] discoverNext:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSError *error) {
     if(error){
         // Handle error
     } else {
@@ -93,11 +111,27 @@ TMBDiscoverParams *params = [TMBDiscoverParams discoverRecommendations:[NSNumber
 }];
 ```
 
-If you are setting [properties for your items][properties] from your backend, you can include these properties in recommendation responses to simplify data handling. For example, you might have `title`, `img`, and `price` properties that you can use to display items to users without needing to make an additional request for each recommendation.
+To get similar items for an 'up next' section on an item page:
 
 ```objc
-TMBDiscoverParams *params = [TMBDiscoverParams alloc] discoverRecommendations:[NSNumber numberWithInt:50] page:nil filter:nil getProperties:true testEvents:nil];
-[[Tamber client] discoverRecommendations:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSError *error) {
+TMBDiscoverParams *params = [TMBDiscoverNextParams discoverNextWithItem:@"item_id" number:[NSNumber numberWithInt:10]];
+[[Tamber client] discoverNext:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSError *error) {
+    if(error){
+        // Handle error
+    } else {
+        for(TMBDiscovery *discovery in object.discoveries){
+            discovery.item // Recommended item id
+            discovery.score // Recommendation score (relative to other results, not a predicted rating)
+        }
+    }
+}];
+```
+
+If you are setting [properties for your items][properties], you can include these properties in recommendation responses to simplify data handling. For example, you might have `title`, `img`, and `price` properties that you can use to display items to users without needing to make an additional request for each recommendation.
+
+```objc
+TMBDiscoverParams *params = [TMBDiscoverNextParams alloc] discoverNext:[NSNumber numberWithInt:50] getProperties:true];
+[[Tamber client] discoverNext:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSError *error) {
     if(error){
         // Handle error
     } else {
@@ -109,8 +143,6 @@ TMBDiscoverParams *params = [TMBDiscoverParams alloc] discoverRecommendations:[N
     }
 }];
 ```
-
-Retrieving recommendations with `testEvents` set will return a list of simulated recommendations given the series of Events, but does not write anything to your project or engine.
 
 
 ### Anonymous / Signed-Out Users
@@ -133,6 +165,18 @@ NSString *toUser = @"user-id"; // The id of the user to which you want to merge.
 }];
 ```
 
+### Testing Recommendations
+
+We recommend creating test users during testing. To do this, simply call the `makeTestUser` method.
+
+```objc
+#define DEV_MODE true
+
+[Tamber setUser:@"testing-user-id"];
+if(DEV_MODE){
+    [Tamber makeTestUser];
+}
+```
 
 [install-cocoa-pods]: https://guides.cocoapods.org/using/getting-started.html
 [ios-docs]: http://tamber.github.io/tamber-ios/docs/index.html

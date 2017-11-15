@@ -6,7 +6,12 @@
 //  Copyright © 2017 Tamber. All rights reserved.
 //
 
+//#import <Tamber/TMBPush.h>
 #import "TMBPush.h"
+#import "TMBSwizzler.h"
+#import "TMBPushMessage.h"
+#import "TMBDiscovery.h"
+
 @import UserNotifications;
 
 typedef void (*didRegisterForRemoteNotificationsWithDeviceTokenImplSignature)(__strong id,SEL,UIApplication *, NSData*);
@@ -195,12 +200,13 @@ static bool swizzled = false;
 }
 
 -(void) pushNotificationEngaged:(nullable NSDictionary *) payload completion:(TMBEmptyCallbackBlock) completion{
-    TMBPushMessage *tmbMessage = [TMBPushMessage decodedObjectFromAPIResponse:payload];
-    NSArray *context;
-    if(tmbMessage){
-        context = @[TMBPushContext];
-        for(TMBDiscovery *d in tmbMessage.items){
-            [_client trackPushEngaged:d.item context:@[TMBPushContext, tmbMessage.type]];
+    id tmbMsgDict = [payload objectForKey:TMBPushMessageFieldName];
+    if ([tmbMsgDict isKindOfClass:[NSDictionary class]]){
+        TMBPushMessage *tmbMessage = [TMBPushMessage decodedObjectFromAPIResponse:tmbMsgDict];
+        if(tmbMessage){
+            for(TMBDiscovery *d in tmbMessage.items){
+                [_client trackPushEngaged:d.item context:@[TMBPushContext, tmbMessage.type]];
+            }
         }
     }
     completion();

@@ -6,11 +6,14 @@
 //  Copyright © 2017 Tamber. All rights reserved.
 //
 
+//#import <Tamber/TMBAPIRequest.h>
 #import "TMBAPIRequest.h"
-#import "TMBClient.h"
 #import "TMBEncoder.h"
 #import "NSMutableURLRequest+Tamber.h"
 #import "TMBDispatcher.h"
+//#import <Tamber/TMBClient.h>
+#import "TMBClient.h"
+#import "TMBError.h"
 
 @implementation TMBAPIRequest
 
@@ -24,7 +27,9 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
     [request setValue:apiClient.auth forHTTPHeaderField:@"Authorization"];
     request.HTTPMethod = @"POST";
+    LogDebug(@"parameters: %@", parameters);
     NSString *query = [TMBEncoder queryStringFromParameters:parameters];
+    LogDebug(@"query: %@", query);
     request.HTTPBody = [query dataUsingEncoding:NSUTF8StringEncoding];
     
     NSURLSessionDataTask *task = [apiClient.urlSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable body, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -46,7 +51,9 @@
     
     NSURL *url = [apiClient.apiUrl URLByAppendingPathComponent:endpoint];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    LogDebug(@"parameters: %@", parameters);
     [request tmb_addParametersToURL:parameters];
+    LogDebug(@"request query: %@", request.URL.absoluteString);
     [request setValue:apiClient.auth forHTTPHeaderField:@"Authorization"];
     request.HTTPMethod = @"GET";
     

@@ -24,8 +24,16 @@
     return [[self.class alloc] initWithUser:nil item:nil number:number excludeItems:nil variability:nil filter:nil getProperties:false];
 }
 
++ (nullable instancetype)discoverNext:(nullable NSNumber*) number getProperties:(BOOL) getProperties{
+    return [[self.class alloc] initWithUser:nil item:nil number:number excludeItems:nil variability:nil filter:nil getProperties:getProperties];
+}
+
 + (nullable instancetype)discoverNextWithItem:(nullable NSString*) item number:(nullable NSNumber*) number {
     return [[self.class alloc] initWithUser:nil item:item number:number excludeItems:nil variability:nil filter:nil getProperties:false];
+}
+
++ (nullable instancetype)discoverNextWithItem:(nullable NSString*) item  number:(nullable NSNumber*) number getProperties:(BOOL) getProperties{
+    return [[self.class alloc] initWithUser:nil item:nil number:number excludeItems:nil variability:nil filter:nil getProperties:getProperties];
 }
 
 + (nullable instancetype)discoverNext:(nullable NSString*) item number:(nullable NSNumber*) number excludeItems:(nullable NSArray*) excludeItems variability:(nullable NSNumber*) variability  filter:(nullable NSDictionary*)filter getProperties:(BOOL) getProperties {

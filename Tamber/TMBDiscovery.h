@@ -6,7 +6,7 @@
 //  Copyright © 2017 Tamber. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "TMBUtils.h"
 #import "TMBObjectDecodable.h"
 
 // A `TMBDiscovery` represents a Discovery object.

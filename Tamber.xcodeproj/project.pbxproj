@@ -10,15 +10,15 @@
 		EE1C47E91F92AADB0037773D /* TMBPush.h in Headers */ = {isa = PBXBuildFile; fileRef = EE1C47E71F92AADB0037773D /* TMBPush.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE1C47EA1F92AADB0037773D /* TMBPush.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1C47E81F92AADB0037773D /* TMBPush.m */; };
 		EE1C47EB1F92AADB0037773D /* TMBPush.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1C47E81F92AADB0037773D /* TMBPush.m */; };
-		EE1C47EC1F92AADB0037773D /* TMBPush.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1C47E81F92AADB0037773D /* TMBPush.m */; };
 		EE1C47EF1F92ADB00037773D /* TMBPushMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = EE1C47ED1F92ADB00037773D /* TMBPushMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE1C47F01F92ADB00037773D /* TMBPushMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1C47EE1F92ADB00037773D /* TMBPushMessage.m */; };
 		EE1C47F11F92ADB00037773D /* TMBPushMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1C47EE1F92ADB00037773D /* TMBPushMessage.m */; };
-		EE1C47F21F92ADB00037773D /* TMBPushMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1C47EE1F92ADB00037773D /* TMBPushMessage.m */; };
 		EE1C47F51F9443CD0037773D /* TMBUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = EE1C47F31F9443CD0037773D /* TMBUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE1C47F61F9443CD0037773D /* TMBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1C47F41F9443CD0037773D /* TMBUtils.m */; };
 		EE1C47F71F9443CD0037773D /* TMBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1C47F41F9443CD0037773D /* TMBUtils.m */; };
-		EE1C47F81F9443CD0037773D /* TMBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1C47F41F9443CD0037773D /* TMBUtils.m */; };
+		EE2B38381FBA23AA00313614 /* TMBItem.h in Headers */ = {isa = PBXBuildFile; fileRef = EE2B38361FBA23AA00313614 /* TMBItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE2B38391FBA23AA00313614 /* TMBItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2B38371FBA23AA00313614 /* TMBItem.m */; };
+		EE2B383A1FBA23AA00313614 /* TMBItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EE2B38371FBA23AA00313614 /* TMBItem.m */; };
 		EE425F361EBA84A600FC10FA /* TMBClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F351EBA84A600FC10FA /* TMBClient.m */; };
 		EE425F3A1EBA8D5C00FC10FA /* TMBEventParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F391EBA8D5C00FC10FA /* TMBEventParams.m */; };
 		EE425F3D1EBAA16300FC10FA /* TMBEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F3C1EBAA16300FC10FA /* TMBEvent.m */; };
@@ -51,6 +51,7 @@
 		EE475C7C1EBB2A2400435C47 /* TMBDiscoverParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F3F1EBAA19000FC10FA /* TMBDiscoverParams.m */; };
 		EE475C7D1EBB2A2400435C47 /* TMBDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F421EBAA1AA00FC10FA /* TMBDiscovery.m */; };
 		EE475C7E1EBB2A2400435C47 /* TMBDiscoverResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF8DE8C1EBB0F4D00CF4CB4 /* TMBDiscoverResponse.m */; };
+		EE4C5B711FBC1CF500AFE751 /* Tamber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF8DE931EBB170F00CF4CB4 /* Tamber.framework */; };
 		EE69BE781F1D4C9200BC1913 /* TMBError.m in Sources */ = {isa = PBXBuildFile; fileRef = EE69BE771F1D4C9200BC1913 /* TMBError.m */; };
 		EE69BE791F1D515D00BC1913 /* TMBError.h in Headers */ = {isa = PBXBuildFile; fileRef = EE69BE761F1D4C9200BC1913 /* TMBError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE69BE7A1F1D51FB00BC1913 /* TMBError.m in Sources */ = {isa = PBXBuildFile; fileRef = EE69BE771F1D4C9200BC1913 /* TMBError.m */; };
@@ -67,33 +68,13 @@
 		EE8EED861F844AAB0038C139 /* TMBDiscoverNextParams.h in Headers */ = {isa = PBXBuildFile; fileRef = EE7C4C361F84311E00206F1B /* TMBDiscoverNextParams.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE8EED871F844C440038C139 /* TMBDiscoverNextParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7C4C371F84311E00206F1B /* TMBDiscoverNextParams.m */; };
 		EEAE1BAB1EB7FD13003F48D5 /* Tamber.h in Copy Files */ = {isa = PBXBuildFile; fileRef = EEAE1BA81EB7FD13003F48D5 /* Tamber.h */; };
-		EECA445E1FA9267300FD8271 /* TMBClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F351EBA84A600FC10FA /* TMBClient.m */; };
-		EECA445F1FA9268E00FD8271 /* TMBDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF8DE861EBB064600CF4CB4 /* TMBDispatcher.m */; };
-		EECA44601FA9268E00FD8271 /* TMBEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F4C1EBAB2D500FC10FA /* TMBEncoder.m */; };
-		EECA44611FA9268E00FD8271 /* TMBAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F4F1EBABBF500FC10FA /* TMBAPIRequest.m */; };
-		EECA44621FA9268E00FD8271 /* NSMutableURLRequest+Tamber.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F571EBAC0D400FC10FA /* NSMutableURLRequest+Tamber.m */; };
-		EECA44631FA9268E00FD8271 /* NSDictionary+Tamber.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF8DE891EBB08A500CF4CB4 /* NSDictionary+Tamber.m */; };
-		EECA44641FA9268E00FD8271 /* NSArray+Tamber.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6A5FA51F0E2BFE0062B409 /* NSArray+Tamber.m */; };
-		EECA44651FA9268E00FD8271 /* TMBError.m in Sources */ = {isa = PBXBuildFile; fileRef = EE69BE771F1D4C9200BC1913 /* TMBError.m */; };
-		EECA44661FA9268E00FD8271 /* TMBEventResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F451EBAA48900FC10FA /* TMBEventResponse.m */; };
-		EECA44671FA9268E00FD8271 /* TMBEventParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F391EBA8D5C00FC10FA /* TMBEventParams.m */; };
-		EECA44681FA9268E00FD8271 /* TMBEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F3C1EBAA16300FC10FA /* TMBEvent.m */; };
-		EECA44691FA9268E00FD8271 /* TMBDiscoverParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F3F1EBAA19000FC10FA /* TMBDiscoverParams.m */; };
-		EECA446A1FA9268E00FD8271 /* TMBDiscoverNextParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7C4C371F84311E00206F1B /* TMBDiscoverNextParams.m */; };
-		EECA446B1FA9268E00FD8271 /* TMBDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F421EBAA1AA00FC10FA /* TMBDiscovery.m */; };
-		EECA446C1FA9268E00FD8271 /* TMBDiscoverResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF8DE8C1EBB0F4D00CF4CB4 /* TMBDiscoverResponse.m */; };
-		EECA446D1FA9268E00FD8271 /* TMBUserParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF9698E1F0DFA40007E7653 /* TMBUserParams.m */; };
-		EECA446E1FA9268E00FD8271 /* TMBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF969881F0DD242007E7653 /* TMBUser.m */; };
-		EECA446F1FA9268E00FD8271 /* TMBUserSearchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF9698B1F0DD601007E7653 /* TMBUserSearchResponse.m */; };
+		EEDC22E61FBCE519004D62B7 /* TamberiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF8DEA01EBB171000CF4CB4 /* TamberiOSTests.m */; };
 		EEE0B9E61F919E9000C27BB3 /* TMBSwizzler.h in Headers */ = {isa = PBXBuildFile; fileRef = EEE0B9E41F919E9000C27BB3 /* TMBSwizzler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EEE0B9E71F919E9000C27BB3 /* TMBSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE0B9E51F919E9000C27BB3 /* TMBSwizzler.m */; };
 		EEE0B9E81F919E9000C27BB3 /* TMBSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE0B9E51F919E9000C27BB3 /* TMBSwizzler.m */; };
-		EEE0B9E91F919E9000C27BB3 /* TMBSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE0B9E51F919E9000C27BB3 /* TMBSwizzler.m */; };
 		EEF8DE871EBB064600CF4CB4 /* TMBDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF8DE861EBB064600CF4CB4 /* TMBDispatcher.m */; };
 		EEF8DE8A1EBB08A500CF4CB4 /* NSDictionary+Tamber.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF8DE891EBB08A500CF4CB4 /* NSDictionary+Tamber.m */; };
 		EEF8DE8D1EBB0F4D00CF4CB4 /* TMBDiscoverResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF8DE8C1EBB0F4D00CF4CB4 /* TMBDiscoverResponse.m */; };
-		EEF8DE9C1EBB171000CF4CB4 /* Tamber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF8DE931EBB170F00CF4CB4 /* Tamber.framework */; };
-		EEF8DEA11EBB171000CF4CB4 /* TamberiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF8DEA01EBB171000CF4CB4 /* TamberiOSTests.m */; };
 		EEF8DEAA1EBB18CE00CF4CB4 /* Tamber.h in Headers */ = {isa = PBXBuildFile; fileRef = EEAE1BA81EB7FD13003F48D5 /* Tamber.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EEF969891F0DD242007E7653 /* TMBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF969881F0DD242007E7653 /* TMBUser.m */; };
 		EEF9698C1F0DD601007E7653 /* TMBUserSearchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF9698B1F0DD601007E7653 /* TMBUserSearchResponse.m */; };
@@ -101,7 +82,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		EEF8DE9D1EBB171000CF4CB4 /* PBXContainerItemProxy */ = {
+		EEDC22E71FBCE697004D62B7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EEAE1B9D1EB7FD13003F48D5 /* Project object */;
 			proxyType = 1;
@@ -131,6 +112,8 @@
 		EE1C47EE1F92ADB00037773D /* TMBPushMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBPushMessage.m; sourceTree = "<group>"; };
 		EE1C47F31F9443CD0037773D /* TMBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBUtils.h; sourceTree = "<group>"; };
 		EE1C47F41F9443CD0037773D /* TMBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBUtils.m; sourceTree = "<group>"; };
+		EE2B38361FBA23AA00313614 /* TMBItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMBItem.h; sourceTree = "<group>"; };
+		EE2B38371FBA23AA00313614 /* TMBItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMBItem.m; sourceTree = "<group>"; };
 		EE425F341EBA84A600FC10FA /* TMBClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBClient.h; sourceTree = "<group>"; };
 		EE425F351EBA84A600FC10FA /* TMBClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBClient.m; sourceTree = "<group>"; };
 		EE425F381EBA8D5C00FC10FA /* TMBEventParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBEventParams.h; sourceTree = "<group>"; };
@@ -199,7 +182,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEF8DE9C1EBB171000CF4CB4 /* Tamber.framework in Frameworks */,
+				EE4C5B711FBC1CF500AFE751 /* Tamber.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +212,8 @@
 				EEF9698E1F0DFA40007E7653 /* TMBUserParams.m */,
 				EEF969871F0DD207007E7653 /* TMBUser.h */,
 				EEF969881F0DD242007E7653 /* TMBUser.m */,
+				EE2B38361FBA23AA00313614 /* TMBItem.h */,
+				EE2B38371FBA23AA00313614 /* TMBItem.m */,
 				EEF9698A1F0DD601007E7653 /* TMBUserSearchResponse.h */,
 				EEF9698B1F0DD601007E7653 /* TMBUserSearchResponse.m */,
 			);
@@ -264,6 +249,7 @@
 				EEAE1BA71EB7FD13003F48D5 /* Tamber */,
 				EEF8DE9F1EBB171000CF4CB4 /* TamberiOSTests */,
 				EEAE1BA61EB7FD13003F48D5 /* Products */,
+				EEBE32361FBBC3D500A73B37 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -289,6 +275,13 @@
 				EE425F371EBA88FA00FC10FA /* Models */,
 			);
 			path = Tamber;
+			sourceTree = "<group>";
+		};
+		EEBE32361FBBC3D500A73B37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		EEE0B9E31F919D1F00C27BB3 /* Push */ = {
@@ -341,6 +334,7 @@
 				EE6A5F9E1F0E08640062B409 /* TMBUser.h in Headers */,
 				EE6A5F9F1F0E08730062B409 /* TMBUserParams.h in Headers */,
 				EE6A5FA01F0E087B0062B409 /* TMBUserSearchResponse.h in Headers */,
+				EE2B38381FBA23AA00313614 /* TMBItem.h in Headers */,
 				EE69BE791F1D515D00BC1913 /* TMBError.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,7 +388,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				EEF8DE9E1EBB171000CF4CB4 /* PBXTargetDependency */,
+				EEDC22E81FBCE697004D62B7 /* PBXTargetDependency */,
 			);
 			name = TamberiOSTests;
 			productName = TamberiOSTests;
@@ -472,6 +466,7 @@
 				EE425F501EBABBF500FC10FA /* TMBAPIRequest.m in Sources */,
 				EE425F401EBAA19000FC10FA /* TMBDiscoverParams.m in Sources */,
 				EE1C47F61F9443CD0037773D /* TMBUtils.m in Sources */,
+				EE2B38391FBA23AA00313614 /* TMBItem.m in Sources */,
 				EE7C4C381F84311E00206F1B /* TMBDiscoverNextParams.m in Sources */,
 				EE425F3A1EBA8D5C00FC10FA /* TMBEventParams.m in Sources */,
 				EEF9698F1F0DFA40007E7653 /* TMBUserParams.m in Sources */,
@@ -501,6 +496,7 @@
 				EE6A5FA91F0E301A0062B409 /* NSArray+Tamber.m in Sources */,
 				EE6A5FA11F0E09910062B409 /* TMBUserParams.m in Sources */,
 				EE1C47F71F9443CD0037773D /* TMBUtils.m in Sources */,
+				EE2B383A1FBA23AA00313614 /* TMBItem.m in Sources */,
 				EE6A5FA21F0E09910062B409 /* TMBUser.m in Sources */,
 				EE6A5FA31F0E09910062B409 /* TMBUserSearchResponse.m in Sources */,
 				EE475C731EBB29DC00435C47 /* TMBClient.m in Sources */,
@@ -526,39 +522,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EECA445F1FA9268E00FD8271 /* TMBDispatcher.m in Sources */,
-				EECA44601FA9268E00FD8271 /* TMBEncoder.m in Sources */,
-				EECA44611FA9268E00FD8271 /* TMBAPIRequest.m in Sources */,
-				EECA44621FA9268E00FD8271 /* NSMutableURLRequest+Tamber.m in Sources */,
-				EECA44631FA9268E00FD8271 /* NSDictionary+Tamber.m in Sources */,
-				EECA44641FA9268E00FD8271 /* NSArray+Tamber.m in Sources */,
-				EECA44651FA9268E00FD8271 /* TMBError.m in Sources */,
-				EECA44661FA9268E00FD8271 /* TMBEventResponse.m in Sources */,
-				EECA44671FA9268E00FD8271 /* TMBEventParams.m in Sources */,
-				EECA44681FA9268E00FD8271 /* TMBEvent.m in Sources */,
-				EECA44691FA9268E00FD8271 /* TMBDiscoverParams.m in Sources */,
-				EECA446A1FA9268E00FD8271 /* TMBDiscoverNextParams.m in Sources */,
-				EECA446B1FA9268E00FD8271 /* TMBDiscovery.m in Sources */,
-				EECA446C1FA9268E00FD8271 /* TMBDiscoverResponse.m in Sources */,
-				EECA446D1FA9268E00FD8271 /* TMBUserParams.m in Sources */,
-				EECA446E1FA9268E00FD8271 /* TMBUser.m in Sources */,
-				EECA446F1FA9268E00FD8271 /* TMBUserSearchResponse.m in Sources */,
-				EECA445E1FA9267300FD8271 /* TMBClient.m in Sources */,
-				EEF8DEA11EBB171000CF4CB4 /* TamberiOSTests.m in Sources */,
-				EE1C47EC1F92AADB0037773D /* TMBPush.m in Sources */,
-				EEE0B9E91F919E9000C27BB3 /* TMBSwizzler.m in Sources */,
-				EE1C47F81F9443CD0037773D /* TMBUtils.m in Sources */,
-				EE1C47F21F92ADB00037773D /* TMBPushMessage.m in Sources */,
+				EEDC22E61FBCE519004D62B7 /* TamberiOSTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		EEF8DE9E1EBB171000CF4CB4 /* PBXTargetDependency */ = {
+		EEDC22E81FBCE697004D62B7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EEF8DE921EBB170F00CF4CB4 /* TamberiOS */;
-			targetProxy = EEF8DE9D1EBB171000CF4CB4 /* PBXContainerItemProxy */;
+			targetProxy = EEDC22E71FBCE697004D62B7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -739,9 +713,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X7P539N426;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TamberiOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tamber.TamberiOSTests;
@@ -754,9 +728,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X7P539N426;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TamberiOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tamber.TamberiOSTests;

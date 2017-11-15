@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>TMBUser Class Reference</title>
+    <title>TMBItem Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/objc/Class/TMBUser" class="dashAnchor"></a>
+    <a name="//apple_ref/objc/Class/TMBItem" class="dashAnchor"></a>
 
-    <a title="TMBUser Class Reference"></a>
+    <a title="TMBItem Class Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">Tamber Reference</a>
       <img class="carat" src="../img/carat.png" />
-      TMBUser Class Reference
+      TMBItem Class Reference
     </p>
 
     <div class="content-wrapper">
@@ -108,14 +108,14 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>TMBUser</h1>
+            <h1>TMBItem</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">TMBUser</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n"><a href="../Protocols/TMBObjectDecodable.html">TMBObjectDecodable</a></span><span class="o">&gt;</span></code></pre>
+                  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">TMBItem</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n"><a href="../Protocols/TMBObjectEncodable.html">TMBObjectEncodable</a></span><span class="p">,</span> <span class="n"><a href="../Protocols/TMBObjectDecodable.html">TMBObjectDecodable</a></span><span class="o">&gt;</span></code></pre>
 
                 </div>
               </div>
-            <p>A <code>TMBUser</code> represents a User object. - see: <a href="https://tamber.com/docs/api/#user-object">https://tamber.com/docs/api/#user-object</a></p>
+            <p>A <code>TMBItem</code> represents a User object. - see: <a href="https://tamber.com/docs/api/#item-object">https://tamber.com/docs/api/#item-object</a></p>
 
           </div>
         </section>
@@ -127,9 +127,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)TMBUser(py)ID"></a>
+                    <a name="/c:objc(cs)TMBItem(py)ID"></a>
                     <a name="//apple_ref/objc/Property/ID" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)TMBUser(py)ID">ID</a>
+                    <a class="token" href="#/c:objc(cs)TMBItem(py)ID">ID</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -137,7 +137,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Unique ID associated with the user.</p>
+                        <p>Unique ID associated with the item.</p>
 
                       </div>
                       <div class="declaration">
@@ -154,7 +154,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBUser.h#L20">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBItem.h#L28">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -162,9 +162,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)TMBUser(py)events"></a>
-                    <a name="//apple_ref/objc/Property/events" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)TMBUser(py)events">events</a>
+                    <a name="/c:objc(cs)TMBItem(py)properties"></a>
+                    <a name="//apple_ref/objc/Property/properties" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TMBItem(py)properties">properties</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -172,24 +172,24 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>List of all of the events that are associated with the user (i.e. all passed user-item interactions).</p>
+                        <p>Properties associated with the item.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSArray</span> <span class="o">*</span><span class="n">events</span><span class="p">;</span></code></pre>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSDictionary</span> <span class="o">*</span><span class="n">properties</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">properties</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBUser.h#L25">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBItem.h#L33">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -197,9 +197,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)TMBUser(py)recs"></a>
-                    <a name="//apple_ref/objc/Property/recs" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)TMBUser(py)recs">recs</a>
+                    <a name="/c:objc(cs)TMBItem(py)tags"></a>
+                    <a name="//apple_ref/objc/Property/tags" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TMBItem(py)tags">tags</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -207,24 +207,24 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>List of all items recommended to the user.</p>
+                        <p>List of all tags assigned to the item.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSArray</span> <span class="o">*</span><span class="n">recs</span><span class="p">;</span></code></pre>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSArray</span> <span class="o">*</span><span class="n">tags</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">recs</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">tags</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBUser.h#L30">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBItem.h#L38">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -232,44 +232,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)TMBUser(py)metadata"></a>
-                    <a name="//apple_ref/objc/Property/metadata" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)TMBUser(py)metadata">metadata</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Data associated with the user.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSDictionary</span> <span class="o">*</span><span class="n">metadata</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">metadata</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBUser.h#L35">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)TMBUser(py)created"></a>
+                    <a name="/c:objc(cs)TMBItem(py)created"></a>
                     <a name="//apple_ref/objc/Property/created" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)TMBUser(py)created">created</a>
+                    <a class="token" href="#/c:objc(cs)TMBItem(py)created">created</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -277,7 +242,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Time the user was created.</p>
+                        <p>Time the item was created.</p>
 
                       </div>
                       <div class="declaration">
@@ -294,7 +259,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBUser.h#L40">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBItem.h#L43">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

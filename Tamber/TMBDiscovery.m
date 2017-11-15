@@ -16,6 +16,7 @@
 }
 
 + (instancetype)decodedObjectFromAPIResponse:(NSDictionary *)response {
+    LogDebug(@"response:%@", response);
     NSDictionary *result = [response tmb_dictionaryByRemovingNullsValidatingRequiredFields:[self requiredFields]];
     if (!result) {
         return nil;

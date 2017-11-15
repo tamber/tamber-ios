@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class TMBDiscoverParams, TMBEventParams;
+@class TMBDiscoverParams, TMBEventParams, TMBDiscoverNextParams, TMBUserParams, TMBItem;
 @protocol TMBObjectEncodable;
 
 @interface TMBEncoder : NSObject

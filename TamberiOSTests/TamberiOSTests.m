@@ -9,10 +9,8 @@
 #import <XCTest/XCTest.h>
 #import <Tamber/Tamber.h>
 
-//const NSString *testProjectKey = @"Mu6DUPXdDYe98cv5JIfX";
-//const NSString *testEngineKey = @"SbWYPBNdARfIDa0IIO9L";
-const NSString *testProjectKey = @"uiGMqKTQl9PoaI1IrdTz";
-const NSString *testEngineKey = @"t02IH7JhTaOF1ElbuDTD";
+const NSString *testProjectKey = @"Mu6DUPXdDYe98cv5JIfX";
+const NSString *testEngineKey = @"SbWYPBNdARfIDa0IIO9L";
 const NSString *defaultUser = @"user_jctzgisbru";
 
 NSString *userA;
@@ -21,7 +19,7 @@ NSString *item1;
 NSString *item2;
 
 @interface TamberiOSTests : XCTestCase
-@property (strong, nonatomic) TMBClient *client;
+@property (nullable, readwrite, nonatomic) TMBClient *client;
 @end
 
 @implementation TamberiOSTests
@@ -131,7 +129,14 @@ NSString *item2;
         XCTAssertNotNil(object);
         [uSearchExp fulfill];
     }];
+    
     [self waitForExpectationsWithTimeout:5.0f handler:nil];
+    
+    XCTestExpectation *testUserExp = [self expectationWithDescription:@"makeTestUser completed"];
+    [Tamber makeTestUser:^(){
+        [testUserExp fulfill];
+    }];
+     [self waitForExpectationsWithTimeout:5.0f handler:nil];
     [Tamber setUser:defaultUser];
 }
 
@@ -254,6 +259,25 @@ NSString *item2;
     [self waitForExpectationsWithTimeout:5.0f handler:nil];
 }
 
+- (void)testItemObjectEvents {
+    TMBItem *item = [TMBItem itemWithId:@"item_id"
+                             properties:@{
+                                          @"type":@"book",
+                                          @"title":@"The Moon is a Harsh Mistress",
+                                          @"img_url":@"https://img.domain.com/book/The_Moon_is_a_Harsh Mistress.jpg",
+                                          @"stock":[NSNumber numberWithInteger:34]
+                                          }
+                                   tags:@[@"sci-fi", @"bestseller"]
+                     ];
+    TMBEventParams *eventParams = [TMBEventParams eventWithItem:item behavior:@"like"];
+    XCTestExpectation *trackExp = [self expectationWithDescription:@"Full item object event tracked"];
+    [[Tamber client] trackEvent:eventParams responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+        XCTAssertNil(errorMessage);
+        XCTAssertNotNil(object);
+        [trackExp fulfill];
+    }];
+    [self waitForExpectationsWithTimeout:5.0f handler:nil];
+}
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{

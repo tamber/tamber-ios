@@ -18,17 +18,17 @@
 /**
  *  Initialize user event with an item and behavior (TMBClient uses default user when tracking event).
  */
-+ (nullable instancetype)eventWithitem:(nonnull id) item behavior:(nonnull NSString *)behavior;
++ (nullable instancetype)eventWithItem:(nonnull id) item behavior:(nonnull NSString *)behavior;
 
 /**
  *  Initialize user event with an item, behavior, hit boolean, and context array (TMBClient uses default user when tracking event).
  */
-+ (nullable instancetype)eventWithitem:(nonnull id) item behavior:(nonnull NSString *)behavior hit:(BOOL)hit context:(nullable NSArray*)context;
++ (nullable instancetype)eventWithItem:(nonnull id) item behavior:(nonnull NSString *)behavior hit:(BOOL)hit context:(nullable NSArray*)context;
 
 /**
  *  Initialize user event with an item, behavior, amount, and created time (TMBClient uses default user when tracking event).
  */
-+ (nullable instancetype)eventWithitem:(nonnull id) item behavior:(nonnull NSString *)behavior amount:(nullable NSNumber*)amount created:(nullable NSDate*)created;
++ (nullable instancetype)eventWithItem:(nonnull id) item behavior:(nonnull NSString *)behavior amount:(nullable NSNumber*)amount created:(nullable NSDate*)created;
 
 /**
  *  Initialize an event with a user, item and behavior.

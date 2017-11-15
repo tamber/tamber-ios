@@ -6,10 +6,10 @@
 //  Copyright © 2017 Tamber. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "TMBUtils.h"
 #import "TMBObjectDecodable.h"
-#import "TMBDiscovery.h"
-#import "TMBEncoder.h"
+
+@class TMBDiscovery;
 
 NS_ASSUME_NONNULL_BEGIN
 static NSString *const TMBPushPayloadIdFieldName = @"tmb-push-id";

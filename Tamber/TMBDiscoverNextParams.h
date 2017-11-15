@@ -22,14 +22,31 @@
 + (nullable instancetype)discoverNext:(nullable NSNumber*) number;
 
 /**
+ * Get `TMBDiscoverNextParams` for user recommendations with given number of recommended items (`TMBDiscovery` objects) you want to return, and `getProperties` set to given value (set to `true` to include item properties in returned `TMBDiscovery` objects).
+ * @warning The `TMBClient` userId must be set with `setUser`.
+ * @param number Number of recommendations to return.
+ * @param getProperties Include items' properties and tags in the discovery objects.
+ */
++ (nullable instancetype)discoverNext:(nullable NSNumber*) number getProperties:(BOOL) getProperties;
+
+/**
  * The simplest way to get `TMBDiscoverNextParams` for a given item. If `TMBClient` userId has been set, the results will be tuned for the user.
+ * @param item Item's unique identifier.
  * @param number Number of recommendations to return.
  */
 + (nullable instancetype)discoverNextWithItem:(nullable NSString*) item number:(nullable NSNumber*) number;
 
 /**
+ * The simplest way to get `TMBDiscoverNextParams` for a given item. If `TMBClient` userId has been set, the results will be tuned for the user.
+ * @param item Item's unique identifier.
+ * @param number Number of recommendations to return.
+ * @param getProperties Include items' properties and tags in the discovery objects.
+ */
++ (nullable instancetype)discoverNextWithItem:(nullable NSString*) item number:(nullable NSNumber*) number getProperties:(BOOL) getProperties;
+
+/**
  * Expanded discover params for user recommendations.
- * @param item Item's unique identifier. Used for discover-similar and discover-recommended_similar.
+ * @param item Item's unique identifier.
  * @param number Number of recommendations to return. Maximum of 200.
  * @param excludeItems List of item ids to exclude from results. Useful for hiding items that are already being displayed to the user.
  * @param variability Represents the degree of variability applied to the results. variability helps make results more dynamic, and is intelligently weighted to prioritize higher-scoring results (i.e. it does not just shuffle the results). Defaults to 0 if not supplied.

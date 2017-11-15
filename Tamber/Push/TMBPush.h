@@ -5,13 +5,10 @@
 //  Created by Alexander Robbins on 10/14/17.
 //  Copyright © 2017 Tamber. All rights reserved.
 //
-
-#import <Foundation/Foundation.h>
-#import "TMBPushMessage.h"
 #import <UserNotifications/UserNotifications.h>
 #import "TMBUtils.h"
-#import "TMBSwizzler.h"
-#import "TMBEncoder.h"
+
+@class TMBPushMessage;
 
 NS_ASSUME_NONNULL_BEGIN
 static NSString *const TMBPushMessageFieldName = @"tmb-push-msg";
@@ -19,7 +16,6 @@ static NSString *const TMBPushContext = @"tmb_push";
 NS_ASSUME_NONNULL_END
 
 #pragma mark Delegate Methods
-
 @protocol TMBPushDelegate <NSObject>
 - (void) getPushContent:(nullable TMBPushMessage *) message completion:(nullable void (^)(UNMutableNotificationContent * _Nullable content))completion;
 

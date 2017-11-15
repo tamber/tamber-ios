@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Tamber.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EEF8DE9A1EBB170F00CF4CB4"
+               BuildableName = "TamberiOSTests.xctest"
+               BlueprintName = "TamberiOSTests"
+               ReferencedContainer = "container:Tamber.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

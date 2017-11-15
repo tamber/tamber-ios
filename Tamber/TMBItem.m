@@ -1,8 +1,8 @@
 //
-//  TMBUser.m
+//  TMBItem.m
 //  Tamber
 //
-//  Created by Alexander Robbins on 7/5/17.
+//  Created by Alexander Robbins on 11/10/17.
 //  Copyright © 2017 Tamber. All rights reserved.
 //
 
@@ -17,6 +17,29 @@
     self = [super init];
     if (self) {
         _additionalAPIParameters = @{};
+    }
+    return self;
+}
+
++ (instancetype)itemWithId:(NSString *) ID {
+    return [[self.class alloc] initWithId:ID properties:nil tags:nil created:nil];
+}
+
++ (instancetype)itemWithId:(NSString *) ID properties:(NSDictionary *)properties tags:(NSArray *) tags{
+    return [[self.class alloc] initWithId:ID properties:properties tags:tags created:nil];
+}
+
++ (instancetype)itemWithId:(NSString *) ID properties:(NSDictionary *)properties tags:(NSArray *) tags created:(NSDate*)created{
+    return [[self.class alloc] initWithId:ID properties:properties tags:tags created:created];
+}
+
+- (instancetype)initWithId:(NSString *) ID properties:(NSDictionary *)properties tags:(NSArray *) tags created:(NSDate*)created {
+    self = [super init];
+    if (self) {
+        _ID = ID;
+        _properties = properties;
+        _tags = tags;
+        _created = created;
     }
     return self;
 }

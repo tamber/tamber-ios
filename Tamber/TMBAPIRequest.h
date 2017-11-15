@@ -9,7 +9,6 @@
 
 #import <Foundation/Foundation.h>
 #import "TMBObjectDecodable.h"
-#import "TMBError.h"
 
 @class TMBClient;
 

@@ -6,8 +6,11 @@
 //  Copyright © 2017 Tamber. All rights reserved.
 //
 
+//#import <Tamber/TMBPushMessage.h>
 #import "TMBPushMessage.h"
 #import "NSDictionary+Tamber.h"
+#import "TMBEncoder.h"
+#import "TMBDiscovery.h"
 
 @implementation TMBPushMessage
 
@@ -16,6 +19,7 @@
 }
 
 + (instancetype)decodedObjectFromAPIResponse:(NSDictionary *)response {
+    LogDebug(@"response:%@", response);
     NSDictionary *result = [response tmb_dictionaryByRemovingNullsValidatingRequiredFields:[self requiredFields]];
     if (!result) {
         return nil;
