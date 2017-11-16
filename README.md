@@ -74,7 +74,7 @@ TMBItem *item = [TMBItem itemWithId:@"item_id"
     tags:@[@"sci-fi", @"bestseller"]
 ];
 
-TMBEventParams *params = [TMBEventParams eventWithItem:item behavior:@"like"];
+TMBEventParams *params = [TMBEventParams eventWithItem:item behavior:@"like" context:@[@"homepage", @"featured"]];
 [[Tamber client] trackEvent:params responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *error) {
     if(error){
         // Handle error

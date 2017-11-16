@@ -30,6 +30,14 @@ NSString *const TMBPushEngagedBehavior = @"tmb_push_engaged";
     return [[self.class alloc] initWithUser:nil item:item behavior:behavior amount:nil hit:false context:nil created:nil];
 }
 
++ (instancetype)eventWithItem:(id) item behavior:(NSString *)behavior context:(NSArray*)context {
+    return [[self.class alloc] initWithUser:nil item:item behavior:behavior amount:nil hit:false context:context created:nil];
+}
+
++ (instancetype)eventWithItem:(id) item behavior:(NSString *)behavior amount:(NSNumber*)amount context:(NSArray*)context {
+    return [[self.class alloc] initWithUser:nil item:item behavior:behavior amount:amount hit:false context:context created:nil];
+}
+
 + (instancetype)eventWithItem:(id) item behavior:(NSString *)behavior hit:(BOOL)hit context:(NSArray*)context {
     return [[self.class alloc] initWithUser:nil item:item behavior:behavior amount:nil hit:hit context:context created:nil];
 }

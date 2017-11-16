@@ -163,6 +163,81 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:context:"></a>
+                    <a name="//apple_ref/objc/Method/+eventWithItem:behavior:context:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:context:">+eventWithItem:behavior:context:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize user event with an item, behavior, and context (TMBClient uses default user when tracking event).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithItem</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="p">)</span><span class="nv">item</span>
+                              <span class="nf">behavior</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">behavior</span>
+                               <span class="nf">context</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">context</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withItem</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L26">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:amount:context:"></a>
+                    <a name="//apple_ref/objc/Method/+eventWithItem:behavior:amount:context:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:amount:context:">+eventWithItem:behavior:amount:context:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize user event with an item, behavior, amount, and context (TMBClient uses default user when tracking event).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithItem</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="p">)</span><span class="nv">item</span>
+                              <span class="nf">behavior</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">behavior</span>
+                                <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                               <span class="nf">context</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">context</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withItem</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">context</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L31">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:hit:context:"></a>
                     <a name="//apple_ref/objc/Method/+eventWithItem:behavior:hit:context:" class="dashAnchor"></a>
                     <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:hit:context:">+eventWithItem:behavior:hit:context:</a>
@@ -193,7 +268,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L26">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L36">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -231,7 +306,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L31">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L41">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -268,7 +343,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L36">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L46">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -307,7 +382,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L41">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L51">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -346,7 +421,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L46">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L56">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -387,7 +462,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L51">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L61">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -422,7 +497,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L63">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L73">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -457,7 +532,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L70">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L80">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -492,7 +567,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L77">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L87">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -527,7 +602,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L84">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L94">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -562,7 +637,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L91">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L101">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -597,7 +672,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L98">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L108">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -632,7 +707,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L103">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L113">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -667,7 +742,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L108">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L118">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -702,7 +777,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L113">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L123">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -737,7 +812,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L118">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L128">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -772,7 +847,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L123">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L133">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -807,7 +882,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L128">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L138">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -842,7 +917,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L133">Show on GitHub</a>
+                        <a href="https://github.com/tamber/tamber-ios/tree/master/Tamber/TMBEventParams.h#L143">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -855,7 +930,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2017 <a class="link" href="https://tamber.com" target="_blank" rel="external">Tamber</a>. All rights reserved. (Last updated: 2017-11-15)</p>
+      <p>&copy; 2017 <a class="link" href="https://tamber.com" target="_blank" rel="external">Tamber</a>. All rights reserved. (Last updated: 2017-11-16)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

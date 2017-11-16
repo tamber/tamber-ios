@@ -269,7 +269,7 @@ NSString *item2;
                                           }
                                    tags:@[@"sci-fi", @"bestseller"]
                      ];
-    TMBEventParams *eventParams = [TMBEventParams eventWithItem:item behavior:@"like"];
+    TMBEventParams *eventParams = [TMBEventParams eventWithItem:item behavior:@"like" context:@[@"homepage", @"featured"]];
     XCTestExpectation *trackExp = [self expectationWithDescription:@"Full item object event tracked"];
     [[Tamber client] trackEvent:eventParams responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
         XCTAssertNil(errorMessage);
