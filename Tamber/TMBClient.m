@@ -77,6 +77,14 @@
     [[TMBClient defaultClient] setUserPushToken: token];
 }
 
++(void) setUserPushMinInterval:(int) interval {
+    [[TMBClient defaultClient] setUserPushMinInterval: interval];
+}
+
++ (void) setUserLocation:(nullable CLLocation*)location {
+    [[TMBClient defaultClient] setUserLocation: location];
+}
+
 +(void) makeTestUser{
     [[TMBClient defaultClient] makeTestUser: nil completion:nil];
 }
@@ -178,7 +186,7 @@
     _userId = user;
 }
 
-- (void) upsertUserMetadata:(NSString *) userId field:(NSString *) field value:(id) value completion:(TMBEmptyCallbackBlock) completion {
+- (void) upsertUserMetadata:(NSString *) userId keyValues:(NSDictionary *) keyValues completion:(TMBEmptyCallbackBlock) completion {
     LogDebug(@"upsertUserMetadata called");
     if(userId == nil){
         if(_userId == nil){
@@ -190,55 +198,77 @@
     TMBUserParams *userParams = [TMBUserParams userWithId:userId];
     [self retrieveUser:userParams responseCompletion:^(TMBUser *user, NSHTTPURLResponse *response, NSError *errorMessage) {
         if(!errorMessage){
-            // Check if token already set
-            if(user.metadata){
-                id curValue = [user.metadata objectForKey:field];
-                if([value isKindOfClass:[NSString class]]){
-                    if([curValue isKindOfClass:[NSString class]] && [curValue isEqualToString:value]){
-                        if(completion){completion();}
-                        return;
-                    }
-                } else if ([value isKindOfClass:[NSNumber class]]){
-                    if([curValue isKindOfClass:[NSNumber class]] && [curValue isEqualToNumber:value]){
-                        if(completion){completion();}
-                        return;
-                    }
-                }
-            }
-            // Update token if necessary
             NSMutableDictionary *metadata;
             if(user.metadata){
                 metadata = [[NSMutableDictionary alloc] initWithDictionary:user.metadata];
             } else {
                 metadata = [[NSMutableDictionary alloc] init];
             }
-            [metadata setValue:value forKey:field];
+            __block BOOL noUpdate = false;
+            if(user.metadata){
+                noUpdate = true;
+                [keyValues enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+                    if (obj != [NSNull null]) {
+                        if([key isKindOfClass:[NSString class]]){
+                            id curValue = [user.metadata objectForKey:key];
+                            if([obj isKindOfClass:[NSString class]]){
+                                if([curValue isKindOfClass:[NSString class]] && [curValue isEqualToString:obj]){
+                                    return;
+                                }
+                            } else if ([obj isKindOfClass:[NSNumber class]]){
+                                if([curValue isKindOfClass:[NSNumber class]] && [curValue isEqualToNumber:obj]){
+                                    return;
+                                }
+                            }
+                            [metadata setValue:obj forKey:key];
+                            noUpdate = false;
+                        }
+                    }
+                }];
+            }
+            if(noUpdate){
+                if(completion){completion();}
+                return;
+            }
+            
+            // Update metadata if necessary
             userParams.metadata = metadata;
             [self updateUser:userParams responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSError *errorMessage) {
                 if(errorMessage){
                     LogDebug(@"error %@", errorMessage);
-                    if(completion){completion();}
                 }
+                if(completion){completion();}
             }];
         } else {
-            NSDictionary *metadata = @{field:value};
-            userParams.metadata = metadata;
+            userParams.metadata = keyValues;
             [self createUser:userParams responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSError *errorMessage) {
                 if(errorMessage){
                     LogDebug(@"error %@", errorMessage);
-                    if(completion){completion();}
                 }
+                if(completion){completion();}
             }];
         }
     }];
 }
 
 -(void) setUserPushToken:(nullable NSString*)token{
-    [self upsertUserMetadata:nil field:TMBPushTokenFieldName value:token completion:nil];
+    [self upsertUserMetadata:nil keyValues:@{TMBPushTokenFieldName:token, TMBTimezoneFieldName: [[NSTimeZone localTimeZone] name]} completion:nil];
+}
+
+-(void) setUserPushMinInterval:(int) interval {
+    [self upsertUserMetadata:nil keyValues:@{TMBPushMinIntervalFieldName:[NSNumber numberWithInt:interval]} completion:nil];
+}
+
+-(void) setUserLocation:(nullable CLLocation*)location {
+     // Ignore null locations
+    if((location.coordinate.latitude == 0.0 && location.coordinate.longitude == 0.0) || location == nil){
+        return;
+    }
+    [self upsertUserMetadata:nil keyValues:@{@"latitude": [NSNumber numberWithDouble:location.coordinate.latitude], @"longitude":[NSNumber numberWithDouble:location.coordinate.longitude]} completion:nil];
 }
 
 -(void) makeTestUser:(NSString *) userId completion:(TMBEmptyCallbackBlock) completion{
-    [self upsertUserMetadata:userId field:TMBTestUserFieldName value:[NSNumber numberWithBool:true] completion:completion];
+    [self upsertUserMetadata:userId keyValues:@{TMBTestUserFieldName:[NSNumber numberWithBool:true]} completion:completion];
 }
 
 -(nullable NSString*) getUser{

@@ -11,6 +11,7 @@
 
 const NSString *testProjectKey = @"Mu6DUPXdDYe98cv5JIfX";
 const NSString *testEngineKey = @"SbWYPBNdARfIDa0IIO9L";
+
 const NSString *defaultUser = @"user_jctzgisbru";
 
 NSString *userA;
@@ -56,34 +57,7 @@ NSString *item2;
     [self waitForExpectationsWithTimeout:5.0f handler:nil];
 }
 
-- (void)testRecs {
-    TMBDiscoverNextParams *nextParams = [TMBDiscoverNextParams discoverNext:[NSNumber numberWithInt:8]];
-    XCTestExpectation *discoverNextExp = [self expectationWithDescription:@"Discover next"];
-    [_client discoverNext:nextParams responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
-        XCTAssertNil(errorMessage);
-        XCTAssertNotNil(object);
-        [discoverNextExp fulfill];
-    }];
-    [self waitForExpectationsWithTimeout:5.0f handler:nil];
-    
-    TMBDiscoverNextParams *nextParamsFull = [TMBDiscoverNextParams discoverNext:item1 number:[NSNumber numberWithInt:8] excludeItems:@[item2] variability:[NSNumber numberWithFloat:0.1]  filter:nil getProperties:true];
-    XCTestExpectation *discoverNextExp2 = [self expectationWithDescription:@"Discover next with item, exclude_items, variability, and get_properties set"];
-    [_client discoverNext:nextParamsFull responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
-        XCTAssertNil(errorMessage);
-        XCTAssertNotNil(object);
-        [discoverNextExp2 fulfill];
-    }];
-    [self waitForExpectationsWithTimeout:5.0f handler:nil];
-    
-    TMBDiscoverParams *params = [TMBDiscoverParams discoverParamsWithUser:defaultUser number:nil];
-    XCTestExpectation *discoverExp = [self expectationWithDescription:@"Discover recommended"];
-    [_client discoverRecommendations:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
-        XCTAssertNil(errorMessage);
-        XCTAssertNotNil(object);
-        [discoverExp fulfill];
-    }];
-    [self waitForExpectationsWithTimeout:5.0f handler:nil];
-}
+
 
 - (void)testBasicUserOps {
     // 1. Create user with events
@@ -132,6 +106,16 @@ NSString *item2;
     
     [self waitForExpectationsWithTimeout:5.0f handler:nil];
     
+    // 5. Set push token
+//    XCTestExpectation *pushTokExp = [self expectationWithDescription:@"Set push token completed"];
+    [Tamber setUserPushToken:@"test_token"];
+    
+    // 6. Set location
+//    XCTestExpectation *locationExp = [self expectationWithDescription:@"Set location completed"];
+    CLLocation * loc = [[CLLocation alloc] initWithLatitude:37.33182 longitude:122.03118];
+    [Tamber setUserLocation:loc];
+    
+    // 7. Make test user
     XCTestExpectation *testUserExp = [self expectationWithDescription:@"makeTestUser completed"];
     [Tamber makeTestUser:^(){
         [testUserExp fulfill];

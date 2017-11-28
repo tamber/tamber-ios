@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 #import "TMBEventParams.h"
 #import "TMBEventResponse.h"
 #import "TMBDiscoverParams.h"
@@ -23,11 +24,13 @@
 #import "TMBAPIRequest.h"
 
 NS_ASSUME_NONNULL_BEGIN
-static  NSString *const TMBSDKVersion = @"0.0.12";
+static  NSString *const TMBSDKVersion = @"0.0.13";
 static NSString *const TMBApiURLBase = @"api.tamber.com/v1";
-static NSString *const TMBApiVersion = @"2017-10-12";
+static NSString *const TMBApiVersion = @"2017-11-9";
 
 static NSString *const TMBPushTokenFieldName = @"tmb_push_token_ios";
+static NSString *const TMBPushMinIntervalFieldName = @"tmb_push_min_interval";
+static NSString *const TMBTimezoneFieldName = @"tmb_timezone";
 static NSString *const TMBTestUserFieldName = @"tmb_test_user";
 
 static NSString *const TMBDefaultContext = @"tamber";
@@ -73,6 +76,18 @@ NS_ASSUME_NONNULL_END
  * @param token The unique push token for the user
  */
 + (void) setUserPushToken:(nullable NSString*)token;
+
+/**
+ * Set the minimum time between push notifications for the user to override the global default.
+ * @param interval The mimimum interval (in seconds)
+ */
++ (void) setUserPushMinInterval:(int) interval;
+
+/**
+ * Set the location for the user (must set the user first)
+ * @param location The current location for the user
+ */
++ (void) setUserLocation:(nullable CLLocation*)location;
 
 + (void) makeTestUser;
 + (void) makeTestUser:(nullable TMBEmptyCallbackBlock) completion;
@@ -134,6 +149,14 @@ NS_ASSUME_NONNULL_END
  * @param token The unique push token for the user
  */
 -(void) setUserPushToken:(nullable NSString*)token;
+
+-(void) setUserPushMinInterval:(int) interval;
+
+/**
+ * Set the location for the user (must set the user first)
+ * @param location The current location for the user
+ */
+-(void) setUserLocation:(nullable CLLocation*)location;
 
 -(void) makeTestUser:(nullable NSString *) userId completion:(nullable TMBEmptyCallbackBlock) completion;
 /**

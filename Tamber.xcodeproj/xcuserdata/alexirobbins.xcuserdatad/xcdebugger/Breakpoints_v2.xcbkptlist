@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tamber/TMBClient.h"
-            timestampString = "532481547.84452"
+            timestampString = "533527442.63509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TamberiOSTests/TamberiOSTests.m"
-            timestampString = "532481547.844621"
+            timestampString = "533527442.635281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "-testUserMerge_ToNovelUser"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TamberiOSTests/TamberiOSTests.m"
-            timestampString = "532481547.845251"
+            timestampString = "533527442.636025"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "-testExample"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tamber/TMBClient.h"
-            timestampString = "532481547.845611"
+            timestampString = "533527442.636595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
             landmarkName = "TMBClient"
             landmarkType = "2">
          </BreakpointContent>
@@ -90,13 +90,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tamber/TMBClient.m"
-            timestampString = "532481547.845769"
+            timestampString = "533527442.636841"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "378"
-            endingLineNumber = "378"
-            landmarkName = "TMBClient"
-            landmarkType = "3">
+            startingLineNumber = "386"
+            endingLineNumber = "386"
+            landmarkName = "-discoverRecommendations:responseCompletion:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TamberiOSTests/TamberiOSTests.m"
-            timestampString = "532481547.845914"
+            timestampString = "533527442.637031"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "-setUp"
             landmarkType = "7">
          </BreakpointContent>
@@ -394,22 +394,22 @@
                   moduleName = "Tamber"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPush.m"
-                  timestampString = "532481549.156127"
+                  timestampString = "533525914.413324"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "172"
                   endingLineNumber = "172"
-                  offsetFromSymbolStart = "269">
+                  offsetFromSymbolStart = "206">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_.127"
+                  symbolName = "__copy_helper_block_.121"
                   moduleName = "Tamber"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPush.m"
-                  timestampString = "532481549.167821"
+                  timestampString = "533525914.424063"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "172"
@@ -420,11 +420,11 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_.128"
+                  symbolName = "__destroy_helper_block_.122"
                   moduleName = "Tamber"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPush.m"
-                  timestampString = "532481549.173622"
+                  timestampString = "533525914.430501"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "172"
@@ -553,12 +553,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tamber/TMBClient.m"
-            timestampString = "532481547.847056"
+            timestampString = "533527442.63922"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "401"
-            endingLineNumber = "401"
-            landmarkName = "+tamberUserAgentDetails"
+            startingLineNumber = "409"
+            endingLineNumber = "409"
+            landmarkName = "-discoverRecommendedSimilar:responseCompletion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -569,12 +569,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tamber/TMBClient.m"
-            timestampString = "532481547.847122"
+            timestampString = "533527442.639441"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "412"
+            endingLineNumber = "412"
+            landmarkName = "-discoverRecommendedSimilar:responseCompletion:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tamber/TMBClient.m"
+            timestampString = "533527442.639547"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "404"
             endingLineNumber = "404"
-            landmarkName = "+tamberUserAgentDetails"
+            landmarkName = "-discoverSimilar:responseCompletion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -585,28 +601,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tamber/TMBClient.m"
-            timestampString = "532481547.847188"
+            timestampString = "533527442.639754"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "396"
-            endingLineNumber = "396"
-            landmarkName = "+tamberUserAgentDetails"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tamber/TMBClient.m"
-            timestampString = "532481547.847253"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "397"
-            endingLineNumber = "397"
-            landmarkName = "+tamberUserAgentDetails"
+            startingLineNumber = "405"
+            endingLineNumber = "405"
+            landmarkName = "-discoverSimilar:responseCompletion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -681,11 +681,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tamber/TMBClient.m"
-            timestampString = "532481547.847573"
+            timestampString = "533527442.640227"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "-init"
             landmarkType = "7">
          </BreakpointContent>
@@ -697,12 +697,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tamber/TMBClient.m"
-            timestampString = "532481547.84764"
+            timestampString = "533527442.640378"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
-            landmarkName = "-upsertUserMetadata:field:value:completion:"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
+            landmarkName = "-upsertUserMetadata:keyValues:completion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -777,12 +777,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tamber/TMBClient.m"
-            timestampString = "532481547.84782"
+            timestampString = "533527442.640711"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
-            landmarkName = "-setUser:"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "-init"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1049,11 +1049,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tamber/TMBClient.m"
-            timestampString = "532481547.84805"
+            timestampString = "533527442.641185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "TMBClient"
             landmarkType = "3">
          </BreakpointContent>
@@ -1061,32 +1061,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tamber/TMBClient.m"
-            timestampString = "532481547.848118"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
-            landmarkName = "-upsertUserMetadata:field:value:completion:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tamber/TMBClient.m"
-            timestampString = "532481547.848184"
+            timestampString = "533527442.641325"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "-upsertUserMetadata:field:value:completion:"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
+            landmarkName = "-upsertUserMetadata:keyValues:completion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1097,28 +1081,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tamber/TMBClient.m"
-            timestampString = "532481547.84825"
+            timestampString = "533527442.641459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
-            landmarkName = "TMBClient"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tamber/TMBClient.m"
-            timestampString = "532481547.848315"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
-            landmarkName = "-createUser:responseCompletion:"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
+            landmarkName = "-getUser"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1129,124 +1097,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tamber/TMBClient.m"
-            timestampString = "532481547.84838"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
-            landmarkName = "-upsertUserMetadata:field:value:completion:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tamber/TMBClient.m"
-            timestampString = "532481547.848446"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
-            landmarkName = "-setUserPushToken:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tamber/TMBClient.m"
-            timestampString = "532481547.848512"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "270"
-            endingLineNumber = "270"
-            landmarkName = "-createUser:responseCompletion:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tamber/TMBClient.m"
-            timestampString = "532481547.848577"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
-            landmarkName = "-upsertUserMetadata:field:value:completion:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tamber/TMBClient.m"
-            timestampString = "532481547.848642"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
-            landmarkName = "-upsertUserMetadata:field:value:completion:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tamber/TMBClient.m"
-            timestampString = "532481547.848707"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
-            landmarkName = "-upsertUserMetadata:field:value:completion:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tamber/TMBClient.m"
-            timestampString = "532481547.84877"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
-            landmarkName = "-upsertUserMetadata:field:value:completion:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tamber/TMBClient.m"
-            timestampString = "532481547.848835"
+            timestampString = "533527442.641594"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "185"
             endingLineNumber = "185"
-            landmarkName = "-upsertUserMetadata:field:value:completion:"
+            landmarkName = "-setUser:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1257,12 +1113,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tamber/TMBClient.m"
-            timestampString = "532481592.055486"
+            timestampString = "533527442.641735"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
-            landmarkName = "-upsertUserMetadata:field:value:completion:"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
+            landmarkName = "-upsertUserMetadata:keyValues:completion:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tamber/TMBClient.m"
+            timestampString = "533527442.641849"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
+            landmarkName = "-trackEvent:responseCompletion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1273,12 +1145,92 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tamber/TMBClient.m"
-            timestampString = "532481593.578968"
+            timestampString = "533527442.641968"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
-            landmarkName = "-upsertUserMetadata:field:value:completion:"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
+            landmarkName = "-upsertUserMetadata:keyValues:completion:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tamber/TMBClient.m"
+            timestampString = "533527442.642075"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
+            landmarkName = "-upsertUserMetadata:keyValues:completion:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tamber/TMBClient.m"
+            timestampString = "533527442.642188"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
+            landmarkName = "-upsertUserMetadata:keyValues:completion:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[TMBClient upsertUserMetadata:keyValues:completion:]"
+                  moduleName = "Tamber"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.m"
+                  timestampString = "533525914.51057"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "199"
+                  endingLineNumber = "199"
+                  offsetFromSymbolStart = "279">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__53-[TMBClient upsertUserMetadata:keyValues:completion:]_block_invoke"
+                  moduleName = "Tamber"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.m"
+                  timestampString = "533525914.514393"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "200"
+                  endingLineNumber = "200"
+                  offsetFromSymbolStart = "127">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tamber/TMBClient.m"
+            timestampString = "533527442.642324"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "-upsertUserMetadata:keyValues:completion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1289,13 +1241,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TamberiOSTests/TamberiOSTests.m"
-            timestampString = "532481857.193117"
+            timestampString = "533527442.642432"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
             landmarkName = "unknown"
             landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[TamberiOSTests client]"
+                  moduleName = "TamberiOSTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexirobbins/Sites/programming/Tamber/TamberiOSTests/TamberiOSTests.m"
+                  timestampString = "533525914.373551"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[TamberiOSTests setClient:]"
+                  moduleName = "TamberiOSTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexirobbins/Sites/programming/Tamber/TamberiOSTests/TamberiOSTests.m"
+                  timestampString = "533525914.378464"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "49">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1305,12 +1289,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tamber/TMBEventParams.m"
-            timestampString = "532557936.587242"
+            timestampString = "533527442.643169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
             endingLineNumber = "33"
             landmarkName = "+eventWithItem:behavior:context:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tamber/TMBClient.m"
+            timestampString = "533527442.643288"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "-upsertUserMetadata:keyValues:completion:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tamber/TMBClient.m"
+            timestampString = "533527442.643412"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
+            landmarkName = "-upsertUserMetadata:keyValues:completion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

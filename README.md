@@ -34,7 +34,7 @@ $ pod install
 
 If you are just getting started, check out the [Quick Start][quickstart] guide for instructions on how to get setup.
 
-To begin tracking events, set your publishable project key. If you have already begun tracking real time events and have created an engine, you should also set your engine key so you can retrieve recommendations.
+To begin tracking events, set your publishable project key.
 
 ```objc
 #import "AppDelegate.h"
@@ -43,8 +43,6 @@ To begin tracking events, set your publishable project key. If you have already 
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Tamber setPublishableProjectKey:@"your_project_key"];
-    // If you have an engine use:
-    [Tamber setPublishableProjectKey:@"your_project_key" publishableEngineKey:@"your_engine_key"];
     // do any other necessary launch configuration
     return YES;
 }
