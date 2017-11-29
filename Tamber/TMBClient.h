@@ -24,8 +24,8 @@
 #import "TMBAPIRequest.h"
 
 NS_ASSUME_NONNULL_BEGIN
-static  NSString *const TMBSDKVersion = @"0.0.13";
-static NSString *const TMBApiURLBase = @"api.tamber.com/v1";
+static  NSString *const TMBSDKVersion = @"0.0.14";
+static NSString *const TMBApiURLBase = @"works.tamber.com/v1";
 static NSString *const TMBApiVersion = @"2017-11-9";
 
 static NSString *const TMBPushTokenFieldName = @"tmb_push_token_ios";
@@ -174,6 +174,16 @@ NS_ASSUME_NONNULL_END
  * Track start of user session. Used to evaluate engagement driven by push notifications.
  */
 -(void) sessionStarted;
+
+/**
+ * Disable push notification services for the user.
+ */
+- (void) disableUserPush;
+
+/**
+ * Enable push notification services for the user *after* having called `disableUserPush`. Push services will be enabled by default if `enablePush` has been called and the user has given push permissions to the app.
+ */
+- (void) reEnableUserPush;
 
 /**
  * Track event to your project.

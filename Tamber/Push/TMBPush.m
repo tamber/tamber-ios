@@ -107,17 +107,11 @@ static bool swizzled = false;
     }
 }
 
-// set token
-// call tamber client setToken method
 -(void) setPushDeviceToken:(nullable NSData *) token{
     NSString* newTokenString = [[[token description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
     [_client setUserPushToken:newTokenString];
 }
-// SWIZZLE ALTERNATIVE:
-// didRegisterForRemoteNotifications
 
-
-// push received
 -(void) pushNotificationReceived:(nullable NSDictionary *) payload willDisplayAlert:(bool) willDisplayAlert completion:(TMBEmptyCallbackBlock) completion {
     LogDebug(@"pushNotificationReceived called");
     TMBPushMessage *tmbMessage = [TMBPushMessage decodedObjectFromAPIResponse:payload];
@@ -186,11 +180,11 @@ static bool swizzled = false;
     if ([tmbMsgDict isKindOfClass:[NSDictionary class]]){
         TMBPushMessage *tmbMessage = [TMBPushMessage decodedObjectFromAPIResponse:tmbMsgDict];
         for(TMBDiscovery *d in tmbMessage.items){
-            [_client trackPushRendered:d.item context:@[TMBPushContext, tmbMessage.type]];
+            [_client trackPushRendered:d.item context:@[TMBPushContext, tmbMessage.type, TMBPushTargetItemContext]];
         }
         if(tmbMessage.srcItems){
             for(TMBDiscovery *d in tmbMessage.srcItems){
-                [_client trackPushRendered:d.item context:@[TMBPushContext, tmbMessage.type]];
+                [_client trackPushRendered:d.item context:@[TMBPushContext, tmbMessage.type, TMBPushSourceItemContext]];
             }
         }
     } else {
@@ -205,7 +199,7 @@ static bool swizzled = false;
         TMBPushMessage *tmbMessage = [TMBPushMessage decodedObjectFromAPIResponse:tmbMsgDict];
         if(tmbMessage){
             for(TMBDiscovery *d in tmbMessage.items){
-                [_client trackPushEngaged:d.item context:@[TMBPushContext, tmbMessage.type]];
+                [_client trackPushEngaged:d.item context:@[TMBPushContext, tmbMessage.type, TMBPushTargetItemContext]];
             }
         }
     }

@@ -13,6 +13,8 @@
 NS_ASSUME_NONNULL_BEGIN
 static NSString *const TMBPushMessageFieldName = @"tmb-push-msg";
 static NSString *const TMBPushContext = @"tmb_push";
+static NSString *const TMBPushTargetItemContext = @"tmb_push_target_item";
+static NSString *const TMBPushSourceItemContext = @"tmb_push_src_item";
 NS_ASSUME_NONNULL_END
 
 #pragma mark Delegate Methods

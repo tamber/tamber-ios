@@ -259,6 +259,14 @@
     [self upsertUserMetadata:nil keyValues:@{TMBPushMinIntervalFieldName:[NSNumber numberWithInt:interval]} completion:nil];
 }
 
+- (void) disableUserPush {
+    [self upsertUserMetadata:nil keyValues:@{ @"tmb_push_setting_ios": @"off"} completion:nil];
+}
+
+- (void) reEnableUserPush {
+    [self upsertUserMetadata:nil keyValues:@{ @"tmb_push_setting_ios": @"on"} completion:nil];
+}
+
 -(void) setUserLocation:(nullable CLLocation*)location {
      // Ignore null locations
     if((location.coordinate.latitude == 0.0 && location.coordinate.longitude == 0.0) || location == nil){

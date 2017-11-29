@@ -9,8 +9,11 @@
 #import <XCTest/XCTest.h>
 #import <Tamber/Tamber.h>
 
-const NSString *testProjectKey = @"Mu6DUPXdDYe98cv5JIfX";
-const NSString *testEngineKey = @"SbWYPBNdARfIDa0IIO9L";
+//const NSString *testProjectKey = @"Mu6DUPXdDYe98cv5JIfX";
+//const NSString *testEngineKey = @"SbWYPBNdARfIDa0IIO9L";
+
+const NSString *testProjectKey = @"lkd2Jp0eKthnCGD5iH5J";
+const NSString *testEngineKey = @"v6KXPdg6mYBJd99j9cqg";
 
 const NSString *defaultUser = @"user_jctzgisbru";
 
@@ -107,15 +110,16 @@ NSString *item2;
     [self waitForExpectationsWithTimeout:5.0f handler:nil];
     
     // 5. Set push token
-//    XCTestExpectation *pushTokExp = [self expectationWithDescription:@"Set push token completed"];
     [Tamber setUserPushToken:@"test_token"];
     
-    // 6. Set location
-//    XCTestExpectation *locationExp = [self expectationWithDescription:@"Set location completed"];
+    // 6. Set push min interval
+    [Tamber setUserPushMinInterval:24*60*60];
+    
+    // 7. Set location
     CLLocation * loc = [[CLLocation alloc] initWithLatitude:37.33182 longitude:122.03118];
     [Tamber setUserLocation:loc];
     
-    // 7. Make test user
+    // 8. Make test user
     XCTestExpectation *testUserExp = [self expectationWithDescription:@"makeTestUser completed"];
     [Tamber makeTestUser:^(){
         [testUserExp fulfill];
