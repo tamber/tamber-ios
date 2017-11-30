@@ -9,11 +9,8 @@
 #import <XCTest/XCTest.h>
 #import <Tamber/Tamber.h>
 
-//const NSString *testProjectKey = @"Mu6DUPXdDYe98cv5JIfX";
-//const NSString *testEngineKey = @"SbWYPBNdARfIDa0IIO9L";
-
-const NSString *testProjectKey = @"lkd2Jp0eKthnCGD5iH5J";
-const NSString *testEngineKey = @"v6KXPdg6mYBJd99j9cqg";
+const NSString *testProjectKey = @"Mu6DUPXdDYe98cv5JIfX";
+const NSString *testEngineKey = @"SbWYPBNdARfIDa0IIO9L";
 
 const NSString *defaultUser = @"user_jctzgisbru";
 
@@ -124,7 +121,7 @@ NSString *item2;
     [Tamber makeTestUser:^(){
         [testUserExp fulfill];
     }];
-     [self waitForExpectationsWithTimeout:5.0f handler:nil];
+     [self waitForExpectationsWithTimeout:400.0f handler:nil];
     [Tamber setUser:defaultUser];
 }
 

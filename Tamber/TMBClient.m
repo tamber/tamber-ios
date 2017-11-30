@@ -233,17 +233,17 @@
             
             // Update metadata if necessary
             userParams.metadata = metadata;
-            [self updateUser:userParams responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSError *errorMessage) {
-                if(errorMessage){
-                    LogDebug(@"error %@", errorMessage);
+            [self updateUser:userParams responseCompletion:^(TMBUser *mupuser, NSHTTPURLResponse *mupresponse, NSError *muperrorMessage) {
+                if(muperrorMessage){
+                    LogDebug(@"error %@", muperrorMessage);
                 }
                 if(completion){completion();}
             }];
         } else {
             userParams.metadata = keyValues;
-            [self createUser:userParams responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSError *errorMessage) {
-                if(errorMessage){
-                    LogDebug(@"error %@", errorMessage);
+            [self createUser:userParams responseCompletion:^(TMBUser *mupuser, NSHTTPURLResponse *response, NSError *muperrorMessage) {
+                if(muperrorMessage){
+                    LogDebug(@"error %@", muperrorMessage);
                 }
                 if(completion){completion();}
             }];
