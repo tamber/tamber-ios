@@ -24,9 +24,9 @@
 #import "TMBAPIRequest.h"
 
 NS_ASSUME_NONNULL_BEGIN
-static  NSString *const TMBSDKVersion = @"0.0.15";
+static  NSString *const TMBSDKVersion = @"0.0.16";
 static NSString *const TMBApiURLBase = @"api.tamber.com/v1";
-static NSString *const TMBApiVersion = @"2017-11-9";
+static NSString *const TMBApiVersion = @"2017-11-30";
 
 static NSString *const TMBPushTokenFieldName = @"tmb_push_token_ios";
 static NSString *const TMBPushMinIntervalFieldName = @"tmb_push_min_interval";

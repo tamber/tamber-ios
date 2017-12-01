@@ -16,6 +16,7 @@ static NSString *const TMBPushPayloadIdFieldName = @"tmb-push-id";
 static NSString *const TMBPushPayloadTypeFieldName = @"tmb-type";
 static NSString *const TMBPushPayloadItemsFieldName = @"tmb-items";
 static NSString *const TMBPushPayloadSrcItemsFieldName = @"tmb-src-items";
+static NSString *const TMBPushPayloadMessageFieldName = @"tmb-push-message";
 NS_ASSUME_NONNULL_END
 
 @interface TMBPushMessage : NSObject<TMBObjectDecodable>
@@ -24,6 +25,7 @@ NS_ASSUME_NONNULL_END
 
 @property (nullable, readwrite, nonatomic) NSDictionary *aps;
 @property (nullable, readwrite, nonatomic) NSString *type;
+@property (nullable, readwrite, nonatomic) NSString *message;
 @property (nullable, readwrite, nonatomic) NSString *pushId;
 @property (nullable, readwrite, nonatomic) NSArray<TMBDiscovery *> *items;
 @property (nullable, readwrite, nonatomic) NSArray<TMBDiscovery *> *srcItems;

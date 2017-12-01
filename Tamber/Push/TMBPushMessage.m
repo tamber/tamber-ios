@@ -27,6 +27,7 @@
     TMBPushMessage *message = [self new];
     message.pushId = result[TMBPushPayloadIdFieldName];
     message.type = result[TMBPushPayloadTypeFieldName];
+    message.message = result[TMBPushPayloadMessageFieldName];
     if(result[TMBPushPayloadItemsFieldName] != nil){
         NSMutableArray *items = [[NSMutableArray alloc] init];
         for (NSDictionary *discoveryDict in result[TMBPushPayloadItemsFieldName]){
@@ -56,6 +57,7 @@
              @"aps": @"aps",
              };
 }
+
 -(NSDictionary *) dict{
     NSMutableDictionary *keyPairs = [NSMutableDictionary dictionary];
     [[TMBPushMessage propertyNamesToFormFieldNamesMapping] enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull propertyName, NSString *  _Nonnull formFieldName, __unused BOOL * _Nonnull stop) {

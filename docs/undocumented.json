@@ -79,7 +79,14 @@
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPushMessage.h",
-      "line": 21,
+      "line": 19,
+      "symbol": "TMBPushPayloadMessageFieldName",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPushMessage.h",
+      "line": 22,
       "symbol": "TMBPushMessage",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
       "warning": "undocumented"
