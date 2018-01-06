@@ -468,12 +468,12 @@
 }
 
 - (void) trackPushReceived:(nullable NSString *) pushId context:(nullable NSArray *) context{
-    [[Tamber client] trackEvent:[TMBEventParams pushReceivedWithContext:context created:nil] responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+    [[Tamber client] trackEvent:[TMBEventParams pushReceivedWithContext:context created:[NSDate date]] responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
         // handle
     }];
 }
 - (void) trackPushRendered:(nullable NSString *) item context:(nullable NSArray *) context{
-    TMBEventParams *eventParams = [TMBEventParams pushRenderedWithContext:context created:nil];
+    TMBEventParams *eventParams = [TMBEventParams pushRenderedWithContext:context created:[NSDate date]];
     eventParams.item = item;
     [[Tamber client] trackEvent:eventParams responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
          // handle
@@ -481,7 +481,7 @@
 }
 
 - (void) trackPushEngaged:(nullable NSString *) item context:(nullable NSArray *) context{
-    TMBEventParams *eventParams = [TMBEventParams pushEngagedWithContext:context created:nil];
+    TMBEventParams *eventParams = [TMBEventParams pushEngagedWithContext:context created:[NSDate date]];
     eventParams.item = item;
     [[Tamber client] trackEvent:eventParams responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
         LogDebug(@"error:%@", errorMessage.localizedDescription);

@@ -44,7 +44,6 @@ NSString *item2;
 }
 
 - (void)testExample {
-    double nan = NAN;
     NSNumber * v =  [NSNumber numberWithDouble:0.3];
 //    NSLog(@"v:%@", [v doubleValue]);
     TMBEventParams *params = [TMBEventParams eventWithUser:@"user_a" item:@"item_1" behavior:@"like" amount:v hit:true context:@[@"recommended", @"detail-view", @"tmb_ios"] created:[NSDate date]];

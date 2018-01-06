@@ -83,7 +83,7 @@ NSString *const TMBPushEngagedBehavior = @"tmb_push_engaged";
 #pragma mark - Reserved item-less events
 
 + (instancetype)sessionStarted{
-    return [[self.class alloc] initWithUser:nil item:nil behavior:TMBSessionStartedBehavior amount:nil hit:false context:nil created:nil];
+    return [[self.class alloc] initWithUser:nil item:nil behavior:TMBSessionStartedBehavior amount:nil hit:false context:nil created:[NSDate date]];
 }
 
 + (instancetype)sessionStartedWithContext:(NSArray*)context created:(NSDate*)created{
@@ -91,7 +91,7 @@ NSString *const TMBPushEngagedBehavior = @"tmb_push_engaged";
 }
 
 + (instancetype)sessionEnded{
-    return [[self.class alloc] initWithUser:nil item:nil behavior:TMBSessionEndedBehavior amount:nil hit:false context:nil created:nil];
+    return [[self.class alloc] initWithUser:nil item:nil behavior:TMBSessionEndedBehavior amount:nil hit:false context:nil created:[NSDate date]];
 }
 
 + (instancetype)sessionEndedWithContext:(NSArray*)context created:(NSDate*)created{
@@ -99,7 +99,7 @@ NSString *const TMBPushEngagedBehavior = @"tmb_push_engaged";
 }
 
 + (instancetype)pushRendered{
-    return [[self.class alloc] initWithUser:nil item:nil behavior:TMBPushRenderedBehavior amount:nil hit:false context:nil created:nil];
+    return [[self.class alloc] initWithUser:nil item:nil behavior:TMBPushRenderedBehavior amount:nil hit:false context:nil created:[NSDate date]];
 }
 
 + (instancetype)pushRenderedWithContext:(NSArray*)context created:(NSDate*)created{
@@ -107,7 +107,7 @@ NSString *const TMBPushEngagedBehavior = @"tmb_push_engaged";
 }
 
 + (nullable instancetype)pushReceived{
-    return [[self.class alloc] initWithUser:nil item:nil behavior:TMBPushReceivedBehavior amount:nil hit:false context:nil created:nil];
+    return [[self.class alloc] initWithUser:nil item:nil behavior:TMBPushReceivedBehavior amount:nil hit:false context:nil created:[NSDate date]];
 }
 
 + (nullable instancetype)pushReceivedWithContext:(nullable NSArray*)context created:(nullable NSDate*)created{
@@ -115,7 +115,7 @@ NSString *const TMBPushEngagedBehavior = @"tmb_push_engaged";
 }
 
 + (nullable instancetype)pushEngaged{
-    return [[self.class alloc] initWithUser:nil item:nil behavior:TMBPushEngagedBehavior amount:nil hit:true context:nil created:nil];
+    return [[self.class alloc] initWithUser:nil item:nil behavior:TMBPushEngagedBehavior amount:nil hit:true context:nil created:[NSDate date]];
 }
 
 + (nullable instancetype)pushEngagedWithContext:(nullable NSArray*)context created:(nullable NSDate*)created{
@@ -135,6 +135,7 @@ NSString *const TMBPushEngagedBehavior = @"tmb_push_engaged";
              @"behavior": @"behavior",
              @"amount": @"amount",
              @"created": @"created",
+             @"context": @"context",
              @"getRecs": @"get_recs",
              };
 }
