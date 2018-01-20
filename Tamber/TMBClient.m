@@ -195,58 +195,35 @@
         }
         userId = _userId;
     }
-    TMBUserParams *userParams = [TMBUserParams userWithId:userId];
-    [self retrieveUser:userParams responseCompletion:^(TMBUser *user, NSHTTPURLResponse *response, NSError *errorMessage) {
-        if(!errorMessage){
-            NSMutableDictionary *metadata;
-            if(user.metadata){
-                metadata = [[NSMutableDictionary alloc] initWithDictionary:user.metadata];
-            } else {
-                metadata = [[NSMutableDictionary alloc] init];
-            }
-            __block BOOL noUpdate = false;
-            if(user.metadata){
-                noUpdate = true;
-                [keyValues enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-                    if (obj != [NSNull null]) {
-                        if([key isKindOfClass:[NSString class]]){
-                            id curValue = [user.metadata objectForKey:key];
-                            if([obj isKindOfClass:[NSString class]]){
-                                if([curValue isKindOfClass:[NSString class]] && [curValue isEqualToString:obj]){
-                                    return;
+    TMBUserParams *userParams = [TMBUserParams userWithId:userId metadata:keyValues];
+    [self updateUser:userParams responseCompletion:^(TMBUser *user, NSHTTPURLResponse *response, NSError *errorMessage) {
+        if(errorMessage){
+            LogDebug(@"ERROR %@", errorMessage);
+            if([errorMessage.domain isEqualToString:TamberDomain]) {
+                [self createUser:userParams responseCompletion:^(TMBUser *cuser, NSHTTPURLResponse *response, NSError *cerrorMessage) {
+                    if(cerrorMessage){
+                        LogDebug(@"CERROR %@", cerrorMessage);
+                        if([cerrorMessage.domain isEqualToString:TamberDomain]) {
+                            [self updateUser:userParams responseCompletion:^(TMBUser *upuser, NSHTTPURLResponse *response, NSError *uperrorMessage) {
+                                if(uperrorMessage){
+                                    LogDebug(@"UPERROR %@", uperrorMessage);
                                 }
-                            } else if ([obj isKindOfClass:[NSNumber class]]){
-                                if([curValue isKindOfClass:[NSNumber class]] && [curValue isEqualToNumber:obj]){
-                                    return;
+                                if(completion){
+                                    completion();
                                 }
-                            }
-                            [metadata setValue:obj forKey:key];
-                            noUpdate = false;
+                            }];
+                        } else if(completion){
+                            completion();
                         }
+                    }else if(completion){
+                        completion();
                     }
                 }];
+            } else if(completion){
+                completion();
             }
-            if(noUpdate){
-                if(completion){completion();}
-                return;
-            }
-            
-            // Update metadata if necessary
-            userParams.metadata = metadata;
-            [self updateUser:userParams responseCompletion:^(TMBUser *mupuser, NSHTTPURLResponse *mupresponse, NSError *muperrorMessage) {
-                if(muperrorMessage){
-                    LogDebug(@"error %@", muperrorMessage);
-                }
-                if(completion){completion();}
-            }];
-        } else {
-            userParams.metadata = keyValues;
-            [self createUser:userParams responseCompletion:^(TMBUser *mupuser, NSHTTPURLResponse *response, NSError *muperrorMessage) {
-                if(muperrorMessage){
-                    LogDebug(@"error %@", muperrorMessage);
-                }
-                if(completion){completion();}
-            }];
+        } else if(completion){
+            completion();
         }
     }];
 }
@@ -276,7 +253,7 @@
 }
 
 -(void) makeTestUser:(NSString *) userId completion:(TMBEmptyCallbackBlock) completion{
-    [self upsertUserMetadata:userId keyValues:@{TMBTestUserFieldName:[NSNumber numberWithBool:true]} completion:completion];
+    [self upsertUserMetadata:userId keyValues:@{TMBTestUserFieldName:[NSNumber numberWithBool:TRUE]} completion:completion];
 }
 
 -(nullable NSString*) getUser{
@@ -467,25 +444,26 @@
     }
 }
 
-- (void) trackPushReceived:(nullable NSString *) pushId context:(nullable NSArray *) context{
+- (void) trackPushReceived:(nullable NSString *) pushId context:(nullable NSArray *) context completion:(TMBEmptyCallbackBlock) completion{
     [[Tamber client] trackEvent:[TMBEventParams pushReceivedWithContext:context created:[NSDate date]] responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
-        // handle
-    }];
-}
-- (void) trackPushRendered:(nullable NSString *) item context:(nullable NSArray *) context{
-    TMBEventParams *eventParams = [TMBEventParams pushRenderedWithContext:context created:[NSDate date]];
-    eventParams.item = item;
-    [[Tamber client] trackEvent:eventParams responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
-         // handle
+        if(completion){completion();}
     }];
 }
 
-- (void) trackPushEngaged:(nullable NSString *) item context:(nullable NSArray *) context{
+- (void) trackPushRendered:(nullable NSString *) item context:(nullable NSArray *) context completion:(TMBEmptyCallbackBlock) completion{
+    TMBEventParams *eventParams = [TMBEventParams pushRenderedWithContext:context created:[NSDate date]];
+    eventParams.item = item;
+    [[Tamber client] trackEvent:eventParams responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+        if(completion){completion();}
+    }];
+}
+
+- (void) trackPushEngaged:(nullable NSString *) item context:(nullable NSArray *) context completion:(TMBEmptyCallbackBlock) completion{
     TMBEventParams *eventParams = [TMBEventParams pushEngagedWithContext:context created:[NSDate date]];
     eventParams.item = item;
     [[Tamber client] trackEvent:eventParams responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
         LogDebug(@"error:%@", errorMessage.localizedDescription);
-        // handle
+        if(completion){completion();}
     }];
 }
 

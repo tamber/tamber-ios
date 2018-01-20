@@ -30,9 +30,9 @@ NS_ASSUME_NONNULL_END
 @protocol TMBPushInternalDelegate <NSObject>
 - (void) sessionStarted;
 - (void) setUserPushToken:(nullable NSString *) token;
-- (void) trackPushReceived:(nullable NSString *) pushId context:(nullable NSArray *) context;
-- (void) trackPushRendered:(nullable NSString *) item context:(nullable NSArray *) context;
-- (void) trackPushEngaged:(nullable NSString *) item context:(nullable NSArray *) context;
+- (void) trackPushReceived:(nullable NSString *) pushId context:(nullable NSArray *) context completion:(nullable TMBEmptyCallbackBlock) completion;
+- (void) trackPushRendered:(nullable NSString *) item context:(nullable NSArray *) context completion:(nullable TMBEmptyCallbackBlock) completion;
+- (void) trackPushEngaged:(nullable NSString *) item context:(nullable NSArray *) context completion:(nullable TMBEmptyCallbackBlock) completion;
 @end
 
 @interface TMBPush : NSObject <UNUserNotificationCenterDelegate>
@@ -95,8 +95,9 @@ NS_ASSUME_NONNULL_END
 /**
  * Handler for rendered notifications (notifications shown to the user). Only to be used if swizzling is disabled.
  * @param userInfo The notification payload. Be sure to correctly set the `tmb-push-msg` field to the dictionary-encoded TMBPushMessage to ensure proper handling.
+ * @param completion Completion handler called once all operations completed.
  */
--(void) localPushNotificationRendered:(nullable NSDictionary *) userInfo;
+-(void) localPushNotificationRendered:(nullable NSDictionary *) userInfo completion:(nullable TMBEmptyCallbackBlock) completion;
 
 /**
  * Track start of user session. Used to evaluate engagement driven by push notifications.

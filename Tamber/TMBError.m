@@ -8,9 +8,6 @@
 
 #import "TMBError.h"
 
-NSString *const TamberDomain = @"com.tamber.lib";
-NSString *const TMBErrorCodeKey = @"com.tamber.lib:ErrorCodeKey";
-
 @implementation NSError(Tamber)
 
 + (NSError *)tmb_error:(NSDictionary *)jsonDictionary statusCode:(NSInteger) statusCode {

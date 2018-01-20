@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-FOUNDATION_EXPORT NSString * __nonnull const StripeDomain;
+NS_ASSUME_NONNULL_BEGIN
+static  NSString *const TamberDomain = @"com.tamber.lib";
+static  NSString *const TMBErrorCodeKey = @"com.tamber.lib:ErrorCodeKey";
+NS_ASSUME_NONNULL_END
 
 @interface NSError(Tamber)
 

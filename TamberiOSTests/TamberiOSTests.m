@@ -9,8 +9,11 @@
 #import <XCTest/XCTest.h>
 #import <Tamber/Tamber.h>
 
-const NSString *testProjectKey = @"Mu6DUPXdDYe98cv5JIfX";
-const NSString *testEngineKey = @"SbWYPBNdARfIDa0IIO9L";
+//const NSString *testProjectKey = @"Mu6DUPXdDYe98cv5JIfX";
+//const NSString *testEngineKey = @"SbWYPBNdARfIDa0IIO9L";
+
+const NSString *testProjectKey = @"HAWhe6BsKMwOwPyy77aZ";
+const NSString *testEngineKey = @"MBeqnXstDJay76HEUwI6";
 
 const NSString *defaultUser = @"user_jctzgisbru";
 
@@ -55,7 +58,6 @@ NSString *item2;
     }];
     [self waitForExpectationsWithTimeout:5.0f handler:nil];
 }
-
 
 
 - (void)testBasicUserOps {
@@ -121,6 +123,54 @@ NSString *item2;
         [testUserExp fulfill];
     }];
      [self waitForExpectationsWithTimeout:400.0f handler:nil];
+    
+    [Tamber setUser:defaultUser];
+}
+
+- (void)testNewUserOps {
+    // Create user with events
+    NSString *tempUid = [[NSProcessInfo processInfo] globallyUniqueString];
+    [Tamber setUser:tempUid];
+    NSString *testToken = @"test_token";
+    [Tamber setUserPushToken:testToken];
+    
+    int minInterval = 24*60*60;
+    // Set push min interval
+    [Tamber setUserPushMinInterval:minInterval];
+    
+    // Set location
+    CLLocation * location = [[CLLocation alloc] initWithLatitude:37.33182 longitude:122.03118];
+    [Tamber setUserLocation:location];
+    
+    // Make test user
+    XCTestExpectation *testUserExp = [self expectationWithDescription:@"makeTestUser completed"];
+    [Tamber makeTestUser:^(){
+        [testUserExp fulfill];
+    }];
+    [self waitForExpectationsWithTimeout:400.0f handler:nil];
+    
+    // Check user metadata
+    NSDictionary *metadata = @{
+                               TMBTestUserFieldName:[NSNumber numberWithBool:TRUE],
+                               TMBPushTokenFieldName:testToken,
+                               TMBPushMinIntervalFieldName: [NSNumber numberWithInt:minInterval],
+                               TMBTimezoneFieldName: [[NSTimeZone localTimeZone] name],
+                                   @"latitude": [NSNumber numberWithDouble:location.coordinate.latitude], @"longitude":[NSNumber numberWithDouble:location.coordinate.longitude]
+                               };
+    
+    // wait for those requests to complete
+    [NSThread sleepForTimeInterval:2.0f];
+    
+    XCTestExpectation *userRetrieveExp = [self expectationWithDescription:@"retrieve user completed"];
+    TMBUserParams *userParams = [TMBUserParams userWithId:tempUid];
+    [[Tamber client] retrieveUser:userParams responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+        XCTAssertNil(errorMessage);
+        XCTAssertNotNil(object);
+        NSLog(@"object.metadata:%@", object.metadata);
+        XCTAssertTrue([object.metadata isEqualToDictionary:metadata]);
+        [userRetrieveExp fulfill];
+    }];
+    [self waitForExpectationsWithTimeout:400.0f handler:nil];
     [Tamber setUser:defaultUser];
 }
 

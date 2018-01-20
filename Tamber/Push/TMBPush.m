@@ -114,13 +114,14 @@ static bool swizzled = false;
 
 -(void) pushNotificationReceived:(nullable NSDictionary *) payload willDisplayAlert:(bool) willDisplayAlert completion:(TMBEmptyCallbackBlock) completion {
     LogDebug(@"pushNotificationReceived called");
+    if(!completion){completion=^(){};}
     TMBPushMessage *tmbMessage = [TMBPushMessage decodedObjectFromAPIResponse:payload];
     NSArray *context;
     if(tmbMessage){
         context = @[TMBPushContext];
     }
     if(_trackReceipts){
-        [_client trackPushReceived:nil context:context];
+        [_client trackPushReceived:nil context:context completion:nil];
     }
     if(tmbMessage){
         if([lastTMBPushId isEqualToString:tmbMessage.pushId]){
@@ -134,7 +135,7 @@ static bool swizzled = false;
         if([aps objectForKey:@"alert"]){
             if(willDisplayAlert){
                 // assume this is not a silent notification
-                [_client trackPushRendered:nil context:context];
+                [_client trackPushRendered:nil context:context completion: completion];
             }
             completion();
             return;
@@ -156,17 +157,23 @@ static bool swizzled = false;
                 [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
                     if (error != nil) {
                         LogDebug(@"%@", error.localizedDescription);
+                        completion();
                     } else {
                         // If center delegate set then iOS will leave presentation of notification up to willPresent -- else if app is foreground the completion error will be non-nil and the notification will not present.
-    //                    [UNUserNotificationCenter currentNotificationCenter].delegate
+                        //  [UNUserNotificationCenter currentNotificationCenter].delegate
                         if(willDisplayAlert){
-                            [self localPushNotificationRendered:request.content.userInfo];
+                            [self localPushNotificationRendered:request.content.userInfo completion: completion];
+                        } else {
+                            completion();
                         }
                     }
                 }];
+            } else {
+                completion();
             }
+        } else {
+            completion();
         }
-        completion();
     }];
 }
 
@@ -174,36 +181,60 @@ static bool swizzled = false;
     [self pushNotificationReceived:payload willDisplayAlert:![TMBUtils sharedUIApplicationActive] completion:completion];
 }
 
--(void) localPushNotificationRendered:(nullable NSDictionary *) userInfo{
+-(void) localPushNotificationRendered:(nullable NSDictionary *) userInfo completion:(TMBEmptyCallbackBlock) completion{
     LogDebug(@"localPushNotificationRendered");
     id tmbMsgDict = [userInfo objectForKey:TMBPushMessageFieldName];
     if ([tmbMsgDict isKindOfClass:[NSDictionary class]]){
         TMBPushMessage *tmbMessage = [TMBPushMessage decodedObjectFromAPIResponse:tmbMsgDict];
+        dispatch_group_t dismissGroup = dispatch_group_create();
         for(TMBDiscovery *d in tmbMessage.items){
-            [_client trackPushRendered:d.item context:@[TMBPushContext, tmbMessage.type, TMBPushTargetItemContext]];
+            dispatch_group_enter(dismissGroup);
+            [_client trackPushRendered:d.item context:@[TMBPushContext, tmbMessage.type, TMBPushTargetItemContext] completion:^(){
+                dispatch_group_leave(dismissGroup);
+            }];
         }
         if(tmbMessage.srcItems){
             for(TMBDiscovery *d in tmbMessage.srcItems){
-                [_client trackPushRendered:d.item context:@[TMBPushContext, tmbMessage.type, TMBPushSourceItemContext]];
+                dispatch_group_enter(dismissGroup);
+                [_client trackPushRendered:d.item context:@[TMBPushContext, tmbMessage.type, TMBPushSourceItemContext] completion:^(){
+                    dispatch_group_leave(dismissGroup);
+                }];
             }
         }
+        
+        dispatch_group_notify(dismissGroup,  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+            if (completion){
+                completion();
+            }
+        });
+        
     } else {
         // Non-tamber local push notification
-        [_client trackPushRendered:nil context:nil];
+        [_client trackPushRendered:nil context:nil completion: completion];
     }
 }
 
 -(void) pushNotificationEngaged:(nullable NSDictionary *) payload completion:(TMBEmptyCallbackBlock) completion{
+    if(!completion){completion=^(){};}
     id tmbMsgDict = [payload objectForKey:TMBPushMessageFieldName];
+    TMBPushMessage *tmbMessage;
     if ([tmbMsgDict isKindOfClass:[NSDictionary class]]){
-        TMBPushMessage *tmbMessage = [TMBPushMessage decodedObjectFromAPIResponse:tmbMsgDict];
-        if(tmbMessage){
-            for(TMBDiscovery *d in tmbMessage.items){
-                [_client trackPushEngaged:d.item context:@[TMBPushContext, tmbMessage.type, TMBPushTargetItemContext]];
-            }
-        }
+        tmbMessage = [TMBPushMessage decodedObjectFromAPIResponse:tmbMsgDict];
     }
-    completion();
+    if(tmbMessage){
+        dispatch_group_t dismissGroup = dispatch_group_create();
+        for(TMBDiscovery *d in tmbMessage.items){
+            dispatch_group_enter(dismissGroup);
+            [_client trackPushEngaged:d.item context:@[TMBPushContext, tmbMessage.type, TMBPushTargetItemContext] completion:^(){
+                dispatch_group_leave(dismissGroup);
+            }];
+        }
+        dispatch_group_notify(dismissGroup,  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+            completion();
+        });
+    } else {
+        completion();
+    }
     return;
 }
 
