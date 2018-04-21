@@ -372,86 +372,100 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBDiscoverNextParams.h",
-      "line": 86,
-      "symbol": "TMBDiscoverNextParams.user",
+      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBDiscoverBasicParams.h",
+      "line": 56,
+      "symbol": "TMBDiscoverBasicParams.user",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBDiscoverNextParams.h",
-      "line": 87,
-      "symbol": "TMBDiscoverNextParams.item",
+      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBDiscoverBasicParams.h",
+      "line": 57,
+      "symbol": "TMBDiscoverBasicParams.item",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBDiscoverNextParams.h",
-      "line": 88,
-      "symbol": "TMBDiscoverNextParams.number",
+      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBDiscoverBasicParams.h",
+      "line": 58,
+      "symbol": "TMBDiscoverBasicParams.number",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBDiscoverNextParams.h",
-      "line": 99,
-      "symbol": "TMBDiscoverNextParams.filter",
+      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBDiscoverBasicParams.h",
+      "line": 59,
+      "symbol": "TMBDiscoverBasicParams.page",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBDiscoverNextParams.h",
-      "line": 100,
-      "symbol": "TMBDiscoverNextParams.getProperties",
+      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBDiscoverBasicParams.h",
+      "line": 60,
+      "symbol": "TMBDiscoverBasicParams.filter",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBDiscoverBasicParams.h",
+      "line": 61,
+      "symbol": "TMBDiscoverBasicParams.getProperties",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBDiscoverBasicParams.h",
+      "line": 62,
+      "symbol": "TMBDiscoverBasicParams.testEvents",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBDiscoverParams.h",
-      "line": 56,
+      "line": 100,
       "symbol": "TMBDiscoverParams.user",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBDiscoverParams.h",
-      "line": 57,
+      "line": 101,
       "symbol": "TMBDiscoverParams.item",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBDiscoverParams.h",
-      "line": 58,
+      "line": 102,
       "symbol": "TMBDiscoverParams.number",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBDiscoverParams.h",
-      "line": 59,
-      "symbol": "TMBDiscoverParams.page",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBDiscoverParams.h",
-      "line": 60,
+      "line": 113,
       "symbol": "TMBDiscoverParams.filter",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBDiscoverParams.h",
-      "line": 61,
+      "line": 114,
       "symbol": "TMBDiscoverParams.getProperties",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBDiscoverParams.h",
-      "line": 62,
-      "symbol": "TMBDiscoverParams.testEvents",
+      "line": 115,
+      "symbol": "TMBDiscoverParams.continuation",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBDiscoverParams.h",
+      "line": 116,
+      "symbol": "TMBDiscoverParams.noCreate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },

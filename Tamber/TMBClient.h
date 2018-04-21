@@ -11,7 +11,7 @@
 #import "TMBEventParams.h"
 #import "TMBEventResponse.h"
 #import "TMBDiscoverParams.h"
-#import "TMBDiscoverNextParams.h"
+#import "TMBDiscoverBasicParams.h"
 #import "TMBDiscoverResponse.h"
 #import "TMBUser.h"
 #import "TMBUserParams.h"
@@ -25,9 +25,9 @@
 #import "TMBAPIRequest.h"
 
 NS_ASSUME_NONNULL_BEGIN
-static  NSString *const TMBSDKVersion = @"0.0.18";
+static  NSString *const TMBSDKVersion = @"0.1.0";
 static NSString *const TMBApiURLBase = @"api.tamber.com/v1";
-static NSString *const TMBApiVersion = @"2018-1-15";
+static NSString *const TMBApiVersion = @"2018-4-16";
 
 static NSString *const TMBPushTokenFieldName = @"tmb_push_token_ios";
 static NSString *const TMBPushMinIntervalFieldName = @"tmb_push_min_interval";
@@ -248,12 +248,12 @@ NS_ASSUME_NONNULL_END
 
 
 /**
- * Retrieve the set of recommended items to display next for the given user and/or item. Discover Next is your go-to tool for displaying personalized items on item-pages (set the item to the currently displayed item) and in dedicated recommendations section.
+ * Retrieve the set of recommended items to display next for the given item and user (if the user is set). Discover Next is your go-to tool for displaying personalized items on item-pages (set the item to the currently displayed item).
  *
  * @param discoverParams The parameters for the discover request.
  * @param responseCompletion The callback to run with the returned TMBEventResponse (and any errors that may have occurred)
  */
-- (nullable NSURLSessionDataTask *) discoverNext:(nonnull TMBDiscoverNextParams*) discoverParams responseCompletion:(nonnull TMBAPIResponseBlock) responseCompletion;
+- (nullable NSURLSessionDataTask *) discoverNext:(nonnull TMBDiscoverParams*) discoverParams responseCompletion:(nonnull TMBAPIResponseBlock) responseCompletion;
 
 /**
  * Retrieve recommended items for the given user.
@@ -269,7 +269,7 @@ NS_ASSUME_NONNULL_END
  * @param discoverParams The parameters for the discover request. Set the `item` parameter to the id of the item for which you wish to receive similar item suggestions.
  * @param responseCompletion The callback to run with the returned TMBEventResponse (and any errors that may have occurred)
  */
-- (nullable NSURLSessionDataTask *) discoverSimilar:(nonnull TMBDiscoverParams*) discoverParams responseCompletion:(nonnull TMBAPIResponseBlock) responseCompletion;
+- (nullable NSURLSessionDataTask *) discoverSimilar:(nonnull TMBDiscoverBasicParams*) discoverParams responseCompletion:(nonnull TMBAPIResponseBlock) responseCompletion;
 
 /**
  * Retrieve similar items for the given item, that are tailored to the taste profile of the given user.
@@ -277,7 +277,7 @@ NS_ASSUME_NONNULL_END
  * @param discoverParams The parameters for the discover request. Set the `item` parameter to the id of the item for which you wish to receive similar item suggestions. If the client's user has been set, then the user field can be nil and it will default to the client's user.
  * @param responseCompletion The callback to run with the returned TMBEventResponse (and any errors that may have occurred)
  */
-- (nullable NSURLSessionDataTask *) discoverRecommendedSimilar:(nonnull TMBDiscoverParams*) discoverParams responseCompletion:(nonnull TMBAPIResponseBlock) responseCompletion;
+- (nullable NSURLSessionDataTask *) discoverRecommendedSimilar:(nonnull TMBDiscoverBasicParams*) discoverParams responseCompletion:(nonnull TMBAPIResponseBlock) responseCompletion;
 
 
 @property (nullable, readwrite, nonatomic) NSString *publishableProjectKey;

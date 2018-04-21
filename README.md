@@ -96,7 +96,7 @@ Once you have seeded some events and created your engine, you can start pulling 
 To get recommendations for the user to show on a homepage, or in any recommended section:
 
 ```objc
-TMBDiscoverParams *params = [TMBDiscoverNextParams discoverNext:[NSNumber numberWithInt:8]];
+TMBDiscoverParams *params = [TMBDiscoverParams discoverRecommended:[NSNumber numberWithInt:8]];
 [[Tamber client] discoverNext:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSError *error) {
     if(error){
         // Handle error
@@ -112,7 +112,7 @@ TMBDiscoverParams *params = [TMBDiscoverNextParams discoverNext:[NSNumber number
 To get similar items for an 'up next' section on an item page:
 
 ```objc
-TMBDiscoverParams *params = [TMBDiscoverNextParams discoverNextWithItem:@"item_id" number:[NSNumber numberWithInt:10]];
+TMBDiscoverParams *params = [TMBDiscoverParams discoverNext:@"item_id" number:[NSNumber numberWithInt:10]];
 [[Tamber client] discoverNext:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSError *error) {
     if(error){
         // Handle error
@@ -128,7 +128,7 @@ TMBDiscoverParams *params = [TMBDiscoverNextParams discoverNextWithItem:@"item_i
 If you are setting [properties for your items][properties], you can include these properties in recommendation responses to simplify data handling. For example, you might have `title`, `img`, and `price` properties that you can use to display items to users without needing to make an additional request for each recommendation.
 
 ```objc
-TMBDiscoverParams *params = [TMBDiscoverNextParams alloc] discoverNext:[NSNumber numberWithInt:50] getProperties:true];
+TMBDiscoverParams *params = [TMBDiscoverParams alloc] discoverNext:[NSNumber numberWithInt:50] getProperties:true];
 [[Tamber client] discoverNext:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSError *error) {
     if(error){
         // Handle error

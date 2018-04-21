@@ -22,7 +22,7 @@
 		EE425F361EBA84A600FC10FA /* TMBClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F351EBA84A600FC10FA /* TMBClient.m */; };
 		EE425F3A1EBA8D5C00FC10FA /* TMBEventParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F391EBA8D5C00FC10FA /* TMBEventParams.m */; };
 		EE425F3D1EBAA16300FC10FA /* TMBEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F3C1EBAA16300FC10FA /* TMBEvent.m */; };
-		EE425F401EBAA19000FC10FA /* TMBDiscoverParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F3F1EBAA19000FC10FA /* TMBDiscoverParams.m */; };
+		EE425F401EBAA19000FC10FA /* TMBDiscoverBasicParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F3F1EBAA19000FC10FA /* TMBDiscoverBasicParams.m */; };
 		EE425F431EBAA1AA00FC10FA /* TMBDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F421EBAA1AA00FC10FA /* TMBDiscovery.m */; };
 		EE425F461EBAA48900FC10FA /* TMBEventResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F451EBAA48900FC10FA /* TMBEventResponse.m */; };
 		EE425F4D1EBAB2D500FC10FA /* TMBEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F4C1EBAB2D500FC10FA /* TMBEncoder.m */; };
@@ -36,7 +36,7 @@
 		EE475C6D1EBB28E900435C47 /* TMBEventResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = EE425F441EBAA48900FC10FA /* TMBEventResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE475C6E1EBB28EA00435C47 /* TMBEventParams.h in Headers */ = {isa = PBXBuildFile; fileRef = EE425F381EBA8D5C00FC10FA /* TMBEventParams.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE475C6F1EBB28ED00435C47 /* TMBEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = EE425F3B1EBAA16300FC10FA /* TMBEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EE475C701EBB28F000435C47 /* TMBDiscoverParams.h in Headers */ = {isa = PBXBuildFile; fileRef = EE425F3E1EBAA19000FC10FA /* TMBDiscoverParams.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE475C701EBB28F000435C47 /* TMBDiscoverBasicParams.h in Headers */ = {isa = PBXBuildFile; fileRef = EE425F3E1EBAA19000FC10FA /* TMBDiscoverBasicParams.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE475C711EBB28F200435C47 /* TMBDiscovery.h in Headers */ = {isa = PBXBuildFile; fileRef = EE425F411EBAA1AA00FC10FA /* TMBDiscovery.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE475C721EBB28F700435C47 /* TMBDiscoverResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = EEF8DE8B1EBB0F4D00CF4CB4 /* TMBDiscoverResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE475C731EBB29DC00435C47 /* TMBClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F351EBA84A600FC10FA /* TMBClient.m */; };
@@ -48,7 +48,7 @@
 		EE475C791EBB2A1100435C47 /* TMBEventResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F451EBAA48900FC10FA /* TMBEventResponse.m */; };
 		EE475C7A1EBB2A1800435C47 /* TMBEventParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F391EBA8D5C00FC10FA /* TMBEventParams.m */; };
 		EE475C7B1EBB2A2400435C47 /* TMBEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F3C1EBAA16300FC10FA /* TMBEvent.m */; };
-		EE475C7C1EBB2A2400435C47 /* TMBDiscoverParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F3F1EBAA19000FC10FA /* TMBDiscoverParams.m */; };
+		EE475C7C1EBB2A2400435C47 /* TMBDiscoverBasicParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F3F1EBAA19000FC10FA /* TMBDiscoverBasicParams.m */; };
 		EE475C7D1EBB2A2400435C47 /* TMBDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = EE425F421EBAA1AA00FC10FA /* TMBDiscovery.m */; };
 		EE475C7E1EBB2A2400435C47 /* TMBDiscoverResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF8DE8C1EBB0F4D00CF4CB4 /* TMBDiscoverResponse.m */; };
 		EE4C5B711FBC1CF500AFE751 /* Tamber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF8DE931EBB170F00CF4CB4 /* Tamber.framework */; };
@@ -63,10 +63,10 @@
 		EE6A5FA31F0E09910062B409 /* TMBUserSearchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF9698B1F0DD601007E7653 /* TMBUserSearchResponse.m */; };
 		EE6A5FA61F0E2BFE0062B409 /* NSArray+Tamber.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6A5FA51F0E2BFE0062B409 /* NSArray+Tamber.m */; };
 		EE6A5FA91F0E301A0062B409 /* NSArray+Tamber.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6A5FA51F0E2BFE0062B409 /* NSArray+Tamber.m */; };
-		EE7C4C381F84311E00206F1B /* TMBDiscoverNextParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7C4C371F84311E00206F1B /* TMBDiscoverNextParams.m */; };
+		EE7C4C381F84311E00206F1B /* TMBDiscoverParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7C4C371F84311E00206F1B /* TMBDiscoverParams.m */; };
 		EE8EED851F844A150038C139 /* NSArray+Tamber.h in Headers */ = {isa = PBXBuildFile; fileRef = EE6A5FA41F0E2BFE0062B409 /* NSArray+Tamber.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EE8EED861F844AAB0038C139 /* TMBDiscoverNextParams.h in Headers */ = {isa = PBXBuildFile; fileRef = EE7C4C361F84311E00206F1B /* TMBDiscoverNextParams.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EE8EED871F844C440038C139 /* TMBDiscoverNextParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7C4C371F84311E00206F1B /* TMBDiscoverNextParams.m */; };
+		EE8EED861F844AAB0038C139 /* TMBDiscoverParams.h in Headers */ = {isa = PBXBuildFile; fileRef = EE7C4C361F84311E00206F1B /* TMBDiscoverParams.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE8EED871F844C440038C139 /* TMBDiscoverParams.m in Sources */ = {isa = PBXBuildFile; fileRef = EE7C4C371F84311E00206F1B /* TMBDiscoverParams.m */; };
 		EEAE1BAB1EB7FD13003F48D5 /* Tamber.h in Copy Files */ = {isa = PBXBuildFile; fileRef = EEAE1BA81EB7FD13003F48D5 /* Tamber.h */; };
 		EEDC22E61FBCE519004D62B7 /* TamberiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF8DEA01EBB171000CF4CB4 /* TamberiOSTests.m */; };
 		EEE0B9E61F919E9000C27BB3 /* TMBSwizzler.h in Headers */ = {isa = PBXBuildFile; fileRef = EEE0B9E41F919E9000C27BB3 /* TMBSwizzler.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -120,8 +120,8 @@
 		EE425F391EBA8D5C00FC10FA /* TMBEventParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBEventParams.m; sourceTree = "<group>"; };
 		EE425F3B1EBAA16300FC10FA /* TMBEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBEvent.h; sourceTree = "<group>"; };
 		EE425F3C1EBAA16300FC10FA /* TMBEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBEvent.m; sourceTree = "<group>"; };
-		EE425F3E1EBAA19000FC10FA /* TMBDiscoverParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBDiscoverParams.h; sourceTree = "<group>"; };
-		EE425F3F1EBAA19000FC10FA /* TMBDiscoverParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBDiscoverParams.m; sourceTree = "<group>"; };
+		EE425F3E1EBAA19000FC10FA /* TMBDiscoverBasicParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBDiscoverBasicParams.h; sourceTree = "<group>"; };
+		EE425F3F1EBAA19000FC10FA /* TMBDiscoverBasicParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBDiscoverBasicParams.m; sourceTree = "<group>"; };
 		EE425F411EBAA1AA00FC10FA /* TMBDiscovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBDiscovery.h; sourceTree = "<group>"; };
 		EE425F421EBAA1AA00FC10FA /* TMBDiscovery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBDiscovery.m; sourceTree = "<group>"; };
 		EE425F441EBAA48900FC10FA /* TMBEventResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBEventResponse.h; sourceTree = "<group>"; };
@@ -137,8 +137,8 @@
 		EE69BE771F1D4C9200BC1913 /* TMBError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBError.m; sourceTree = "<group>"; };
 		EE6A5FA41F0E2BFE0062B409 /* NSArray+Tamber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Tamber.h"; sourceTree = "<group>"; };
 		EE6A5FA51F0E2BFE0062B409 /* NSArray+Tamber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Tamber.m"; sourceTree = "<group>"; };
-		EE7C4C361F84311E00206F1B /* TMBDiscoverNextParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBDiscoverNextParams.h; sourceTree = "<group>"; };
-		EE7C4C371F84311E00206F1B /* TMBDiscoverNextParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBDiscoverNextParams.m; sourceTree = "<group>"; };
+		EE7C4C361F84311E00206F1B /* TMBDiscoverParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBDiscoverParams.h; sourceTree = "<group>"; };
+		EE7C4C371F84311E00206F1B /* TMBDiscoverParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMBDiscoverParams.m; sourceTree = "<group>"; };
 		EEAE1BA51EB7FD13003F48D5 /* libTamber.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTamber.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAE1BA81EB7FD13003F48D5 /* Tamber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tamber.h; sourceTree = "<group>"; };
 		EEE0B9E41F919E9000C27BB3 /* TMBSwizzler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMBSwizzler.h; sourceTree = "<group>"; };
@@ -198,10 +198,10 @@
 				EE425F391EBA8D5C00FC10FA /* TMBEventParams.m */,
 				EE425F3B1EBAA16300FC10FA /* TMBEvent.h */,
 				EE425F3C1EBAA16300FC10FA /* TMBEvent.m */,
-				EE425F3E1EBAA19000FC10FA /* TMBDiscoverParams.h */,
-				EE425F3F1EBAA19000FC10FA /* TMBDiscoverParams.m */,
-				EE7C4C361F84311E00206F1B /* TMBDiscoverNextParams.h */,
-				EE7C4C371F84311E00206F1B /* TMBDiscoverNextParams.m */,
+				EE425F3E1EBAA19000FC10FA /* TMBDiscoverBasicParams.h */,
+				EE425F3F1EBAA19000FC10FA /* TMBDiscoverBasicParams.m */,
+				EE7C4C361F84311E00206F1B /* TMBDiscoverParams.h */,
+				EE7C4C371F84311E00206F1B /* TMBDiscoverParams.m */,
 				EE425F411EBAA1AA00FC10FA /* TMBDiscovery.h */,
 				EE425F421EBAA1AA00FC10FA /* TMBDiscovery.m */,
 				EEF8DE8B1EBB0F4D00CF4CB4 /* TMBDiscoverResponse.h */,
@@ -321,8 +321,8 @@
 				EE475C6D1EBB28E900435C47 /* TMBEventResponse.h in Headers */,
 				EE475C6E1EBB28EA00435C47 /* TMBEventParams.h in Headers */,
 				EE475C6F1EBB28ED00435C47 /* TMBEvent.h in Headers */,
-				EE475C701EBB28F000435C47 /* TMBDiscoverParams.h in Headers */,
-				EE8EED861F844AAB0038C139 /* TMBDiscoverNextParams.h in Headers */,
+				EE475C701EBB28F000435C47 /* TMBDiscoverBasicParams.h in Headers */,
+				EE8EED861F844AAB0038C139 /* TMBDiscoverParams.h in Headers */,
 				EE475C711EBB28F200435C47 /* TMBDiscovery.h in Headers */,
 				EE475C721EBB28F700435C47 /* TMBDiscoverResponse.h in Headers */,
 				EE475C6B1EBB28DE00435C47 /* TMBObjectEncodable.h in Headers */,
@@ -464,10 +464,10 @@
 			files = (
 				EE6A5FA61F0E2BFE0062B409 /* NSArray+Tamber.m in Sources */,
 				EE425F501EBABBF500FC10FA /* TMBAPIRequest.m in Sources */,
-				EE425F401EBAA19000FC10FA /* TMBDiscoverParams.m in Sources */,
+				EE425F401EBAA19000FC10FA /* TMBDiscoverBasicParams.m in Sources */,
 				EE1C47F61F9443CD0037773D /* TMBUtils.m in Sources */,
 				EE2B38391FBA23AA00313614 /* TMBItem.m in Sources */,
-				EE7C4C381F84311E00206F1B /* TMBDiscoverNextParams.m in Sources */,
+				EE7C4C381F84311E00206F1B /* TMBDiscoverParams.m in Sources */,
 				EE425F3A1EBA8D5C00FC10FA /* TMBEventParams.m in Sources */,
 				EEF9698F1F0DFA40007E7653 /* TMBUserParams.m in Sources */,
 				EEF8DE8A1EBB08A500CF4CB4 /* NSDictionary+Tamber.m in Sources */,
@@ -510,8 +510,8 @@
 				EE475C7A1EBB2A1800435C47 /* TMBEventParams.m in Sources */,
 				EE475C7B1EBB2A2400435C47 /* TMBEvent.m in Sources */,
 				EE1C47F11F92ADB00037773D /* TMBPushMessage.m in Sources */,
-				EE475C7C1EBB2A2400435C47 /* TMBDiscoverParams.m in Sources */,
-				EE8EED871F844C440038C139 /* TMBDiscoverNextParams.m in Sources */,
+				EE475C7C1EBB2A2400435C47 /* TMBDiscoverBasicParams.m in Sources */,
+				EE8EED871F844C440038C139 /* TMBDiscoverParams.m in Sources */,
 				EE475C7D1EBB2A2400435C47 /* TMBDiscovery.m in Sources */,
 				EE475C7E1EBB2A2400435C47 /* TMBDiscoverResponse.m in Sources */,
 				EE1C47EB1F92AADB0037773D /* TMBPush.m in Sources */,

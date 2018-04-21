@@ -2,7 +2,7 @@
 //  TMBDiscoverParams.m
 //  Tamber
 //
-//  Created by Alexander Robbins on 5/3/17.
+//  Created by Alexander Robbins on 10/3/17.
 //  Copyright © 2017 Tamber. All rights reserved.
 //
 
@@ -20,30 +20,51 @@
     return self;
 }
 
-+ (nullable instancetype)discoverRecommendations:(nullable NSNumber*) number {
-    return [[self.class alloc] initWithUser:nil item:nil number:number page:nil filter:nil getProperties:false testEvents:nil];
++ (nullable instancetype) discoverRecommended:(nullable NSNumber*) number {
+    return [[self.class alloc] initWithUser:nil item:nil number:number excludeItems:nil variability:nil filter:nil getProperties:false continuation:false noCreate:nil];
 }
 
-+ (nullable instancetype)discoverRecommendations:(nullable NSNumber*) number page:(nullable NSNumber*) page filter:(nullable NSDictionary*)filter getProperties:(BOOL) getProperties testEvents:(nullable NSArray*) testEvents{
-    return [[self.class alloc] initWithUser:nil item:nil number:number page:page filter:filter getProperties:getProperties testEvents:testEvents];
++ (nullable instancetype)discoverRecommended:(nullable NSNumber*) number getProperties:(BOOL) getProperties{
+    return [[self.class alloc] initWithUser:nil item:nil number:number excludeItems:nil variability:nil filter:nil getProperties:getProperties continuation:false noCreate: nil];
 }
 
-+ (nullable instancetype)discoverParamsWithUser:(nullable NSString*) user number:(nullable NSNumber*) number {
-    return [[self.class alloc] initWithUser:user item:nil number:number page:nil filter:nil getProperties:false testEvents:nil];
++ (nullable instancetype)discoverRecommended:(nullable NSNumber*) number excludeItems:(nullable NSArray*) excludeItems variability:(nullable NSNumber*) variability  filter:(nullable NSDictionary*)filter getProperties:(BOOL) getProperties continuation:(BOOL) continuation noCreate:(nullable NSString *) noCreate {
+    return [[self.class alloc] initWithUser:nil item:nil number:number excludeItems:excludeItems variability:variability filter:filter getProperties:getProperties continuation:continuation noCreate: noCreate];
+}
+
++ (nullable instancetype)discoverNext:(nullable NSString*) item number:(nullable NSNumber*) number {
+    return [[self.class alloc] initWithUser:nil item:item number:number excludeItems:nil variability:nil filter:nil getProperties:false continuation:false noCreate: nil];
+}
+
++ (nullable instancetype)discoverNext:(nullable NSString*) item  number:(nullable NSNumber*) number getProperties:(BOOL) getProperties{
+    return [[self.class alloc] initWithUser:nil item:nil number:number excludeItems:nil variability:nil filter:nil getProperties:getProperties continuation:false noCreate: nil];
+}
+
++ (nullable instancetype)discoverNext:(nullable NSString*) item number:(nullable NSNumber*) number excludeItems:(nullable NSArray*) excludeItems variability:(nullable NSNumber*) variability  filter:(nullable NSDictionary*)filter getProperties:(BOOL) getProperties noCreate:(NSString*) noCreate {
+    return [[self.class alloc] initWithUser:nil item:nil number:number excludeItems:excludeItems variability:variability filter:filter getProperties:getProperties continuation:false noCreate: noCreate];
+}
+
++ (nullable instancetype)discoverNextParamsWithUser:(nullable NSString*) user number:(nullable NSNumber*) number {
+    return [[self.class alloc] initWithUser:user item:nil number:number excludeItems:nil variability:nil filter:nil getProperties:false continuation:false noCreate: nil];
+}
+
++ (nullable instancetype)discoverNextParamsWithUser:(nullable NSString*) user item:(nullable NSString*) item number:(nullable NSNumber*) number {
+    return [[self.class alloc] initWithUser:user item:item number:number excludeItems:nil variability:nil filter:nil getProperties:false continuation:false noCreate: nil];
 }
 
 
-
-- (instancetype)initWithUser:(NSString*) user item:(NSString*) item number:(NSNumber*)number page:(NSNumber*)page filter:(NSDictionary*)filter getProperties:(BOOL) getProperties testEvents:(NSArray*) testEvents {
+- (instancetype)initWithUser:(NSString*) user item:(NSString*) item number:(NSNumber*)number excludeItems:(NSArray*) excludeItems variability:(NSNumber*)variability filter:(NSDictionary*)filter getProperties:(BOOL) getProperties continuation:(BOOL) continuation noCreate:(NSString *) noCreate {
     self = [super init];
     if (self) {
         _user = user;
         _item = item;
         _number = number;
-        _page = page;
+        _excludeItems = excludeItems;
+        _variability = variability;
         _filter = filter;
         _getProperties = getProperties;
-        _testEvents = testEvents;
+        _continuation = continuation;
+        _noCreate = noCreate;
     }
     return self;
 }
@@ -60,10 +81,12 @@
              @"user": @"user",
              @"item": @"item",
              @"number": @"number",
-             @"page": @"page",
+             @"excludeItems": @"exclude_items",
+             @"variability": @"variability",
              @"filter": @"filter",
-             @"testEvents": @"test_events",
              @"getProperties": @"get_properties",
+             @"continuation": @"continuation",
+             @"noCreate": @"no_create",
              };
 }
 

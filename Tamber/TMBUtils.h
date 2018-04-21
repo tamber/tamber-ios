@@ -12,7 +12,7 @@
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 #define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 
-#ifdef TMB_LOGS_DISABLE
+#ifndef TMB_LOGS_DISABLE
 #define LogDebug( s, ... ) NSLog(s, ##__VA_ARGS__)
 #else
 #define LogDebug( s, ... )

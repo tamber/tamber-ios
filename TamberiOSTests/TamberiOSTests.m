@@ -9,11 +9,8 @@
 #import <XCTest/XCTest.h>
 #import <Tamber/Tamber.h>
 
-//const NSString *testProjectKey = @"Mu6DUPXdDYe98cv5JIfX";
-//const NSString *testEngineKey = @"SbWYPBNdARfIDa0IIO9L";
-
-const NSString *testProjectKey = @"HAWhe6BsKMwOwPyy77aZ";
-const NSString *testEngineKey = @"MBeqnXstDJay76HEUwI6";
+const NSString *testProjectKey = @"Mu6DUPXdDYe98cv5JIfX";
+const NSString *testEngineKey = @"SbWYPBNdARfIDa0IIO9L";
 
 const NSString *defaultUser = @"user_jctzgisbru";
 
@@ -131,23 +128,28 @@ NSString *item2;
     // Create user with events
     NSString *tempUid = [[NSProcessInfo processInfo] globallyUniqueString];
     [Tamber setUser:tempUid];
-    NSString *testToken = @"test_token";
-    [Tamber setUserPushToken:testToken];
-    
-    int minInterval = 24*60*60;
-    // Set push min interval
-    [Tamber setUserPushMinInterval:minInterval];
-    
-    // Set location
-    CLLocation * location = [[CLLocation alloc] initWithLatitude:37.33182 longitude:122.03118];
-    [Tamber setUserLocation:location];
+    NSLog(@"temp-uid:%@", tempUid);
     
     // Make test user
     XCTestExpectation *testUserExp = [self expectationWithDescription:@"makeTestUser completed"];
     [Tamber makeTestUser:^(){
+        NSLog(@"make test user complete");
         [testUserExp fulfill];
     }];
     [self waitForExpectationsWithTimeout:400.0f handler:nil];
+    
+    NSString *testToken = @"test_token";
+    [Tamber setUserPushToken:testToken];
+     [NSThread sleepForTimeInterval:0.5f];
+    int minInterval = 24*60*60;
+    // Set push min interval
+    [Tamber setUserPushMinInterval:minInterval];
+    [NSThread sleepForTimeInterval:0.5f];
+    // Set location
+    CLLocation * location = [[CLLocation alloc] initWithLatitude:37.33182 longitude:122.03118];
+    [Tamber setUserLocation:location];
+    
+     [NSThread sleepForTimeInterval:0.5f];
     
     // Check user metadata
     NSDictionary *metadata = @{
@@ -159,14 +161,14 @@ NSString *item2;
                                };
     
     // wait for those requests to complete
-    [NSThread sleepForTimeInterval:2.0f];
+    [NSThread sleepForTimeInterval:4.0f];
     
     XCTestExpectation *userRetrieveExp = [self expectationWithDescription:@"retrieve user completed"];
     TMBUserParams *userParams = [TMBUserParams userWithId:tempUid];
     [[Tamber client] retrieveUser:userParams responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSError *errorMessage) {
         XCTAssertNil(errorMessage);
         XCTAssertNotNil(object);
-        NSLog(@"object.metadata:%@", object.metadata);
+        NSLog(@"object.metadata:%@  \nmetadata:%@", object.metadata, metadata);
         XCTAssertTrue([object.metadata isEqualToDictionary:metadata]);
         [userRetrieveExp fulfill];
     }];
@@ -253,7 +255,7 @@ NSString *item2;
     }];
     [self waitForExpectationsWithTimeout:5.0f handler:nil];
     
-    TMBDiscoverParams *params = [TMBDiscoverParams discoverRecommendations:[NSNumber numberWithInt:50]];
+    TMBDiscoverParams *params = [TMBDiscoverParams discoverRecommended:[NSNumber numberWithInt:50]];
     XCTestExpectation *discoverExp = [self expectationWithDescription:@"Discover recommended"];
     [[Tamber client] discoverRecommendations:params responseCompletion:^(TMBDiscoverResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
         XCTAssertNil(errorMessage);

@@ -10,7 +10,7 @@
 #import "TMBDiscoverParams.h"
 #import "TMBEventParams.h"
 #import "TMBItem.h"
-#import "TMBDiscoverNextParams.h"
+#import "TMBDiscoverBasicParams.h"
 #import "TMBUserParams.h"
 #import "NSDictionary+Tamber.h"
 #import "NSArray+Tamber.h"

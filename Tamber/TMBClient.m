@@ -353,7 +353,7 @@
                                 completion:responseCompletion];
 }
 
-- (nullable NSURLSessionDataTask *) discoverNext:(nonnull TMBDiscoverNextParams*) discoverParams responseCompletion:(nonnull TMBAPIResponseBlock) responseCompletion {
+- (nullable NSURLSessionDataTask *) discoverNext:(nonnull TMBDiscoverParams*) discoverParams responseCompletion:(nonnull TMBAPIResponseBlock) responseCompletion {
     NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"discover", @"next"];
     if(discoverParams.user == nil && self.userId != nil){
         discoverParams.user = self.userId;
@@ -380,7 +380,7 @@
                                 completion:responseCompletion];
 }
 
-- (NSURLSessionDataTask *) discoverSimilar:(TMBDiscoverParams*) discoverParams responseCompletion:(TMBAPIResponseBlock) responseCompletion {
+- (NSURLSessionDataTask *) discoverSimilar:(TMBDiscoverBasicParams*) discoverParams responseCompletion:(TMBAPIResponseBlock) responseCompletion {
     
     NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"discover", @"similar"];
     NSDictionary *params = [TMBEncoder dictionaryForObject:discoverParams];
@@ -391,7 +391,7 @@
                                 completion:responseCompletion];
 }
 
-- (NSURLSessionDataTask *) discoverRecommendedSimilar:(TMBDiscoverParams*) discoverParams responseCompletion:(TMBAPIResponseBlock) responseCompletion {
+- (NSURLSessionDataTask *) discoverRecommendedSimilar:(TMBDiscoverBasicParams*) discoverParams responseCompletion:(TMBAPIResponseBlock) responseCompletion {
     
     NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"discover", @"recommended_similar"];
     if(discoverParams.user == nil && self.userId != nil){
