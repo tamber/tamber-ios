@@ -1,8 +1,8 @@
 //
 //  NSMutableArray+Tamber.m
-//  AFNetworking-iOS
+//  Tamber
 //
-//  Created by Jeremy Levine on 3/5/19.
+//  Copyright © 2017 Tamber. All rights reserved.
 //
 
 #import "NSMutableArray+Tamber.h"
