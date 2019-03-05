@@ -9,6 +9,7 @@
 #import "TMBDiscoverResponse.h"
 #import "TMBDiscovery.h"
 #import "NSDictionary+Tamber.h"
+#import "NSMutableArray+Tamber.h"
 
 @implementation TMBDiscoverResponse
 
@@ -24,7 +25,7 @@
     NSMutableArray *discoveries = [[NSMutableArray alloc] initWithCapacity:[response[@"result"] count]];
     for (NSDictionary *discoveryObj in response[@"result"]){
         TMBDiscovery *discovery = [TMBDiscovery decodedObjectFromAPIResponse:discoveryObj];
-        [discoveries addObject:discovery];
+        [discoveries tmb_addObjectIfNotNil:discovery];
     }
     discoverResponse.discoveries = [discoveries copy];
     return discoverResponse;

@@ -7,6 +7,7 @@
 //
 
 #import "NSDictionary+Tamber.h"
+#import "NSMutableArray+Tamber.h"
 
 @implementation NSDictionary (Tamber)
 

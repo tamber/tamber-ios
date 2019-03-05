@@ -9,6 +9,7 @@
 #import "TMBEventResponse.h"
 #import "TMBEvent.h"
 #import "NSDictionary+Tamber.h"
+#import "NSMutableArray+Tamber.h"
 
 @implementation TMBEventResponse
 
@@ -30,7 +31,7 @@
     NSMutableArray *events = [[NSMutableArray alloc] init];
     for (NSDictionary *eventDict in result[@"events"]){
         TMBEvent *event = [TMBEvent decodedObjectFromAPIResponse:eventDict];
-        [events addObject:event];
+        [events tmb_addObjectIfNotNil:event];
     }
     eventResponse.events = [events copy];
     
@@ -38,7 +39,7 @@
         NSMutableArray *recs = [[NSMutableArray alloc] init];
         for (NSDictionary *discoveryDict in result[@"recommended"]){
             TMBDiscovery *discovery = [TMBDiscovery decodedObjectFromAPIResponse:discoveryDict];
-            [recs addObject:discovery];
+            [recs tmb_addObjectIfNotNil:discovery];
         }
         eventResponse.recs = [recs copy];
     }
