@@ -9,6 +9,7 @@
 //#import <Tamber/TMBPushMessage.h>
 #import "TMBPushMessage.h"
 #import "NSDictionary+Tamber.h"
+#import "NSMutableArray+Tamber.h"
 #import "TMBEncoder.h"
 #import "TMBDiscovery.h"
 
@@ -32,7 +33,7 @@
         NSMutableArray *items = [[NSMutableArray alloc] init];
         for (NSDictionary *discoveryDict in result[TMBPushPayloadItemsFieldName]){
             TMBDiscovery *discovery = [TMBDiscovery decodedObjectFromAPIResponse:discoveryDict];
-            [items addObject:discovery];
+            [items tmb_addObjectIfNotNil:discovery];
         }
         message.items = [items copy];
     }
@@ -40,7 +41,7 @@
         NSMutableArray *items = [[NSMutableArray alloc] init];
         for (NSDictionary *discoveryDict in result[TMBPushPayloadSrcItemsFieldName]){
             TMBDiscovery *discovery = [TMBDiscovery decodedObjectFromAPIResponse:discoveryDict];
-            [items addObject:discovery];
+            [items tmb_addObjectIfNotNil:discovery];
         }
         message.srcItems = [items copy];
     }

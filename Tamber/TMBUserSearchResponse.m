@@ -7,6 +7,7 @@
 //
 
 #import "TMBUserSearchResponse.h"
+#import "NSMutableArray+Tamber.h"
 
 @implementation TMBUserSearchResponse
 
@@ -22,7 +23,7 @@
     NSMutableArray *users = [[NSMutableArray alloc] initWithCapacity:[response[@"result"] count]];
     for (NSDictionary *userObj in response[@"result"]){
         TMBUser *user = [TMBUser decodedObjectFromAPIResponse:userObj];
-        [users addObject:user];
+        [users tmb_addObjectIfNotNil:user];
     }
     searchResponse.users = [users copy];
     return searchResponse;
