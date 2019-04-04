@@ -3,7 +3,7 @@
 //  Tamber
 //
 //  Created by Alexander Robbins on 5/3/17.
-//  Copyright © 2017 Tamber. All rights reserved.
+//  Copyright © 2019 Tamber. All rights reserved.
 //
 
 #import "TMBEventParams.h"
@@ -30,15 +30,15 @@ NSString *const TMBPushEngagedBehavior = @"tmb_push_engaged";
     return [[self.class alloc] initWithUser:nil item:item behavior:behavior amount:nil hit:false context:nil created:nil];
 }
 
-+ (instancetype)eventWithItem:(id) item behavior:(NSString *)behavior context:(NSArray*)context {
++ (instancetype)eventWithItem:(id) item behavior:(NSString *)behavior context:(NSDictionary*)context {
     return [[self.class alloc] initWithUser:nil item:item behavior:behavior amount:nil hit:false context:context created:nil];
 }
 
-+ (instancetype)eventWithItem:(id) item behavior:(NSString *)behavior amount:(NSNumber*)amount context:(NSArray*)context {
++ (instancetype)eventWithItem:(id) item behavior:(NSString *)behavior amount:(NSNumber*)amount context:(NSDictionary*)context {
     return [[self.class alloc] initWithUser:nil item:item behavior:behavior amount:amount hit:false context:context created:nil];
 }
 
-+ (instancetype)eventWithItem:(id) item behavior:(NSString *)behavior hit:(BOOL)hit context:(NSArray*)context {
++ (instancetype)eventWithItem:(id) item behavior:(NSString *)behavior hit:(BOOL)hit context:(NSDictionary*)context {
     return [[self.class alloc] initWithUser:nil item:item behavior:behavior amount:nil hit:hit context:context created:nil];
 }
 
@@ -54,15 +54,15 @@ NSString *const TMBPushEngagedBehavior = @"tmb_push_engaged";
     return [[self.class alloc] initWithUser:user item:item behavior:behavior amount:amount hit:false context:nil created:created];
 }
 
-+ (instancetype)eventWithUser:(NSString*) user item:(id) item behavior:(NSString *)behavior hit:(BOOL)hit context:(NSArray*)context{
++ (instancetype)eventWithUser:(NSString*) user item:(id) item behavior:(NSString *)behavior hit:(BOOL)hit context:(NSDictionary*)context{
     return [[self.class alloc] initWithUser:user item:item behavior:behavior amount:nil hit:hit context:context created:nil];
 }
 
-+ (instancetype)eventWithUser:(NSString*) user item:(id) item behavior:(NSString *)behavior amount:(NSNumber*)amount hit:(BOOL)hit context:(NSArray*)context created:(NSDate*)created {
++ (instancetype)eventWithUser:(NSString*) user item:(id) item behavior:(NSString *)behavior amount:(NSNumber*)amount hit:(BOOL)hit context:(NSDictionary*)context created:(NSDate*)created {
     return [[self.class alloc] initWithUser:user item:item behavior:behavior amount:amount hit:hit context:context created:created];
 }
 
-- (instancetype)initWithUser:(NSString*) user item:(id) item behavior:(NSString *)behavior amount:(NSNumber*)amount hit:(BOOL)hit context:(NSArray*)context created:(NSDate*)created {
+- (instancetype)initWithUser:(NSString*) user item:(id) item behavior:(NSString *)behavior amount:(NSNumber*)amount hit:(BOOL)hit context:(NSDictionary*)context created:(NSDate*)created {
     self = [super init];
     if (self) {
         _user = user;
@@ -86,7 +86,7 @@ NSString *const TMBPushEngagedBehavior = @"tmb_push_engaged";
     return [[self.class alloc] initWithUser:nil item:nil behavior:TMBSessionStartedBehavior amount:nil hit:false context:nil created:[NSDate date]];
 }
 
-+ (instancetype)sessionStartedWithContext:(NSArray*)context created:(NSDate*)created{
++ (instancetype)sessionStartedWithContext:(NSDictionary*)context created:(NSDate*)created{
     return [[self.class alloc] initWithUser:nil item:nil behavior:TMBSessionStartedBehavior amount:nil hit:false context:context created:created];
 }
 
@@ -94,7 +94,7 @@ NSString *const TMBPushEngagedBehavior = @"tmb_push_engaged";
     return [[self.class alloc] initWithUser:nil item:nil behavior:TMBSessionEndedBehavior amount:nil hit:false context:nil created:[NSDate date]];
 }
 
-+ (instancetype)sessionEndedWithContext:(NSArray*)context created:(NSDate*)created{
++ (instancetype)sessionEndedWithContext:(NSDictionary*)context created:(NSDate*)created{
     return [[self.class alloc] initWithUser:nil item:nil behavior:TMBSessionEndedBehavior amount:nil hit:false context:context created:created];
 }
 
@@ -102,7 +102,7 @@ NSString *const TMBPushEngagedBehavior = @"tmb_push_engaged";
     return [[self.class alloc] initWithUser:nil item:nil behavior:TMBPushRenderedBehavior amount:nil hit:false context:nil created:[NSDate date]];
 }
 
-+ (instancetype)pushRenderedWithContext:(NSArray*)context created:(NSDate*)created{
++ (instancetype)pushRenderedWithContext:(NSDictionary*)context created:(NSDate*)created{
     return [[self.class alloc] initWithUser:nil item:nil behavior:TMBPushRenderedBehavior amount:nil hit:false context:context created:created];
 }
 
@@ -110,7 +110,7 @@ NSString *const TMBPushEngagedBehavior = @"tmb_push_engaged";
     return [[self.class alloc] initWithUser:nil item:nil behavior:TMBPushReceivedBehavior amount:nil hit:false context:nil created:[NSDate date]];
 }
 
-+ (nullable instancetype)pushReceivedWithContext:(nullable NSArray*)context created:(nullable NSDate*)created{
++ (nullable instancetype)pushReceivedWithContext:(nullable NSDictionary*)context created:(nullable NSDate*)created{
     return [[self.class alloc] initWithUser:nil item:nil behavior:TMBPushReceivedBehavior amount:nil hit:false context:context created:created];
 }
 
@@ -118,7 +118,7 @@ NSString *const TMBPushEngagedBehavior = @"tmb_push_engaged";
     return [[self.class alloc] initWithUser:nil item:nil behavior:TMBPushEngagedBehavior amount:nil hit:true context:nil created:[NSDate date]];
 }
 
-+ (nullable instancetype)pushEngagedWithContext:(nullable NSArray*)context created:(nullable NSDate*)created{
++ (nullable instancetype)pushEngagedWithContext:(nullable NSDictionary*)context created:(nullable NSDate*)created{
     return [[self.class alloc] initWithUser:nil item:nil behavior:TMBPushEngagedBehavior amount:nil hit:true context:context created:created];
 }
 

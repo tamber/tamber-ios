@@ -9,21 +9,28 @@
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPush.h",
-      "line": 15,
-      "symbol": "TMBPushContext",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPush.h",
       "line": 16,
-      "symbol": "TMBPushTargetItemContext",
+      "symbol": "TMBPushContextKey",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPush.h",
       "line": 17,
+      "symbol": "TMBPushReceivedContext",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPush.h",
+      "line": 18,
+      "symbol": "TMBPushTargetItemContext",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPush.h",
+      "line": 19,
       "symbol": "TMBPushSourceItemContext",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
@@ -31,20 +38,27 @@
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPush.h",
       "line": 21,
+      "symbol": "TMBPushMessageTypeContextKey",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPush.h",
+      "line": 25,
       "symbol": "TMBPushDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPush.h",
-      "line": 30,
+      "line": 34,
       "symbol": "TMBPushInternalDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/Push/TMBPush.h",
-      "line": 38,
+      "line": 42,
       "symbol": "TMBPush",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
       "warning": "undocumented"
@@ -163,210 +177,175 @@
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 37,
-      "symbol": "TMBDefaultContext",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 38,
-      "symbol": "TMBNextContext",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 39,
-      "symbol": "TMBRecommendedContext",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 40,
-      "symbol": "TMBSimilarContext",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 41,
-      "symbol": "TMBRecommendedSimilarContext",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 50,
+      "line": 44,
       "symbol": "Tamber.+setPublishableProjectKey:publishableEngineKey:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 53,
+      "line": 47,
       "symbol": "Tamber.+setPublishableProjectKey:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 56,
+      "line": 50,
       "symbol": "Tamber.+setPublishableEngineKey:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 59,
+      "line": 53,
       "symbol": "Tamber.+setPublishableProjectKey:enablePush:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 62,
+      "line": 56,
       "symbol": "Tamber.+setPublishableProjectKey:publishableEngineKey:enablePush:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 65,
+      "line": 59,
       "symbol": "Tamber.+setUser:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 67,
+      "line": 61,
       "symbol": "Tamber.+enablePush",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 69,
+      "line": 63,
       "symbol": "Tamber.+enableAutoUNCenterDel",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 71,
+      "line": 65,
       "symbol": "Tamber.+disableAutoUNCenterDel",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 73,
+      "line": 67,
       "symbol": "Tamber.+setPushDelegate:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 93,
+      "line": 87,
       "symbol": "Tamber.+makeTestUser",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 94,
+      "line": 88,
       "symbol": "Tamber.+makeTestUser:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 98,
+      "line": 92,
       "symbol": "Tamber.+client",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 100,
+      "line": 94,
       "symbol": "Tamber.+push",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 108,
+      "line": 102,
       "symbol": "TMBClient.+defaultClient",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 109,
+      "line": 103,
       "symbol": "TMBClient.-updateAuth",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 154,
+      "line": 148,
       "symbol": "TMBClient.-setUserPushMinInterval:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 162,
+      "line": 156,
       "symbol": "TMBClient.-makeTestUser:completion:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 283,
+      "line": 287,
       "symbol": "TMBClient.publishableProjectKey",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 284,
+      "line": 288,
       "symbol": "TMBClient.publishableEngineKey",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 285,
+      "line": 289,
       "symbol": "TMBClient.userId",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 286,
+      "line": 290,
       "symbol": "TMBClient.urlSession",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 287,
+      "line": 291,
       "symbol": "TMBClient.apiUrl",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 288,
+      "line": 292,
       "symbol": "TMBClient.apiVersion",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBClient.h",
-      "line": 289,
+      "line": 293,
       "symbol": "TMBClient.auth",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
@@ -583,14 +562,42 @@
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBUtils.h",
-      "line": 21,
+      "line": 13,
+      "symbol": "TMBSourceContextKey",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBUtils.h",
+      "line": 14,
+      "symbol": "TMBSourcePushContext",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBUtils.h",
+      "line": 15,
+      "symbol": "TMBSourceRecommendedContext",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBUtils.h",
+      "line": 16,
+      "symbol": "TMBSourceNextContext",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBUtils.h",
+      "line": 28,
       "symbol": "TMBEmptyCallbackBlock",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexirobbins/Sites/programming/Tamber/Tamber/TMBUtils.h",
-      "line": 23,
+      "line": 30,
       "symbol": "TMBUtils",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
       "warning": "undocumented"

@@ -3,7 +3,7 @@
 //  Tamber
 //
 //  Created by Alexander Robbins on 7/5/17.
-//  Copyright © 2017 Tamber. All rights reserved.
+//  Copyright © 2019 Tamber. All rights reserved.
 //
 
 #import "TMBUserSearchResponse.h"

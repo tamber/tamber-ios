@@ -3,7 +3,7 @@
 //  Tamber
 //
 //  Created by Alexander Robbins on 5/3/17.
-//  Copyright © 2017 Tamber. All rights reserved.
+//  Copyright © 2019 Tamber. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -42,7 +42,7 @@
 /**
  *  The context(s) in which the event occurred. Useful for segmenting events data to determine the impact of interface elements and other contextual variables on user behavior. Also useful for A/B testing interface changes.
  */
-@property (nonatomic, copy, nullable) NSArray *context;
+@property (nonatomic, copy, nullable) NSDictionary *context;
 
 /**
  *  Time the event occurred. Defaults to the current time if not supplied.

@@ -3,7 +3,7 @@
 //  Tamber
 //
 //  Created by Alexander Robbins on 5/3/17.
-//  Copyright © 2017 Tamber. All rights reserved.
+//  Copyright © 2019 Tamber. All rights reserved.
 //
 
 //#import <Tamber/TMBClient.h>
@@ -290,16 +290,22 @@
 }
 
 - (NSURLSessionDataTask *) retrieveUser:(TMBUserParams*) userParams responseCompletion:(TMBAPIResponseBlock) responseCompletion{
+    return [self retrieveUser: userParams getEvents: false responseCompletion: responseCompletion];
+}
+
+- (NSURLSessionDataTask *) retrieveUser:(TMBUserParams*) userParams getEvents:(BOOL) getEvents responseCompletion:(TMBAPIResponseBlock) responseCompletion{
     NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"user", @"retrieve"];
     
     if(userParams.ID == nil && self.userId != nil){
         userParams.ID = self.userId;
     }
-    NSDictionary *params = [TMBEncoder dictionaryForObject:userParams];
+    NSDictionary *_params = [TMBEncoder dictionaryForObject:userParams];
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary: _params];
+    [params setObject:@(getEvents) forKey:@"get_events"];
     
     return [TMBAPIRequest getWithAPIClient:self
                                   endpoint:endpoint
-                                parameters:params
+                                parameters:[params copy]
                                 serializer:[TMBUser new]
                                 completion:responseCompletion];
 }
@@ -320,19 +326,19 @@
 }
 
 - (NSURLSessionDataTask *) mergeToUser:(NSString*) toUser responseCompletion:(TMBAPIResponseBlock) responseCompletion{
-    NSURLSessionDataTask *task = [self mergeUser: _userId toUser:toUser noCreate: false responseCompletion: responseCompletion];
+    NSURLSessionDataTask *task = [self mergeUser: _userId toUser:toUser noCreate: false getEvents: false responseCompletion: responseCompletion];
     _userId = toUser;
     return task;
 }
 
 - (NSURLSessionDataTask *) mergeUser:(NSString*) fromUser toUser:(NSString*)toUser responseCompletion:(TMBAPIResponseBlock) responseCompletion{
-    return [self mergeUser: fromUser toUser:toUser noCreate: false responseCompletion: responseCompletion];
+    return [self mergeUser: fromUser toUser:toUser noCreate: false getEvents: false responseCompletion: responseCompletion];
 }
 
-- (NSURLSessionDataTask *) mergeUser:(NSString*) fromUser toUser:(NSString*)toUser noCreate:(BOOL) noCreate responseCompletion:(TMBAPIResponseBlock) responseCompletion{
+- (NSURLSessionDataTask *) mergeUser:(NSString*) fromUser toUser:(NSString*)toUser noCreate:(BOOL) noCreate getEvents:(BOOL) getEvents responseCompletion:(TMBAPIResponseBlock) responseCompletion{
     NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"user", @"merge"];
 
-    NSDictionary *params = @{ @"from": fromUser, @"to": toUser, @"no_create":@(noCreate) };
+    NSDictionary *params = @{ @"from": fromUser, @"to": toUser, @"no_create":@(noCreate), @"get_events":@(getEvents) };
     
     return [TMBAPIRequest getWithAPIClient:self
                                   endpoint:endpoint
@@ -342,7 +348,7 @@
 }
 
 - (NSURLSessionDataTask *) searchUsers:(NSDictionary*) metadata responseCompletion:(TMBAPIResponseBlock) responseCompletion{
-    NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"user", @"search"];
+    NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"user", @"list"];
     
     NSDictionary *params = @{ @"filter": metadata };
     
@@ -444,13 +450,13 @@
     }
 }
 
-- (void) trackPushReceived:(nullable NSString *) pushId context:(nullable NSArray *) context completion:(TMBEmptyCallbackBlock) completion{
+- (void) trackPushReceived:(nullable NSString *) pushId context:(nullable NSDictionary*) context completion:(TMBEmptyCallbackBlock) completion{
     [[Tamber client] trackEvent:[TMBEventParams pushReceivedWithContext:context created:[NSDate date]] responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
         if(completion){completion();}
     }];
 }
 
-- (void) trackPushRendered:(nullable NSString *) item context:(nullable NSArray *) context completion:(TMBEmptyCallbackBlock) completion{
+- (void) trackPushRendered:(nullable NSString *) item context:(nullable NSDictionary*) context completion:(TMBEmptyCallbackBlock) completion{
     TMBEventParams *eventParams = [TMBEventParams pushRenderedWithContext:context created:[NSDate date]];
     eventParams.item = item;
     [[Tamber client] trackEvent:eventParams responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
@@ -458,7 +464,7 @@
     }];
 }
 
-- (void) trackPushEngaged:(nullable NSString *) item context:(nullable NSArray *) context completion:(TMBEmptyCallbackBlock) completion{
+- (void) trackPushEngaged:(nullable NSString *) item context:(nullable NSDictionary*) context completion:(TMBEmptyCallbackBlock) completion{
     TMBEventParams *eventParams = [TMBEventParams pushEngagedWithContext:context created:[NSDate date]];
     eventParams.item = item;
     [[Tamber client] trackEvent:eventParams responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {

@@ -3,7 +3,7 @@
 //  Tamber
 //
 //  Created by Alexander Robbins on 10/14/17.
-//  Copyright © 2017 Tamber. All rights reserved.
+//  Copyright © 2019 Tamber. All rights reserved.
 //
 #import <UserNotifications/UserNotifications.h>
 #import "TMBUtils.h"
@@ -12,9 +12,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 static NSString *const TMBPushMessageFieldName = @"tmb-push-msg";
-static NSString *const TMBPushContext = @"tmb_push";
-static NSString *const TMBPushTargetItemContext = @"tmb_push_target_item";
-static NSString *const TMBPushSourceItemContext = @"tmb_push_src_item";
+
+static NSString *const TMBPushContextKey = @"tmb_push";
+static NSString *const TMBPushReceivedContext = @"received";
+static NSString *const TMBPushTargetItemContext = @"target_item";
+static NSString *const TMBPushSourceItemContext = @"src_item";
+
+static NSString *const TMBPushMessageTypeContextKey = @"tmb_push_msg_type";
 NS_ASSUME_NONNULL_END
 
 #pragma mark Delegate Methods
@@ -30,9 +34,9 @@ NS_ASSUME_NONNULL_END
 @protocol TMBPushInternalDelegate <NSObject>
 - (void) sessionStarted;
 - (void) setUserPushToken:(nullable NSString *) token;
-- (void) trackPushReceived:(nullable NSString *) pushId context:(nullable NSArray *) context completion:(nullable TMBEmptyCallbackBlock) completion;
-- (void) trackPushRendered:(nullable NSString *) item context:(nullable NSArray *) context completion:(nullable TMBEmptyCallbackBlock) completion;
-- (void) trackPushEngaged:(nullable NSString *) item context:(nullable NSArray *) context completion:(nullable TMBEmptyCallbackBlock) completion;
+- (void) trackPushReceived:(nullable NSString *) pushId context:(nullable NSDictionary*) context completion:(nullable TMBEmptyCallbackBlock) completion;
+- (void) trackPushRendered:(nullable NSString *) item context:(nullable NSDictionary*) context completion:(nullable TMBEmptyCallbackBlock) completion;
+- (void) trackPushEngaged:(nullable NSString *) item context:(nullable NSDictionary*) context completion:(nullable TMBEmptyCallbackBlock) completion;
 @end
 
 @interface TMBPush : NSObject <UNUserNotificationCenterDelegate>

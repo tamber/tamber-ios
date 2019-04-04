@@ -3,7 +3,7 @@
 //  Tamber
 //
 //  Created by Alexander Robbins on 5/3/17.
-//  Copyright © 2017 Tamber. All rights reserved.
+//  Copyright © 2019 Tamber. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -23,17 +23,17 @@
 /**
  *  Initialize user event with an item, behavior, and context (TMBClient uses default user when tracking event).
  */
-+ (nullable instancetype)eventWithItem:(nonnull id) item behavior:(nonnull NSString *)behavior context:(nullable NSArray*)context;
++ (nullable instancetype)eventWithItem:(nonnull id) item behavior:(nonnull NSString *)behavior context:(nullable NSDictionary*)context;
 
 /**
  *  Initialize user event with an item, behavior, amount, and context (TMBClient uses default user when tracking event).
  */
-+ (nullable instancetype)eventWithItem:(nonnull id) item behavior:(nonnull NSString *)behavior amount:(nullable NSNumber*)amount context:(nullable NSArray*)context;
++ (nullable instancetype)eventWithItem:(nonnull id) item behavior:(nonnull NSString *)behavior amount:(nullable NSNumber*)amount context:(nullable NSDictionary*)context;
 
 /**
  *  Initialize user event with an item, behavior, hit boolean, and context array (TMBClient uses default user when tracking event).
  */
-+ (nullable instancetype)eventWithItem:(nonnull id) item behavior:(nonnull NSString *)behavior hit:(BOOL)hit context:(nullable NSArray*)context;
++ (nullable instancetype)eventWithItem:(nonnull id) item behavior:(nonnull NSString *)behavior hit:(BOOL)hit context:(nullable NSDictionary*)context;
 
 /**
  *  Initialize user event with an item, behavior, amount, and created time (TMBClient uses default user when tracking event).
@@ -53,14 +53,14 @@
 /**
  *  Initialize an event with a user, item, behavior, hit, and context.
  */
-+ (nullable instancetype)eventWithUser:(nonnull NSString*) user item:(nonnull id) item behavior:(nonnull NSString *)behavior hit:(BOOL)hit context:(nullable NSArray*)context;
++ (nullable instancetype)eventWithUser:(nonnull NSString*) user item:(nonnull id) item behavior:(nonnull NSString *)behavior hit:(BOOL)hit context:(nullable NSDictionary*)context;
 
 /**
  *  Initialize the full event params with a user, item, behavior, amount, and created time.
  */
-+ (nullable instancetype)eventWithUser:(nonnull NSString*) user item:(nonnull id) item behavior:(nonnull NSString *)behavior amount:(nullable NSNumber*)amount hit:(BOOL)hit context:(nullable NSArray*)context created:(nullable NSDate*)created;
++ (nullable instancetype)eventWithUser:(nonnull NSString*) user item:(nonnull id) item behavior:(nonnull NSString *)behavior amount:(nullable NSNumber*)amount hit:(BOOL)hit context:(nullable NSDictionary*)context created:(nullable NSDate*)created;
 
-- (nullable instancetype)initWithUser:(nullable NSString*) user item:(nullable NSString*) item behavior:(nonnull NSString *)behavior amount:(nullable NSNumber*)amount hit:(BOOL)hit context:(nullable NSArray*)context created:(nullable NSDate*)created;
+- (nullable instancetype)initWithUser:(nullable NSString*) user item:(nullable NSString*) item behavior:(nonnull NSString *)behavior amount:(nullable NSNumber*)amount hit:(BOOL)hit context:(nullable NSDictionary*)context created:(nullable NSDate*)created;
 
 /**
  *  Provide TMBDiscoverParams to return udpated recommendations for the user, taking into account the event that is tracked.
@@ -72,35 +72,35 @@
  */
 + (nullable instancetype)sessionStarted;
 
-+ (nullable instancetype)sessionStartedWithContext:(nullable NSArray*)context created:(nullable NSDate*)created;
++ (nullable instancetype)sessionStartedWithContext:(nullable NSDictionary*)context created:(nullable NSDate*)created;
 
 /**
  *  Initialize a session ended item-less event.
  */
 + (nullable instancetype)sessionEnded;
 
-+ (nullable instancetype)sessionEndedWithContext:(nullable NSArray*)context created:(nullable NSDate*)created;
++ (nullable instancetype)sessionEndedWithContext:(nullable NSDictionary*)context created:(nullable NSDate*)created;
 
 /**
  *  Initialize a push rendered item-less event.
  */
 + (nullable instancetype)pushRendered;
 
-+ (nullable instancetype)pushRenderedWithContext:(nullable NSArray*)context created:(nullable NSDate*)created;
++ (nullable instancetype)pushRenderedWithContext:(nullable NSDictionary*)context created:(nullable NSDate*)created;
 
 /**
  *  Initialize a push received item-less event.
  */
 + (nullable instancetype)pushReceived;
 
-+ (nullable instancetype)pushReceivedWithContext:(nullable NSArray*)context created:(nullable NSDate*)created;
++ (nullable instancetype)pushReceivedWithContext:(nullable NSDictionary*)context created:(nullable NSDate*)created;
 
 /**
  *  Initialize a push engaged item-less event.
  */
 + (nullable instancetype)pushEngaged;
 
-+ (nullable instancetype)pushEngagedWithContext:(nullable NSArray*)context created:(nullable NSDate*)created;
++ (nullable instancetype)pushEngagedWithContext:(nullable NSDictionary*)context created:(nullable NSDate*)created;
 
 /**
  *  User associated with the event.

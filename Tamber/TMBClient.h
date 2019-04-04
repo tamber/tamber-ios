@@ -3,7 +3,7 @@
 //  Tamber
 //
 //  Created by Alexander Robbins on 5/3/17.
-//  Copyright © 2017 Tamber. All rights reserved.
+//  Copyright © 2019 Tamber. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -25,20 +25,14 @@
 #import "TMBAPIRequest.h"
 
 NS_ASSUME_NONNULL_BEGIN
-static  NSString *const TMBSDKVersion = @"0.1.0";
+static  NSString *const TMBSDKVersion = @"0.1.1";
 static NSString *const TMBApiURLBase = @"api.tamber.com/v1";
-static NSString *const TMBApiVersion = @"2018-4-16";
+static NSString *const TMBApiVersion = @"2019-3-31";
 
 static NSString *const TMBPushTokenFieldName = @"tmb_push_token_ios";
 static NSString *const TMBPushMinIntervalFieldName = @"tmb_push_min_interval";
 static NSString *const TMBTimezoneFieldName = @"tmb_timezone";
 static NSString *const TMBTestUserFieldName = @"tmb_test_user";
-
-static NSString *const TMBDefaultContext = @"tamber";
-static NSString *const TMBNextContext = @"tmb_next";
-static NSString *const TMBRecommendedContext = @"tmb_recommended";
-static NSString *const TMBSimilarContext = @"tmb_similar";
-static NSString *const TMBRecommendedSimilarContext = @"tmb_recommended_similar";
 NS_ASSUME_NONNULL_END
 
 /**
@@ -215,6 +209,14 @@ NS_ASSUME_NONNULL_END
 - (nullable NSURLSessionDataTask *) retrieveUser:(nullable TMBUserParams*) userParams responseCompletion:(nullable TMBAPIResponseBlock) responseCompletion;
 
 /**
+ * Retrieve user in your project.
+ * @param userParams The parameters for the user you are retrieving – only the `ID` is used. If the client's user has been set, then the `ID` field can be nil and it will default to the client's user.
+ * @param getEvents Include the past events performed by the user in the user response.
+ * @param responseCompletion The callback to run with the returned TMBUser (and any errors that may have occurred)
+ */
+- (nullable NSURLSessionDataTask *) retrieveUser:(nullable TMBUserParams*) userParams getEvents:(BOOL) getEvents responseCompletion:(nullable TMBAPIResponseBlock) responseCompletion;
+
+/**
  * Merge from the current default user to another, transferring the tracked events / recommendations and removing the default user from the project, as well as all associated engines, and setting the `TMBClient` default user to the id of the new `toUser`. Useful for transferring a temporary user profile to a logged-in user.
  
  * @param toUser The ID of the user that will be merged to.
@@ -235,9 +237,10 @@ NS_ASSUME_NONNULL_END
  * @param fromUser The ID of the user that will be merged from.
  * @param toUser The ID of the user that will be merged to.
  * @param noCreate By default, if the toUser does not yet exist it will be created. Set noCreate to `true` to disable this behavior (meaning attempting to merge to a user that does not exist will return an error).
+ * @param getEvents Include the past events performed by the user in the user response.
  * @param responseCompletion The callback to run with the returned TMBUser (and any errors that may have occurred)
  */
-- (nullable NSURLSessionDataTask *) mergeUser:(nonnull  NSString*) fromUser toUser:(nonnull  NSString*)toUser noCreate:(BOOL) noCreate responseCompletion:(nullable TMBAPIResponseBlock) responseCompletion;
+- (nullable NSURLSessionDataTask *) mergeUser:(nonnull  NSString*) fromUser toUser:(nonnull  NSString*)toUser noCreate:(BOOL) noCreate getEvents:(BOOL) getEvents responseCompletion:(nullable TMBAPIResponseBlock) responseCompletion;
 
 /**
  * Search for users by metadata field-values.

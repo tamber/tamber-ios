@@ -3,11 +3,12 @@
 //  Tamber
 //
 //  Created by Alexander Robbins on 10/14/17.
-//  Copyright © 2017 Tamber. All rights reserved.
+//  Copyright © 2019 Tamber. All rights reserved.
 //
 
 //#import <Tamber/TMBPush.h>
 #import "TMBPush.h"
+#import "TMBUtils.h"
 #import "TMBSwizzler.h"
 #import "TMBPushMessage.h"
 #import "TMBDiscovery.h"
@@ -116,9 +117,9 @@ static bool swizzled = false;
     LogDebug(@"pushNotificationReceived called");
     if(!completion){completion=^(){};}
     TMBPushMessage *tmbMessage = [TMBPushMessage decodedObjectFromAPIResponse:payload];
-    NSArray *context;
+    NSDictionary *context;
     if(tmbMessage){
-        context = @[TMBPushContext];
+        context = @{TMBSourceContextKey: TMBSourcePushContext};
     }
     if(_trackReceipts){
         [_client trackPushReceived:nil context:context completion:nil];
@@ -189,14 +190,18 @@ static bool swizzled = false;
         dispatch_group_t dismissGroup = dispatch_group_create();
         for(TMBDiscovery *d in tmbMessage.items){
             dispatch_group_enter(dismissGroup);
-            [_client trackPushRendered:d.item context:@[TMBPushContext, tmbMessage.type, TMBPushTargetItemContext] completion:^(){
+            [_client trackPushRendered:d.item context:@{TMBSourceContextKey: TMBSourcePushContext,
+                                                        TMBPushContextKey: TMBPushTargetItemContext,
+                                                        TMBPushMessageTypeContextKey: tmbMessage.type} completion:^(){
                 dispatch_group_leave(dismissGroup);
             }];
         }
         if(tmbMessage.srcItems){
             for(TMBDiscovery *d in tmbMessage.srcItems){
                 dispatch_group_enter(dismissGroup);
-                [_client trackPushRendered:d.item context:@[TMBPushContext, tmbMessage.type, TMBPushSourceItemContext] completion:^(){
+                [_client trackPushRendered:d.item context:@{TMBSourceContextKey: TMBSourcePushContext,
+                                                            TMBPushContextKey: TMBPushSourceItemContext,
+                                                            TMBPushMessageTypeContextKey: tmbMessage.type} completion:^(){
                     dispatch_group_leave(dismissGroup);
                 }];
             }
@@ -225,7 +230,9 @@ static bool swizzled = false;
         dispatch_group_t dismissGroup = dispatch_group_create();
         for(TMBDiscovery *d in tmbMessage.items){
             dispatch_group_enter(dismissGroup);
-            [_client trackPushEngaged:d.item context:@[TMBPushContext, tmbMessage.type, TMBPushTargetItemContext] completion:^(){
+            [_client trackPushEngaged:d.item context:@{TMBSourceContextKey: TMBSourcePushContext,
+                                                       TMBPushContextKey: TMBPushTargetItemContext,
+                                                       TMBPushMessageTypeContextKey: tmbMessage.type} completion:^(){
                 dispatch_group_leave(dismissGroup);
             }];
         }

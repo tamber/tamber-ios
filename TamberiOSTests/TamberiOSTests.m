@@ -3,14 +3,17 @@
 //  TamberiOSTests
 //
 //  Created by Alexander Robbins on 5/4/17.
-//  Copyright © 2017 Tamber. All rights reserved.
+//  Copyright © 2019 Tamber. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 #import <Tamber/Tamber.h>
 
-const NSString *testProjectKey = @"Mu6DUPXdDYe98cv5JIfX";
-const NSString *testEngineKey = @"SbWYPBNdARfIDa0IIO9L";
+//const NSString *testProjectKey = @"Mu6DUPXdDYe98cv5JIfX";
+//const NSString *testEngineKey = @"SbWYPBNdARfIDa0IIO9L";
+
+const NSString *testProjectKey = @"HAWhe6BsKMwOwPyy77aZ";
+const NSString *testEngineKey = @"MBeqnXstDJay76HEUwI6";
 
 const NSString *defaultUser = @"user_jctzgisbru";
 
@@ -46,7 +49,7 @@ NSString *item2;
 - (void)testExample {
     NSNumber * v =  [NSNumber numberWithDouble:0.3];
 //    NSLog(@"v:%@", [v doubleValue]);
-    TMBEventParams *params = [TMBEventParams eventWithUser:@"user_a" item:@"item_1" behavior:@"like" amount:v hit:true context:@[@"recommended", @"detail-view", @"tmb_ios"] created:[NSDate date]];
+    TMBEventParams *params = [TMBEventParams eventWithUser:@"user_a" item:@"item_1" behavior:@"like" amount:v hit:true context:@{@"page": @"detail-view", @"section": @"recommended"} created:[NSDate date]];
     XCTestExpectation *trackExp = [self expectationWithDescription:@"Event tracked"];
     [_client trackEvent:params responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
         XCTAssertNil(errorMessage);
@@ -94,15 +97,15 @@ NSString *item2;
     [self waitForExpectationsWithTimeout:5.0f handler:nil];
     
     // 4. Search for user with the newly updated metadata
-    XCTestExpectation *uSearchExp = [self expectationWithDescription:@"User search completed"];
-    [[Tamber client] searchUsers:metadata responseCompletion:^(TMBUserSearchResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
-        XCTAssertNil(errorMessage);
-        NSLog(@"search results: %@", object.users);
-        XCTAssertNotNil(object);
-        [uSearchExp fulfill];
-    }];
-    
-    [self waitForExpectationsWithTimeout:5.0f handler:nil];
+//    XCTestExpectation *uSearchExp = [self expectationWithDescription:@"User search completed"];
+//    [[Tamber client] searchUsers:metadata responseCompletion:^(TMBUserSearchResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+//        XCTAssertNil(errorMessage);
+//        NSLog(@"search results: %@", object.users);
+//        XCTAssertNotNil(object);
+//        [uSearchExp fulfill];
+//    }];
+//
+//    [self waitForExpectationsWithTimeout:5.0f handler:nil];
     
     // 5. Set push token
     [Tamber setUserPushToken:@"test_token"];
@@ -140,16 +143,16 @@ NSString *item2;
     
     NSString *testToken = @"test_token";
     [Tamber setUserPushToken:testToken];
-     [NSThread sleepForTimeInterval:0.5f];
+//     [NSThread sleepForTimeInterval:0.5f];
     int minInterval = 24*60*60;
     // Set push min interval
     [Tamber setUserPushMinInterval:minInterval];
-    [NSThread sleepForTimeInterval:0.5f];
+//    [NSThread sleepForTimeInterval:0.5f];
     // Set location
     CLLocation * location = [[CLLocation alloc] initWithLatitude:37.33182 longitude:122.03118];
     [Tamber setUserLocation:location];
     
-     [NSThread sleepForTimeInterval:0.5f];
+//     [NSThread sleepForTimeInterval:0.5f];
     
     // Check user metadata
     NSDictionary *metadata = @{
@@ -161,7 +164,7 @@ NSString *item2;
                                };
     
     // wait for those requests to complete
-    [NSThread sleepForTimeInterval:4.0f];
+    [NSThread sleepForTimeInterval:1.0f];
     
     XCTestExpectation *userRetrieveExp = [self expectationWithDescription:@"retrieve user completed"];
     TMBUserParams *userParams = [TMBUserParams userWithId:tempUid];
@@ -192,7 +195,7 @@ NSString *item2;
     [self waitForExpectationsWithTimeout:5.0f handler:nil];
     
     XCTestExpectation *mergeFailExp = [self expectationWithDescription:@"User A merged to B"];
-    [[Tamber client] mergeUser:existingUser toUser:newUser noCreate:true responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+    [[Tamber client] mergeUser:existingUser toUser:newUser noCreate:true getEvents: true responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSError *errorMessage) {
         XCTAssertNotNil(errorMessage);
         NSLog(@"merge to novel user with noCreate true error:%@", errorMessage);
         [mergeFailExp fulfill];
@@ -204,8 +207,14 @@ NSString *item2;
         XCTAssertNil(errorMessage);
         XCTAssertNotNil(object);
         NSLog(@"Merge User Response Object: %@", object);
-        XCTAssertTrue([object.events count] == 1);
-        [mergeExp fulfill];
+        [[Tamber client] retrieveUser:[TMBUserParams userWithId:newUser] getEvents: true responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+            XCTAssertNil(errorMessage);
+            XCTAssertNotNil(object);
+            XCTAssertTrue([object.events count] == 1);
+            [mergeExp fulfill];
+        }];
+        
+        
     }];
     [self waitForExpectationsWithTimeout:5.0f handler:nil];
     
@@ -234,10 +243,10 @@ NSString *item2;
     [self waitForExpectationsWithTimeout:5.0f handler:nil];
     
     XCTestExpectation *mergeExp = [self expectationWithDescription:@"User A merged to B"];
-    [[Tamber client] mergeUser:userA toUser:userB noCreate:false responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+    [[Tamber client] mergeUser:userA toUser:userB noCreate:false getEvents: true responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSError *errorMessage) {
         XCTAssertNil(errorMessage);
         XCTAssertNotNil(object);
-        NSLog(@"Merge User Response Object: %@", object);
+        NSLog(@"Merge User Response Object: %@ events: %@", object, object.events);
         XCTAssertTrue([object.events count] == 2);
         [mergeExp fulfill];
     }];
@@ -267,7 +276,7 @@ NSString *item2;
 
 - (void)testItemlessEvents {
     
-    TMBEventParams *eventParams = [TMBEventParams pushRenderedWithContext:@[TMBPushContext] created:nil];
+    TMBEventParams *eventParams = [TMBEventParams pushRenderedWithContext:@{TMBSourceContextKey: TMBSourcePushContext} created:nil];
     XCTestExpectation *trackExp = [self expectationWithDescription:@"Itemless `tmb_push_rendered` event tracked"];
     [[Tamber client] trackEvent:eventParams responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
         XCTAssertNil(errorMessage);
@@ -305,7 +314,7 @@ NSString *item2;
                                           }
                                    tags:@[@"sci-fi", @"bestseller"]
                      ];
-    TMBEventParams *eventParams = [TMBEventParams eventWithItem:item behavior:@"like" context:@[@"homepage", @"featured"]];
+    TMBEventParams *eventParams = [TMBEventParams eventWithItem:item behavior:@"like" context:@{@"page": @"homepage", @"section": @"featured"}];
     XCTestExpectation *trackExp = [self expectationWithDescription:@"Full item object event tracked"];
     [[Tamber client] trackEvent:eventParams responseCompletion:^(TMBEventResponse *object, NSHTTPURLResponse *response, NSError *errorMessage) {
         XCTAssertNil(errorMessage);
