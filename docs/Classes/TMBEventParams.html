@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          Tamber Docs
+          Tamber 0.1.2 Docs
         </a>
         
       </p>
@@ -107,11 +107,11 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
+          <div class="section-content top-matter">
             <h1>TMBEventParams</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">TMBEventParams</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n"><a href="../Protocols/TMBObjectEncodable.html">TMBObjectEncodable</a></span><span class="o">&gt;</span></code></pre>
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">TMBEventParams</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n"><a href="../Protocols/TMBObjectEncodable.html">TMBObjectEncodable</a></span><span class="o">&gt;</span></code></pre>
 
                 </div>
               </div>
@@ -129,7 +129,7 @@
                     <code>
                     <a name="/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:"></a>
                     <a name="//apple_ref/objc/Method/+eventWithItem:behavior:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:">+eventWithItem:behavior:</a>
+                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:">+eventWithItem:<wbr>behavior:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -144,13 +144,13 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithItem</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="p">)</span><span class="nv">item</span>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithItem</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="p">)</span><span class="nv">item</span>
                               <span class="nf">behavior</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">behavior</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withItem</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withItem</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -165,7 +165,7 @@
                     <code>
                     <a name="/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:context:"></a>
                     <a name="//apple_ref/objc/Method/+eventWithItem:behavior:context:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:context:">+eventWithItem:behavior:context:</a>
+                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:context:">+eventWithItem:<wbr>behavior:<wbr>context:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -180,14 +180,14 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithItem</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="p">)</span><span class="nv">item</span>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithItem</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="p">)</span><span class="nv">item</span>
                               <span class="nf">behavior</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">behavior</span>
                                <span class="nf">context</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">context</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withItem</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withItem</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -202,7 +202,7 @@
                     <code>
                     <a name="/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:amount:context:"></a>
                     <a name="//apple_ref/objc/Method/+eventWithItem:behavior:amount:context:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:amount:context:">+eventWithItem:behavior:amount:context:</a>
+                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:amount:context:">+eventWithItem:<wbr>behavior:<wbr>amount:<wbr>context:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -217,7 +217,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithItem</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="p">)</span><span class="nv">item</span>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithItem</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="p">)</span><span class="nv">item</span>
                               <span class="nf">behavior</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">behavior</span>
                                 <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
                                <span class="nf">context</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">context</span><span class="p">;</span></code></pre>
@@ -225,7 +225,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withItem</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">context</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withItem</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">context</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -240,7 +240,7 @@
                     <code>
                     <a name="/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:hit:context:"></a>
                     <a name="//apple_ref/objc/Method/+eventWithItem:behavior:hit:context:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:hit:context:">+eventWithItem:behavior:hit:context:</a>
+                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:hit:context:">+eventWithItem:<wbr>behavior:<wbr>hit:<wbr>context:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -255,7 +255,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithItem</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="p">)</span><span class="nv">item</span>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithItem</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="p">)</span><span class="nv">item</span>
                               <span class="nf">behavior</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">behavior</span>
                                    <span class="nf">hit</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">hit</span>
                                <span class="nf">context</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">context</span><span class="p">;</span></code></pre>
@@ -263,7 +263,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withItem</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">hit</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withItem</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">hit</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -278,7 +278,7 @@
                     <code>
                     <a name="/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:amount:created:"></a>
                     <a name="//apple_ref/objc/Method/+eventWithItem:behavior:amount:created:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:amount:created:">+eventWithItem:behavior:amount:created:</a>
+                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithItem:behavior:amount:created:">+eventWithItem:<wbr>behavior:<wbr>amount:<wbr>created:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -293,7 +293,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithItem</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="p">)</span><span class="nv">item</span>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithItem</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="p">)</span><span class="nv">item</span>
                               <span class="nf">behavior</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">behavior</span>
                                 <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
                                <span class="nf">created</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDate</span> <span class="o">*</span><span class="p">)</span><span class="nv">created</span><span class="p">;</span></code></pre>
@@ -301,7 +301,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withItem</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">created</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withItem</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">created</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -316,7 +316,7 @@
                     <code>
                     <a name="/c:objc(cs)TMBEventParams(cm)eventWithUser:item:behavior:"></a>
                     <a name="//apple_ref/objc/Method/+eventWithUser:item:behavior:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithUser:item:behavior:">+eventWithUser:item:behavior:</a>
+                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithUser:item:behavior:">+eventWithUser:<wbr>item:<wbr>behavior:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -331,14 +331,14 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithUser</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">user</span>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithUser</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">user</span>
                                   <span class="nf">item</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="p">)</span><span class="nv">item</span>
                               <span class="nf">behavior</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">behavior</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withUser</span> <span class="nv">user</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withUser</span> <span class="nv">user</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -353,7 +353,7 @@
                     <code>
                     <a name="/c:objc(cs)TMBEventParams(cm)eventWithUser:item:behavior:amount:created:"></a>
                     <a name="//apple_ref/objc/Method/+eventWithUser:item:behavior:amount:created:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithUser:item:behavior:amount:created:">+eventWithUser:item:behavior:amount:created:</a>
+                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithUser:item:behavior:amount:created:">+eventWithUser:<wbr>item:<wbr>behavior:<wbr>amount:<wbr>created:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -368,7 +368,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithUser</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">user</span>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithUser</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">user</span>
                                   <span class="nf">item</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="p">)</span><span class="nv">item</span>
                               <span class="nf">behavior</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">behavior</span>
                                 <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
@@ -377,7 +377,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withUser</span> <span class="nv">user</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">created</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withUser</span> <span class="nv">user</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">created</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -392,7 +392,7 @@
                     <code>
                     <a name="/c:objc(cs)TMBEventParams(cm)eventWithUser:item:behavior:hit:context:"></a>
                     <a name="//apple_ref/objc/Method/+eventWithUser:item:behavior:hit:context:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithUser:item:behavior:hit:context:">+eventWithUser:item:behavior:hit:context:</a>
+                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithUser:item:behavior:hit:context:">+eventWithUser:<wbr>item:<wbr>behavior:<wbr>hit:<wbr>context:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -407,7 +407,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithUser</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">user</span>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithUser</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">user</span>
                                   <span class="nf">item</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="p">)</span><span class="nv">item</span>
                               <span class="nf">behavior</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">behavior</span>
                                    <span class="nf">hit</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">hit</span>
@@ -416,7 +416,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withUser</span> <span class="nv">user</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">hit</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withUser</span> <span class="nv">user</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">hit</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -431,7 +431,7 @@
                     <code>
                     <a name="/c:objc(cs)TMBEventParams(cm)eventWithUser:item:behavior:amount:hit:context:created:"></a>
                     <a name="//apple_ref/objc/Method/+eventWithUser:item:behavior:amount:hit:context:created:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithUser:item:behavior:amount:hit:context:created:">+eventWithUser:item:behavior:amount:hit:context:created:</a>
+                    <a class="token" href="#/c:objc(cs)TMBEventParams(cm)eventWithUser:item:behavior:amount:hit:context:created:">+eventWithUser:<wbr>item:<wbr>behavior:<wbr>amount:<wbr>hit:<wbr>context:<wbr>created:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -446,7 +446,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithUser</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">user</span>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">eventWithUser</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">user</span>
                                   <span class="nf">item</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">id</span><span class="p">)</span><span class="nv">item</span>
                               <span class="nf">behavior</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">behavior</span>
                                 <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
@@ -457,7 +457,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withUser</span> <span class="nv">user</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">hit</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?,</span> <span class="nv">created</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">event</span><span class="p">(</span><span class="n">withUser</span> <span class="nv">user</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">hit</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?,</span> <span class="nv">created</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -487,12 +487,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="n">sessionStarted</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="n">sessionStarted</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">sessionStarted</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">sessionStarted</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -522,12 +522,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="n">sessionEnded</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="n">sessionEnded</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">sessionEnded</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">sessionEnded</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -557,12 +557,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="n">pushRendered</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="n">pushRendered</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">pushRendered</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">pushRendered</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -592,12 +592,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="n">pushReceived</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="n">pushReceived</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">pushReceived</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">pushReceived</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -627,12 +627,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="n">pushEngaged</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">instancetype</span><span class="p">)</span><span class="n">pushEngaged</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">pushEngaged</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">pushEngaged</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -662,12 +662,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">user</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">user</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">user</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">user</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -697,12 +697,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">id</span> <span class="n">item</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">id</span> <span class="n">item</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -732,12 +732,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">behavior</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">behavior</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">behavior</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -767,12 +767,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="n">amount</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="n">amount</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -802,12 +802,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">hit</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">hit</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">hit</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hit</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -837,12 +837,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSArray</span> <span class="o">*</span><span class="n">context</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSArray</span> <span class="o">*</span><span class="n">context</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">context</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">context</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -872,12 +872,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSDate</span> <span class="o">*</span><span class="n">created</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSDate</span> <span class="o">*</span><span class="n">created</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">created</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">created</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -907,12 +907,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n"><a href="../Classes/TMBDiscoverParams.html">TMBDiscoverParams</a></span> <span class="o">*</span><span class="n">getRecs</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n"><a href="../Classes/TMBDiscoverParams.html">TMBDiscoverParams</a></span> <span class="o">*</span><span class="n">getRecs</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">@NSCopying</span> <span class="k">var</span> <span class="nv">getRecs</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBDiscoverParams.html">TMBDiscoverParams</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@NSCopying</span> <span class="k">var</span> <span class="nv">getRecs</span><span class="p">:</span> <span class="kt"><a href="../Classes/TMBDiscoverParams.html">TMBDiscoverParams</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -930,8 +930,8 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://tamber.com" target="_blank" rel="external">Tamber</a>. All rights reserved. (Last updated: 2019-04-04)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="https://tamber.com" target="_blank" rel="external">Tamber</a>. All rights reserved. (Last updated: 2020-06-22)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

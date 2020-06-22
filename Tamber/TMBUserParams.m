@@ -3,7 +3,7 @@
 //  Tamber
 //
 //  Created by Alexander Robbins on 7/5/17.
-//  Copyright © 2019 Tamber. All rights reserved.
+//  Copyright © 2020 Tamber. All rights reserved.
 //
 
 #import "TMBUserParams.h"
@@ -57,6 +57,12 @@
 
 - (void) setGetRecs:(TMBDiscoverParams*)getRecs{
     _getRecs = getRecs;
+}
+
+- (void) setSaveMode:(NSString*)mode{
+    if (mode != nil) {
+        _additionalAPIParameters = @{@"mode": mode};
+    }
 }
 
 #pragma mark - TMBObjectEncodable

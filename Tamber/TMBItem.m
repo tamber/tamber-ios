@@ -3,7 +3,7 @@
 //  Tamber
 //
 //  Created by Alexander Robbins on 11/10/17.
-//  Copyright © 2019 Tamber. All rights reserved.
+//  Copyright © 2020 Tamber. All rights reserved.
 //
 
 #import "TMBItem.h"
@@ -91,6 +91,7 @@
              @"properties": @"properties",
              @"tags": @"tags",
              @"created": @"created",
+             @"hidden": @"hidden",
              };
 }
 

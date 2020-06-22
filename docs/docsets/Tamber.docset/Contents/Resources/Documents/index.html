@@ -20,7 +20,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="index.html">
-          Tamber Docs
+          Tamber 0.1.2 Docs
         </a>
         
       </p>
@@ -106,7 +106,7 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
+          <div class="section-content top-matter">
             
             <h1 id='tamber-ios-sdk' class='heading'>Tamber iOS SDK</h1>
 
@@ -143,8 +143,8 @@
 <span class="k">@implementation</span> <span class="nc">AppDelegate</span>
 <span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">application</span><span class="p">:(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">didFinishLaunchingWithOptions</span><span class="p">:(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">launchOptions</span> <span class="p">{</span>
     <span class="p">[</span><span class="n">Tamber</span> <span class="nf">setPublishableProjectKey</span><span class="p">:</span><span class="s">@"your_project_key"</span><span class="p">];</span>
-    <span class="c1">// do any other necessary launch configuration
-</span>    <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
+    <span class="c1">// do any other necessary launch configuration</span>
+    <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="k">@end</span>
 </code></pre>
@@ -157,23 +157,23 @@
 
 <p>Stream events to your Tamber project as the user interacts with items in your app.</p>
 <pre class="highlight objective_c"><code><span class="n">TMBItem</span> <span class="o">*</span><span class="n">item</span> <span class="o">=</span> <span class="p">[</span><span class="n">TMBItem</span> <span class="nf">itemWithId</span><span class="p">:</span><span class="s">@"item_id"</span>
-    <span class="nf">properties</span><span class="p">:@{</span>
+    <span class="nl">properties:</span><span class="p">@{</span>
         <span class="s">@"type"</span><span class="o">:</span><span class="s">@"book"</span><span class="p">,</span>
         <span class="s">@"title"</span><span class="o">:</span><span class="s">@"The Moon is a Harsh Mistress"</span><span class="p">,</span>
         <span class="s">@"img_url"</span><span class="o">:</span><span class="s">@"https://img.domain.com/book/The_Moon_is_a_Harsh Mistress.jpg"</span><span class="p">,</span> 
         <span class="s">@"stock"</span><span class="o">:</span><span class="p">[</span><span class="n">NSNumber</span> <span class="nf">numberWithInteger</span><span class="p">:</span><span class="mi">34</span><span class="p">]</span>
     <span class="p">}</span>
-    <span class="n">tags</span><span class="o">:</span><span class="p">@[</span><span class="s">@"sci-fi"</span><span class="p">,</span> <span class="s">@"bestseller"</span><span class="p">]</span>
+    <span class="nl">tags:</span><span class="p">@[</span><span class="s">@"sci-fi"</span><span class="p">,</span> <span class="s">@"bestseller"</span><span class="p">]</span>
 <span class="p">];</span>
 
 <span class="n">TMBEventParams</span> <span class="o">*</span><span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="n">TMBEventParams</span> <span class="nf">eventWithItem</span><span class="p">:</span><span class="n">item</span> <span class="nf">behavior</span><span class="p">:</span><span class="s">@"like"</span> <span class="n">context</span><span class="o">:</span><span class="p">@{</span><span class="s">@"page"</span><span class="o">:</span> <span class="s">@"homepage"</span><span class="p">,</span> <span class="s">@"section"</span><span class="o">:</span> <span class="s">@"featured"</span><span class="p">}];</span>
 <span class="p">[[</span><span class="n">Tamber</span> <span class="nf">client</span><span class="p">]</span> <span class="nf">trackEvent</span><span class="p">:</span><span class="n">params</span> <span class="nf">responseCompletion</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">TMBEventResponse</span> <span class="o">*</span><span class="n">object</span><span class="p">,</span> <span class="n">NSHTTPURLResponse</span> <span class="o">*</span><span class="n">response</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span><span class="p">(</span><span class="n">error</span><span class="p">){</span>
-        <span class="c1">// Handle error
-</span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="n">object</span><span class="p">.</span><span class="n">events</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">// Event tracked
-</span>        <span class="n">object</span><span class="p">.</span><span class="n">recs</span> <span class="c1">// Returns updated recommendations if params.getRecs is set - [params setGetRecs:&lt;TMBDiscoverParams&gt;]
-</span>    <span class="p">}</span>
+        <span class="c1">// Handle error</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">object</span><span class="p">.</span><span class="n">events</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">// Event tracked</span>
+        <span class="n">object</span><span class="p">.</span><span class="n">recs</span> <span class="c1">// Returns updated recommendations if params.getRecs is set - [params setGetRecs:&lt;TMBDiscoverParams&gt;]</span>
+    <span class="p">}</span>
 <span class="p">}];</span>
 </code></pre>
 
@@ -188,12 +188,12 @@
 <pre class="highlight objective_c"><code><span class="n">TMBDiscoverParams</span> <span class="o">*</span><span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="n">TMBDiscoverParams</span> <span class="nf">discoverRecommended</span><span class="p">:[</span><span class="n">NSNumber</span> <span class="nf">numberWithInt</span><span class="p">:</span><span class="mi">8</span><span class="p">]];</span>
 <span class="p">[[</span><span class="n">Tamber</span> <span class="nf">client</span><span class="p">]</span> <span class="nf">discoverNext</span><span class="p">:</span><span class="n">params</span> <span class="nf">responseCompletion</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">TMBDiscoverResponse</span> <span class="o">*</span><span class="n">object</span><span class="p">,</span> <span class="n">NSHTTPURLResponse</span> <span class="o">*</span><span class="n">response</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span><span class="p">(</span><span class="n">error</span><span class="p">){</span>
-        <span class="c1">// Handle error
-</span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// Handle error</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
         <span class="k">for</span><span class="p">(</span><span class="n">TMBDiscovery</span> <span class="o">*</span><span class="n">discovery</span> <span class="k">in</span> <span class="n">object</span><span class="p">.</span><span class="n">discoveries</span><span class="p">){</span>
-            <span class="n">discovery</span><span class="p">.</span><span class="n">item</span> <span class="c1">// Recommended item id
-</span>            <span class="n">discovery</span><span class="p">.</span><span class="n">score</span> <span class="c1">// Recommendation score (relative to other results, not a predicted rating)
-</span>        <span class="p">}</span>
+            <span class="n">discovery</span><span class="p">.</span><span class="n">item</span> <span class="c1">// Recommended item id</span>
+            <span class="n">discovery</span><span class="p">.</span><span class="n">score</span> <span class="c1">// Recommendation score (relative to other results, not a predicted rating)</span>
+        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}];</span>
 </code></pre>
@@ -202,12 +202,12 @@
 <pre class="highlight objective_c"><code><span class="n">TMBDiscoverParams</span> <span class="o">*</span><span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="n">TMBDiscoverParams</span> <span class="nf">discoverNext</span><span class="p">:</span><span class="s">@"item_id"</span> <span class="nf">number</span><span class="p">:[</span><span class="n">NSNumber</span> <span class="nf">numberWithInt</span><span class="p">:</span><span class="mi">10</span><span class="p">]];</span>
 <span class="p">[[</span><span class="n">Tamber</span> <span class="nf">client</span><span class="p">]</span> <span class="nf">discoverNext</span><span class="p">:</span><span class="n">params</span> <span class="nf">responseCompletion</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">TMBDiscoverResponse</span> <span class="o">*</span><span class="n">object</span><span class="p">,</span> <span class="n">NSHTTPURLResponse</span> <span class="o">*</span><span class="n">response</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span><span class="p">(</span><span class="n">error</span><span class="p">){</span>
-        <span class="c1">// Handle error
-</span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// Handle error</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
         <span class="k">for</span><span class="p">(</span><span class="n">TMBDiscovery</span> <span class="o">*</span><span class="n">discovery</span> <span class="k">in</span> <span class="n">object</span><span class="p">.</span><span class="n">discoveries</span><span class="p">){</span>
-            <span class="n">discovery</span><span class="p">.</span><span class="n">item</span> <span class="c1">// Recommended item id
-</span>            <span class="n">discovery</span><span class="p">.</span><span class="n">score</span> <span class="c1">// Recommendation score (relative to other results, not a predicted rating)
-</span>        <span class="p">}</span>
+            <span class="n">discovery</span><span class="p">.</span><span class="n">item</span> <span class="c1">// Recommended item id</span>
+            <span class="n">discovery</span><span class="p">.</span><span class="n">score</span> <span class="c1">// Recommendation score (relative to other results, not a predicted rating)</span>
+        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}];</span>
 </code></pre>
@@ -216,31 +216,31 @@
 <pre class="highlight objective_c"><code><span class="n">TMBDiscoverParams</span> <span class="o">*</span><span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="n">TMBDiscoverParams</span> <span class="nf">alloc</span><span class="p">]</span> <span class="n">discoverNext</span><span class="o">:</span><span class="p">[</span><span class="n">NSNumber</span> <span class="nf">numberWithInt</span><span class="p">:</span><span class="mi">50</span><span class="p">]</span> <span class="n">getProperties</span><span class="o">:</span><span class="nb">true</span><span class="p">];</span>
 <span class="p">[[</span><span class="n">Tamber</span> <span class="nf">client</span><span class="p">]</span> <span class="nf">discoverNext</span><span class="p">:</span><span class="n">params</span> <span class="nf">responseCompletion</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">TMBDiscoverResponse</span> <span class="o">*</span><span class="n">object</span><span class="p">,</span> <span class="n">NSHTTPURLResponse</span> <span class="o">*</span><span class="n">response</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span><span class="p">(</span><span class="n">error</span><span class="p">){</span>
-        <span class="c1">// Handle error
-</span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// Handle error</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
         <span class="k">for</span><span class="p">(</span><span class="n">TMBDiscovery</span> <span class="o">*</span><span class="n">discovery</span> <span class="k">in</span> <span class="n">object</span><span class="p">.</span><span class="n">discoveries</span><span class="p">){</span>
-            <span class="n">discovery</span><span class="p">.</span><span class="n">item</span> <span class="c1">// Recommended item id
-</span>            <span class="n">discovery</span><span class="p">.</span><span class="n">score</span> <span class="c1">// Recommendation score (relative to other results, not a predicted rating)
-</span>            <span class="n">discovery</span><span class="p">.</span><span class="n">properties</span> <span class="c1">// Dictionary of item properties
-</span>        <span class="p">}</span>
+            <span class="n">discovery</span><span class="p">.</span><span class="n">item</span> <span class="c1">// Recommended item id</span>
+            <span class="n">discovery</span><span class="p">.</span><span class="n">score</span> <span class="c1">// Recommendation score (relative to other results, not a predicted rating)</span>
+            <span class="n">discovery</span><span class="p">.</span><span class="n">properties</span> <span class="c1">// Dictionary of item properties</span>
+        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}];</span>
 </code></pre>
 <h3 id='anonymous-signed-out-users' class='heading'>Anonymous / Signed-Out Users</h3>
 
 <p>If your app allows users to interact with content before creating an account, or when they are logged out, but you have some unique identifier (like the device id) you may set the user to this id and track events as normal. Then, when the user creates an account or logs in, you can <code>merge</code> the anonymous user into the logged-in user.</p>
-<pre class="highlight objective_c"><code><span class="c1">// At app launch / wherever appropriate in your code 
-</span><span class="p">[</span><span class="n">Tamber</span> <span class="nf">setUser</span><span class="p">:</span><span class="s">@"anonymous-device-id"</span><span class="p">];</span>
+<pre class="highlight objective_c"><code><span class="c1">// At app launch / wherever appropriate in your code </span>
+<span class="p">[</span><span class="n">Tamber</span> <span class="nf">setUser</span><span class="p">:</span><span class="s">@"anonymous-device-id"</span><span class="p">];</span>
 
-<span class="c1">// On signup/login:
-</span><span class="n">NSString</span> <span class="o">*</span><span class="n">toUser</span> <span class="o">=</span> <span class="s">@"user-id"</span><span class="p">;</span> <span class="c1">// The id of the user to which you want to merge.
-</span><span class="p">[[</span><span class="n">Tamber</span> <span class="nf">client</span><span class="p">]</span> <span class="nf">mergeToUser</span><span class="p">:</span><span class="n">toUser</span> <span class="nf">responseCompletion</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">TMBUser</span> <span class="o">*</span><span class="n">object</span><span class="p">,</span> <span class="n">NSHTTPURLResponse</span> <span class="o">*</span><span class="n">response</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+<span class="c1">// On signup/login:</span>
+<span class="n">NSString</span> <span class="o">*</span><span class="n">toUser</span> <span class="o">=</span> <span class="s">@"user-id"</span><span class="p">;</span> <span class="c1">// The id of the user to which you want to merge.</span>
+<span class="p">[[</span><span class="n">Tamber</span> <span class="nf">client</span><span class="p">]</span> <span class="nf">mergeToUser</span><span class="p">:</span><span class="n">toUser</span> <span class="nf">responseCompletion</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="n">TMBUser</span> <span class="o">*</span><span class="n">object</span><span class="p">,</span> <span class="n">NSHTTPURLResponse</span> <span class="o">*</span><span class="n">response</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span><span class="p">(</span><span class="n">error</span><span class="p">){</span>
-        <span class="c1">// Handle error. Note that mergeToUser internally sets the default user to the `toUser`.
-</span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-       <span class="n">object</span><span class="p">.</span><span class="n">events</span> <span class="c1">// Array of merged user events (`TMBEvent` objects)
-</span>       <span class="n">object</span><span class="p">.</span><span class="n">metadata</span> <span class="c1">// Dictionary of the merged user metadata. Note that field-value conflicts default to the `toUser`.
-</span>    <span class="p">}</span>
+        <span class="c1">// Handle error. Note that mergeToUser internally sets the default user to the `toUser`.</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+       <span class="n">object</span><span class="p">.</span><span class="n">events</span> <span class="c1">// Array of merged user events (`TMBEvent` objects)</span>
+       <span class="n">object</span><span class="p">.</span><span class="n">metadata</span> <span class="c1">// Dictionary of the merged user metadata. Note that field-value conflicts default to the `toUser`.</span>
+    <span class="p">}</span>
 <span class="p">}];</span>
 </code></pre>
 <h3 id='testing-recommendations' class='heading'>Testing Recommendations</h3>
@@ -261,8 +261,8 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://tamber.com" target="_blank" rel="external">Tamber</a>. All rights reserved. (Last updated: 2019-04-04)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="https://tamber.com" target="_blank" rel="external">Tamber</a>. All rights reserved. (Last updated: 2020-06-22)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

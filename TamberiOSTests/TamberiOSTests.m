@@ -3,17 +3,14 @@
 //  TamberiOSTests
 //
 //  Created by Alexander Robbins on 5/4/17.
-//  Copyright © 2019 Tamber. All rights reserved.
+//  Copyright © 2020 Tamber. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 #import <Tamber/Tamber.h>
 
-//const NSString *testProjectKey = @"Mu6DUPXdDYe98cv5JIfX";
-//const NSString *testEngineKey = @"SbWYPBNdARfIDa0IIO9L";
-
-const NSString *testProjectKey = @"HAWhe6BsKMwOwPyy77aZ";
-const NSString *testEngineKey = @"MBeqnXstDJay76HEUwI6";
+const NSString *testProjectKey = @"Mu6DUPXdDYe98cv5JIfX";
+const NSString *testEngineKey = @"SbWYPBNdARfIDa0IIO9L";
 
 const NSString *defaultUser = @"user_jctzgisbru";
 
@@ -86,13 +83,13 @@ NSString *item2;
     [self waitForExpectationsWithTimeout:5.0f handler:nil];
     
     // 3. Update user with metadata
-    XCTestExpectation *uUpdateExp = [self expectationWithDescription:@"User updated"];
+    XCTestExpectation *uSaveExp = [self expectationWithDescription:@"User saved"];
     NSDictionary *metadata = @{ @"key": @"value" };
     userParams = [TMBUserParams userWithMetadata:metadata];
-    [[Tamber client] updateUser:userParams responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSError *errorMessage) {
+    [[Tamber client] saveUser:userParams responseCompletion:^(TMBUser *object, NSHTTPURLResponse *response, NSError *errorMessage) {
         XCTAssertNil(errorMessage);
         XCTAssertNotNil(object);
-        [uUpdateExp fulfill];
+        [uSaveExp fulfill];
     }];
     [self waitForExpectationsWithTimeout:5.0f handler:nil];
     

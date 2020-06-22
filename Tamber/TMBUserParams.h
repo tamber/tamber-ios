@@ -3,7 +3,7 @@
 //  Tamber
 //
 //  Created by Alexander Robbins on 7/5/17.
-//  Copyright © 2019 Tamber. All rights reserved.
+//  Copyright © 2020 Tamber. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -52,6 +52,10 @@
  */
 - (void) setGetRecs:(nonnull TMBDiscoverParams*)getRecs;
 
+/**
+ *  Adds additional api parameter for the mode when saving a user ("merge" or "replace").
+ */
+- (void) setSaveMode:(nullable NSString*)mode;
 /**
  *  Unique ID associated with the user.
  */

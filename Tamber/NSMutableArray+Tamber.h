@@ -3,7 +3,7 @@
 //  Tamber
 //
 //  Created on 3/5/19.
-//  Copyright © 2019 Tamber. All rights reserved.
+//  Copyright © 2020 Tamber. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

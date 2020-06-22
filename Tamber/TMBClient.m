@@ -3,7 +3,7 @@
 //  Tamber
 //
 //  Created by Alexander Robbins on 5/3/17.
-//  Copyright © 2019 Tamber. All rights reserved.
+//  Copyright © 2020 Tamber. All rights reserved.
 //
 
 //#import <Tamber/TMBClient.h>
@@ -310,8 +310,8 @@
                                 completion:responseCompletion];
 }
 
-- (NSURLSessionDataTask *) updateUser:(TMBUserParams*) userParams responseCompletion:(TMBAPIResponseBlock) responseCompletion{
-    NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"user", @"update"];
+- (NSURLSessionDataTask *) saveUser:(TMBUserParams*) userParams responseCompletion:(TMBAPIResponseBlock) responseCompletion{
+    NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"user", @"save"];
     
     if(userParams.ID == nil && self.userId != nil){
         userParams.ID = self.userId;
@@ -323,6 +323,27 @@
                                 parameters:params
                                 serializer:[TMBUser new]
                                 completion:responseCompletion];
+}
+
+- (NSURLSessionDataTask *) saveUser:(TMBUserParams*) userParams withMode:(NSString *) mode responseCompletion:(TMBAPIResponseBlock) responseCompletion{
+    NSString *endpoint = [NSString stringWithFormat:@"%@/%@", @"user", @"save"];
+    
+    if(userParams.ID == nil && self.userId != nil){
+        userParams.ID = self.userId;
+    }
+    [userParams setSaveMode:mode];
+    NSDictionary *params = [TMBEncoder dictionaryForObject:userParams];
+    
+    return [TMBAPIRequest getWithAPIClient:self
+                                  endpoint:endpoint
+                                parameters:params
+                                serializer:[TMBUser new]
+                                completion:responseCompletion];
+}
+
+//deprecated
+- (NSURLSessionDataTask *) updateUser:(TMBUserParams*) userParams responseCompletion:(TMBAPIResponseBlock) responseCompletion{
+    return [self saveUser: userParams withMode:TMBMergeMode responseCompletion: responseCompletion];
 }
 
 - (NSURLSessionDataTask *) mergeToUser:(NSString*) toUser responseCompletion:(TMBAPIResponseBlock) responseCompletion{

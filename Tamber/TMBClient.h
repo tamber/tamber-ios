@@ -3,11 +3,12 @@
 //  Tamber
 //
 //  Created by Alexander Robbins on 5/3/17.
-//  Copyright © 2019 Tamber. All rights reserved.
+//  Copyright © 2020 Tamber. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <AvailabilityMacros.h>
 #import "TMBEventParams.h"
 #import "TMBEventResponse.h"
 #import "TMBDiscoverParams.h"
@@ -25,14 +26,17 @@
 #import "TMBAPIRequest.h"
 
 NS_ASSUME_NONNULL_BEGIN
-static  NSString *const TMBSDKVersion = @"0.1.1";
+static  NSString *const TMBSDKVersion = @"0.1.2";
 static NSString *const TMBApiURLBase = @"api.tamber.com/v1";
-static NSString *const TMBApiVersion = @"2019-3-31";
+static NSString *const TMBApiVersion = @"2020-6-11";
 
 static NSString *const TMBPushTokenFieldName = @"tmb_push_token_ios";
 static NSString *const TMBPushMinIntervalFieldName = @"tmb_push_min_interval";
 static NSString *const TMBTimezoneFieldName = @"tmb_timezone";
 static NSString *const TMBTestUserFieldName = @"tmb_test_user";
+
+static NSString *const TMBReplaceMode = @"replace";
+static NSString *const TMBMergeMode = @"merge";
 NS_ASSUME_NONNULL_END
 
 /**
@@ -195,11 +199,26 @@ NS_ASSUME_NONNULL_END
 - (nullable NSURLSessionDataTask *) createUser:(nullable TMBUserParams*) userParams responseCompletion:(nullable TMBAPIResponseBlock) responseCompletion;
 
 /**
+ * Save user in your project. The metadata field will be set to the value provided, if not nil, overwriting any past metadata.
+ * @param userParams The parameters for the user you are updating. If the client's user has been set, then the `ID` field can be nil and it will default to the client's user.
+ * @param responseCompletion The callback to run with the returned TMBUser (and any errors that may have occurred)
+ */
+- (nullable NSURLSessionDataTask *) saveUser:(nullable TMBUserParams*) userParams responseCompletion:(nullable TMBAPIResponseBlock) responseCompletion;
+
+/**
+ * Save user in your project with configurable save mode, either "merge" or "replace". The metadata field will be set to the value provided, if not nil, overwriting any past metadata.
+ * @param userParams The parameters for the user you are updating. If the client's user has been set, then the `ID` field can be nil and it will default to the client's user.
+ * @param mode The mode for how the user object will be saved on conflict, either "merge" with the pre-existing user or "replace" the whole object (default is "replace").
+ * @param responseCompletion The callback to run with the returned TMBUser (and any errors that may have occurred)
+ */
+- (nullable NSURLSessionDataTask *) saveUser:(nullable TMBUserParams*) userParams withMode:(nullable NSString*) mode responseCompletion:(nullable TMBAPIResponseBlock) responseCompletion;
+
+/**
  * Update user in your project. The metadata field will be set to the value provided, if not nil, overwriting any past metadata.
  * @param userParams The parameters for the user you are updating. If the client's user has been set, then the `ID` field can be nil and it will default to the client's user.
  * @param responseCompletion The callback to run with the returned TMBUser (and any errors that may have occurred)
  */
-- (nullable NSURLSessionDataTask *) updateUser:(nullable TMBUserParams*) userParams responseCompletion:(nullable TMBAPIResponseBlock) responseCompletion;
+- (nullable NSURLSessionDataTask *) updateUser:(nullable TMBUserParams*) userParams responseCompletion:(nullable TMBAPIResponseBlock) responseCompletion DEPRECATED_MSG_ATTRIBUTE("Use saveUser instead.");
 
 /**
  * Retrieve user in your project.
