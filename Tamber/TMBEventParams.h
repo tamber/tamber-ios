@@ -130,7 +130,7 @@
 /**
  *  The context(s) in which the event occurred. Useful for segmenting events data to determine the impact of interface elements and other contextual variables on user behavior. Also useful for A/B testing interface changes.
  */
-@property (nonatomic, copy, nullable) NSArray *context;
+@property (nonatomic, copy, nullable) NSDictionary *context;
 
 /**
  *  Time the event occurred. Defaults to the current time if not supplied.

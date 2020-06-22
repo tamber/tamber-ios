@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.frameworks                     = 'Foundation'
   s.requires_arc                   = true
   s.platform                       = :ios
-  s.ios.deployment_target          = '8.0'
+  s.ios.deployment_target          = '10.0'
   s.public_header_files            = 'Tamber/*.h', 'Tamber/Push/*.h'
   s.source_files                   = 'Tamber/*.{h,m}', 'Tamber/Push/*.{h,m}'
 end

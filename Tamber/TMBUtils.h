@@ -32,10 +32,10 @@ typedef void(^TMBEmptyCallbackBlock)(void);
 //@property (readwrite, nonatomic) BOOL autoLoadToken;
 @property (readwrite, nonatomic) BOOL disableNotificationCenterDelegate;
 
-+ (instancetype) getInstance;
++ (nonnull instancetype) getInstance;
 + (BOOL) autoUNCenterDelDisabled;
 
-+ (UIApplication *) sharedUIApplication;
++ (nullable UIApplication *) sharedUIApplication;
 + (BOOL) sharedUIApplicationActive;
 
 @end
