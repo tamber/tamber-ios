@@ -196,7 +196,7 @@
         userId = _userId;
     }
     TMBUserParams *userParams = [TMBUserParams userWithId:userId metadata:keyValues];
-    [self updateUser:userParams responseCompletion:^(TMBUser *user, NSHTTPURLResponse *response, NSError *errorMessage) {
+    [self saveUser:userParams withMode:TMBMergeMode responseCompletion:^(TMBUser *user, NSHTTPURLResponse *response, NSError *errorMessage) {
         if(errorMessage){
             LogDebug(@"ERROR %@", errorMessage);
             if([errorMessage.domain isEqualToString:TamberDomain]) {
@@ -204,7 +204,7 @@
                     if(cerrorMessage){
                         LogDebug(@"CERROR %@", cerrorMessage);
                         if([cerrorMessage.domain isEqualToString:TamberDomain]) {
-                            [self updateUser:userParams responseCompletion:^(TMBUser *upuser, NSHTTPURLResponse *response, NSError *uperrorMessage) {
+                            [self saveUser:userParams withMode:TMBMergeMode responseCompletion:^(TMBUser *upuser, NSHTTPURLResponse *response, NSError *uperrorMessage) {
                                 if(uperrorMessage){
                                     LogDebug(@"UPERROR %@", uperrorMessage);
                                 }
